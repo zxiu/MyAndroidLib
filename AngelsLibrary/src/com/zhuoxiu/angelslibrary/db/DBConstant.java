@@ -1,4 +1,4 @@
-package com.zhuoxiu.dbhelper;
+package com.zhuoxiu.angelslibrary.db;
 
 public interface DBConstant {
 
