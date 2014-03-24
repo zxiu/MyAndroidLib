@@ -1,4 +1,4 @@
-package com.xiuzhuo.dbhelper;
+package com.zhuoxiu.dbhelper;
 
 public interface DBConstant {
 

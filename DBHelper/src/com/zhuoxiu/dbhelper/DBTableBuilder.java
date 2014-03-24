@@ -1,4 +1,4 @@
-package com.xiuzhuo.dbhelper;
+package com.zhuoxiu.dbhelper;
 
 import java.util.ArrayList;
 import java.util.List;
