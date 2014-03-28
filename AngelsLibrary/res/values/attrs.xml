@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DrawerLayout">
+        <attr name="handlerId" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="IndexBar">
+        <attr name="textColor" format="color" />
+        <attr name="textAlpha" format="float" />
+        <attr name="textHoverColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="backgroundHoverColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="PhotoView">
+        <attr name="circleEnable" format="boolean" />
+        <attr name="circleColor" format="color" />
+        <attr name="circleAlpha" format="float" />
+    </declare-styleable>
+    <declare-styleable name="InfoBar">
+        <attr name="infoType">
+            <enum name="information" value="0" />
+            <enum name="warning" value="1" />
+            <enum name="error" value="2" />
+        </attr>
+    </declare-styleable>
+
+</resources>

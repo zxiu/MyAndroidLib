@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpStatus;
 import org.apache.http.util.EntityUtils;
-
-import android.util.Log;
 
 public class HttpResult implements org.apache.http.HttpStatus {
 	String tag = this.getClass().getSimpleName();
@@ -38,6 +35,10 @@ public class HttpResult implements org.apache.http.HttpStatus {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public void setEntityString(String entity) {
+		bytes = entity.getBytes();
 	}
 
 	public String getEntityString() {
@@ -74,5 +75,5 @@ public class HttpResult implements org.apache.http.HttpStatus {
 	public boolean isBadRequest() {
 		return (code == SC_BAD_REQUEST);
 	}
-	
+
 }

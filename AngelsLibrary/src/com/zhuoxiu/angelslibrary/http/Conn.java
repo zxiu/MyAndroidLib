@@ -53,7 +53,6 @@ public class Conn {
 	public static final String POST = "post";
 	public static final String PUT = "put";
 	public static final String DELETE = "delete";
-	private static final String AUTHORIZATION = "Authorization";
 
 	public static final String tag = Conn.class.getSimpleName();
 
