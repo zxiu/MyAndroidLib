@@ -1,4 +1,4 @@
-package com.zhuoxiu.angelslibrary.http;
+package com.zhuoxiu.angelslibrary.net;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

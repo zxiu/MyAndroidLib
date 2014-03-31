@@ -15,8 +15,8 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
-import com.zhuoxiu.angelslibrary.http.Conn;
-import com.zhuoxiu.angelslibrary.http.Conn.OnDownloadListener;
+import com.zhuoxiu.angelslibrary.net.ConnOld;
+import com.zhuoxiu.angelslibrary.net.ConnOld.OnDownloadListener;
 
 public class PanoUtil {
 	static String tag = PanoUtil.class.getSimpleName();
@@ -53,7 +53,7 @@ public class PanoUtil {
 			return null;
 		}
 		if (!file.exists()) {
-			Conn conn = new Conn(url, Conn.GET);
+			ConnOld conn = new ConnOld(url, ConnOld.GET);
 			conn.downloadFileWithProgress(file, downloadListener);
 		}
 		return file;
@@ -82,9 +82,9 @@ public class PanoUtil {
 			memCache.addBitmapToCache(key, bitmap);
 		}
 	}
-
+ 
 	public String generateKey(String url) {
-		return new String(Base64.decode(url, Base64.URL_SAFE));
+		return new String(Base64.encodeToString(url.getBytes(), Base64.URL_SAFE));
 	}
 
 	public Bitmap downloadBitmap(String url) throws IOException {

@@ -1,4 +1,4 @@
-package com.zhuoxiu.angelslibrary.http;
+package com.zhuoxiu.angelslibrary.net;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -7,8 +7,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -47,14 +59,14 @@ import android.util.Log;
 
 import com.zhuoxiu.angelslibrary.exception.SessionExpiredException;
 
-public class Conn {
+public class ConnOld {
 	public static final String CHARSET = HTTP.UTF_8;
 	public static final String GET = "get";
 	public static final String POST = "post";
 	public static final String PUT = "put";
 	public static final String DELETE = "delete";
 
-	public static final String tag = Conn.class.getSimpleName();
+	public static final String tag = ConnOld.class.getSimpleName();
 
 	private static HttpClient customerHttpClient;
 	private List<HttpParams> paramList = new ArrayList<HttpParams>();
@@ -75,8 +87,10 @@ public class Conn {
 
 	String method;
 	String boundary = "SwA" + System.currentTimeMillis() + "SwA";
+	String url;
 
-	public Conn(String url, String method) {
+	public ConnOld(String url, String method) {
+		this.url = url;
 		this.method = method;
 		this.client = getHttpClient();
 		if (method.equalsIgnoreCase(GET)) {
@@ -87,24 +101,28 @@ public class Conn {
 			request = new HttpDelete(url);
 		}
 		request.setParams(params);
-//		if (Cube7App.getUser() != null) {
-//			addHeader(AUTHORIZATION, Cube7App.getUser().getEncodeToken());
-//			Log.i(tag, "url=" + url);
-//			Log.i(tag, "token=" + Cube7App.getUser().getEncodeToken());
-//		}
+		// if (Cube7App.getUser() != null) {
+		// addHeader(AUTHORIZATION, Cube7App.getUser().getEncodeToken());
+		// Log.i(tag, "url=" + url);
+		// Log.i(tag, "token=" + Cube7App.getUser().getEncodeToken());
+		// }
 	}
 
-	public Conn(String url, JSONObject jsonObject) {
-		this(url,POST);
+	public ConnOld(String url, JSONObject jsonObject) {
+		this(url, POST);
 		addHeader("Content-Type", "application/json");
-		addHeader("Content-Type","application/x-www-form-urlencoded");
+		addHeader("Content-Type", "application/x-www-form-urlencoded");
 		try {
 			entity = new StringEntity(jsonObject.toString(), CHARSET);
-//			String json="{\"grant_type\": \"password\", \"username\": \"rjmaltamar@gmail.com\", \"password\": \"defaultpw\", \"client_id\": \"4699fa41e4828c568440ccafdcbc7b8acb6659e1a5d8be05e90a8324472b9d23\", \"client_secret\": " +
-//					"\"2c7f384d4f790a959df666f9ed8949018d2ebe5ab0163d3a45bf9c5f97cf85b9\", \"redirect_uri\": \"http://andriod.cube7.com\"}";
-//			Log.i(tag,json); 
-//			entity=new StringEntity(json); 
 			((HttpPost) request).setEntity(entity);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void setEntity(String entity) {
+		try {
+			this.entity = new StringEntity(entity);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
@@ -113,6 +131,7 @@ public class Conn {
 	public HttpResult execute() throws SessionExpiredException {
 		for (Header header : headerList) {
 			request.addHeader(header);
+			Log.i(tag, header.getName() + " : " + header.getValue());
 		}
 		for (HttpParams params : paramList) {
 			request.setParams(params);
@@ -134,6 +153,7 @@ public class Conn {
 			((HttpPost) request).setEntity(progressiveEntity);
 		}
 		try {
+			Log.i(tag, "url = " + url);
 			response = client.execute(request);
 			result.setEntity(response.getEntity());
 			result.setCode(response.getStatusLine().getStatusCode());
@@ -214,6 +234,27 @@ public class Conn {
 		return false;
 	}
 
+	public static SSLSocketFactory getSSLSocketFactory() throws KeyStoreException, KeyManagementException,
+			UnrecoverableKeyException, NoSuchAlgorithmException, CertificateException, IOException {
+		KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+		trustStore.load(null, null);
+
+		SSLSocketFactory sf = new SSLSocketFactoryEx(trustStore);
+		sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+
+		HttpParams params = new BasicHttpParams();
+		HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
+		HttpProtocolParams.setContentCharset(params, HTTP.UTF_8);
+
+		SchemeRegistry registry = new SchemeRegistry();
+		registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+		registry.register(new Scheme("https", sf, 443));
+
+		ClientConnectionManager ccm = new ThreadSafeClientConnManager(params, registry);
+
+		return sf;
+	}
+
 	public static synchronized HttpClient getHttpClient() {
 		if (null == customerHttpClient) {
 			HttpParams params = new BasicHttpParams();
@@ -237,8 +278,11 @@ public class Conn {
 			// Set Client support http and htttps
 			SchemeRegistry schReg = new SchemeRegistry();
 			schReg.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-			schReg.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
-
+			try {
+				schReg.register(new Scheme("https", getSSLSocketFactory(), 443));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			// Use thread safe connection manager to create HttpClient
 			ClientConnectionManager conMgr = new ThreadSafeClientConnManager(params, schReg);
 			customerHttpClient = new DefaultHttpClient(conMgr, params);
@@ -352,4 +396,42 @@ public class Conn {
 		}
 
 	};
+
+	public static class SSLSocketFactoryEx extends SSLSocketFactory {
+
+		SSLContext sslContext = SSLContext.getInstance("TLS");
+
+		public SSLSocketFactoryEx(KeyStore truststore) throws NoSuchAlgorithmException, KeyManagementException,
+				KeyStoreException, UnrecoverableKeyException {
+			super(truststore);
+
+			TrustManager tm = new X509TrustManager() {
+				public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+					return null;
+				}
+
+				@Override
+				public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType)
+						throws java.security.cert.CertificateException {
+				}
+
+				@Override
+				public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType)
+						throws java.security.cert.CertificateException {
+				}
+			};
+			sslContext.init(null, new TrustManager[] { tm }, null);
+		}
+
+		@Override
+		public Socket createSocket(Socket socket, String host, int port, boolean autoClose) throws IOException,
+				UnknownHostException {
+			return sslContext.getSocketFactory().createSocket(socket, host, port, autoClose);
+		}
+
+		@Override
+		public Socket createSocket() throws IOException {
+			return sslContext.getSocketFactory().createSocket();
+		}
+	}
 }
