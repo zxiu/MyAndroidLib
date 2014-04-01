@@ -31,8 +31,9 @@ public class Conn {
 	public static final String PUT = HttpPut.METHOD_NAME;
 	public static final String DELETE = HttpDelete.METHOD_NAME;
 
-	static final String AUTHENTICATION = "Authentication";
+	static final String AUTHORIZATION = "Authorization";
 	static final String ACCESS_TOKEN = "access_token";
+	static final String BEARER = "Bearer";
 
 	public static final String tag = Conn.class.getSimpleName();
 
@@ -42,7 +43,6 @@ public class Conn {
 	public long totalSize;
 
 	URL url;
-	String method;
 	String json;
 	String boundary = "SwA" + System.currentTimeMillis() + "SwA";
 
@@ -53,16 +53,19 @@ public class Conn {
 
 	public Conn(String url, String method) throws IOException {
 		this.url = new URL(url);
-		this.method = method;
-		if (this.url.getProtocol().equals(HTTP)) {
+		Log.i(tag, "this.url.getProtocol()=" + this.url.getProtocol());
+		if (this.url.getProtocol().equalsIgnoreCase(HTTP)) {
 			connection = (HttpURLConnection) this.url.openConnection();
-		} else if (this.url.getProtocol().equals(HTTPS)) {
+		} else if (this.url.getProtocol().equalsIgnoreCase(HTTPS)) {
 			connection = (HttpsURLConnection) this.url.openConnection();
 		}
-		connection.setDoOutput(true);
-		connection.setDoInput(true);
 		connection.setRequestMethod(method);
+		if (method.equalsIgnoreCase(POST)) {
+			connection.setDoOutput(true);
+		}
+		connection.setDoInput(true);
 		connection.setReadTimeout(6000);
+		connection.setConnectTimeout(5000);
 	}
 
 	public Conn(String url, JSONObject obj) throws IOException, JSONException {
@@ -70,9 +73,19 @@ public class Conn {
 		addHeader("Content-Type", "application/json");
 		content = obj.toString(2);
 	}
-	
-	public void setContent(String content){
-		this.content=content;
+
+	public Conn setContent(String content) {
+		this.content = content;
+		return this;
+	}
+
+	public Conn setAuthorization(String auth_token) {
+		return setAuthorization(BEARER, auth_token);
+	}
+
+	public Conn setAuthorization(String type, String auth_token) {
+		addHeader(AUTHORIZATION, type + " " + auth_token);
+		return this;
 	}
 
 	public void addHeader(String name, String value) {
@@ -87,11 +100,11 @@ public class Conn {
 		HttpResult result = new HttpResult();
 		try {
 			for (NameValuePair header : headerList) {
-				Log.i(tag, header.getName()+" : "+header.getValue());
+				Log.i(tag, header.getName() + " : " + header.getValue());
 				connection.addRequestProperty(header.getName(), header.getValue());
 			}
-			if (content != null) {
-				Log.i(tag,"content="+content);
+			if (content != null && connection.getRequestMethod().equalsIgnoreCase(POST)) {
+				Log.i(tag, "content=" + content);
 				connection.setDoOutput(true);
 				OutputStreamWriter out = new OutputStreamWriter(connection.getOutputStream());
 				out.write(content);
