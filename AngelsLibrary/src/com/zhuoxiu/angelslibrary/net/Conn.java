@@ -1,9 +1,12 @@
 package com.zhuoxiu.angelslibrary.net;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -13,15 +16,25 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.zhuoxiu.angelslibrary.net.ConnOld.ProgressiveEntity;
+
+import android.text.TextUtils;
 import android.util.Log;
 
 public class Conn {
@@ -39,6 +52,8 @@ public class Conn {
 
 	private List<BasicNameValuePair> headerList = new ArrayList<BasicNameValuePair>();
 	private List<BasicNameValuePair> paramList = new ArrayList<BasicNameValuePair>();
+	private List<NameValuePair> textBodyList = new ArrayList<NameValuePair>();
+	private List<File> fileList = new ArrayList<File>();
 	public long finishedSize;
 	public long totalSize;
 
@@ -66,6 +81,17 @@ public class Conn {
 		connection.setDoInput(true);
 		connection.setReadTimeout(6000);
 		connection.setConnectTimeout(5000);
+	}
+
+	public void addTextBody(String name, String value) {
+		textBodyList.add(new BasicNameValuePair(name, value));
+	}
+
+	public void addFile(File file) {
+		if (file != null && file.isFile() && file.exists()) {
+			fileList.add(file);
+			totalSize += file.length();
+		}
 	}
 
 	public Conn(String url, JSONObject obj) throws IOException, JSONException {
@@ -96,23 +122,149 @@ public class Conn {
 		paramList.add(new BasicNameValuePair(name, value));
 	}
 
+	class ProgressiveEntity implements HttpEntity {
+
+		HttpEntity yourEntity;
+
+		public ProgressiveEntity(HttpEntity yourEntity) {
+			this.yourEntity = yourEntity;
+		}
+
+		@Override
+		public void consumeContent() throws IOException {
+			yourEntity.consumeContent();
+		}
+
+		@Override
+		public InputStream getContent() throws IOException, IllegalStateException {
+			return yourEntity.getContent();
+		}
+
+		@Override
+		public Header getContentEncoding() {
+			return yourEntity.getContentEncoding();
+		}
+
+		@Override
+		public long getContentLength() {
+			return yourEntity.getContentLength();
+		}
+
+		@Override
+		public Header getContentType() {
+			return yourEntity.getContentType();
+		}
+
+		@Override
+		public boolean isChunked() {
+			return yourEntity.isChunked();
+		}
+
+		@Override
+		public boolean isRepeatable() {
+			return yourEntity.isRepeatable();
+		}
+
+		@Override
+		public boolean isStreaming() {
+			return yourEntity.isStreaming();
+		} // CONSIDER put a _real_ delegator into here!
+
+		@Override
+		public void writeTo(OutputStream outstream) throws IOException {
+
+			class ProxyOutputStream extends FilterOutputStream {
+				/**
+				 * @author Stephen Colebourne
+				 */
+
+				public ProxyOutputStream(OutputStream proxy) {
+					super(proxy);
+				}
+
+				public void write(int idx) throws IOException {
+					out.write(idx);
+				}
+
+				public void write(byte[] bts) throws IOException {
+					out.write(bts);
+				}
+
+				public void write(byte[] bts, int st, int end) throws IOException {
+					out.write(bts, st, end);
+				}
+
+				public void flush() throws IOException {
+					out.flush();
+				}
+
+				public void close() throws IOException {
+					out.close();
+				}
+			} // CONSIDER import this class (and risk more Jar File Hell)
+
+			class ProgressiveOutputStream extends ProxyOutputStream {
+				public ProgressiveOutputStream(OutputStream proxy) {
+					super(proxy);
+				}
+
+				public void write(byte[] bts, int st, int end) throws IOException {
+					Log.i(tag, "bts=" + bts.length + " st=" + st + " end=" + end);
+					// FIXME Put your progress bar stuff here!
+
+					out.write(bts, st, end);
+				}
+			}
+
+			yourEntity.writeTo(new ProgressiveOutputStream(outstream));
+		}
+	};
+
 	public HttpResult execute() {
 		HttpResult result = new HttpResult();
 		try {
+			Log.i(tag, "url=" + connection.getURL());
 			for (NameValuePair header : headerList) {
 				Log.i(tag, header.getName() + " : " + header.getValue());
 				connection.addRequestProperty(header.getName(), header.getValue());
 			}
-			if (content != null && connection.getRequestMethod().equalsIgnoreCase(POST)) {
-				Log.i(tag, "content=" + content);
+			if (connection.getRequestMethod().equalsIgnoreCase(POST)) {
 				connection.setDoOutput(true);
-				OutputStreamWriter out = new OutputStreamWriter(connection.getOutputStream());
-				out.write(content);
-				out.close();
+
+				if ((textBodyList.size() > 0 || fileList.size() > 0) && connection.getRequestMethod().equalsIgnoreCase(POST)) {
+					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+					builder.setBoundary(boundary);
+					for (int i = 0; i < textBodyList.size(); i++) {
+						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
+					}
+					for (int i = 0; i < fileList.size(); i++) {
+						builder.addPart("[message][message_attachments_attributes][" + i + "][file]", new FileBody(fileList.get(i)));
+					}
+					final HttpEntity entity = builder.build();
+					entity.writeTo(connection.getOutputStream());
+					connection.getOutputStream().close();
+					// InputStream input=new
+					// ProgressiveEntity(entity).getContent();
+					// IOUtils.copy(input,output);
+					// output.close();
+				} else if (!TextUtils.isEmpty(content)) {
+					Log.i(tag, "content=" + content);
+					OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());
+					osw.write(content);
+					osw.close();
+				}
 			}
 			connection.connect();
 			result.setCode(connection.getResponseCode());
-			InputStream is = connection.getInputStream();
+
+			InputStream is = null;
+			if (result.isOK() || result.isCreated()) {
+				is = connection.getInputStream();
+			} else {
+				is = connection.getErrorStream();
+			}
+
 			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 			String resultString = new String();
 			String lines;

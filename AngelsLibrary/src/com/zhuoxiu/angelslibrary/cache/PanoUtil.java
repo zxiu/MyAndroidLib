@@ -82,7 +82,7 @@ public class PanoUtil {
 			memCache.addBitmapToCache(key, bitmap);
 		}
 	}
- 
+
 	public String generateKey(String url) {
 		return new String(Base64.encodeToString(url.getBytes(), Base64.URL_SAFE));
 	}
@@ -91,7 +91,8 @@ public class PanoUtil {
 		HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 		conn = (HttpURLConnection) new URL(url).openConnection();
 		conn.connect();
-		final Bitmap bitmap = BitmapFactory.decodeStream(conn.getInputStream());
+		Bitmap bitmap = null;
+//		bitmap = BitmapFactory.decodeStream(conn.getInputStream());
 		return bitmap;
 	}
 

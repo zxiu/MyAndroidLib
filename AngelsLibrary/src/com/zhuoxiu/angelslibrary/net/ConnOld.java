@@ -61,8 +61,8 @@ import com.zhuoxiu.angelslibrary.exception.SessionExpiredException;
 
 public class ConnOld {
 	public static final String CHARSET = HTTP.UTF_8;
-	public static final String GET = "get";
-	public static final String POST = "post";
+	public static final String GET = "GET";
+	public static final String POST = "POST";
 	public static final String PUT = "put";
 	public static final String DELETE = "delete";
 
