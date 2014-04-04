@@ -16,7 +16,6 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
@@ -32,8 +31,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.zhuoxiu.angelslibrary.net.ConnOld.ProgressiveEntity;
-
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -44,9 +41,13 @@ public class Conn {
 	public static final String PUT = HttpPut.METHOD_NAME;
 	public static final String DELETE = HttpDelete.METHOD_NAME;
 
+	public static final String CONTENT_TYPE_MULTIPART = "multipart/form-data";
+	public static final String CONTENT_TYPE_JSON = "application/json";
+
 	static final String AUTHORIZATION = "Authorization";
 	static final String ACCESS_TOKEN = "access_token";
 	static final String BEARER = "Bearer";
+	static final String CONTENT_TYPE = "Content-Type";
 
 	public static final String tag = Conn.class.getSimpleName();
 
@@ -105,7 +106,11 @@ public class Conn {
 		return this;
 	}
 
-	public Conn setAuthorization(String auth_token) {
+	public void setContentType(String type) {
+		addHeader(CONTENT_TYPE, type);
+	}
+
+	public Conn setAuthorizationBearer(String auth_token) {
 		return setAuthorization(BEARER, auth_token);
 	}
 
@@ -209,7 +214,7 @@ public class Conn {
 				}
 
 				public void write(byte[] bts, int st, int end) throws IOException {
-					Log.i(tag, "bts=" + bts.length + " st=" + st + " end=" + end);
+					//Log.i(tag, "bts=" + bts.length + " st=" + st + " end=" + end);
 					// FIXME Put your progress bar stuff here!
 
 					out.write(bts, st, end);
@@ -225,29 +230,45 @@ public class Conn {
 		try {
 			Log.i(tag, "url=" + connection.getURL());
 			for (NameValuePair header : headerList) {
-				Log.i(tag, header.getName() + " : " + header.getValue());
-				connection.addRequestProperty(header.getName(), header.getValue());
+				Log.i(tag, "multi " + header.getName() + " : " + header.getValue());
+				connection.setRequestProperty(header.getName(), header.getValue());
 			}
 			if (connection.getRequestMethod().equalsIgnoreCase(POST)) {
 				connection.setDoOutput(true);
-
 				if ((textBodyList.size() > 0 || fileList.size() > 0) && connection.getRequestMethod().equalsIgnoreCase(POST)) {
+					connection.setRequestProperty("Content-Type", "Multipart/Form-Data; Boundary = " + boundary);
 					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					builder.setBoundary(boundary);
+					Log.i(tag, "multipart " + url);
 					for (int i = 0; i < textBodyList.size(); i++) {
+						Log.i(tag, "multipart=" + textBodyList.get(i).getValue());
 						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
 					}
 					for (int i = 0; i < fileList.size(); i++) {
 						builder.addPart("[message][message_attachments_attributes][" + i + "][file]", new FileBody(fileList.get(i)));
 					}
 					final HttpEntity entity = builder.build();
-					entity.writeTo(connection.getOutputStream());
+					ProgressiveEntity progressiveEntity = new ProgressiveEntity(entity);
+					// entity.writeTo(connection.getOutputStream());
+
+					OutputStream os = new OutputStream() {
+						private StringBuilder string = new StringBuilder();
+
+						@Override
+						public void write(int b) throws IOException {
+							this.string.append((char) b);
+						}
+
+						// Netbeans IDE automatically overrides this toString()
+						public String toString() {
+							return this.string.toString();
+						}
+					};
+					progressiveEntity.writeTo(os);
+					Log.i(tag, "multipart " + os.toString());
+
 					connection.getOutputStream().close();
-					// InputStream input=new
-					// ProgressiveEntity(entity).getContent();
-					// IOUtils.copy(input,output);
-					// output.close();
 				} else if (!TextUtils.isEmpty(content)) {
 					Log.i(tag, "content=" + content);
 					OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());
