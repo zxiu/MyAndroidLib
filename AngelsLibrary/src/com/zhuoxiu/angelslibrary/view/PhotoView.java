@@ -25,6 +25,8 @@ import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.ImageView;
 
+import cn.trinea.android.common.service.impl.ImageCache;
+
 import com.zhuoxiu.angelslibrary.R;
 import com.zhuoxiu.angelslibrary.cache.PanoUtil;
 
@@ -35,6 +37,8 @@ import com.zhuoxiu.angelslibrary.cache.PanoUtil;
  * 
  */
 public class PhotoView extends ImageView {
+	static ImageCache imageCache = new ImageCache();
+
 	String tag = this.getClass().getSimpleName();
 	public int scale = 10;
 	public int ratio = (int) (Math.random() * (scale + 1));
@@ -51,7 +55,6 @@ public class PhotoView extends ImageView {
 	int messageCount;
 	int indexOffset = 0;
 	PanoUtil panoUtil;
-
 	Bitmap defaultPhoto;
 
 	public PhotoView(Context context, AttributeSet attrs) {
@@ -101,6 +104,7 @@ public class PhotoView extends ImageView {
 		if (!URLUtil.isValidUrl(photoUrl)) {
 			return;
 		}
+
 		new LoadImageTask(photoUrl).execute();
 	}
 
@@ -125,11 +129,9 @@ public class PhotoView extends ImageView {
 		}
 		int length = this.getWidth();
 		if (bitmap.getWidth() > bitmap.getHeight()) {
-			bitmap = Bitmap.createBitmap(bitmap, (bitmap.getWidth() - bitmap.getHeight()) / 2, 0, bitmap.getHeight(),
-					bitmap.getHeight());
+			bitmap = Bitmap.createBitmap(bitmap, (bitmap.getWidth() - bitmap.getHeight()) / 2, 0, bitmap.getHeight(), bitmap.getHeight());
 		} else {
-			bitmap = Bitmap.createBitmap(bitmap, 0, (bitmap.getHeight() - bitmap.getWidth()) / 2, bitmap.getWidth(),
-					bitmap.getWidth());
+			bitmap = Bitmap.createBitmap(bitmap, 0, (bitmap.getHeight() - bitmap.getWidth()) / 2, bitmap.getWidth(), bitmap.getWidth());
 		}
 		Bitmap newBitmap;
 		newBitmap = Bitmap.createScaledBitmap(bitmap, 50, 50, false);
@@ -168,10 +170,8 @@ public class PhotoView extends ImageView {
 		}
 		if (urlList.size() >= 3) {
 			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((0 + indexOffset) % urlList.size()))), POS_LEFT);
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((1 + indexOffset) % urlList.size()))),
-					POS_RIGHT_UP);
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((2 + indexOffset) % urlList.size()))),
-					POS_RIGHT_DOWN);
+			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((1 + indexOffset) % urlList.size()))), POS_RIGHT_UP);
+			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((2 + indexOffset) % urlList.size()))), POS_RIGHT_DOWN);
 		}
 		newCanvas.save(Canvas.ALL_SAVE_FLAG);
 		newCanvas.restore();
@@ -192,9 +192,7 @@ public class PhotoView extends ImageView {
 
 		if (messageCount > 0) {
 			paint.setColor(Color.RED);
-			canvas.drawRoundRect(
-					new RectF((int) (canvas.getWidth() * 11.0 / 16), 0, canvas.getWidth(), canvas.getWidth() / 8 * 3),
-					10, 10, paint);
+			canvas.drawRoundRect(new RectF((int) (canvas.getWidth() * 11.0 / 16), 0, canvas.getWidth(), canvas.getWidth() / 8 * 3), 10, 10, paint);
 			paint.setColor(Color.WHITE);
 			paint.setStyle(Style.FILL);
 			if (messageCount <= 9) {
@@ -228,29 +226,23 @@ public class PhotoView extends ImageView {
 			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(0, 0, cWidth, cHeight), paint);
 			break;
 		case POS_LEFT:
-			canvas.drawBitmap(bitmap, new Rect(bWidth / 4, 0, bWidth * 3 / 4, bHeight), new RectF(0, 0, cWidth / 2 - 1,
-					cHeight), paint);
+			canvas.drawBitmap(bitmap, new Rect(bWidth / 4, 0, bWidth * 3 / 4, bHeight), new RectF(0, 0, cWidth / 2 - 1, cHeight), paint);
 			break;
 		case POS_RIGHT:
-			canvas.drawBitmap(bitmap, new Rect(bWidth / 4, 0, bWidth * 3 / 4, bHeight), new RectF(cWidth / 2, 0,
-					cWidth, cHeight), paint);
+			canvas.drawBitmap(bitmap, new Rect(bWidth / 4, 0, bWidth * 3 / 4, bHeight), new RectF(cWidth / 2, 0, cWidth, cHeight), paint);
 			break;
 		case POS_LEFT_UP:
-			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(0, 0, cWidth / 2 - 1, cHeight / 2 - 1),
-					paint);
+			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(0, 0, cWidth / 2 - 1, cHeight / 2 - 1), paint);
 			break;
 		case POS_LEFT_DOWN:
-			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight),
-					new Rect(0, cHeight / 2, cWidth / 2 - 1, cHeight), paint);
+			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(0, cHeight / 2, cWidth / 2 - 1, cHeight), paint);
 			break;
 
 		case POS_RIGHT_UP:
-			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight),
-					new Rect(cWidth / 2, 0, cWidth, cHeight / 2 - 1), paint);
+			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(cWidth / 2, 0, cWidth, cHeight / 2 - 1), paint);
 			break;
 		case POS_RIGHT_DOWN:
-			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(cWidth / 2, cHeight / 2, cWidth,
-					cHeight), paint);
+			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(cWidth / 2, cHeight / 2, cWidth, cHeight), paint);
 			break;
 		}
 	}
