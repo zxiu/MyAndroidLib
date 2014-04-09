@@ -1,7 +1,15 @@
 package com.zhuoxiu.angelslibrary.db;
 
+import android.provider.SyncStateContract.Columns;
+
 public interface DBConstant {
 
+	// column
+	public static final String COL_ID = Columns._ID;
+	public static final String COL_KEY = "key";
+	public static final String COL_JSON = "json";
+	public static final String COL_URL = "url";
+	
 	// type
 	public static final String TYPE_NULL = "NULL";
 	public static final String TYPE_INTEGER = "INTEGER";
@@ -15,4 +23,5 @@ public interface DBConstant {
 	public static final int FLAG_PAID = 2;
 	public static final int FLAG_NORMAL = 3;
 	public static final int FLAG_DELETED = 4;
+
 }

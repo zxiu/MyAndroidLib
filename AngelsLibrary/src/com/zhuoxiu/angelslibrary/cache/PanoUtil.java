@@ -17,6 +17,7 @@ import android.view.WindowManager;
 
 import com.zhuoxiu.angelslibrary.net.ConnOld;
 import com.zhuoxiu.angelslibrary.net.ConnOld.OnDownloadListener;
+import com.zhuoxiu.angelslibrary.net.URLCoder;
 
 public class PanoUtil {
 	static String tag = PanoUtil.class.getSimpleName();
@@ -67,6 +68,7 @@ public class PanoUtil {
 		}
 		if (bitmap == null) {
 			bitmap = downloadBitmap(url);
+			Log.d(tag,"size= downloadbitmap = "+bitmap);
 			if (bitmap != null) {
 				diskCache.addBitmapToCache(key, bitmap);
 				memCache.addBitmapToCache(key, bitmap);
@@ -84,7 +86,13 @@ public class PanoUtil {
 	}
 
 	public String generateKey(String url) {
-		return new String(Base64.encodeToString(url.getBytes(), Base64.URL_SAFE));
+		try {
+			return URLCoder.encode(url);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	public Bitmap downloadBitmap(String url) throws IOException {
@@ -92,7 +100,7 @@ public class PanoUtil {
 		conn = (HttpURLConnection) new URL(url).openConnection();
 		conn.connect();
 		Bitmap bitmap = null;
-//		bitmap = BitmapFactory.decodeStream(conn.getInputStream());
+		// bitmap = BitmapFactory.decodeStream(conn.getInputStream());
 		return bitmap;
 	}
 

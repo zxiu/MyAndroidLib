@@ -24,11 +24,12 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.ImageView;
-
 import cn.trinea.android.common.service.impl.ImageCache;
 
 import com.zhuoxiu.angelslibrary.R;
 import com.zhuoxiu.angelslibrary.cache.PanoUtil;
+import com.zhuoxiu.angelslibrary.cache.PhotoDBCache;
+import com.zhuoxiu.angelslibrary.cache.PhotoDBCache.OnLoadFinishListener;
 
 /**
  * View for photo on Conversation, FriendList. Circle Transparent Frame
@@ -56,6 +57,8 @@ public class PhotoView extends ImageView {
 	int indexOffset = 0;
 	PanoUtil panoUtil;
 	Bitmap defaultPhoto;
+
+	String fakeUrl = "http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Yahoo-Messenger-icon.png";
 
 	public PhotoView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -104,8 +107,15 @@ public class PhotoView extends ImageView {
 		if (!URLUtil.isValidUrl(photoUrl)) {
 			return;
 		}
+		//new LoadImageTask(photoUrl).execute();
+		final PhotoDBCache photoCache = new PhotoDBCache(getContext(), fakeUrl, false, null);
+		photoCache.load(new OnLoadFinishListener() {
+			@Override
+			public void onFinish(boolean success) {
+				Log.i(tag, "photoCache success="+success+" getData="+photoCache.getData().length+" url=" + fakeUrl+" bitmap="+photoCache.getBitmap());
+			}
+		});
 
-		new LoadImageTask(photoUrl).execute();
 	}
 
 	public void setPhotoUrl(String photoUrl) {
@@ -274,6 +284,7 @@ public class PhotoView extends ImageView {
 			if (result != null && !urlList.contains(url)) {
 				urlList.add(url);
 			}
+			System.out.println("size=" + PhotoView.this.getWidth() + " " + PhotoView.this.getHeight() + " url=" + url +  " result=" + result);
 			if (!bitmaps.containsKey(panoUtil.generateKey(url))) {
 				bitmaps.put(panoUtil.generateKey(url), initBitmap(bitmap));
 			}
