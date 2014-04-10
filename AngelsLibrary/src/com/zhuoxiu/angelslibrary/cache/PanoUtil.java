@@ -43,12 +43,12 @@ public class PanoUtil {
 	}
 
 	public boolean hasCache(String url) {
-		String key = generateKey(url);
+		String key = createKey(url);
 		return (diskCache.isCached(key) || memCache.isCached(key));
 	}
 
 	public File loadFile(String url, OnDownloadListener downloadListener) throws IOException {
-		this.key = generateKey(url);
+		this.key = createKey(url);
 		File file = PanoDiskCache.getFileFromDisk(key);
 		if (file == null) {
 			return null;
@@ -61,31 +61,37 @@ public class PanoUtil {
 	}
 
 	public Bitmap getBitmap(String url) throws IOException {
-		String key = generateKey(url);
+		String key = createKey(url);
 		Bitmap bitmap = memCache.getBitmapFromMem(key);
 		if (bitmap == null) {
+			Log.d(tag,"cache bitmap not in memory url="+url);
 			bitmap = diskCache.getBitmapFromDisk(key);
+		}else{
+			Log.e(tag,"cache bitmap in memory url="+url);
 		}
 		if (bitmap == null) {
+			Log.d(tag,"cache bitmap not in disk url="+url);
 			bitmap = downloadBitmap(url);
 			Log.d(tag,"size= downloadbitmap = "+bitmap);
 			if (bitmap != null) {
-				diskCache.addBitmapToCache(key, bitmap);
 				memCache.addBitmapToCache(key, bitmap);
+				diskCache.addBitmapToCache(key, bitmap);
 			}
+		}else{
+			Log.e(tag,"cache bitmap in disk url="+url);
 		}
 		return bitmap;
 	}
 
 	public void addBitmapToCache(String url, Bitmap bitmap) {
-		String key = generateKey(url);
+		String key = createKey(url);
 		if (bitmap != null) {
 			diskCache.addBitmapToCache(key, bitmap);
 			memCache.addBitmapToCache(key, bitmap);
 		}
 	}
 
-	public String generateKey(String url) {
+	public String createKey(String url) {
 		try {
 			return URLCoder.encode(url);
 		} catch (IOException e) {
@@ -99,8 +105,7 @@ public class PanoUtil {
 		HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 		conn = (HttpURLConnection) new URL(url).openConnection();
 		conn.connect();
-		Bitmap bitmap = null;
-		// bitmap = BitmapFactory.decodeStream(conn.getInputStream());
+		Bitmap bitmap =  BitmapFactory.decodeStream(conn.getInputStream());
 		return bitmap;
 	}
 

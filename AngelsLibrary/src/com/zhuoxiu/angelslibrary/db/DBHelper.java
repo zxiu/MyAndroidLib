@@ -30,7 +30,7 @@ public class DBHelper extends SQLiteOpenHelper implements DBConstant {
 		}
 		return writeable ? helper.getWritableDatabase() : helper.getReadableDatabase();
 	}
-
+ 
 	public void onCreate(SQLiteDatabase db) {
 		Log.i(tag, "onCreate");
 		createDB(db);

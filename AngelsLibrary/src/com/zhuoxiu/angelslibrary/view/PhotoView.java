@@ -28,8 +28,6 @@ import cn.trinea.android.common.service.impl.ImageCache;
 
 import com.zhuoxiu.angelslibrary.R;
 import com.zhuoxiu.angelslibrary.cache.PanoUtil;
-import com.zhuoxiu.angelslibrary.cache.PhotoDBCache;
-import com.zhuoxiu.angelslibrary.cache.PhotoDBCache.OnLoadFinishListener;
 
 /**
  * View for photo on Conversation, FriendList. Circle Transparent Frame
@@ -40,7 +38,7 @@ import com.zhuoxiu.angelslibrary.cache.PhotoDBCache.OnLoadFinishListener;
 public class PhotoView extends ImageView {
 	static ImageCache imageCache = new ImageCache();
 
-	String tag = this.getClass().getSimpleName();
+	String TAG = this.getClass().getSimpleName();
 	public int scale = 10;
 	public int ratio = (int) (Math.random() * (scale + 1));
 
@@ -50,15 +48,20 @@ public class PhotoView extends ImageView {
 	private int circleColor = Color.RED;
 	private float circleAlpha = 0.6f;
 
-	public static Map<String, Bitmap> bitmaps = new HashMap<String, Bitmap>();
+	static Map<String, Bitmap> originalBitmaps = new HashMap<String, Bitmap>();
+	static Map<String, Bitmap> roundBitmaps = new HashMap<String, Bitmap>();
+
 	private List<String> urlList = new ArrayList<String>();
 
 	int messageCount;
 	int indexOffset = 0;
 	PanoUtil panoUtil;
 	Bitmap defaultPhoto;
-
-	String fakeUrl = "http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Yahoo-Messenger-icon.png";
+	Paint paint;
+	String[] fakeUrl = new String[] { "http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Yahoo-Messenger-icon.png",
+			"http://1.bp.blogspot.com/-ae-aXaKue70/UPbRltB8dTI/AAAAAAAAbgQ/pUroMZ5haUg/s1600/fotos-fake-morenas-06.jpg",
+			"http://www.lesliensinvisibles.org/wp-content/uploads/2009/10/20/fake.jpg", "http://blog.cachinko.com/blog/wp-content/uploads/2012/07/fake.png",
+			"http://willvideoforfood.com/wp-content/uploads/2011/09/FakeBoobs1.jpg" };
 
 	public PhotoView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -80,13 +83,16 @@ public class PhotoView extends ImageView {
 	}
 
 	void initiate() {
+		paint = new Paint();
+		paint.setAntiAlias(true);
+
 		panoUtil = new PanoUtil(getContext());
 		this.setBackgroundColor(Color.TRANSPARENT);
 		this.setDrawingCacheEnabled(true);
 		this.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Log.i(tag, "onClick");
+				Log.i(TAG, "onClick");
 				indexOffset += 1;
 				invalidate();
 			}
@@ -103,18 +109,23 @@ public class PhotoView extends ImageView {
 		}
 	}
 
-	public void addPhotoUrl(String photoUrl) {
+	public void addPhotoUrl(final String photoUrl) {
 		if (!URLUtil.isValidUrl(photoUrl)) {
 			return;
 		}
-		//new LoadImageTask(photoUrl).execute();
-		final PhotoDBCache photoCache = new PhotoDBCache(getContext(), fakeUrl, false, null);
-		photoCache.load(new OnLoadFinishListener() {
-			@Override
-			public void onFinish(boolean success) {
-				Log.i(tag, "photoCache success="+success+" getData="+photoCache.getData().length+" url=" + fakeUrl+" bitmap="+photoCache.getBitmap());
-			}
-		});
+		new LoadImageTask(photoUrl, getTag()).execute();
+		// final PhotoDBCache photoCache = new PhotoDBCache(getContext(),
+		// photoUrl, false, null);
+		// photoCache.load(new OnLoadFinishListener() {
+		// @Override
+		// public void onFinish(boolean success) {
+		// Log.i(TAG,
+		// "photoCache success=" + success
+		// + " getData=" + photoCache.getData()
+		// + " url=" + photoUrl +
+		// " bitmap=" + photoCache.getBitmap());
+		// }
+		// });
 
 	}
 
@@ -123,7 +134,6 @@ public class PhotoView extends ImageView {
 		if (!URLUtil.isValidUrl(photoUrl)) {
 			return;
 		}
-		Log.i(tag, "setPhotoUrl");
 		addPhotoUrl(photoUrl);
 	}
 
@@ -137,14 +147,14 @@ public class PhotoView extends ImageView {
 		if (bitmap == null) {
 			return null;
 		}
-		int length = this.getWidth();
+		int length = getWidth();
 		if (bitmap.getWidth() > bitmap.getHeight()) {
 			bitmap = Bitmap.createBitmap(bitmap, (bitmap.getWidth() - bitmap.getHeight()) / 2, 0, bitmap.getHeight(), bitmap.getHeight());
 		} else {
 			bitmap = Bitmap.createBitmap(bitmap, 0, (bitmap.getHeight() - bitmap.getWidth()) / 2, bitmap.getWidth(), bitmap.getWidth());
 		}
 		Bitmap newBitmap;
-		newBitmap = Bitmap.createScaledBitmap(bitmap, 50, 50, false);
+		newBitmap = Bitmap.createScaledBitmap(bitmap, length, length, false);
 		if (length != 0) {
 
 		}
@@ -165,60 +175,74 @@ public class PhotoView extends ImageView {
 
 	@SuppressLint("DrawAllocation")
 	protected void onDraw(Canvas canvas) {
-		Bitmap bitmap = Bitmap.createBitmap(canvas.getWidth(), canvas.getHeight(), Bitmap.Config.ARGB_8888);
-		Canvas newCanvas = new Canvas(bitmap);
+		StringBuilder keyBuilder = new StringBuilder();
+		Log.i(TAG, "getWidth()=" + getWidth());
+		for (int i = 0; i < Math.min(3, urlList.size()); i++) {
+			keyBuilder.append(createKey(urlList.get((0 + indexOffset) % urlList.size()))).append("_");
+		}
+		String key = keyBuilder.toString();
 
+		Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+		Canvas newCanvas = new Canvas(bitmap);
+		Log.i(TAG, "newCanvas.getWidth()=" + newCanvas.getWidth());
+		Log.i(TAG, "key=" + key);
 		if (urlList.size() == 0) {
-			drawOnPosition(newCanvas, defaultPhoto, POS_FULL);
+			//drawOnPosition(newCanvas, defaultPhoto, POS_FULL);
+			super.onDraw(canvas);
+			return;
 		}
-		if (urlList.size() == 1) {
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get(0))), POS_FULL);
+
+		Bitmap bitmapTopaint = roundBitmaps.get(key);
+		if (bitmapTopaint == null) {
+			if (urlList.size() == 1) {
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get(0))), POS_FULL);
+			}
+			if (urlList.size() == 2) {
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((0 + indexOffset) % urlList.size()))), POS_LEFT);
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((1 + indexOffset) % urlList.size()))), POS_RIGHT);
+			}
+			if (urlList.size() >= 3) {
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((0 + indexOffset) % urlList.size()))), POS_LEFT);
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((1 + indexOffset) % urlList.size()))), POS_RIGHT_UP);
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((2 + indexOffset) % urlList.size()))), POS_RIGHT_DOWN);
+			}
+			newCanvas.save(Canvas.ALL_SAVE_FLAG);
+			newCanvas.restore();
+			bitmapTopaint = bitmap.copy(Config.ARGB_8888, true);
+			int width = bitmapTopaint.getWidth();
+			int height = bitmapTopaint.getHeight();
+			for (int x = 0; x < width; x++) {
+				for (int y = 0; y < height; y++) {
+					if (Math.sqrt(Math.pow((x - width / 2), 2) + Math.pow((y - height / 2), 2)) > (width + height) / 4) {
+						bitmapTopaint.setPixel(x, y, Color.TRANSPARENT);
+					}
+				}
+			}
+			roundBitmaps.put(key, bitmapTopaint);
 		}
-		if (urlList.size() == 2) {
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((0 + indexOffset) % urlList.size()))), POS_LEFT);
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((1 + indexOffset) % urlList.size()))), POS_RIGHT);
-		}
-		if (urlList.size() >= 3) {
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((0 + indexOffset) % urlList.size()))), POS_LEFT);
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((1 + indexOffset) % urlList.size()))), POS_RIGHT_UP);
-			drawOnPosition(newCanvas, bitmaps.get(getKey(urlList.get((2 + indexOffset) % urlList.size()))), POS_RIGHT_DOWN);
-		}
-		newCanvas.save(Canvas.ALL_SAVE_FLAG);
-		newCanvas.restore();
-		bitmap = bitmap.copy(Config.ARGB_8888, true);
-		int width = bitmap.getWidth();
-		int height = bitmap.getHeight();
-		for (int x = 0; x < width; x++) {
-			for (int y = 0; y < height; y++) {
-				if (Math.sqrt(Math.pow((x - width / 2), 2) + Math.pow((y - height / 2), 2)) > (width + height) / 4) {
-					bitmap.setPixel(x, y, Color.TRANSPARENT);
+
+		if (bitmapTopaint != null) {
+			canvas.drawBitmap(bitmapTopaint, 0, 0, paint);
+			if (messageCount > 0) {
+				paint.setColor(Color.RED);
+				canvas.drawRoundRect(new RectF((int) (canvas.getWidth() * 11.0 / 16), 0, canvas.getWidth(), canvas.getWidth() / 8 * 3), 10, 10, paint);
+				paint.setColor(Color.WHITE);
+				paint.setStyle(Style.FILL);
+				if (messageCount <= 9) {
+					paint.setTextSize(canvas.getWidth() / 4);
+					String number = Integer.toString(messageCount);
+					canvas.drawText(number, canvas.getWidth() / 4 * 3 + 2, canvas.getWidth() / 4 + 2, paint);
+				} else {
+					String number = "9+";
+					paint.setTextSize(canvas.getWidth() / 5);
+					canvas.drawText(number, canvas.getWidth() / 4 * 3, canvas.getWidth() / 4 + 2, paint);
 				}
 			}
 		}
-
-		Paint paint = new Paint();
-		paint.setAntiAlias(true);
-		canvas.drawBitmap(bitmap, 0, 0, paint);
-
-		if (messageCount > 0) {
-			paint.setColor(Color.RED);
-			canvas.drawRoundRect(new RectF((int) (canvas.getWidth() * 11.0 / 16), 0, canvas.getWidth(), canvas.getWidth() / 8 * 3), 10, 10, paint);
-			paint.setColor(Color.WHITE);
-			paint.setStyle(Style.FILL);
-			if (messageCount <= 9) {
-				paint.setTextSize(canvas.getWidth() / 4);
-				String number = Integer.toString(messageCount);
-				canvas.drawText(number, canvas.getWidth() / 4 * 3 + 2, canvas.getWidth() / 4 + 2, paint);
-			} else {
-				String number = "9+";
-				paint.setTextSize(canvas.getWidth() / 5);
-				canvas.drawText(number, canvas.getWidth() / 4 * 3, canvas.getWidth() / 4 + 2, paint);
-			}
-		}
-
 	}
 
 	private void drawOnPosition(Canvas canvas, Bitmap bitmap, int position) {
+		Log.i(TAG, "bitmap=" + bitmap);
 		if (bitmap == null) {
 			return;
 		}
@@ -228,9 +252,7 @@ public class PhotoView extends ImageView {
 
 		int bWidth = bitmap.getWidth();
 		int bHeight = bitmap.getHeight();
-
-		Paint paint = new Paint();
-		paint.setAntiAlias(true);
+		Log.i(TAG, "bWidth=" + bWidth + " cWidth=" + cWidth);
 		switch (position) {
 		case POS_FULL:
 			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(0, 0, cWidth, cHeight), paint);
@@ -257,22 +279,33 @@ public class PhotoView extends ImageView {
 		}
 	}
 
-	private String getKey(String url) {
-		return panoUtil.generateKey(url);
+	String createKey(String url) {
+		String key = panoUtil.createKey(url);
+		if (getWidth() != 0 && getHeight() != 0) {
+			key += "_" + getWidth() + "_" + getHeight();
+		}
+		return key;
 	}
 
 	class LoadImageTask extends AsyncTask<Void, Integer, Bitmap> {
 		String url;
-		Bitmap bitmap;
+		Object tag;
 
-		public LoadImageTask(String url) {
-			Log.i(tag, "LoadImageTask " + url);
+		public LoadImageTask(String url, Object tag) {
+			// url = fakeUrl[(int) (Math.random() * fakeUrl.length)];
+			this.tag = tag;
 			this.url = url;
 		}
 
 		protected Bitmap doInBackground(Void... params) {
+			Bitmap bitmap = null;
 			try {
-				bitmap = panoUtil.getBitmap(url);
+				bitmap = originalBitmaps.get(createKey(url));
+				if (bitmap == null) {
+					bitmap = panoUtil.getBitmap(url);
+					originalBitmaps.put(createKey(url), initBitmap(bitmap));
+				}
+				return panoUtil.getBitmap(url);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -284,11 +317,9 @@ public class PhotoView extends ImageView {
 			if (result != null && !urlList.contains(url)) {
 				urlList.add(url);
 			}
-			System.out.println("size=" + PhotoView.this.getWidth() + " " + PhotoView.this.getHeight() + " url=" + url +  " result=" + result);
-			if (!bitmaps.containsKey(panoUtil.generateKey(url))) {
-				bitmaps.put(panoUtil.generateKey(url), initBitmap(bitmap));
+			if (getTag() == this.tag) {
+				invalidate();
 			}
-			invalidate();
 		}
 	}
 }

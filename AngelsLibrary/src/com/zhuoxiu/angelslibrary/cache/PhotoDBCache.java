@@ -1,6 +1,9 @@
 package com.zhuoxiu.angelslibrary.cache;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Date;
 
 import android.content.ContentValues;
@@ -10,6 +13,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
+import android.graphics.ImageFormat;
+import android.graphics.Rect;
+import android.graphics.YuvImage;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.webkit.URLUtil;
@@ -110,15 +116,20 @@ public class PhotoDBCache {
 		}.execute();
 	}
 
-	public byte[] getData(){
+	public byte[] getData() {
 		return data;
 	}
-	
+
 	public Bitmap getBitmap() {
-		try { 
-			Options options=new Options();
-			options.inSampleSize=8;
-			return BitmapFactory.decodeByteArray(data, 0, data.length,options);
+		try {
+			YuvImage yuvimage = new YuvImage(data, ImageFormat.NV21, 20, 20, null);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			yuvimage.compressToJpeg(new Rect(0, 0, 20, 20), 80, baos);
+			byte[] jdata = baos.toByteArray();
+
+			Options options = new Options();
+			options.inSampleSize = 8;
+			return BitmapFactory.decodeByteArray(data, 0, data.length, options);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

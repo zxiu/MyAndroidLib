@@ -42,7 +42,7 @@ public class PanoDiskCache {
 	public Bitmap getBitmapFromDisk(String key) {
 		File file = getFileFromDisk(key);
 		if (file != null && file.exists()) {
-			Log.i(tag,"getBitmapFromDisk");
+			Log.i(tag, "getBitmapFromDisk");
 			Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
 			if (bitmap == null) {
 				file.delete();
@@ -55,10 +55,10 @@ public class PanoDiskCache {
 	}
 
 	public static File getFileFromDisk(String key) {
-		if (key==null){
+		if (key == null) {
 			return null;
 		}
-		String dir = getDiskCacheDir(); 
+		String dir = getDiskCacheDir();
 		File dirFile = new File(dir);
 		if (!dirFile.exists()) {
 			dirFile.mkdirs();
@@ -74,10 +74,10 @@ public class PanoDiskCache {
 	 * @param key
 	 */
 	public void addBitmapToCache(String key, Bitmap bitmap) {
+		Log.i(tag, "addBitmapToCache key=" + key + " bitmap=" + bitmap);
 		if (bitmap == null) {
 			return;
 		}
-		// 判断当前SDCard上的剩余空间是否足够用于文件缓存
 		if (SDCARD_CACHE_THRESHOLD > calculateFreeSpaceOnSd()) {
 			return;
 		}
@@ -112,8 +112,7 @@ public class PanoDiskCache {
 		if (files == null || files.length == 0) {
 			return true;
 		}
-		if (!Environment.getExternalStorageState().equals(
-				Environment.MEDIA_MOUNTED)) {
+		if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 			return false;
 		}
 
@@ -123,8 +122,7 @@ public class PanoDiskCache {
 				dirSize += files[i].length();
 			}
 		}
-		if (dirSize > CACHE_SIZE * MB
-				|| SDCARD_CACHE_THRESHOLD > calculateFreeSpaceOnSd()) {
+		if (dirSize > CACHE_SIZE * MB || SDCARD_CACHE_THRESHOLD > calculateFreeSpaceOnSd()) {
 			int removeFactor = (int) (0.4 * files.length + 1);
 			Arrays.sort(files, new FileLastModifiedSort());
 			for (int i = 0; i < removeFactor; i++) {
@@ -157,11 +155,9 @@ public class PanoDiskCache {
 	 * @return space in MB
 	 */
 	private int calculateFreeSpaceOnSd() {
-		StatFs stat = new StatFs(Environment.getExternalStorageDirectory()
-				.getPath());
+		StatFs stat = new StatFs(Environment.getExternalStorageDirectory().getPath());
 		@SuppressWarnings("deprecation")
-		double sdFreeMB = ((double) stat.getAvailableBlocks() * (double) stat
-				.getBlockSize()) / MB;
+		double sdFreeMB = ((double) stat.getAvailableBlocks() * (double) stat.getBlockSize()) / MB;
 		return (int) sdFreeMB;
 	}
 
@@ -193,7 +189,7 @@ public class PanoDiskCache {
 	 * @return
 	 */
 	private static String getSDPath() {
-//		return Cube7App.context.getCacheDir().getAbsolutePath();
+		// return Cube7App.context.getCacheDir().getAbsolutePath();
 		return Environment.getExternalStorageDirectory().getAbsolutePath();
 	}
 

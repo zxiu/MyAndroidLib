@@ -69,7 +69,6 @@ public class Conn {
 
 	public Conn(String url, String method) throws IOException {
 		this.url = new URL(url);
-		Log.i(tag, "this.url.getProtocol()=" + this.url.getProtocol());
 		if (this.url.getProtocol().equalsIgnoreCase(HTTP)) {
 			connection = (HttpURLConnection) this.url.openConnection();
 		} else if (this.url.getProtocol().equalsIgnoreCase(HTTPS)) {
@@ -214,7 +213,8 @@ public class Conn {
 				}
 
 				public void write(byte[] bts, int st, int end) throws IOException {
-					//Log.i(tag, "bts=" + bts.length + " st=" + st + " end=" + end);
+					// Log.i(tag, "bts=" + bts.length + " st=" + st + " end=" +
+					// end);
 					// FIXME Put your progress bar stuff here!
 
 					out.write(bts, st, end);
@@ -228,9 +228,7 @@ public class Conn {
 	public HttpResult execute() {
 		HttpResult result = new HttpResult();
 		try {
-			Log.i(tag, "url=" + connection.getURL());
 			for (NameValuePair header : headerList) {
-				Log.i(tag, "multi " + header.getName() + " : " + header.getValue());
 				connection.setRequestProperty(header.getName(), header.getValue());
 			}
 			if (connection.getRequestMethod().equalsIgnoreCase(POST)) {
@@ -240,9 +238,7 @@ public class Conn {
 					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					builder.setBoundary(boundary);
-					Log.i(tag, "multipart " + url);
 					for (int i = 0; i < textBodyList.size(); i++) {
-						Log.i(tag, "multipart=" + textBodyList.get(i).getValue());
 						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
 					}
 					for (int i = 0; i < fileList.size(); i++) {
@@ -266,7 +262,6 @@ public class Conn {
 						}
 					};
 					progressiveEntity.writeTo(os);
-					Log.i(tag, "multipart " + os.toString());
 
 					connection.getOutputStream().close();
 				} else if (!TextUtils.isEmpty(content)) {
@@ -294,7 +289,6 @@ public class Conn {
 				resultString += lines;
 			}
 			result.setEntityString(resultString);
-			Log.i(tag, "result=" + result);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
