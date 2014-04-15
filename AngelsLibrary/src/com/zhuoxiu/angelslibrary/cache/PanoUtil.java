@@ -64,21 +64,21 @@ public class PanoUtil {
 		String key = createKey(url);
 		Bitmap bitmap = memCache.getBitmapFromMem(key);
 		if (bitmap == null) {
-			Log.d(tag,"cache bitmap not in memory url="+url);
+			Log.d(tag, "cache bitmap not in memory url=" + url);
 			bitmap = diskCache.getBitmapFromDisk(key);
-		}else{
-			Log.e(tag,"cache bitmap in memory url="+url);
+		} else {
+			Log.e(tag, "cache bitmap in memory url=" + url);
 		}
 		if (bitmap == null) {
-			Log.d(tag,"cache bitmap not in disk url="+url);
+			Log.d(tag, "cache bitmap not in disk url=" + url);
 			bitmap = downloadBitmap(url);
-			Log.d(tag,"size= downloadbitmap = "+bitmap);
+			Log.d(tag, "size= downloadbitmap = " + bitmap);
 			if (bitmap != null) {
 				memCache.addBitmapToCache(key, bitmap);
 				diskCache.addBitmapToCache(key, bitmap);
 			}
-		}else{
-			Log.e(tag,"cache bitmap in disk url="+url);
+		} else {
+			Log.e(tag, "cache bitmap in disk url=" + url);
 		}
 		return bitmap;
 	}
@@ -101,11 +101,17 @@ public class PanoUtil {
 		}
 	}
 
-	public Bitmap downloadBitmap(String url) throws IOException {
-		HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
-		conn = (HttpURLConnection) new URL(url).openConnection();
-		conn.connect();
-		Bitmap bitmap =  BitmapFactory.decodeStream(conn.getInputStream());
+	public Bitmap downloadBitmap(String url) {
+		Bitmap bitmap = null;
+		try {
+			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+			conn = (HttpURLConnection) new URL(url).openConnection();
+			conn.connect();
+			bitmap = BitmapFactory.decodeStream(conn.getInputStream());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		return bitmap;
 	}
 

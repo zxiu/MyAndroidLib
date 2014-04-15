@@ -55,8 +55,8 @@ public class PhotoView extends ImageView {
 	static Map<String, Bitmap> roundBitmaps = new HashMap<String, Bitmap>();
 
 	private List<String> urlList = new CopyOnWriteArrayList<String>();
-	private List<String> invalidUrlList=new CopyOnWriteArrayList<String>();
-	
+	private List<String> invalidUrlList = new CopyOnWriteArrayList<String>();
+
 	LoadImageTask loadImageTask;
 
 	int messageCount;
@@ -98,7 +98,6 @@ public class PhotoView extends ImageView {
 		this.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Log.i(TAG, "onClick");
 				indexOffset += 1;
 				invalidate();
 			}
@@ -113,23 +112,24 @@ public class PhotoView extends ImageView {
 			loadImageTask.cancel(true);
 		}
 		this.urlList.clear();
-		invalidate();
+		// invalidate();
 		loadImageTask = new LoadImageTask();
 		loadImageTask.execute(urlList.toArray(new String[urlList.size()]));
 
 	}
 
-	public void setPhotoUrl(String photoUrl) {
+	public void setPhotoUrl(String url) {
+		Log.e(TAG, "setPhotoUrl " + url + "  invalidUrlList.contains(url) = " + invalidUrlList.contains(url));
 		this.urlList.clear();
-		invalidate();
-		if (photoUrl == null||invalidUrlList.contains(photoUrl)) {
+		if (url == null || invalidUrlList.contains(url)) {
+			invalidate();
 			return;
 		}
 		if (loadImageTask != null) {
 			loadImageTask.cancel(true);
 		}
 		loadImageTask = new LoadImageTask();
-		loadImageTask.execute(photoUrl);
+		loadImageTask.execute(url);
 
 	}
 
@@ -183,33 +183,23 @@ public class PhotoView extends ImageView {
 
 	@SuppressLint("DrawAllocation")
 	protected void onDraw(Canvas canvas) {
-		Log.d(TAG, "onDraw 0");
 		StringBuilder keyBuilder = new StringBuilder();
-		Log.i(TAG, "getWidth()=" + getWidth());
 		for (int i = 0; i < Math.min(3, urlList.size()); i++) {
-			Log.d(TAG, "" + urlList.get(i + indexOffset));
 			keyBuilder.append(createKey(urlList.get((i + indexOffset) % urlList.size()))).append("_");
 		}
 		String key = keyBuilder.toString();
 
 		Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
 		Canvas newCanvas = new Canvas(bitmap);
-		Log.i(TAG, "newCanvas.getWidth()=" + newCanvas.getWidth());
-		Log.i(TAG, "key=" + key);
 		if (urlList.size() == 0) {
 			canvas.drawBitmap(defaultPhoto, new Rect(0, 0, defaultPhoto.getWidth(), defaultPhoto.getHeight()),
 					new Rect(0, 0, canvas.getWidth(), canvas.getHeight()), paint);
-			// setImageBitmap(defaultPhoto);
-			// super.onDraw(canvas);
 			return;
 		}
 
 		Bitmap bitmapTopaint = roundBitmaps.get(key);
-		Log.d(TAG, "onDraw 1 bitmapTopaint=" + bitmapTopaint);
-		Log.d(TAG, "onDraw 2 urlList.size() =" + urlList.size());
 		if (bitmapTopaint == null) {
 			if (urlList.size() == 1) {
-				Log.d(TAG, "urlList.size() == 1");
 				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get(0))), POS_FULL);
 			}
 			if (urlList.size() == 2) {
@@ -239,7 +229,6 @@ public class PhotoView extends ImageView {
 		if (bitmapTopaint != null) {
 			// setImageBitmap(bitmapTopaint);
 			// super.onDraw(canvas);
-			Log.d(TAG, "onDraw 3 " + bitmapTopaint.getWidth() + " " + canvas.getWidth());
 			canvas.drawBitmap(bitmapTopaint, new Rect(0, 0, bitmapTopaint.getWidth(), bitmapTopaint.getHeight()),
 					new Rect(0, 0, canvas.getWidth(), canvas.getHeight()), paint);
 			if (messageCount > 0) {
@@ -261,7 +250,6 @@ public class PhotoView extends ImageView {
 	}
 
 	private void drawOnPosition(Canvas canvas, Bitmap bitmap, int position) {
-		Log.i(TAG, "bitmap=" + bitmap);
 		if (bitmap == null) {
 			return;
 		}
@@ -271,7 +259,6 @@ public class PhotoView extends ImageView {
 
 		int bWidth = bitmap.getWidth();
 		int bHeight = bitmap.getHeight();
-		Log.i(TAG, "bWidth=" + bWidth + " cWidth=" + cWidth);
 		switch (position) {
 		case POS_FULL:
 			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(0, 0, cWidth, cHeight), paint);
@@ -312,54 +299,55 @@ public class PhotoView extends ImageView {
 		return key;
 	}
 
-	class LoadImageTask extends AsyncTask<String, Void, Boolean> {
+	class LoadImageTask extends AsyncTask<String, Void, Void> {
 		Object tag;
-		String[] urls;
 
 		@Override
 		protected void onPreExecute() {
 			tag = getTag();
 		}
 
-		protected Boolean doInBackground(String... urls) {
-			this.urls = urls;
+		protected Void doInBackground(String... urls) {
 			for (String url : urls) {
 				if (URLUtil.isValidUrl(url)) {
 					Bitmap bitmap = null;
 					try {
 						bitmap = originalBitmaps.get(createKey(url));
-						if (bitmap == null) {
-							bitmap = panoUtil.getBitmap(url);
-							if (bitmap != null) {
-								originalBitmaps.put(createKey(url), initBitmap(bitmap));
-								return true;
-							}else{
-								if (!invalidUrlList.contains(url)){
-									invalidUrlList.add(url);
-								}
-								return false;
+						if (bitmap == null && !invalidUrlList.contains(url)) {
+							if (tag != getTag()) {
+								return null;
 							}
-						} else {
-							return true;
+
+							bitmap = panoUtil.getBitmap(url);
+//							if (url.equals("https://c7dev.s3.amazonaws.com/uploads/account_gallery_image/picture/143439/thumb_imgres.jpg?v=1395244139")) {
+//								Log.e(TAG, "bitmap =" + bitmap);
+//							}
+							if (bitmap == null) {
+								invalidUrlList.add(url);
+							} else {
+								originalBitmaps.put(createKey(url), initBitmap(bitmap));
+							}
 						}
+						if (bitmap != null) {
+							if (!originalBitmaps.containsKey(createKey(url))) {
+								originalBitmaps.put(createKey(url), bitmap);
+							}
+							if (!urlList.contains(url)) {
+								urlList.add(url);
+							}
+						}
+
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
 			}
-			return false;
+			return null;
 		}
 
 		@Override
-		protected void onPostExecute(Boolean result) {
-			if (tag == getTag() && result) {
-				for (String url : urls) {
-					if (url!=null && !invalidUrlList.contains(url)){
-						urlList.add(url);
-					}
-				}
-				invalidate();
-			}
+		protected void onPostExecute(Void result) {
+			invalidate();
 		}
 	}
 }
