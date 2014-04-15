@@ -27,7 +27,6 @@ public class URLCoder {
 
 	public static String encode(String path) throws IOException {
 		StringBuilder rewrittenPath = new StringBuilder(path.length());
-
 		int maxBytesPerChar = 10;
 		ByteArrayOutputStream byteBuff = new ByteArrayOutputStream(maxBytesPerChar);
 

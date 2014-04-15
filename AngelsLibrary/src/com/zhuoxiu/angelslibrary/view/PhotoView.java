@@ -2,6 +2,7 @@ package com.zhuoxiu.angelslibrary.view;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,7 @@ import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.ImageView;
 import cn.trinea.android.common.service.impl.ImageCache;
+import cn.trinea.android.common.util.ArrayUtils;
 
 import com.zhuoxiu.angelslibrary.R;
 import com.zhuoxiu.angelslibrary.cache.PanoUtil;
@@ -53,8 +55,10 @@ public class PhotoView extends ImageView {
 	static Map<String, Bitmap> roundBitmaps = new HashMap<String, Bitmap>();
 
 	private List<String> urlList = new CopyOnWriteArrayList<String>();
-	LoadImageTask loadImageTask;
+	private List<String> invalidUrlList=new CopyOnWriteArrayList<String>();
 	
+	LoadImageTask loadImageTask;
+
 	int messageCount;
 	int indexOffset = 0;
 	PanoUtil panoUtil;
@@ -105,24 +109,27 @@ public class PhotoView extends ImageView {
 	}
 
 	public void setPhotoUrlList(List<String> urlList) {
-		urlList = new ArrayList<String>();
-		invalidate();
-		if (loadImageTask!=null){
+		if (loadImageTask != null) {
 			loadImageTask.cancel(true);
 		}
-		loadImageTask=new LoadImageTask(getTag());
-		loadImageTask.execute(urlList.toArray(new String[urlList.size()])); 
-		
+		this.urlList.clear();
+		invalidate();
+		loadImageTask = new LoadImageTask();
+		loadImageTask.execute(urlList.toArray(new String[urlList.size()]));
+
 	}
 
 	public void setPhotoUrl(String photoUrl) {
-		urlList = new ArrayList<String>();
+		this.urlList.clear();
 		invalidate();
-		if (loadImageTask!=null){
+		if (photoUrl == null||invalidUrlList.contains(photoUrl)) {
+			return;
+		}
+		if (loadImageTask != null) {
 			loadImageTask.cancel(true);
 		}
-		loadImageTask=new LoadImageTask(getTag());
-		loadImageTask.execute(photoUrl); 
+		loadImageTask = new LoadImageTask();
+		loadImageTask.execute(photoUrl);
 
 	}
 
@@ -133,7 +140,6 @@ public class PhotoView extends ImageView {
 
 	@SuppressLint("NewApi")
 	private Bitmap initBitmap(Bitmap bitmap) {
-		Log.e(TAG, "bitmap=" + bitmap);
 		if (bitmap == null) {
 			return null;
 		}
@@ -146,7 +152,6 @@ public class PhotoView extends ImageView {
 			int width = this.getMeasuredWidth();
 			length = width;
 		}
-		Log.e(TAG, "length=" + length);
 		if (length != 0) {
 			if (bitmap.getWidth() > bitmap.getHeight()) {
 				bitmap = Bitmap.createBitmap(bitmap, (bitmap.getWidth() - bitmap.getHeight()) / 2, 0, bitmap.getHeight(), bitmap.getHeight());
@@ -182,7 +187,8 @@ public class PhotoView extends ImageView {
 		StringBuilder keyBuilder = new StringBuilder();
 		Log.i(TAG, "getWidth()=" + getWidth());
 		for (int i = 0; i < Math.min(3, urlList.size()); i++) {
-			keyBuilder.append(createKey(urlList.get((0 + indexOffset) % urlList.size()))).append("_");
+			Log.d(TAG, "" + urlList.get(i + indexOffset));
+			keyBuilder.append(createKey(urlList.get((i + indexOffset) % urlList.size()))).append("_");
 		}
 		String key = keyBuilder.toString();
 
@@ -282,7 +288,6 @@ public class PhotoView extends ImageView {
 		case POS_LEFT_DOWN:
 			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(0, cHeight / 2, cWidth / 2 - 1, cHeight), paint);
 			break;
-
 		case POS_RIGHT_UP:
 			canvas.drawBitmap(bitmap, new Rect(0, 0, bWidth, bHeight), new Rect(cWidth / 2, 0, cWidth, cHeight / 2 - 1), paint);
 			break;
@@ -307,41 +312,52 @@ public class PhotoView extends ImageView {
 		return key;
 	}
 
-	class LoadImageTask extends AsyncTask<String, Void, Void> {
+	class LoadImageTask extends AsyncTask<String, Void, Boolean> {
 		Object tag;
+		String[] urls;
 
-		public LoadImageTask(Object tag) {
-			this.tag = tag;
+		@Override
+		protected void onPreExecute() {
+			tag = getTag();
 		}
 
-		protected Void doInBackground(String... urls) {
-
+		protected Boolean doInBackground(String... urls) {
+			this.urls = urls;
 			for (String url : urls) {
 				if (URLUtil.isValidUrl(url)) {
 					Bitmap bitmap = null;
 					try {
 						bitmap = originalBitmaps.get(createKey(url));
-						Log.e(TAG, "url=" + url);
-						Log.e(TAG, "bitmap1 createKey(url)=" + createKey(url));
 						if (bitmap == null) {
 							bitmap = panoUtil.getBitmap(url);
-							originalBitmaps.put(createKey(url), initBitmap(bitmap));
-						}
-						Log.e(TAG, "bitmap2 " + bitmap + " urlList.contains(url) " + urlList.contains(url));
-						if (bitmap != null && !urlList.contains(url)) {
-							urlList.add(url);
+							if (bitmap != null) {
+								originalBitmaps.put(createKey(url), initBitmap(bitmap));
+								return true;
+							}else{
+								if (!invalidUrlList.contains(url)){
+									invalidUrlList.add(url);
+								}
+								return false;
+							}
+						} else {
+							return true;
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
 			}
-			return null;
+			return false;
 		}
 
 		@Override
-		protected void onPostExecute(Void result) {
-			if (tag == getTag()) {
+		protected void onPostExecute(Boolean result) {
+			if (tag == getTag() && result) {
+				for (String url : urls) {
+					if (url!=null && !invalidUrlList.contains(url)){
+						urlList.add(url);
+					}
+				}
 				invalidate();
 			}
 		}
