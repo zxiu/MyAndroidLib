@@ -119,11 +119,11 @@ public class PhotoView extends ImageView {
 	}
 
 	public void setPhotoUrl(String url) {
-		Log.e(TAG, "setPhotoUrl " + url + "  invalidUrlList.contains(url) = " + invalidUrlList.contains(url));
+		//Log.e(TAG, "setPhotoUrl " + url + "  invalidUrlList.contains(url) = " + invalidUrlList.contains(url));
 		this.urlList.clear();
 		if (url == null || invalidUrlList.contains(url)) {
 			invalidate();
-			return;
+			return; 
 		}
 		if (loadImageTask != null) {
 			loadImageTask.cancel(true);
@@ -227,8 +227,6 @@ public class PhotoView extends ImageView {
 		}
 
 		if (bitmapTopaint != null) {
-			// setImageBitmap(bitmapTopaint);
-			// super.onDraw(canvas);
 			canvas.drawBitmap(bitmapTopaint, new Rect(0, 0, bitmapTopaint.getWidth(), bitmapTopaint.getHeight()),
 					new Rect(0, 0, canvas.getWidth(), canvas.getHeight()), paint);
 			if (messageCount > 0) {
@@ -327,7 +325,7 @@ public class PhotoView extends ImageView {
 							} else {
 								originalBitmaps.put(createKey(url), initBitmap(bitmap));
 							}
-						}
+						} 
 						if (bitmap != null) {
 							if (!originalBitmaps.containsKey(createKey(url))) {
 								originalBitmaps.put(createKey(url), bitmap);
@@ -336,7 +334,6 @@ public class PhotoView extends ImageView {
 								urlList.add(url);
 							}
 						}
-
 					} catch (IOException e) {
 						e.printStackTrace();
 					}

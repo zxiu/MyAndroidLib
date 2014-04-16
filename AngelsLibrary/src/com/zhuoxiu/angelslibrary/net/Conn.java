@@ -273,22 +273,23 @@ public class Conn {
 			}
 			connection.connect();
 			result.setCode(connection.getResponseCode());
-
 			InputStream is = null;
+			Log.i(tag,result.toString());
 			if (result.isOK() || result.isCreated()) {
 				is = connection.getInputStream();
 			} else {
 				is = connection.getErrorStream();
 			}
-
-			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-			String resultString = new String();
-			String lines;
-			while ((lines = reader.readLine()) != null) {
-				System.out.println(lines);
-				resultString += lines;
+			if (is!=null){
+				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+				String resultString = new String();
+				String lines;
+				while ((lines = reader.readLine()) != null) {
+					System.out.println(lines);
+					resultString += lines;
+				}
+				result.setEntityString(resultString);	
 			}
-			result.setEntityString(resultString);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
