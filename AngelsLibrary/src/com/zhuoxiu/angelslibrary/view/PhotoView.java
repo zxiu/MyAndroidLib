@@ -107,6 +107,7 @@ public class PhotoView extends ImageView {
 		if (defaultPhoto == null) {
 			defaultPhoto = BitmapFactory.decodeResource(getResources(), R.drawable.ic_friend_gray);
 		}
+		setWillNotDraw(false);
 	}
 
 	public void setPhotoUrlList(List<String> urlList) {
@@ -125,10 +126,10 @@ public class PhotoView extends ImageView {
 	public void setPhotoUrl(String url) {
 		// Log.e(TAG, "setPhotoUrl " + url + "  invalidUrlList.contains(url) = "
 		// + invalidUrlList.contains(url));
-//		if (url == null || invalidUrlList.contains(url)) {
-//			invalidate();
-//			return;
-//		}
+		// if (url == null || invalidUrlList.contains(url)) {
+		// invalidate();
+		// return;
+		// }
 
 		// if (loadImageTask != null) {
 		// loadImageTask.cancel(true);
@@ -188,27 +189,17 @@ public class PhotoView extends ImageView {
 		this.defaultPhoto = defaultPhoto;
 	}
 
-	@SuppressLint("DrawAllocation")
-	protected void onDraw(Canvas canvas) {
-		Log.d(TAG, "onDraw");
+	protected void prepareBitmapToPaint(List<String> urlList) {
 		StringBuilder keyBuilder = new StringBuilder();
 		for (int i = 0; i < Math.min(3, urlList.size()); i++) {
 			keyBuilder.append(createKey(urlList.get((i + indexOffset) % urlList.size()))).append("_");
 		}
 		String key = keyBuilder.toString();
-		Log.d(TAG, "KEY=" + key);
-		Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
-		Canvas newCanvas = new Canvas(bitmap);
-		if (urlList.size() == 0) {
-			canvas.drawBitmap(defaultPhoto, new Rect(0, 0, defaultPhoto.getWidth(), defaultPhoto.getHeight()),
-					new Rect(0, 0, canvas.getWidth(), canvas.getHeight()), paint);
-			return;
-		}
-
-		Bitmap bitmapTopaint = roundBitmaps.get(key);
-		// bitmapTopaint=defaultPhoto;
-		Log.d(TAG, "bitmapTopaint = " + bitmapTopaint);
-		if (bitmapTopaint == null) {
+		Log.e(TAG,"urlList.size() "+urlList.size()); 
+		Bitmap bitmapToPaint = roundBitmaps.get(key);
+		if (bitmapToPaint == null) {
+			Bitmap bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+			Canvas newCanvas = new Canvas(bitmap);
 			if (urlList.size() == 1) {
 				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get(0))), POS_FULL);
 			}
@@ -223,26 +214,75 @@ public class PhotoView extends ImageView {
 			}
 			newCanvas.save(Canvas.ALL_SAVE_FLAG);
 			newCanvas.restore();
-			bitmapTopaint = bitmap.copy(Config.ARGB_8888, true);
-			int width = bitmapTopaint.getWidth();
-			int height = bitmapTopaint.getHeight();
+			bitmapToPaint = bitmap.copy(Config.ARGB_8888, true);
+			int width = bitmapToPaint.getWidth();
+			int height = bitmapToPaint.getHeight();
 			for (int x = 0; x < width; x++) {
 				for (int y = 0; y < height; y++) {
 					if (Math.sqrt(Math.pow((x - width / 2), 2) + Math.pow((y - height / 2), 2)) > (width + height) / 4) {
-						bitmapTopaint.setPixel(x, y, Color.TRANSPARENT);
+						bitmapToPaint.setPixel(x, y, Color.TRANSPARENT);
 					}
 				}
 			}
-			roundBitmaps.put(key, bitmapTopaint);
+			roundBitmaps.put(key, bitmapToPaint);
+		}
+		setImageBitmap(bitmapToPaint);
+	}
+
+	@SuppressLint("DrawAllocation")
+	protected void onDraw1(Canvas canvas) {
+		Log.d(TAG, "onDraw");
+		StringBuilder keyBuilder = new StringBuilder();
+		for (int i = 0; i < Math.min(3, urlList.size()); i++) {
+			keyBuilder.append(createKey(urlList.get((i + indexOffset) % urlList.size()))).append("_");
+		}
+		String key = keyBuilder.toString();
+		Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+		Canvas newCanvas = new Canvas(bitmap);
+		if (urlList.size() == 0) {
+			canvas.drawBitmap(defaultPhoto, new Rect(0, 0, defaultPhoto.getWidth(), defaultPhoto.getHeight()),
+					new Rect(0, 0, canvas.getWidth(), canvas.getHeight()), paint);
+			return;
 		}
 
-		if (bitmapTopaint != null) {
+		Bitmap bitmapToPaint = roundBitmaps.get(key);
+		// bitmapTopaint=defaultPhoto;
+		Log.d(TAG, "bitmapTopaint = " + bitmapToPaint);
+		if (bitmapToPaint == null) {
+			if (urlList.size() == 1) {
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get(0))), POS_FULL);
+			}
+			if (urlList.size() == 2) {
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((0 + indexOffset) % urlList.size()))), POS_LEFT);
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((1 + indexOffset) % urlList.size()))), POS_RIGHT);
+			}
+			if (urlList.size() >= 3) {
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((0 + indexOffset) % urlList.size()))), POS_LEFT);
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((1 + indexOffset) % urlList.size()))), POS_RIGHT_UP);
+				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get((2 + indexOffset) % urlList.size()))), POS_RIGHT_DOWN);
+			}
+			newCanvas.save(Canvas.ALL_SAVE_FLAG);
+			newCanvas.restore();
+			bitmapToPaint = bitmap.copy(Config.ARGB_8888, true);
+			int width = bitmapToPaint.getWidth();
+			int height = bitmapToPaint.getHeight();
+			for (int x = 0; x < width; x++) {
+				for (int y = 0; y < height; y++) {
+					if (Math.sqrt(Math.pow((x - width / 2), 2) + Math.pow((y - height / 2), 2)) > (width + height) / 4) {
+						bitmapToPaint.setPixel(x, y, Color.TRANSPARENT);
+					}
+				}
+			}
+			roundBitmaps.put(key, bitmapToPaint);
+		}
+
+		if (bitmapToPaint != null) {
 			if (key.equals("https%3A%2F%2Fc7dev%2Es3%2Eamazonaws%2Ecom%2Fuploads%2Faccount%5Fgallery%5Fimage%2Fpicture%2F143644%2Fthumb%5Falex%5F2012%5Fsmall%2Epng%3Fv%3D1395996613_100_100_")) {
-				Log.e(TAG,"bingo! "+bitmapTopaint.getWidth()+" "+bitmapTopaint.getHeight());
-				//bitmapTopaint=defaultPhoto;
+				Log.e(TAG, "bingo! " + bitmapToPaint.getWidth() + " " + bitmapToPaint.getHeight());
+				// bitmapTopaint=defaultPhoto;
 			}
 
-			canvas.drawBitmap(bitmapTopaint, new Rect(0, 0, bitmapTopaint.getWidth(), bitmapTopaint.getHeight()),
+			canvas.drawBitmap(bitmapToPaint, new Rect(0, 0, bitmapToPaint.getWidth(), bitmapToPaint.getHeight()),
 					new Rect(0, 0, canvas.getWidth(), canvas.getHeight()), paint);
 			if (messageCount > 0) {
 				paint.setColor(Color.RED);
@@ -312,7 +352,7 @@ public class PhotoView extends ImageView {
 		return key;
 	}
 
-	class LoadImageTask extends AsyncTask<String, Void, Void> {
+	class LoadImageTask extends AsyncTask<String, Void, List<String>> {
 		Object tag;
 		List<String> urlNewList = new ArrayList<String>();
 
@@ -321,7 +361,7 @@ public class PhotoView extends ImageView {
 			tag = getTag();
 		}
 
-		protected Void doInBackground(String... urls) {
+		protected List<String> doInBackground(String... urls) {
 			for (String url : urls) {
 				if (URLUtil.isValidUrl(url)) {
 					Bitmap bitmap = null;
@@ -353,12 +393,17 @@ public class PhotoView extends ImageView {
 				}
 			}
 			urlList.clear();
-			for (String url : urlNewList) {
-				Log.e(TAG, "add url=" + url);
-				urlList.add(url);
+			urlList.addAll(urlNewList);
+			//postInvalidate();
+			return urlList;
+		}
+		
+		@Override
+		protected void onPostExecute(List<String> result) {
+			super.onPostExecute(result);
+			if (result!=null){
+				prepareBitmapToPaint(result);
 			}
-			postInvalidate();
-			return null;
 		}
 	}
 }
