@@ -64,6 +64,8 @@ public class PhotoView extends ImageView {
 	PanoUtil panoUtil;
 	Bitmap defaultPhoto;
 	Paint paint;
+	Object tag;
+
 	String[] fakeUrl = new String[] { "http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Yahoo-Messenger-icon.png",
 			"http://1.bp.blogspot.com/-ae-aXaKue70/UPbRltB8dTI/AAAAAAAAbgQ/pUroMZ5haUg/s1600/fotos-fake-morenas-06.jpg",
 			"http://www.lesliensinvisibles.org/wp-content/uploads/2009/10/20/fake.jpg", "http://blog.cachinko.com/blog/wp-content/uploads/2012/07/fake.png",
@@ -108,26 +110,31 @@ public class PhotoView extends ImageView {
 	}
 
 	public void setPhotoUrlList(List<String> urlList) {
-		if (loadImageTask != null) {
-			loadImageTask.cancel(true);
-		}
+		// if (loadImageTask != null) {
+		// loadImageTask.cancel(true);
+		// Log.e(TAG, "cancle");
+		// }
 		this.urlList.clear();
 		// invalidate();
 		loadImageTask = new LoadImageTask();
+		Log.e(TAG, urlList.toArray(new String[urlList.size()]).toString());
 		loadImageTask.execute(urlList.toArray(new String[urlList.size()]));
 
 	}
 
 	public void setPhotoUrl(String url) {
-		//Log.e(TAG, "setPhotoUrl " + url + "  invalidUrlList.contains(url) = " + invalidUrlList.contains(url));
-		this.urlList.clear();
-		if (url == null || invalidUrlList.contains(url)) {
-			invalidate();
-			return; 
-		}
-		if (loadImageTask != null) {
-			loadImageTask.cancel(true);
-		}
+		// Log.e(TAG, "setPhotoUrl " + url + "  invalidUrlList.contains(url) = "
+		// + invalidUrlList.contains(url));
+//		if (url == null || invalidUrlList.contains(url)) {
+//			invalidate();
+//			return;
+//		}
+
+		// if (loadImageTask != null) {
+		// loadImageTask.cancel(true);
+		// Log.e(TAG, "cancle");
+		// }
+		this.tag = getTag();
 		loadImageTask = new LoadImageTask();
 		loadImageTask.execute(url);
 
@@ -183,12 +190,13 @@ public class PhotoView extends ImageView {
 
 	@SuppressLint("DrawAllocation")
 	protected void onDraw(Canvas canvas) {
+		Log.d(TAG, "onDraw");
 		StringBuilder keyBuilder = new StringBuilder();
 		for (int i = 0; i < Math.min(3, urlList.size()); i++) {
 			keyBuilder.append(createKey(urlList.get((i + indexOffset) % urlList.size()))).append("_");
 		}
 		String key = keyBuilder.toString();
-
+		Log.d(TAG, "KEY=" + key);
 		Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
 		Canvas newCanvas = new Canvas(bitmap);
 		if (urlList.size() == 0) {
@@ -198,6 +206,8 @@ public class PhotoView extends ImageView {
 		}
 
 		Bitmap bitmapTopaint = roundBitmaps.get(key);
+		// bitmapTopaint=defaultPhoto;
+		Log.d(TAG, "bitmapTopaint = " + bitmapTopaint);
 		if (bitmapTopaint == null) {
 			if (urlList.size() == 1) {
 				drawOnPosition(newCanvas, originalBitmaps.get(createKey(urlList.get(0))), POS_FULL);
@@ -227,6 +237,11 @@ public class PhotoView extends ImageView {
 		}
 
 		if (bitmapTopaint != null) {
+			if (key.equals("https%3A%2F%2Fc7dev%2Es3%2Eamazonaws%2Ecom%2Fuploads%2Faccount%5Fgallery%5Fimage%2Fpicture%2F143644%2Fthumb%5Falex%5F2012%5Fsmall%2Epng%3Fv%3D1395996613_100_100_")) {
+				Log.e(TAG,"bingo! "+bitmapTopaint.getWidth()+" "+bitmapTopaint.getHeight());
+				//bitmapTopaint=defaultPhoto;
+			}
+
 			canvas.drawBitmap(bitmapTopaint, new Rect(0, 0, bitmapTopaint.getWidth(), bitmapTopaint.getHeight()),
 					new Rect(0, 0, canvas.getWidth(), canvas.getHeight()), paint);
 			if (messageCount > 0) {
@@ -299,6 +314,7 @@ public class PhotoView extends ImageView {
 
 	class LoadImageTask extends AsyncTask<String, Void, Void> {
 		Object tag;
+		List<String> urlNewList = new ArrayList<String>();
 
 		@Override
 		protected void onPreExecute() {
@@ -311,40 +327,38 @@ public class PhotoView extends ImageView {
 					Bitmap bitmap = null;
 					try {
 						bitmap = originalBitmaps.get(createKey(url));
+						Log.e(TAG, "bitmap =" + bitmap);
 						if (bitmap == null && !invalidUrlList.contains(url)) {
 							if (tag != getTag()) {
 								return null;
 							}
-
 							bitmap = panoUtil.getBitmap(url);
-//							if (url.equals("https://c7dev.s3.amazonaws.com/uploads/account_gallery_image/picture/143439/thumb_imgres.jpg?v=1395244139")) {
-//								Log.e(TAG, "bitmap =" + bitmap);
-//							}
+							// if
+							// (url.equals("https://c7dev.s3.amazonaws.com/uploads/account_gallery_image/picture/143439/thumb_imgres.jpg?v=1395244139"))
+							// {
+
+							// }
 							if (bitmap == null) {
 								invalidUrlList.add(url);
 							} else {
 								originalBitmaps.put(createKey(url), initBitmap(bitmap));
 							}
-						} 
+						}
 						if (bitmap != null) {
-							if (!originalBitmaps.containsKey(createKey(url))) {
-								originalBitmaps.put(createKey(url), bitmap);
-							}
-							if (!urlList.contains(url)) {
-								urlList.add(url);
-							}
+							urlNewList.add(url);
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
 			}
+			urlList.clear();
+			for (String url : urlNewList) {
+				Log.e(TAG, "add url=" + url);
+				urlList.add(url);
+			}
+			postInvalidate();
 			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Void result) {
-			invalidate();
 		}
 	}
 }
