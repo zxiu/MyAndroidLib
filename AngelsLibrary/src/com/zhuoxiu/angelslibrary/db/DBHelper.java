@@ -16,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper implements DBConstant {
 	private static final int dbVersion = 1;
 	public static DBHelper helper;
 
-	public static String TABLE_PHOTO="photo";
+	public static String TABLE_PHOTO = "photo";
 	public static String COL_DATA = "data";
 	public static String COL_LAST_USE = "last_use";
 
@@ -30,7 +30,7 @@ public class DBHelper extends SQLiteOpenHelper implements DBConstant {
 		}
 		return writeable ? helper.getWritableDatabase() : helper.getReadableDatabase();
 	}
- 
+
 	public void onCreate(SQLiteDatabase db) {
 		Log.i(tag, "onCreate");
 		createDB(db);
@@ -72,7 +72,7 @@ public class DBHelper extends SQLiteOpenHelper implements DBConstant {
 				if (cursor.getType(columnIndex) == Cursor.FIELD_TYPE_STRING) {
 					columnValue = cursor.getString(columnIndex);
 				}
-				output2 += columnValue + " ";
+				output2 += "(" + i + ")" + cursor.getColumnName(i) + " : " + columnValue + " ";
 			}
 			Log.i(tag, output2);
 			cursor.moveToNext();
