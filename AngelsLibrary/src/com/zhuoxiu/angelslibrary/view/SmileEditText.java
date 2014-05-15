@@ -1,16 +1,16 @@
 package com.zhuoxiu.angelslibrary.view;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import util.ZipHelper;
-
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.EditText;
 
+import com.zhuoxiu.angelslibrary.bean.Smile;
+
 public class SmileEditText extends EditText {
-	List<Smile> smileList;
+	List<Smile> smileList = new ArrayList<Smile>();
 
 	public SmileEditText(Context context) {
 		super(context);
@@ -20,13 +20,10 @@ public class SmileEditText extends EditText {
 		super(context, attrs);
 	}
 
-	public void setSmileZipFile(String path) {
-		ZipHelper.getEntryList(path);
+	public void setSmileList(List<Smile> smileList) {
+		this.smileList = smileList;
 	}
+	
+	 
 
-	class Smile {
-		Drawable drawable;
-		String text;
-		String name;
-	}
 }
