@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import com.zhuoxiu.angelslibrary.bean.Smile;
+import com.zhuoxiu.angelslibrary.bean.Smiley;
 
 import android.content.Context;
 import android.text.Spannable;
@@ -18,19 +18,19 @@ import android.text.style.ImageSpan;
 public class SmileyParser {
 	private Context mContext;
 	private Pattern mPattern;
-	private HashMap<String, Smile> mSmileyToRes;
+	private HashMap<String, Smiley> mSmileyToRes;
 
-	static List<Smile> smileList;
+	static List<Smiley> smileList;
 
 	public SmileyParser(Context context) throws XmlPullParserException, IOException {
 		if (smileList == null) {
-			smileList = Smile.getSmileList(context);
+			smileList = Smiley.getSmileyList(context);
 		}
 		mContext = context;
-		mSmileyToRes = new HashMap<String, Smile>();
+		mSmileyToRes = new HashMap<String, Smiley>();
 		mPattern = buildPattern();
 
-		for (Smile smile : smileList) {
+		for (Smiley smile : smileList) {
 			mSmileyToRes.put(smile.getText(), smile);
 		}
 	}
@@ -38,7 +38,7 @@ public class SmileyParser {
 	private Pattern buildPattern() {
 		StringBuilder patternString = new StringBuilder(smileList.size() * 3);
 		patternString.append('(');
-		for (Smile smile : smileList) {
+		for (Smiley smile : smileList) {
 			String s = smile.getText();
 			patternString.append(Pattern.quote(s));
 			patternString.append('|');

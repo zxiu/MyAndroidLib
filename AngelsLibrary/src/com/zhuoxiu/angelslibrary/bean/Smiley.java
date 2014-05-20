@@ -15,11 +15,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
-public class Smile {
-	static final String TAG = Smile.class.getSimpleName();
-	static final String FOLDER_NAME = "smile";
-	static final String XML_FILE_NAME = "smile.xml";
-	static final String TAG_SMILE = "smile";
+public class Smiley {
+	static final String TAG = Smiley.class.getSimpleName();
+	static final String FOLDER_NAME = "smiley";
+	static final String XML_FILE_NAME = "smiley.xml";
+	static final String TAG_SMILEY = "smiley";
 	static final String ATTR_NAME = "name";
 	static final String ATTR_TEXT = "text";
 	static final String ATTR_FILE = "file";
@@ -35,10 +35,11 @@ public class Smile {
 		return "SmileBean [name=" + name + ", text=" + text + ", fileName=" + fileName + ", bitmap=" + bitmap + "]";
 	}
 
-	public static List<Smile> getSmileList(Context context) throws XmlPullParserException, IOException {
-		List<Smile> smileList = new ArrayList<Smile>();
+	public static List<Smiley> getSmileyList(Context context) throws XmlPullParserException, IOException {
+		List<Smiley> smileyList = new ArrayList<Smiley>();
 		AssetManager am = context.getAssets();
 		String path = FOLDER_NAME + "/" + XML_FILE_NAME;
+		 
 		XmlPullParser xpp = XmlPullParserFactory.newInstance().newPullParser();
 		xpp.setInput(am.open(path), "utf-8");
 		int eventType = xpp.getEventType();
@@ -46,14 +47,14 @@ public class Smile {
 			if (eventType == XmlPullParser.START_DOCUMENT) {
 				// System.out.println("Start document");
 			} else if (eventType == XmlPullParser.START_TAG) {
-				if (xpp.getName().equalsIgnoreCase(TAG_SMILE)) {
-					Smile smile = new Smile();
+				if (xpp.getName().equalsIgnoreCase(TAG_SMILEY)) {
+					Smiley smile = new Smiley();
 					smile.setName(xpp.getAttributeValue(null, ATTR_NAME));
 					smile.setText(xpp.getAttributeValue(null, ATTR_TEXT));
 					smile.setFileName(xpp.getAttributeValue(null, ATTR_FILE));
 					smile.setBitmap(BitmapFactory.decodeStream(am.open(FOLDER_NAME + "/" + smile.getFileName())));
 					Log.i(TAG, smile.toString());
-					smileList.add(smile);
+					smileyList.add(smile);
 				}
 				// System.out.println("Start tag " + xpp.getName());
 			} else if (eventType == XmlPullParser.END_TAG) {
@@ -63,7 +64,7 @@ public class Smile {
 			}
 			eventType = xpp.next();
 		}
-		return smileList;
+		return smileyList;
 	}
 
 	public String getName() {
