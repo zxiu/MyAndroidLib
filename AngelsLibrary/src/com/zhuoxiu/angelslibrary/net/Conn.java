@@ -11,6 +11,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +26,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.ByteArrayBody;
+import org.apache.http.entity.mime.content.ContentBody;
 import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -235,35 +240,44 @@ public class Conn {
 				connection.setDoOutput(true);
 				if ((textBodyList.size() > 0 || fileList.size() > 0) && connection.getRequestMethod().equalsIgnoreCase(POST)) {
 					connection.setRequestProperty("Content-Type", "Multipart/Form-Data; Boundary = " + boundary);
+
 					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					builder.setBoundary(boundary);
 					for (int i = 0; i < textBodyList.size(); i++) {
 						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
+						Log.i(tag,textBodyList.get(i).getName()+" = "+textBodyList.get(i).getValue());
+						//StringBody sb = new StringBody(textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
 					}
 					for (int i = 0; i < fileList.size(); i++) {
 						builder.addPart("[message][message_attachments_attributes][" + i + "][file]", new FileBody(fileList.get(i)));
 					}
+
 					final HttpEntity entity = builder.build();
-					ProgressiveEntity progressiveEntity = new ProgressiveEntity(entity);
-					// entity.writeTo(connection.getOutputStream());
+					Log.i(tag, "entity=" + entity);
+					OutputStream os = connection.getOutputStream();
+					entity.writeTo(connection.getOutputStream());
+					os.close();
 
-					OutputStream os = new OutputStream() {
-						private StringBuilder string = new StringBuilder();
+					// ProgressiveEntity progressiveEntity = new
+					// ProgressiveEntity(entity);
+					// progressiveEntity.writeTo(connection.getOutputStream());
 
-						@Override
-						public void write(int b) throws IOException {
-							this.string.append((char) b);
-						}
-
-						// Netbeans IDE automatically overrides this toString()
-						public String toString() {
-							return this.string.toString();
-						}
-					};
-					progressiveEntity.writeTo(os);
-
-					connection.getOutputStream().close();
+					// OutputStream os = new OutputStream() {
+					// private StringBuilder string = new StringBuilder();
+					//
+					// @Override
+					// public void write(int b) throws IOException {
+					// this.string.append((char) b);
+					// }
+					//
+					// // Netbeans IDE automatically overrides this toString()
+					// public String toString() {
+					// return this.string.toString();
+					// }
+					// };
+					// progressiveEntity.writeTo(os);
+					// connection.getOutputStream().close();
 				} else if (!TextUtils.isEmpty(content)) {
 					Log.i(tag, "content=" + content);
 					OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());
@@ -274,13 +288,13 @@ public class Conn {
 			connection.connect();
 			result.setCode(connection.getResponseCode());
 			InputStream is = null;
-			Log.i(tag,result.toString());
+			Log.i(tag, result.toString());
 			if (result.isOK() || result.isCreated()) {
 				is = connection.getInputStream();
 			} else {
 				is = connection.getErrorStream();
 			}
-			if (is!=null){
+			if (is != null) {
 				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 				String resultString = new String();
 				String lines;
@@ -288,7 +302,7 @@ public class Conn {
 					System.out.println(lines);
 					resultString += lines;
 				}
-				result.setEntityString(resultString);	
+				result.setEntityString(resultString);
 			}
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
