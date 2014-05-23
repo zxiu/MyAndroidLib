@@ -94,7 +94,6 @@ public class PanoUtil {
 		try {
 			return URLCoder.encode(url);
 		} catch (IOException e) {
-
 			e.printStackTrace();
 			return null;
 		}

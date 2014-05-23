@@ -23,279 +23,286 @@ import android.view.View;
  * @author liao
  *
  */
-public class GifView extends View implements GifAction{
+public class GifView extends View implements GifAction {
 
 	/**gif解码器*/
 	private GifDecoder gifDecoder = null;
 	/**当前要画的帧的图*/
 	private Bitmap currentImage = null;
-	
+
 	private boolean isRun = true;
-	
+
 	private boolean pause = false;
-	
+
 	private int showWidth = -1;
 	private int showHeight = -1;
 	private Rect rect = null;
-	
+
 	private DrawThread drawThread = null;
-	
+
 	private GifImageType animationType = GifImageType.SYNC_DECODER;
-	
+
 	/**
 	 * 解码过程中，Gif动画显示的方式<br>
 	 * 如果图片较大，那么解码过程会比较长，这个解码过程中，gif如何显示
 	 * @author liao
 	 *
 	 */
-	public enum GifImageType{
+	public enum GifImageType {
 		/**
 		 * 在解码过程中，不显示图片，直到解码全部成功后，再显示
 		 */
-		WAIT_FINISH (0),
+		WAIT_FINISH(0),
 		/**
 		 * 和解码过程同步，解码进行到哪里，图片显示到哪里
 		 */
-		SYNC_DECODER (1),
+		SYNC_DECODER(1),
 		/**
 		 * 在解码过程中，只显示第一帧图片
 		 */
-		COVER (2);
-		
-		GifImageType(int i){
+		COVER(2);
+
+		GifImageType(int i) {
 			nativeInt = i;
 		}
+
 		final int nativeInt;
 	}
-	
-	
+
 	public GifView(Context context) {
-        super(context);
-        
-    }
-    
-    public GifView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-    
-    public GifView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        
-    }
-    
-    /**
-     * 设置图片，并开始解码
-     * @param gif 要设置的图片
-     */
-    private void setGifDecoderImage(byte[] gif){
-    	if(gifDecoder != null){  		
-    		gifDecoder.free();
-    		gifDecoder = null;
-    	}
-    	gifDecoder = new GifDecoder(gif,this);
-    	gifDecoder.start();
-    }
-    
-    private void setGifDecoderImage(InputStream is){
-    	if(gifDecoder != null){
-    		gifDecoder.free();
-    		gifDecoder= null;
-    	}
-    	gifDecoder = new GifDecoder(is,this);
-    	gifDecoder.start();
-    }
-    
-    public void setGifImage(byte[] gif){
-    	setGifDecoderImage(gif);
-    }
-    
-    public void setGifImage(InputStream is){
-    	setGifDecoderImage(is);
-    }
-    
-    public void setGifImage(int resId){
-    	Resources r = this.getResources();
-    	InputStream is = r.openRawResource(resId);
-    	setGifDecoderImage(is);
-    }
-    
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if(gifDecoder == null)
-        	return;
-        if(currentImage == null){
-        	currentImage = gifDecoder.getImage();
-        }
-        if(currentImage == null){
-        		return;
-        }
-        int saveCount = canvas.getSaveCount();
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        if(showWidth == -1){
-        	canvas.drawBitmap(currentImage, 0, 0,null);
-        }else{
-        	canvas.drawBitmap(currentImage, null, rect, null);
-        }
-        canvas.restoreToCount(saveCount);
-    }
-    
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    	int pleft = getPaddingLeft();
-        int pright = getPaddingRight();
-        int ptop = getPaddingTop();
-        int pbottom = getPaddingBottom();
+		super(context);
 
-        int widthSize;
-        int heightSize;
-        
-        int w;
-        int h;
-        
-        if(gifDecoder == null){
-        	w = 1;
-        	h = 1;
-        }else{
-        	w = gifDecoder.width;
-        	h = gifDecoder.height;
-        }
-        
-        w += pleft + pright;
-        h += ptop + pbottom;
-            
-        w = Math.max(w, getSuggestedMinimumWidth());
-        h = Math.max(h, getSuggestedMinimumHeight());
+	}
 
-        widthSize = resolveSize(w, widthMeasureSpec);
-        heightSize = resolveSize(h, heightMeasureSpec);
-        
-        setMeasuredDimension(widthSize, heightSize);
-    }
-    
-    public void showCover(){
-    	if(gifDecoder == null)
-    		return;
-    	pause = true;
-    	currentImage = gifDecoder.getImage();
-    	invalidate();
-    }
-    
-    public void showAnimation(){
-    	if(pause){
-    		pause = false;
-    	}
-    }
-    
-    public void setGifImageType(GifImageType type){
-    	if(gifDecoder == null)
-    		animationType = type;
-    }
-    
-    public void setShowDimension(int width,int height){
-    	if(width > 0 && height > 0){
-	    	showWidth = width;
-	    	showHeight = height;
-	    	rect = new Rect();
+	public GifView(Context context, AttributeSet attrs) {
+		this(context, attrs, 0);
+	}
+
+	public GifView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+
+	}
+
+	/**
+	 * 设置图片，并开始解码
+	 * @param gif 要设置的图片
+	 */
+	private void setGifDecoderImage(byte[] gif) {
+		if (gifDecoder != null) {
+			gifDecoder.free();
+			gifDecoder = null;
+		}
+		gifDecoder = new GifDecoder(gif, this);
+		gifDecoder.start();
+	}
+
+	private void setGifDecoderImage(InputStream is) {
+		if (gifDecoder != null) {
+			gifDecoder.free();
+			gifDecoder = null;
+		}
+		gifDecoder = new GifDecoder(is, this);
+		gifDecoder.start();
+	}
+
+	public void setGifImage(byte[] gif) {
+		setGifDecoderImage(gif);
+	}
+
+	public void setGifImage(InputStream is) {
+		setGifDecoderImage(is);
+	}
+
+	public void setGifImage(int resId) {
+		Resources r = this.getResources();
+		InputStream is = r.openRawResource(resId);
+		setGifDecoderImage(is);
+	}
+
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		if (gifDecoder == null)
+			return;
+		if (currentImage == null) {
+			currentImage = gifDecoder.getImage();
+		}
+		if (currentImage == null) {
+			return;
+		}
+		int saveCount = canvas.getSaveCount();
+		canvas.save();
+		canvas.translate(getPaddingLeft(), getPaddingTop());
+		if (showWidth == -1) {
+			canvas.drawBitmap(currentImage, 0, 0, null);
+		} else {
+			canvas.drawBitmap(currentImage, null, rect, null);
+		}
+		canvas.restoreToCount(saveCount);
+	}
+
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		int pleft = getPaddingLeft();
+		int pright = getPaddingRight();
+		int ptop = getPaddingTop();
+		int pbottom = getPaddingBottom();
+
+		int widthSize;
+		int heightSize;
+
+		int w;
+		int h;
+
+		if (gifDecoder == null) {
+			w = 1;
+			h = 1;
+		} else {
+			w = gifDecoder.width;
+			h = gifDecoder.height;
+		}
+
+		w += pleft + pright;
+		h += ptop + pbottom;
+
+		w = Math.max(w, getSuggestedMinimumWidth());
+		h = Math.max(h, getSuggestedMinimumHeight());
+
+		widthSize = resolveSize(w, widthMeasureSpec);
+		heightSize = resolveSize(h, heightMeasureSpec);
+
+		setMeasuredDimension(widthSize, heightSize);
+	}
+
+	public void showCover() {
+		if (gifDecoder == null)
+			return;
+		pause = true;
+		currentImage = gifDecoder.getImage();
+		invalidate();
+	}
+
+	public void showAnimation() {
+		if (pause) {
+			pause = false;
+		}
+	}
+
+	public boolean isShowAnimation() {
+		return !pause;
+	}
+
+	public void setGifImageType(GifImageType type) {
+		if (gifDecoder == null)
+			animationType = type;
+	}
+
+	public void setShowDimension(int width, int height) {
+		if (width > 0 && height > 0) {
+			showWidth = width;
+			showHeight = height;
+			rect = new Rect();
 			rect.left = 0;
 			rect.top = 0;
 			rect.right = width;
 			rect.bottom = height;
-    	}
-    }
-    
-    public void parseOk(boolean parseStatus,int frameIndex){
-    	if(parseStatus){
-    		if(gifDecoder != null){
-    			switch(animationType){
-    			case WAIT_FINISH:
-    				if(frameIndex == -1){
-    					if(gifDecoder.getFrameCount() > 1){     //当帧数大于1时，启动动画线程
-    	    				DrawThread dt = new DrawThread();
-    	    	    		dt.start();
-    	    			}else{
-    	    				reDraw();
-    	    			}
-    				}
-    				break;
-    			case COVER:
-    				if(frameIndex == 1){
-    					currentImage = gifDecoder.getImage();
-    					reDraw();
-    				}else if(frameIndex == -1){
-    					if(gifDecoder.getFrameCount() > 1){
-    						if(drawThread == null){
-        						drawThread = new DrawThread();
-        						drawThread.start();
-        					}
-    					}else{
-    						reDraw();
-    					}
-    				}
-    				break;
-    			case SYNC_DECODER:
-    				if(frameIndex == 1){
-    					currentImage = gifDecoder.getImage();
-    					reDraw();
-    				}else if(frameIndex == -1){
-    					reDraw();
-    				}else{
-    					if(drawThread == null){
-    						drawThread = new DrawThread();
-    						drawThread.start();
-    					}
-    				}
-    				break;
-    			}
- 
-    		}else{
-    			Log.e("gif","parse error");
-    		}
-    		
-    	}
-    }
-    
-    private void reDraw(){
-    	if(redrawHandler != null){
+		}
+	}
+
+	public void parseOk(boolean parseStatus, int frameIndex) {
+		if (parseStatus) {
+			if (gifDecoder != null) {
+				switch (animationType) {
+				case WAIT_FINISH:
+					if (frameIndex == -1) {
+						if (gifDecoder.getFrameCount() > 1) { // 当帧数大于1时，启动动画线程
+							DrawThread dt = new DrawThread();
+							dt.start();
+						} else {
+							reDraw();
+						}
+					}
+					break;
+				case COVER:
+					if (frameIndex == 1) {
+						currentImage = gifDecoder.getImage();
+						reDraw();
+					} else if (frameIndex == -1) {
+						if (gifDecoder.getFrameCount() > 1) {
+							if (drawThread == null) {
+								drawThread = new DrawThread();
+								drawThread.start();
+							}
+						} else {
+							reDraw();
+						}
+					}
+					break;
+				case SYNC_DECODER:
+					if (frameIndex == 1) {
+						currentImage = gifDecoder.getImage();
+						reDraw();
+					} else if (frameIndex == -1) {
+						reDraw();
+					} else {
+						if (drawThread == null) {
+							drawThread = new DrawThread();
+							drawThread.start();
+						}
+					}
+					break;
+				}
+
+			} else {
+				Log.e("gif", "parse error");
+			}
+
+		}
+	}
+
+	private void reDraw() {
+		if (redrawHandler != null) {
 			Message msg = redrawHandler.obtainMessage();
 			redrawHandler.sendMessage(msg);
-    	}
-    }
-    
-    private Handler redrawHandler = new Handler(){
-    	public void handleMessage(Message msg) {
-    		invalidate();
-    	}
-    };
-    
-    private class DrawThread extends Thread{	
-    	public void run(){
-    		if(gifDecoder == null){
-    			return;
-    		}
-    		while(isRun){
-    			if(pause == false){
-	    			//if(gifDecoder.parseOk()){
-	    				GifFrame frame = gifDecoder.next();
-	    				currentImage = frame.image;
-	    				long sp = frame.delay;	    				
-	    				if(redrawHandler != null){
-	    					Message msg = redrawHandler.obtainMessage();
-	    					redrawHandler.sendMessage(msg);
-	    					SystemClock.sleep(sp); 
-	    				}else{
-	    					break;
-	    				}
-//	    			}else{
-//	    				currentImage = gifDecoder.getImage();
-//	    				break;
-//	    			}
-    			}else{
-    				SystemClock.sleep(10);
-    			}
-    		}
-    	}
-    }
-    
+		}
+	}
+
+	private Handler redrawHandler = new Handler() {
+		public void handleMessage(Message msg) {
+			invalidate();
+		}
+	};
+
+	private class DrawThread extends Thread {
+		public void run() {
+			if (gifDecoder == null) {
+				return;
+			}
+			while (isRun) {
+				if (pause == false && gifDecoder.next() != null) {
+					// if(gifDecoder.parseOk()){
+					GifFrame frame = gifDecoder.next();
+					currentImage = frame.image;
+					long sp = frame.delay;
+					if (sp == 0) {
+						sp = 100;
+					}
+					if (redrawHandler != null) {
+						Message msg = redrawHandler.obtainMessage();
+						redrawHandler.sendMessage(msg);
+						SystemClock.sleep(sp);
+					} else {
+						break;
+					}
+					// }else{
+					// currentImage = gifDecoder.getImage();
+					// break;
+					// }
+				} else {
+					SystemClock.sleep(10);
+				}
+			}
+		}
+	}
+
 }
 
 class GifFrame {
@@ -308,6 +315,7 @@ class GifFrame {
 		image = im;
 		delay = del;
 	}
+
 	/**图片*/
 	public Bitmap image;
 	/**延时*/
@@ -316,7 +324,7 @@ class GifFrame {
 	public GifFrame nextFrame = null;
 }
 
-class GifDecoder extends Thread{
+class GifDecoder extends Thread {
 
 	/**状态：正在解码中*/
 	public static final int STATUS_PARSING = 0;
@@ -326,7 +334,7 @@ class GifDecoder extends Thread{
 	public static final int STATUS_OPEN_ERROR = 2;
 	/**状态：解码成功*/
 	public static final int STATUS_FINISH = -1;
-	
+
 	private InputStream in;
 	private int status;
 
@@ -356,7 +364,6 @@ class GifDecoder extends Thread{
 	private GifFrame currentFrame = null;
 
 	private boolean isShow = false;
-	
 
 	private byte[] block = new byte[256]; // current data block
 	private int blockSize = 0; // block size
@@ -382,66 +389,64 @@ class GifDecoder extends Thread{
 	private int frameCount;
 
 	private GifAction action = null;
-	
-	
+
 	private byte[] gifData = null;
 
-	
-	public GifDecoder(byte[] data,GifAction act){
+	public GifDecoder(byte[] data, GifAction act) {
 		gifData = data;
 		action = act;
 	}
-	
-	public GifDecoder(InputStream is,GifAction act){
+
+	public GifDecoder(InputStream is, GifAction act) {
 		in = is;
 		action = act;
 	}
 
-	
-	public void run(){
-		if(in != null){
+	public void run() {
+		if (in != null) {
 			readStream();
-		}else if(gifData != null){
+		} else if (gifData != null) {
 			readByte();
 		}
 	}
-	
+
 	/**
 	 * 释放资源
 	 */
-	public void free(){
+	public void free() {
 		GifFrame fg = gifFrame;
-		while(fg != null){
+		while (fg != null) {
 			fg.image = null;
 			fg = null;
 			gifFrame = gifFrame.nextFrame;
 			fg = gifFrame;
 		}
-		if(in != null){
-			try{
-			in.close();
-			}catch(Exception ex){}
+		if (in != null) {
+			try {
+				in.close();
+			} catch (Exception ex) {
+			}
 			in = null;
 		}
 		gifData = null;
 	}
-	
+
 	/**
 	 * 当前状态
 	 * @return
 	 */
-	public int getStatus(){
+	public int getStatus() {
 		return status;
 	}
-	
+
 	/**
 	 * 解码是否成功，成功返回true
 	 * @return 成功返回true，否则返回false
 	 */
-	public boolean parseOk(){
+	public boolean parseOk() {
 		return status == STATUS_FINISH;
 	}
-	
+
 	/**
 	 * 取某帧的延时时间
 	 * @param n 第几帧 
@@ -457,23 +462,22 @@ class GifDecoder extends Thread{
 		}
 		return delay;
 	}
-	
+
 	/**
 	 * 取所有帧的延时时间
 	 * @return
 	 */
-	public int[] getDelays(){
+	public int[] getDelays() {
 		GifFrame f = gifFrame;
 		int[] d = new int[frameCount];
 		int i = 0;
-		while(f != null && i < frameCount){
+		while (f != null && i < frameCount) {
 			d[i] = f.delay;
 			f = f.nextFrame;
 			i++;
 		}
 		return d;
 	}
-	
 
 	/**
 	 * 取总帧 数
@@ -582,7 +586,7 @@ class GifDecoder extends Thread{
 	 * @return 可画的图片，如果没有此帧或者出错，返回null
 	 */
 	public Bitmap getFrameImage(int n) {
-		GifFrame frame = getFrame(n);	
+		GifFrame frame = getFrame(n);
 		if (frame == null)
 			return null;
 		else
@@ -593,10 +597,10 @@ class GifDecoder extends Thread{
 	 * 取当前帧图片
 	 * @return 当前帧可画的图片
 	 */
-	public GifFrame getCurrentFrame(){
+	public GifFrame getCurrentFrame() {
 		return currentFrame;
 	}
-	
+
 	/**
 	 * 取第几帧，每帧包含了可画的图片和延时时间
 	 * @param n 帧数
@@ -619,24 +623,24 @@ class GifDecoder extends Thread{
 	/**
 	 * 重置，进行本操作后，会直接到第一帧
 	 */
-	public void reset(){
+	public void reset() {
 		currentFrame = gifFrame;
 	}
-	
+
 	/**
 	 * 下一帧，进行本操作后，通过getCurrentFrame得到的是下一帧
 	 * @return 返回下一帧
 	 */
-	public GifFrame next() {	
-		if(isShow == false){
+	public GifFrame next() {
+		if (isShow == false) {
 			isShow = true;
 			return gifFrame;
-		}else{	
-			if(status == STATUS_PARSING){
-				if(currentFrame.nextFrame != null)
-					currentFrame = currentFrame.nextFrame;			
-				//currentFrame = gifFrame;
-			}else{			
+		} else {
+			if (currentFrame != null && status == STATUS_PARSING) {
+				if (currentFrame.nextFrame != null)
+					currentFrame = currentFrame.nextFrame;
+				// currentFrame = gifFrame;
+			} else {
 				currentFrame = currentFrame.nextFrame;
 				if (currentFrame == null) {
 					currentFrame = gifFrame;
@@ -646,40 +650,42 @@ class GifDecoder extends Thread{
 		}
 	}
 
-	private int readByte(){
+	private int readByte() {
 		in = new ByteArrayInputStream(gifData);
 		gifData = null;
 		return readStream();
 	}
-	
-//	public int read(byte[] data){
-//		InputStream is = new ByteArrayInputStream(data);
-//		return read(is);
-//	}
-	
-	private int readStream(){
+
+	// public int read(byte[] data){
+	// InputStream is = new ByteArrayInputStream(data);
+	// return read(is);
+	// }
+
+	private int readStream() {
 		init();
-		if(in != null){
+		if (in != null) {
 			readHeader();
-			if(!err()){
+			if (!err()) {
 				readContents();
-				if(frameCount < 0){
+				if (frameCount < 0) {
 					status = STATUS_FORMAT_ERROR;
-					action.parseOk(false,-1);
-				}else{
+					action.parseOk(false, -1);
+				} else {
 					status = STATUS_FINISH;
-					action.parseOk(true,-1);
+					action.parseOk(true, -1);
 				}
 			}
 			try {
-				in.close();
+				if (in != null) {
+					in.close();
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-		}else {
+
+		} else {
 			status = STATUS_OPEN_ERROR;
-			action.parseOk(false,-1);
+			action.parseOk(false, -1);
 		}
 		return status;
 	}
@@ -775,8 +781,7 @@ class GifDecoder extends Thread{
 				prefix[available] = (short) old_code;
 				suffix[available] = (byte) first;
 				available++;
-				if (((available & code_mask) == 0)
-						&& (available < MaxStackSize)) {
+				if (((available & code_mask) == 0) && (available < MaxStackSize)) {
 					code_size++;
 					code_mask += available;
 				}
@@ -808,7 +813,7 @@ class GifDecoder extends Thread{
 	private int read() {
 		int curByte = 0;
 		try {
-			
+
 			curByte = in.read();
 		} catch (Exception e) {
 			status = STATUS_FORMAT_ERROR;
@@ -816,27 +821,26 @@ class GifDecoder extends Thread{
 		return curByte;
 	}
 
-	
-	
-	
 	private int readBlock() {
 		blockSize = read();
 		int n = 0;
-		if (blockSize > 0) {
-			try {
-				int count = 0;
-				while (n < blockSize) {
-					count = in.read(block, n, blockSize - n);
-					if (count == -1) {
-						break;
+		if (in != null) {
+			if (blockSize > 0) {
+				try {
+					int count = 0;
+					while (n < blockSize) {
+						count = in.read(block, n, blockSize - n);
+						if (count == -1) {
+							break;
+						}
+						n += count;
 					}
-					n += count;
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			if (n < blockSize) {
-				status = STATUS_FORMAT_ERROR;
+				if (n < blockSize) {
+					status = STATUS_FORMAT_ERROR;
+				}
 			}
 		}
 		return n;
@@ -985,7 +989,7 @@ class GifDecoder extends Thread{
 			currentFrame = gifFrame;
 		} else {
 			GifFrame f = gifFrame;
-			while(f.nextFrame != null){
+			while (f.nextFrame != null) {
 				f = f.nextFrame;
 			}
 			f.nextFrame = new GifFrame(image, delay);
@@ -1061,5 +1065,5 @@ interface GifAction {
 	 * @param parseStatus 解码是否成功，成功会为true
 	 * @param frameIndex 当前解码的第几帧，当全部解码成功后，这里为-1
 	 */
-	public void parseOk(boolean parseStatus,int frameIndex);
+	public void parseOk(boolean parseStatus, int frameIndex);
 }
