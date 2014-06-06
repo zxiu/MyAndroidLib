@@ -11,6 +11,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +37,21 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import cn.trinea.android.common.util.ListUtils;
+
 import android.text.TextUtils;
 import android.util.Log;
 
-public class Conn {
+public class Conn implements Constant{
+	public interface OnDownloadListener {
+		public void onDownloadBegin(long totalSize);
+
+		public void onProgressChange(long finishedSize);
+
+		public void onDownloadFinish(boolean isSuccessful);
+	}
+	
+	
 	public static final String CHARSET = org.apache.http.protocol.HTTP.UTF_8;
 	public static final String GET = HttpGet.METHOD_NAME;
 	public static final String POST = HttpPost.METHOD_NAME;
@@ -49,7 +61,6 @@ public class Conn {
 	public static final String CONTENT_TYPE_MULTIPART = "multipart/form-data";
 	public static final String CONTENT_TYPE_JSON = "application/json";
 
-	static final String AUTHORIZATION = "Authorization";
 	static final String ACCESS_TOKEN = "access_token";
 	static final String BEARER = "Bearer";
 	static final String CONTENT_TYPE = "Content-Type";
@@ -67,25 +78,23 @@ public class Conn {
 	String json;
 	String boundary = "SwA" + System.currentTimeMillis() + "SwA";
 
-	static final String HTTP = "http";
-	static final String HTTPS = "https";
-	HttpURLConnection connection;
+	HttpURLConnection conn;
 	String content;
 
 	public Conn(String url, String method) throws IOException {
 		this.url = new URL(url);
 		if (this.url.getProtocol().equalsIgnoreCase(HTTP)) {
-			connection = (HttpURLConnection) this.url.openConnection();
+			conn = (HttpURLConnection) this.url.openConnection();
 		} else if (this.url.getProtocol().equalsIgnoreCase(HTTPS)) {
-			connection = (HttpsURLConnection) this.url.openConnection();
+			conn = (HttpsURLConnection) this.url.openConnection();
 		}
-		connection.setRequestMethod(method);
+		conn.setRequestMethod(method);
 		if (method.equalsIgnoreCase(POST)) {
-			connection.setDoOutput(true);
+			conn.setDoOutput(true);
 		}
-		connection.setDoInput(true);
-		connection.setReadTimeout(6000);
-		connection.setConnectTimeout(5000);
+		conn.setDoInput(true);
+		conn.setReadTimeout(6000);
+		conn.setConnectTimeout(5000);
 	}
 
 	public void addTextBody(String name, String value) {
@@ -234,65 +243,88 @@ public class Conn {
 		HttpResult result = new HttpResult();
 		try {
 			for (NameValuePair header : headerList) {
-				connection.setRequestProperty(header.getName(), header.getValue());
+				conn.setRequestProperty(header.getName(), header.getValue());
 			}
-			if (connection.getRequestMethod().equalsIgnoreCase(POST)) {
-				connection.setDoOutput(true);
-				if ((textBodyList.size() > 0 || fileList.size() > 0) && connection.getRequestMethod().equalsIgnoreCase(POST)) {
-					connection.setRequestProperty("Content-Type", "Multipart/Form-Data; Boundary = " + boundary);
+
+			if (conn.getRequestMethod().equalsIgnoreCase(POST)) {
+				conn.setDoOutput(true);
+				if (!ListUtils.isEmpty(paramList)) {
+					for (NameValuePair param : paramList) {
+						conn.getOutputStream().write(param.getName().getBytes("UTF-8"));
+						conn.getOutputStream().write("=".getBytes("UTF-8"));
+						conn.getOutputStream().write(param.getValue().getBytes("UTF-8"));
+						conn.getOutputStream().write("&".getBytes("UTF-8"));
+					}
+					conn.getOutputStream().flush();
+					conn.getOutputStream().close();
+				}
+
+				if ((textBodyList.size() > 0 || fileList.size() > 0) && conn.getRequestMethod().equalsIgnoreCase(POST)) {
+					Log.i(tag, "send multipart");
+					conn.setRequestProperty("Content-Type", "Multipart/Form-Data; Boundary=" + boundary);
 
 					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
 					builder.setBoundary(boundary);
+					builder.setCharset(Charset.forName("utf-8"));
 					for (int i = 0; i < textBodyList.size(); i++) {
 						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
-						Log.i(tag,textBodyList.get(i).getName()+" = "+textBodyList.get(i).getValue());
-						//StringBody sb = new StringBody(textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
+						Log.i(tag, textBodyList.get(i).getName() + " = " + textBodyList.get(i).getValue());
+						// StringBody sb = new
+						// StringBody(textBodyList.get(i).getValue(),
+						// ContentType.TEXT_PLAIN);
 					}
 					for (int i = 0; i < fileList.size(); i++) {
-						builder.addPart("[message][message_attachments_attributes][" + i + "][file]", new FileBody(fileList.get(i)));
+						// builder.addPart("[message][message_attachments_attributes]["
+						// + i + "][file]", new FileBody(fileList.get(i)));
+						String fileString="123456";
+//						builder.addBinaryBody("[message][message_attachments_attributes][" + i + "][file]", fileString.getBytes(),
+//								ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())), fileList.get(i).getName());
+//						
+						builder.addBinaryBody("[message][message_attachments_attributes][" + i + "][file]", fileList.get(i),
+								ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())), fileList.get(i).getName());
+						
+						Log.i(tag, fileList.get(i).getAbsolutePath());
 					}
 
 					final HttpEntity entity = builder.build();
 					Log.i(tag, "entity=" + entity);
-					OutputStream os = connection.getOutputStream();
-					entity.writeTo(connection.getOutputStream());
-					os.close();
+					// OutputStream os = connection.getOutputStream();
+					// entity.writeTo(connection.getOutputStream());
+					// os.close();
 
-					// ProgressiveEntity progressiveEntity = new
-					// ProgressiveEntity(entity);
-					// progressiveEntity.writeTo(connection.getOutputStream());
-
-					// OutputStream os = new OutputStream() {
-					// private StringBuilder string = new StringBuilder();
-					//
-					// @Override
-					// public void write(int b) throws IOException {
-					// this.string.append((char) b);
-					// }
-					//
-					// // Netbeans IDE automatically overrides this toString()
-					// public String toString() {
-					// return this.string.toString();
-					// }
-					// };
-					// progressiveEntity.writeTo(os);
-					// connection.getOutputStream().close();
+					ProgressiveEntity progressiveEntity = new ProgressiveEntity(entity);
+					progressiveEntity.writeTo(conn.getOutputStream());
+//					OutputStream os = new OutputStream() {
+//						private StringBuilder string = new StringBuilder();
+//
+//						@Override
+//						public void write(int b) throws IOException {
+//							this.string.append((char) b);
+//						}
+//
+//						public String toString() {
+//							return this.string.toString();
+//						}
+//					};
+//					progressiveEntity.writeTo(os);
+//					Log.d(tag, os.toString());
+//					conn.getOutputStream().flush();
+					conn.getOutputStream().close();
 				} else if (!TextUtils.isEmpty(content)) {
 					Log.i(tag, "content=" + content);
-					OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());
+					OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
 					osw.write(content);
 					osw.close();
 				}
 			}
-			connection.connect();
-			result.setCode(connection.getResponseCode());
+			conn.connect();
+			result.setCode(conn.getResponseCode());
 			InputStream is = null;
-			Log.i(tag, result.toString());
-			if (result.isOK() || result.isCreated()) {
-				is = connection.getInputStream();
+			if (result.isOK() || result.isCreated() || result.isNoContent()) {
+				is = conn.getInputStream();
 			} else {
-				is = connection.getErrorStream();
+				is = conn.getErrorStream();
 			}
 			if (is != null) {
 				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -309,7 +341,9 @@ public class Conn {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-			
+		Log.i(tag, result.toString());
 		return result;
 	}
 }
+
+

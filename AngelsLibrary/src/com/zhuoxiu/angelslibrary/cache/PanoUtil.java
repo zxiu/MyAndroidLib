@@ -14,8 +14,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
-import com.zhuoxiu.angelslibrary.net.ConnOld;
-import com.zhuoxiu.angelslibrary.net.ConnOld.OnDownloadListener;
+import com.zhuoxiu.angelslibrary.net.Conn.OnDownloadListener;
 import com.zhuoxiu.angelslibrary.net.URLCoder;
 
 public class PanoUtil {
@@ -53,8 +52,8 @@ public class PanoUtil {
 			return null;
 		}
 		if (!file.exists()) {
-			ConnOld conn = new ConnOld(url, ConnOld.GET);
-			conn.downloadFileWithProgress(file, downloadListener);
+//			ConnOld conn = new ConnOld(url, ConnOld.GET);
+//			conn.downloadFileWithProgress(file, downloadListener);
 		}
 		return file;
 	}

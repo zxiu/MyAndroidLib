@@ -23,8 +23,9 @@ public class HttpResult implements org.apache.http.HttpStatus {
 		return "HttpResult [code=" + code + ", getEntityString()=" + getEntityString() + "]";
 	}
 
-	public void setCode(int code) {
+	public HttpResult setCode(int code) {
 		this.code = code;
+		return this;
 	}
 
 	public void setEntity(HttpEntity entity) {
