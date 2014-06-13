@@ -2,6 +2,7 @@ package com.zhuoxiu.angelslibrary.net;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +15,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -41,17 +43,19 @@ import cn.trinea.android.common.util.ListUtils;
 
 import android.text.TextUtils;
 import android.util.Log;
+import android.webkit.URLUtil;
 
-public class Conn implements Constant{
+public class Conn implements Constant {
 	public interface OnDownloadListener {
-		public void onDownloadBegin(long totalSize);
+		public void onStart(long totalSize);
 
-		public void onProgressChange(long finishedSize);
+		public void onProgress(long finishedSize, long totalSize);
 
-		public void onDownloadFinish(boolean isSuccessful);
+		public void onFinish(boolean success, File downloadedFile);
 	}
-	
-	
+
+	static final int BUFFER_SIZE = 4096;
+
 	public static final String CHARSET = org.apache.http.protocol.HTTP.UTF_8;
 	public static final String GET = HttpGet.METHOD_NAME;
 	public static final String POST = HttpPost.METHOD_NAME;
@@ -277,13 +281,15 @@ public class Conn implements Constant{
 					for (int i = 0; i < fileList.size(); i++) {
 						// builder.addPart("[message][message_attachments_attributes]["
 						// + i + "][file]", new FileBody(fileList.get(i)));
-						String fileString="123456";
-//						builder.addBinaryBody("[message][message_attachments_attributes][" + i + "][file]", fileString.getBytes(),
-//								ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())), fileList.get(i).getName());
-//						
+						String fileString = "123456";
+						// builder.addBinaryBody("[message][message_attachments_attributes]["
+						// + i + "][file]", fileString.getBytes(),
+						// ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())),
+						// fileList.get(i).getName());
+						//
 						builder.addBinaryBody("[message][message_attachments_attributes][" + i + "][file]", fileList.get(i),
 								ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())), fileList.get(i).getName());
-						
+
 						Log.i(tag, fileList.get(i).getAbsolutePath());
 					}
 
@@ -295,21 +301,21 @@ public class Conn implements Constant{
 
 					ProgressiveEntity progressiveEntity = new ProgressiveEntity(entity);
 					progressiveEntity.writeTo(conn.getOutputStream());
-//					OutputStream os = new OutputStream() {
-//						private StringBuilder string = new StringBuilder();
-//
-//						@Override
-//						public void write(int b) throws IOException {
-//							this.string.append((char) b);
-//						}
-//
-//						public String toString() {
-//							return this.string.toString();
-//						}
-//					};
-//					progressiveEntity.writeTo(os);
-//					Log.d(tag, os.toString());
-//					conn.getOutputStream().flush();
+					// OutputStream os = new OutputStream() {
+					// private StringBuilder string = new StringBuilder();
+					//
+					// @Override
+					// public void write(int b) throws IOException {
+					// this.string.append((char) b);
+					// }
+					//
+					// public String toString() {
+					// return this.string.toString();
+					// }
+					// };
+					// progressiveEntity.writeTo(os);
+					// Log.d(tag, os.toString());
+					// conn.getOutputStream().flush();
 					conn.getOutputStream().close();
 				} else if (!TextUtils.isEmpty(content)) {
 					Log.i(tag, "content=" + content);
@@ -344,6 +350,71 @@ public class Conn implements Constant{
 		Log.i(tag, result.toString());
 		return result;
 	}
+
+	public static File download(String fileURL, String saveDir, String key, OnDownloadListener listener) throws IOException {
+		if (URLUtil.isValidUrl(fileURL)) {
+			URL url = new URL(fileURL);
+			HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+			int responseCode = httpConn.getResponseCode();
+			// always check HTTP response code first
+			if (responseCode == HttpURLConnection.HTTP_OK) {
+				String fileName = "";
+				String disposition = httpConn.getHeaderField("Content-Disposition");
+				String contentType = httpConn.getContentType();
+				int contentLength = httpConn.getContentLength();
+				if (listener != null) {
+					listener.onStart(contentLength);
+				}
+				if (disposition != null) {
+					// extracts file name from header field
+					int index = disposition.indexOf("filename=");
+					if (index > 0) {
+						fileName = disposition.substring(index + 10, disposition.length() - 1);
+					}
+				} else {
+					// extracts file name from URL 
+					fileName = (key != null ? key + "_" : new String()) + fileURL.substring(fileURL.lastIndexOf("/") + 1, fileURL.length());
+					fileName=new Date().getTime()+".3gp";
+				}
+
+				System.out.println("Content-Type = " + contentType);
+				System.out.println("Content-Disposition = " + disposition);
+				System.out.println("Content-Length = " + contentLength);
+				System.out.println("fileName = " + fileName);
+
+				// opens input stream from the HTTP connection
+				InputStream inputStream = httpConn.getInputStream();
+				String saveFilePath = saveDir + File.separator + fileName;
+				File file = new File(saveFilePath);
+				// opens an output stream to save into file
+				if (file.exists()){
+					file.delete();
+				}
+				FileOutputStream outputStream = new FileOutputStream(saveFilePath);
+				int bytesRead = -1;
+				byte[] buffer = new byte[BUFFER_SIZE];
+				while ((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer, 0, bytesRead);
+					if (listener != null) {
+						listener.onProgress(contentLength, contentLength);
+					}
+				}
+
+				outputStream.close();
+				inputStream.close();
+				if (listener!=null){
+					listener.onFinish(file.exists() && file.isFile() && file.length() > 0, file);
+				}
+				System.out.println("File downloaded");
+				httpConn.disconnect();
+				return file;
+			} else {
+				System.out.println("No file to download. Server replied HTTP code: " + responseCode);
+				httpConn.disconnect();
+				return null;
+			}
+		}
+		return null;
+	}
+
 }
-
-

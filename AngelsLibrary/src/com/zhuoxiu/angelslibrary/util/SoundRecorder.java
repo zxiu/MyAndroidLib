@@ -46,7 +46,7 @@ public class SoundRecorder {
 		mRecorder.setOnErrorListener(new OnErrorListener() {
 			@Override
 			public void onError(MediaRecorder mr, int what, int extra) {
-				stopRecording();
+				stopRecording(); 
 			}
 		});
 		recordTimeThread = new Thread() {
