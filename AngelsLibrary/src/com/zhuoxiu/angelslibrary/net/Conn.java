@@ -85,6 +85,10 @@ public class Conn implements Constant {
 	HttpURLConnection conn;
 	String content;
 
+	public Conn(String url) throws IOException{
+		this(url,GET);
+	}
+	
 	public Conn(String url, String method) throws IOException {
 		this.url = new URL(url);
 		if (this.url.getProtocol().equalsIgnoreCase(HTTP)) {
