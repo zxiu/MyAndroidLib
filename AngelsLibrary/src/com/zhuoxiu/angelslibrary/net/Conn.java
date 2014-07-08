@@ -27,23 +27,14 @@ import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.mime.HttpMultipartMode;
-import org.apache.http.entity.mime.MultipartEntity;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.ByteArrayBody;
-import org.apache.http.entity.mime.content.ContentBody;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.trinea.android.common.util.ListUtils;
-
 import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.URLUtil;
+import cn.trinea.android.common.util.ListUtils;
 
 public class Conn implements Constant {
 	public interface OnDownloadListener {
@@ -266,67 +257,39 @@ public class Conn implements Constant {
 					conn.getOutputStream().flush();
 					conn.getOutputStream().close();
 				}
-
-				if ((textBodyList.size() > 0 || fileList.size() > 0) && conn.getRequestMethod().equalsIgnoreCase(POST)) {
-					Log.i(tag, "send multipart");
-					conn.setRequestProperty("Content-Type", "Multipart/Form-Data; Boundary=" + boundary);
-
-					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
-					builder.setBoundary(boundary);
-					builder.setCharset(Charset.forName("utf-8"));
-					for (int i = 0; i < textBodyList.size(); i++) {
-						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
-						Log.i(tag, textBodyList.get(i).getName() + " = " + textBodyList.get(i).getValue());
-						// StringBody sb = new
-						// StringBody(textBodyList.get(i).getValue(),
-						// ContentType.TEXT_PLAIN);
-					}
-					for (int i = 0; i < fileList.size(); i++) {
-						// builder.addPart("[message][message_attachments_attributes]["
-						// + i + "][file]", new FileBody(fileList.get(i)));
-						String fileString = "123456";
-						// builder.addBinaryBody("[message][message_attachments_attributes]["
-						// + i + "][file]", fileString.getBytes(),
-						// ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())),
-						// fileList.get(i).getName());
-						//
-						builder.addBinaryBody("[message][message_attachments_attributes][" + i + "][file]", fileList.get(i),
-								ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())), fileList.get(i).getName());
-
-						Log.i(tag, fileList.get(i).getAbsolutePath());
-					}
-
-					final HttpEntity entity = builder.build();
-					Log.i(tag, "entity=" + entity);
-					// OutputStream os = connection.getOutputStream();
-					// entity.writeTo(connection.getOutputStream());
-					// os.close();
-
-					ProgressiveEntity progressiveEntity = new ProgressiveEntity(entity);
-					progressiveEntity.writeTo(conn.getOutputStream());
-					// OutputStream os = new OutputStream() {
-					// private StringBuilder string = new StringBuilder();
-					//
-					// @Override
-					// public void write(int b) throws IOException {
-					// this.string.append((char) b);
-					// }
-					//
-					// public String toString() {
-					// return this.string.toString();
-					// }
-					// };
-					// progressiveEntity.writeTo(os);
-					// Log.d(tag, os.toString());
-					// conn.getOutputStream().flush();
-					conn.getOutputStream().close();
-				} else if (!TextUtils.isEmpty(content)) {
-					Log.i(tag, "content=" + content);
-					OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
-					osw.write(content);
-					osw.close();
-				}
+//
+//				if ((textBodyList.size() > 0 || fileList.size() > 0) && conn.getRequestMethod().equalsIgnoreCase(POST)) {
+//					Log.i(tag, "send multipart");
+//					conn.setRequestProperty("Content-Type", "Multipart/Form-Data; Boundary=" + boundary);
+//
+//					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+//					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+//					builder.setBoundary(boundary);
+//					builder.setCharset(Charset.forName("utf-8"));
+//					for (int i = 0; i < textBodyList.size(); i++) {
+//						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
+//						Log.i(tag, textBodyList.get(i).getName() + " = " + textBodyList.get(i).getValue());
+//					}
+//					for (int i = 0; i < fileList.size(); i++) {
+//						String fileString = "123456";
+//						builder.addBinaryBody("[message][message_attachments_attributes][" + i + "][file]", fileList.get(i),
+//								ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())), fileList.get(i).getName());
+//
+//						Log.i(tag, fileList.get(i).getAbsolutePath());
+//					}
+//
+//					final HttpEntity entity = builder.build();
+//					Log.i(tag, "entity=" + entity);
+//
+//					ProgressiveEntity progressiveEntity = new ProgressiveEntity(entity);
+//					progressiveEntity.writeTo(conn.getOutputStream());
+//					conn.getOutputStream().close();
+//				} else if (!TextUtils.isEmpty(content)) {
+//					Log.i(tag, "content=" + content);
+//					OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
+//					osw.write(content);
+//					osw.close();
+//				}
 			}
 			conn.connect();
 			result.setCode(conn.getResponseCode());
