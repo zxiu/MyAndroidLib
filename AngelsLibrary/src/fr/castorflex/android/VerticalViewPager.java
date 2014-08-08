@@ -70,6 +70,8 @@ public class VerticalViewPager extends ViewGroup {
             android.R.attr.layout_gravity
     };
 
+    boolean allowScroll = true;
+    
     /**
      * Used to track what the expected number of items in the adapter should be.
      * If the app changes this when we don't expect it, we'll throw a big obnoxious exception.
@@ -2786,4 +2788,16 @@ public class VerticalViewPager extends ViewGroup {
             return llp.position - rlp.position;
         }
     }
+    
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent ev) {
+		if (!allowScroll) {
+			return true;
+		}
+		return super.dispatchTouchEvent(ev);
+	}
+	
+	public void enableScroll(boolean allowScroll) {
+		this.allowScroll = allowScroll;
+	}
 }

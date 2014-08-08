@@ -9,7 +9,12 @@ public interface DBConstant {
 	public static final String COL_KEY = "key";
 	public static final String COL_JSON = "json";
 	public static final String COL_URL = "url";
-	
+	public static final String COL_TIMESTAMP = "timestamp";
+	public static final String COL_FLAG = "flag";
+	public static final String COL_DATA = "data";
+	public static final String COL_MESSAGE = "message";
+	public static final String COL_LAST_USE = "last_use";
+
 	// type
 	public static final String TYPE_NULL = "NULL";
 	public static final String TYPE_INTEGER = "INTEGER";
@@ -23,5 +28,7 @@ public interface DBConstant {
 	public static final int FLAG_PAID = 2;
 	public static final int FLAG_NORMAL = 3;
 	public static final int FLAG_DELETED = 4;
+	public static final int FLAG_READ = 5;
+	public static final int FLAG_UNREAD = 6;
 
 }

@@ -10,26 +10,24 @@ import android.util.Log;
 
 import com.zhuoxiu.angelslibrary.db.DBTableBuilder;
 
-public class DBHelper extends SQLiteOpenHelper implements DBConstant {
-	private static String tag = DBHelper.class.getSimpleName();
-	private static String dbName = "com.zhuoxiu.angleslibrary";
-	private static final int dbVersion = 1;
+public abstract class DBHelper extends SQLiteOpenHelper {
+	protected String tag = this.getClass().getSimpleName();
+	protected static String dbName = "com.zhuoxiu.angleslibrary";
+	protected static int dbVersion = 1;
 	public static DBHelper helper;
 
 	public static String TABLE_PHOTO = "photo";
-	public static String COL_DATA = "data";
-	public static String COL_LAST_USE = "last_use";
 
 	public DBHelper(Context context, String name, CursorFactory factory, int version) {
 		super(context, name, factory, version);
 	}
 
-	public static SQLiteDatabase getDB(Context context, boolean writeable) {
-		if (helper == null) {
-			helper = new DBHelper(context, dbName, null, dbVersion);
-		}
-		return writeable ? helper.getWritableDatabase() : helper.getReadableDatabase();
-	}
+//	public static SQLiteDatabase getDB(Context context, boolean writeable) {
+//		if (helper == null) {
+//			helper = new DBHelper(context, dbName, null, dbVersion);
+//		}
+//		return writeable ? helper.getWritableDatabase() : helper.getReadableDatabase();
+//	}
 
 	public void onCreate(SQLiteDatabase db) {
 		Log.i(tag, "onCreate");
@@ -42,14 +40,7 @@ public class DBHelper extends SQLiteOpenHelper implements DBConstant {
 		createDB(db);
 	}
 
-	private void createDB(SQLiteDatabase db) {
-		DBTableBuilder.getInstance(db, TABLE_PHOTO).addColumn(COL_ID, TYPE_INTEGER, true).addColumn(COL_URL, TYPE_TEXT).addColumn(COL_DATA, TYPE_BLOB)
-				.addColumn(COL_LAST_USE, TYPE_INTEGER).build();
-	}
-
-	public void onOpen(SQLiteDatabase db) {
-		super.onOpen(db);
-	}
+	abstract protected void createDB(SQLiteDatabase db);
 
 	@SuppressLint("NewApi")
 	public static void print(String tag, Cursor cursor) {
