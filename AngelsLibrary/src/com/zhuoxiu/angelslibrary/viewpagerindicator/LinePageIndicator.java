@@ -15,7 +15,7 @@
  */
 package com.zhuoxiu.angelslibrary.viewpagerindicator;
 
-import com.zhuoxiu.angelslibrary.R;
+import angels.zhuoxiu.library.R;
 
 import android.content.Context;
 import android.content.res.Resources;

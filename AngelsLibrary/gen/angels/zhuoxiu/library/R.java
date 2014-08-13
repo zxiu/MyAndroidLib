@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.zhuoxiu.angelslibrary;
+package angels.zhuoxiu.library;
 
 public final class R {
     public static final class anim {
@@ -1968,26 +1968,26 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBar_background com.zhuoxiu.angelslibrary:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundSplit com.zhuoxiu.angelslibrary:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundStacked com.zhuoxiu.angelslibrary:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_customNavigationLayout com.zhuoxiu.angelslibrary:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
-           <tr><td><code>{@link #ActionBar_displayOptions com.zhuoxiu.angelslibrary:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
-           <tr><td><code>{@link #ActionBar_divider com.zhuoxiu.angelslibrary:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
-           <tr><td><code>{@link #ActionBar_height com.zhuoxiu.angelslibrary:height}</code></td><td> Specifies a fixed height.</td></tr>
-           <tr><td><code>{@link #ActionBar_homeLayout com.zhuoxiu.angelslibrary:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_icon com.zhuoxiu.angelslibrary:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
-           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle com.zhuoxiu.angelslibrary:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
-           <tr><td><code>{@link #ActionBar_itemPadding com.zhuoxiu.angelslibrary:itemPadding}</code></td><td> Specifies padding that should be applied to the left and right sides of
+           <tr><td><code>{@link #ActionBar_background angels.zhuoxiu.library:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundSplit angels.zhuoxiu.library:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundStacked angels.zhuoxiu.library:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_customNavigationLayout angels.zhuoxiu.library:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
+           <tr><td><code>{@link #ActionBar_displayOptions angels.zhuoxiu.library:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
+           <tr><td><code>{@link #ActionBar_divider angels.zhuoxiu.library:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
+           <tr><td><code>{@link #ActionBar_height angels.zhuoxiu.library:height}</code></td><td> Specifies a fixed height.</td></tr>
+           <tr><td><code>{@link #ActionBar_homeLayout angels.zhuoxiu.library:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_icon angels.zhuoxiu.library:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
+           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle angels.zhuoxiu.library:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
+           <tr><td><code>{@link #ActionBar_itemPadding angels.zhuoxiu.library:itemPadding}</code></td><td> Specifies padding that should be applied to the left and right sides of
              system-provided items in the bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_logo com.zhuoxiu.angelslibrary:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
-           <tr><td><code>{@link #ActionBar_navigationMode com.zhuoxiu.angelslibrary:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarPadding com.zhuoxiu.angelslibrary:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarStyle com.zhuoxiu.angelslibrary:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_subtitle com.zhuoxiu.angelslibrary:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #ActionBar_subtitleTextStyle com.zhuoxiu.angelslibrary:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #ActionBar_title com.zhuoxiu.angelslibrary:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #ActionBar_titleTextStyle com.zhuoxiu.angelslibrary:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #ActionBar_logo angels.zhuoxiu.library:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
+           <tr><td><code>{@link #ActionBar_navigationMode angels.zhuoxiu.library:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarPadding angels.zhuoxiu.library:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarStyle angels.zhuoxiu.library:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_subtitle angels.zhuoxiu.library:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #ActionBar_subtitleTextStyle angels.zhuoxiu.library:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #ActionBar_title angels.zhuoxiu.library:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #ActionBar_titleTextStyle angels.zhuoxiu.library:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #ActionBar_background
            @see #ActionBar_backgroundSplit
@@ -2025,7 +2025,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:background
+          @attr name angels.zhuoxiu.library:background
         */
         public static final int ActionBar_background = 10;
         /**
@@ -2039,7 +2039,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:backgroundSplit
+          @attr name angels.zhuoxiu.library:backgroundSplit
         */
         public static final int ActionBar_backgroundSplit = 12;
         /**
@@ -2053,7 +2053,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:backgroundStacked
+          @attr name angels.zhuoxiu.library:backgroundStacked
         */
         public static final int ActionBar_backgroundStacked = 11;
         /**
@@ -2065,7 +2065,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:customNavigationLayout
+          @attr name angels.zhuoxiu.library:customNavigationLayout
         */
         public static final int ActionBar_customNavigationLayout = 13;
         /**
@@ -2088,7 +2088,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:displayOptions
+          @attr name angels.zhuoxiu.library:displayOptions
         */
         public static final int ActionBar_displayOptions = 3;
         /**
@@ -2100,7 +2100,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:divider
+          @attr name angels.zhuoxiu.library:divider
         */
         public static final int ActionBar_divider = 9;
         /**
@@ -2118,7 +2118,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:height
+          @attr name angels.zhuoxiu.library:height
         */
         public static final int ActionBar_height = 1;
         /**
@@ -2130,7 +2130,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:homeLayout
+          @attr name angels.zhuoxiu.library:homeLayout
         */
         public static final int ActionBar_homeLayout = 14;
         /**
@@ -2142,7 +2142,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:icon
+          @attr name angels.zhuoxiu.library:icon
         */
         public static final int ActionBar_icon = 7;
         /**
@@ -2154,7 +2154,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:indeterminateProgressStyle
+          @attr name angels.zhuoxiu.library:indeterminateProgressStyle
         */
         public static final int ActionBar_indeterminateProgressStyle = 16;
         /**
@@ -2173,7 +2173,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:itemPadding
+          @attr name angels.zhuoxiu.library:itemPadding
         */
         public static final int ActionBar_itemPadding = 18;
         /**
@@ -2185,7 +2185,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:logo
+          @attr name angels.zhuoxiu.library:logo
         */
         public static final int ActionBar_logo = 8;
         /**
@@ -2205,7 +2205,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>tabMode</code></td><td>2</td><td> The action bar will use a series of horizontal tabs for navigation. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:navigationMode
+          @attr name angels.zhuoxiu.library:navigationMode
         */
         public static final int ActionBar_navigationMode = 2;
         /**
@@ -2223,7 +2223,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:progressBarPadding
+          @attr name angels.zhuoxiu.library:progressBarPadding
         */
         public static final int ActionBar_progressBarPadding = 17;
         /**
@@ -2235,7 +2235,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:progressBarStyle
+          @attr name angels.zhuoxiu.library:progressBarStyle
         */
         public static final int ActionBar_progressBarStyle = 15;
         /**
@@ -2251,7 +2251,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:subtitle
+          @attr name angels.zhuoxiu.library:subtitle
         */
         public static final int ActionBar_subtitle = 4;
         /**
@@ -2263,7 +2263,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:subtitleTextStyle
+          @attr name angels.zhuoxiu.library:subtitleTextStyle
         */
         public static final int ActionBar_subtitleTextStyle = 6;
         /**
@@ -2279,7 +2279,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:title
+          @attr name angels.zhuoxiu.library:title
         */
         public static final int ActionBar_title = 0;
         /**
@@ -2291,7 +2291,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:titleTextStyle
+          @attr name angels.zhuoxiu.library:titleTextStyle
         */
         public static final int ActionBar_titleTextStyle = 5;
         /**  Valid LayoutParams for views placed in the action bar as custom views. 
@@ -2322,17 +2322,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowActionBar com.zhuoxiu.angelslibrary:windowActionBar}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowActionBarOverlay com.zhuoxiu.angelslibrary:windowActionBarOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMajor com.zhuoxiu.angelslibrary:windowFixedHeightMajor}</code></td><td> A fixed height for the window along the major axis of the screen,
+           <tr><td><code>{@link #ActionBarWindow_windowActionBar angels.zhuoxiu.library:windowActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowActionBarOverlay angels.zhuoxiu.library:windowActionBarOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMajor angels.zhuoxiu.library:windowFixedHeightMajor}</code></td><td> A fixed height for the window along the major axis of the screen,
              that is, when in portrait.</td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMinor com.zhuoxiu.angelslibrary:windowFixedHeightMinor}</code></td><td> A fixed height for the window along the minor axis of the screen,
+           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMinor angels.zhuoxiu.library:windowFixedHeightMinor}</code></td><td> A fixed height for the window along the minor axis of the screen,
              that is, when in landscape.</td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMajor com.zhuoxiu.angelslibrary:windowFixedWidthMajor}</code></td><td> A fixed width for the window along the major axis of the screen,
+           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMajor angels.zhuoxiu.library:windowFixedWidthMajor}</code></td><td> A fixed width for the window along the major axis of the screen,
              that is, when in landscape.</td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMinor com.zhuoxiu.angelslibrary:windowFixedWidthMinor}</code></td><td> A fixed width for the window along the minor axis of the screen,
+           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMinor angels.zhuoxiu.library:windowFixedWidthMinor}</code></td><td> A fixed width for the window along the minor axis of the screen,
              that is, when in portrait.</td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowSplitActionBar com.zhuoxiu.angelslibrary:windowSplitActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowSplitActionBar angels.zhuoxiu.library:windowSplitActionBar}</code></td><td></td></tr>
            </table>
            @see #ActionBarWindow_windowActionBar
            @see #ActionBarWindow_windowActionBarOverlay
@@ -2347,7 +2347,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010007, 0x7f010008, 0x7f010009
         };
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#windowActionBar}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#windowActionBar}
           attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
@@ -2357,11 +2357,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:windowActionBar
+          @attr name angels.zhuoxiu.library:windowActionBar
         */
         public static final int ActionBarWindow_windowActionBar = 0;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#windowActionBarOverlay}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
@@ -2371,7 +2371,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:windowActionBarOverlay
+          @attr name angels.zhuoxiu.library:windowActionBarOverlay
         */
         public static final int ActionBarWindow_windowActionBarOverlay = 1;
         /**
@@ -2394,7 +2394,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:windowFixedHeightMajor
+          @attr name angels.zhuoxiu.library:windowFixedHeightMajor
         */
         public static final int ActionBarWindow_windowFixedHeightMajor = 6;
         /**
@@ -2417,7 +2417,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:windowFixedHeightMinor
+          @attr name angels.zhuoxiu.library:windowFixedHeightMinor
         */
         public static final int ActionBarWindow_windowFixedHeightMinor = 4;
         /**
@@ -2440,7 +2440,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:windowFixedWidthMajor
+          @attr name angels.zhuoxiu.library:windowFixedWidthMajor
         */
         public static final int ActionBarWindow_windowFixedWidthMajor = 3;
         /**
@@ -2463,11 +2463,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:windowFixedWidthMinor
+          @attr name angels.zhuoxiu.library:windowFixedWidthMinor
         */
         public static final int ActionBarWindow_windowFixedWidthMinor = 5;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#windowSplitActionBar}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#windowSplitActionBar}
           attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
@@ -2477,7 +2477,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:windowSplitActionBar
+          @attr name angels.zhuoxiu.library:windowSplitActionBar
         */
         public static final int ActionBarWindow_windowSplitActionBar = 2;
         /** Attributes that can be used with a ActionMenuItemView.
@@ -2510,11 +2510,11 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionMode_background com.zhuoxiu.angelslibrary:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_backgroundSplit com.zhuoxiu.angelslibrary:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_height com.zhuoxiu.angelslibrary:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_subtitleTextStyle com.zhuoxiu.angelslibrary:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #ActionMode_titleTextStyle com.zhuoxiu.angelslibrary:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #ActionMode_background angels.zhuoxiu.library:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
+           <tr><td><code>{@link #ActionMode_backgroundSplit angels.zhuoxiu.library:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
+           <tr><td><code>{@link #ActionMode_height angels.zhuoxiu.library:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
+           <tr><td><code>{@link #ActionMode_subtitleTextStyle angels.zhuoxiu.library:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #ActionMode_titleTextStyle angels.zhuoxiu.library:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #ActionMode_background
            @see #ActionMode_backgroundSplit
@@ -2535,7 +2535,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:background
+          @attr name angels.zhuoxiu.library:background
         */
         public static final int ActionMode_background = 3;
         /**
@@ -2549,7 +2549,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:backgroundSplit
+          @attr name angels.zhuoxiu.library:backgroundSplit
         */
         public static final int ActionMode_backgroundSplit = 4;
         /**
@@ -2567,7 +2567,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:height
+          @attr name angels.zhuoxiu.library:height
         */
         public static final int ActionMode_height = 0;
         /**
@@ -2579,7 +2579,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:subtitleTextStyle
+          @attr name angels.zhuoxiu.library:subtitleTextStyle
         */
         public static final int ActionMode_subtitleTextStyle = 2;
         /**
@@ -2591,7 +2591,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:titleTextStyle
+          @attr name angels.zhuoxiu.library:titleTextStyle
         */
         public static final int ActionMode_titleTextStyle = 1;
         /**  Attrbitutes for a ActivityChooserView. 
@@ -2600,8 +2600,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable com.zhuoxiu.angelslibrary:expandActivityOverflowButtonDrawable}</code></td><td> The drawable to show in the button for expanding the activities overflow popup.</td></tr>
-           <tr><td><code>{@link #ActivityChooserView_initialActivityCount com.zhuoxiu.angelslibrary:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
+           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable angels.zhuoxiu.library:expandActivityOverflowButtonDrawable}</code></td><td> The drawable to show in the button for expanding the activities overflow popup.</td></tr>
+           <tr><td><code>{@link #ActivityChooserView_initialActivityCount angels.zhuoxiu.library:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
            </table>
            @see #ActivityChooserView_expandActivityOverflowButtonDrawable
            @see #ActivityChooserView_initialActivityCount
@@ -2623,7 +2623,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:expandActivityOverflowButtonDrawable
+          @attr name angels.zhuoxiu.library:expandActivityOverflowButtonDrawable
         */
         public static final int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
         /**
@@ -2639,7 +2639,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:initialActivityCount
+          @attr name angels.zhuoxiu.library:initialActivityCount
         */
         public static final int ActivityChooserView_initialActivityCount = 0;
         /** Attributes that can be used with a CirclePageIndicator.
@@ -2650,13 +2650,13 @@ containing a value of this type.
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #CirclePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
            <tr><td><code>{@link #CirclePageIndicator_android_orientation android:orientation}</code></td><td> Orientation of the indicator.</td></tr>
-           <tr><td><code>{@link #CirclePageIndicator_centered com.zhuoxiu.angelslibrary:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
-           <tr><td><code>{@link #CirclePageIndicator_fillColor com.zhuoxiu.angelslibrary:fillColor}</code></td><td> Color of the filled circle that represents the current page.</td></tr>
-           <tr><td><code>{@link #CirclePageIndicator_pageColor com.zhuoxiu.angelslibrary:pageColor}</code></td><td> Color of the filled circles that represents pages.</td></tr>
-           <tr><td><code>{@link #CirclePageIndicator_radius com.zhuoxiu.angelslibrary:radius}</code></td><td> Radius of the circles.</td></tr>
-           <tr><td><code>{@link #CirclePageIndicator_snap com.zhuoxiu.angelslibrary:snap}</code></td><td> Whether or not the selected indicator snaps to the circles.</td></tr>
-           <tr><td><code>{@link #CirclePageIndicator_strokeColor com.zhuoxiu.angelslibrary:strokeColor}</code></td><td> Color of the open circles.</td></tr>
-           <tr><td><code>{@link #CirclePageIndicator_strokeWidth com.zhuoxiu.angelslibrary:strokeWidth}</code></td><td> Width of the stroke used to draw the circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_centered angels.zhuoxiu.library:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_fillColor angels.zhuoxiu.library:fillColor}</code></td><td> Color of the filled circle that represents the current page.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_pageColor angels.zhuoxiu.library:pageColor}</code></td><td> Color of the filled circles that represents pages.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_radius angels.zhuoxiu.library:radius}</code></td><td> Radius of the circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_snap angels.zhuoxiu.library:snap}</code></td><td> Whether or not the selected indicator snaps to the circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_strokeColor angels.zhuoxiu.library:strokeColor}</code></td><td> Color of the open circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_strokeWidth angels.zhuoxiu.library:strokeWidth}</code></td><td> Width of the stroke used to draw the circles.</td></tr>
            </table>
            @see #CirclePageIndicator_android_background
            @see #CirclePageIndicator_android_orientation
@@ -2704,7 +2704,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:centered
+          @attr name angels.zhuoxiu.library:centered
         */
         public static final int CirclePageIndicator_centered = 2;
         /**
@@ -2721,7 +2721,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:fillColor
+          @attr name angels.zhuoxiu.library:fillColor
         */
         public static final int CirclePageIndicator_fillColor = 4;
         /**
@@ -2738,7 +2738,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:pageColor
+          @attr name angels.zhuoxiu.library:pageColor
         */
         public static final int CirclePageIndicator_pageColor = 5;
         /**
@@ -2756,7 +2756,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:radius
+          @attr name angels.zhuoxiu.library:radius
         */
         public static final int CirclePageIndicator_radius = 6;
         /**
@@ -2772,7 +2772,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:snap
+          @attr name angels.zhuoxiu.library:snap
         */
         public static final int CirclePageIndicator_snap = 7;
         /**
@@ -2789,7 +2789,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:strokeColor
+          @attr name angels.zhuoxiu.library:strokeColor
         */
         public static final int CirclePageIndicator_strokeColor = 8;
         /**
@@ -2807,7 +2807,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:strokeWidth
+          @attr name angels.zhuoxiu.library:strokeWidth
         */
         public static final int CirclePageIndicator_strokeWidth = 3;
         /** Attributes that can be used with a CompatTextView.
@@ -2816,7 +2816,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CompatTextView_textAllCaps com.zhuoxiu.angelslibrary:textAllCaps}</code></td><td> Present the text in ALL CAPS.</td></tr>
+           <tr><td><code>{@link #CompatTextView_textAllCaps angels.zhuoxiu.library:textAllCaps}</code></td><td> Present the text in ALL CAPS.</td></tr>
            </table>
            @see #CompatTextView_textAllCaps
          */
@@ -2833,7 +2833,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:textAllCaps
+          @attr name angels.zhuoxiu.library:textAllCaps
         */
         public static final int CompatTextView_textAllCaps = 0;
         /** Attributes that can be used with a DrawerLayout.
@@ -2842,7 +2842,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #DrawerLayout_handlerId com.zhuoxiu.angelslibrary:handlerId}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerLayout_handlerId angels.zhuoxiu.library:handlerId}</code></td><td></td></tr>
            </table>
            @see #DrawerLayout_handlerId
          */
@@ -2850,13 +2850,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010071
         };
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#handlerId}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#handlerId}
           attribute's value can be found in the {@link #DrawerLayout} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.zhuoxiu.angelslibrary:handlerId
+          @attr name angels.zhuoxiu.library:handlerId
         */
         public static final int DrawerLayout_handlerId = 0;
         /** Attributes that can be used with a IndexBar.
@@ -2865,11 +2865,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #IndexBar_backgroundColor com.zhuoxiu.angelslibrary:backgroundColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #IndexBar_backgroundHoverColor com.zhuoxiu.angelslibrary:backgroundHoverColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #IndexBar_textAlpha com.zhuoxiu.angelslibrary:textAlpha}</code></td><td></td></tr>
-           <tr><td><code>{@link #IndexBar_textColor com.zhuoxiu.angelslibrary:textColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #IndexBar_textHoverColor com.zhuoxiu.angelslibrary:textHoverColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #IndexBar_backgroundColor angels.zhuoxiu.library:backgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #IndexBar_backgroundHoverColor angels.zhuoxiu.library:backgroundHoverColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #IndexBar_textAlpha angels.zhuoxiu.library:textAlpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #IndexBar_textColor angels.zhuoxiu.library:textColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #IndexBar_textHoverColor angels.zhuoxiu.library:textHoverColor}</code></td><td></td></tr>
            </table>
            @see #IndexBar_backgroundColor
            @see #IndexBar_backgroundHoverColor
@@ -2882,7 +2882,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010076
         };
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#backgroundColor}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#backgroundColor}
           attribute's value can be found in the {@link #IndexBar} array.
 
 
@@ -2893,11 +2893,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:backgroundColor
+          @attr name angels.zhuoxiu.library:backgroundColor
         */
         public static final int IndexBar_backgroundColor = 3;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#backgroundHoverColor}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#backgroundHoverColor}
           attribute's value can be found in the {@link #IndexBar} array.
 
 
@@ -2908,11 +2908,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:backgroundHoverColor
+          @attr name angels.zhuoxiu.library:backgroundHoverColor
         */
         public static final int IndexBar_backgroundHoverColor = 4;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#textAlpha}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#textAlpha}
           attribute's value can be found in the {@link #IndexBar} array.
 
 
@@ -2922,11 +2922,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:textAlpha
+          @attr name angels.zhuoxiu.library:textAlpha
         */
         public static final int IndexBar_textAlpha = 1;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#textColor}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#textColor}
           attribute's value can be found in the {@link #IndexBar} array.
 
 
@@ -2937,11 +2937,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:textColor
+          @attr name angels.zhuoxiu.library:textColor
         */
         public static final int IndexBar_textColor = 0;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#textHoverColor}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#textHoverColor}
           attribute's value can be found in the {@link #IndexBar} array.
 
 
@@ -2952,7 +2952,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:textHoverColor
+          @attr name angels.zhuoxiu.library:textHoverColor
         */
         public static final int IndexBar_textHoverColor = 2;
         /** Attributes that can be used with a InfoBar.
@@ -2961,7 +2961,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #InfoBar_infoType com.zhuoxiu.angelslibrary:infoType}</code></td><td></td></tr>
+           <tr><td><code>{@link #InfoBar_infoType angels.zhuoxiu.library:infoType}</code></td><td></td></tr>
            </table>
            @see #InfoBar_infoType
          */
@@ -2969,7 +2969,7 @@ containing a value of this type.
             0x7f01007a
         };
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#infoType}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#infoType}
           attribute's value can be found in the {@link #InfoBar} array.
 
 
@@ -2983,7 +2983,7 @@ containing a value of this type.
 <tr><td><code>warning</code></td><td>1</td><td></td></tr>
 <tr><td><code>error</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name com.zhuoxiu.angelslibrary:infoType
+          @attr name angels.zhuoxiu.library:infoType
         */
         public static final int InfoBar_infoType = 0;
         /** Attributes that can be used with a LinePageIndicator.
@@ -2993,12 +2993,12 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #LinePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
-           <tr><td><code>{@link #LinePageIndicator_centered com.zhuoxiu.angelslibrary:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
-           <tr><td><code>{@link #LinePageIndicator_gapWidth com.zhuoxiu.angelslibrary:gapWidth}</code></td><td> Width of the gap between each indicator line.</td></tr>
-           <tr><td><code>{@link #LinePageIndicator_lineWidth com.zhuoxiu.angelslibrary:lineWidth}</code></td><td> Width of each indicator line.</td></tr>
-           <tr><td><code>{@link #LinePageIndicator_selectedColor com.zhuoxiu.angelslibrary:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
-           <tr><td><code>{@link #LinePageIndicator_strokeWidth com.zhuoxiu.angelslibrary:strokeWidth}</code></td><td> Width of each indicator line's stroke.</td></tr>
-           <tr><td><code>{@link #LinePageIndicator_unselectedColor com.zhuoxiu.angelslibrary:unselectedColor}</code></td><td> Color of the unselected lines that represent the pages.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_centered angels.zhuoxiu.library:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_gapWidth angels.zhuoxiu.library:gapWidth}</code></td><td> Width of the gap between each indicator line.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_lineWidth angels.zhuoxiu.library:lineWidth}</code></td><td> Width of each indicator line.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_selectedColor angels.zhuoxiu.library:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_strokeWidth angels.zhuoxiu.library:strokeWidth}</code></td><td> Width of each indicator line's stroke.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_unselectedColor angels.zhuoxiu.library:unselectedColor}</code></td><td> Color of the unselected lines that represent the pages.</td></tr>
            </table>
            @see #LinePageIndicator_android_background
            @see #LinePageIndicator_centered
@@ -3034,7 +3034,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:centered
+          @attr name angels.zhuoxiu.library:centered
         */
         public static final int LinePageIndicator_centered = 1;
         /**
@@ -3052,7 +3052,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:gapWidth
+          @attr name angels.zhuoxiu.library:gapWidth
         */
         public static final int LinePageIndicator_gapWidth = 6;
         /**
@@ -3070,7 +3070,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:lineWidth
+          @attr name angels.zhuoxiu.library:lineWidth
         */
         public static final int LinePageIndicator_lineWidth = 5;
         /**
@@ -3087,7 +3087,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:selectedColor
+          @attr name angels.zhuoxiu.library:selectedColor
         */
         public static final int LinePageIndicator_selectedColor = 2;
         /**
@@ -3105,7 +3105,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:strokeWidth
+          @attr name angels.zhuoxiu.library:strokeWidth
         */
         public static final int LinePageIndicator_strokeWidth = 3;
         /**
@@ -3122,7 +3122,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:unselectedColor
+          @attr name angels.zhuoxiu.library:unselectedColor
         */
         public static final int LinePageIndicator_unselectedColor = 4;
         /** Attributes that can be used with a LinearLayoutICS.
@@ -3131,9 +3131,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LinearLayoutICS_divider com.zhuoxiu.angelslibrary:divider}</code></td><td> Drawable to use as a vertical divider between buttons.</td></tr>
-           <tr><td><code>{@link #LinearLayoutICS_dividerPadding com.zhuoxiu.angelslibrary:dividerPadding}</code></td><td> Size of padding on either end of a divider.</td></tr>
-           <tr><td><code>{@link #LinearLayoutICS_showDividers com.zhuoxiu.angelslibrary:showDividers}</code></td><td> Setting for which dividers to show.</td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_divider angels.zhuoxiu.library:divider}</code></td><td> Drawable to use as a vertical divider between buttons.</td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_dividerPadding angels.zhuoxiu.library:dividerPadding}</code></td><td> Size of padding on either end of a divider.</td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_showDividers angels.zhuoxiu.library:showDividers}</code></td><td> Setting for which dividers to show.</td></tr>
            </table>
            @see #LinearLayoutICS_divider
            @see #LinearLayoutICS_dividerPadding
@@ -3151,7 +3151,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:divider
+          @attr name angels.zhuoxiu.library:divider
         */
         public static final int LinearLayoutICS_divider = 0;
         /**
@@ -3169,7 +3169,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:dividerPadding
+          @attr name angels.zhuoxiu.library:dividerPadding
         */
         public static final int LinearLayoutICS_dividerPadding = 2;
         /**
@@ -3190,7 +3190,7 @@ containing a value of this type.
 <tr><td><code>end</code></td><td>4</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:showDividers
+          @attr name angels.zhuoxiu.library:showDividers
         */
         public static final int LinearLayoutICS_showDividers = 1;
         /**  Base attributes that are available to all groups. 
@@ -3279,10 +3279,10 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuItem_actionLayout com.zhuoxiu.angelslibrary:actionLayout}</code></td><td> An optional layout to be used as an action view.</td></tr>
-           <tr><td><code>{@link #MenuItem_actionProviderClass com.zhuoxiu.angelslibrary:actionProviderClass}</code></td><td> The name of an optional ActionProvider class to instantiate an action view
+           <tr><td><code>{@link #MenuItem_actionLayout angels.zhuoxiu.library:actionLayout}</code></td><td> An optional layout to be used as an action view.</td></tr>
+           <tr><td><code>{@link #MenuItem_actionProviderClass angels.zhuoxiu.library:actionProviderClass}</code></td><td> The name of an optional ActionProvider class to instantiate an action view
              and perform operations such as default action for that menu item.</td></tr>
-           <tr><td><code>{@link #MenuItem_actionViewClass com.zhuoxiu.angelslibrary:actionViewClass}</code></td><td> The name of an optional View class to instantiate and use as an
+           <tr><td><code>{@link #MenuItem_actionViewClass angels.zhuoxiu.library:actionViewClass}</code></td><td> The name of an optional View class to instantiate and use as an
              action view.</td></tr>
            <tr><td><code>{@link #MenuItem_android_alphabeticShortcut android:alphabeticShortcut}</code></td><td> The alphabetic shortcut key.</td></tr>
            <tr><td><code>{@link #MenuItem_android_checkable android:checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
@@ -3298,7 +3298,7 @@ containing a value of this type.
            <tr><td><code>{@link #MenuItem_android_title android:title}</code></td><td> The title associated with the item.</td></tr>
            <tr><td><code>{@link #MenuItem_android_titleCondensed android:titleCondensed}</code></td><td> The condensed title associated with the item.</td></tr>
            <tr><td><code>{@link #MenuItem_android_visible android:visible}</code></td><td> Whether the item is shown/visible.</td></tr>
-           <tr><td><code>{@link #MenuItem_showAsAction com.zhuoxiu.angelslibrary:showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
+           <tr><td><code>{@link #MenuItem_showAsAction angels.zhuoxiu.library:showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
            </table>
            @see #MenuItem_actionLayout
            @see #MenuItem_actionProviderClass
@@ -3336,7 +3336,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:actionLayout
+          @attr name angels.zhuoxiu.library:actionLayout
         */
         public static final int MenuItem_actionLayout = 14;
         /**
@@ -3355,7 +3355,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:actionProviderClass
+          @attr name angels.zhuoxiu.library:actionProviderClass
         */
         public static final int MenuItem_actionProviderClass = 16;
         /**
@@ -3373,7 +3373,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:actionViewClass
+          @attr name angels.zhuoxiu.library:actionViewClass
         */
         public static final int MenuItem_actionViewClass = 15;
         /**
@@ -3529,7 +3529,7 @@ containing a value of this type.
                  larger segment of its container. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:showAsAction
+          @attr name angels.zhuoxiu.library:showAsAction
         */
         public static final int MenuItem_showAsAction = 13;
         /** Attributes that can be used with a MenuView.
@@ -3637,9 +3637,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PhotoView_circleAlpha com.zhuoxiu.angelslibrary:circleAlpha}</code></td><td></td></tr>
-           <tr><td><code>{@link #PhotoView_circleColor com.zhuoxiu.angelslibrary:circleColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #PhotoView_circleEnable com.zhuoxiu.angelslibrary:circleEnable}</code></td><td></td></tr>
+           <tr><td><code>{@link #PhotoView_circleAlpha angels.zhuoxiu.library:circleAlpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #PhotoView_circleColor angels.zhuoxiu.library:circleColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #PhotoView_circleEnable angels.zhuoxiu.library:circleEnable}</code></td><td></td></tr>
            </table>
            @see #PhotoView_circleAlpha
            @see #PhotoView_circleColor
@@ -3649,7 +3649,7 @@ containing a value of this type.
             0x7f010077, 0x7f010078, 0x7f010079
         };
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#circleAlpha}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#circleAlpha}
           attribute's value can be found in the {@link #PhotoView} array.
 
 
@@ -3659,11 +3659,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:circleAlpha
+          @attr name angels.zhuoxiu.library:circleAlpha
         */
         public static final int PhotoView_circleAlpha = 2;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#circleColor}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#circleColor}
           attribute's value can be found in the {@link #PhotoView} array.
 
 
@@ -3674,11 +3674,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:circleColor
+          @attr name angels.zhuoxiu.library:circleColor
         */
         public static final int PhotoView_circleColor = 1;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#circleEnable}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#circleEnable}
           attribute's value can be found in the {@link #PhotoView} array.
 
 
@@ -3688,7 +3688,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:circleEnable
+          @attr name angels.zhuoxiu.library:circleEnable
         */
         public static final int PhotoView_circleEnable = 0;
         /** Attributes that can be used with a SearchView.
@@ -3700,8 +3700,8 @@ containing a value of this type.
            <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td> The IME options to set on the query text field.</td></tr>
            <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td> The input type to set on the query text field.</td></tr>
            <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td> An optional maximum width of the SearchView.</td></tr>
-           <tr><td><code>{@link #SearchView_iconifiedByDefault com.zhuoxiu.angelslibrary:iconifiedByDefault}</code></td><td> The default state of the SearchView.</td></tr>
-           <tr><td><code>{@link #SearchView_queryHint com.zhuoxiu.angelslibrary:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
+           <tr><td><code>{@link #SearchView_iconifiedByDefault angels.zhuoxiu.library:iconifiedByDefault}</code></td><td> The default state of the SearchView.</td></tr>
+           <tr><td><code>{@link #SearchView_queryHint angels.zhuoxiu.library:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
            </table>
            @see #SearchView_android_imeOptions
            @see #SearchView_android_inputType
@@ -3754,7 +3754,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:iconifiedByDefault
+          @attr name angels.zhuoxiu.library:iconifiedByDefault
         */
         public static final int SearchView_iconifiedByDefault = 3;
         /**
@@ -3770,7 +3770,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:queryHint
+          @attr name angels.zhuoxiu.library:queryHint
         */
         public static final int SearchView_queryHint = 4;
         /** Attributes that can be used with a Spinner.
@@ -3787,12 +3787,12 @@ containing a value of this type.
            <tr><td><code>{@link #Spinner_android_dropDownWidth android:dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
            <tr><td><code>{@link #Spinner_android_gravity android:gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
            <tr><td><code>{@link #Spinner_android_popupBackground android:popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled com.zhuoxiu.angelslibrary:disableChildrenWhenDisabled}</code></td><td> Whether this spinner should mark child views as enabled/disabled when
+           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled angels.zhuoxiu.library:disableChildrenWhenDisabled}</code></td><td> Whether this spinner should mark child views as enabled/disabled when
              the spinner itself is enabled/disabled.</td></tr>
-           <tr><td><code>{@link #Spinner_popupPromptView com.zhuoxiu.angelslibrary:popupPromptView}</code></td><td> Reference to a layout to use for displaying a prompt in the dropdown for
+           <tr><td><code>{@link #Spinner_popupPromptView angels.zhuoxiu.library:popupPromptView}</code></td><td> Reference to a layout to use for displaying a prompt in the dropdown for
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_prompt com.zhuoxiu.angelslibrary:prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
-           <tr><td><code>{@link #Spinner_spinnerMode com.zhuoxiu.angelslibrary:spinnerMode}</code></td><td> Display mode for spinner options.</td></tr>
+           <tr><td><code>{@link #Spinner_prompt angels.zhuoxiu.library:prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
+           <tr><td><code>{@link #Spinner_spinnerMode angels.zhuoxiu.library:spinnerMode}</code></td><td> Display mode for spinner options.</td></tr>
            </table>
            @see #Spinner_android_dropDownHorizontalOffset
            @see #Spinner_android_dropDownSelector
@@ -3880,7 +3880,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:disableChildrenWhenDisabled
+          @attr name angels.zhuoxiu.library:disableChildrenWhenDisabled
         */
         public static final int Spinner_disableChildrenWhenDisabled = 9;
         /**
@@ -3894,7 +3894,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:popupPromptView
+          @attr name angels.zhuoxiu.library:popupPromptView
         */
         public static final int Spinner_popupPromptView = 8;
         /**
@@ -3906,7 +3906,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:prompt
+          @attr name angels.zhuoxiu.library:prompt
         */
         public static final int Spinner_prompt = 6;
         /**
@@ -3926,7 +3926,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
                  anchored to the spinner widget itself. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:spinnerMode
+          @attr name angels.zhuoxiu.library:spinnerMode
         */
         public static final int Spinner_spinnerMode = 7;
         /**  These are the standard attributes that make up a complete theme. 
@@ -3935,12 +3935,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Theme_actionDropDownStyle com.zhuoxiu.angelslibrary:actionDropDownStyle}</code></td><td> Default ActionBar dropdown style.</td></tr>
-           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight com.zhuoxiu.angelslibrary:dropdownListPreferredItemHeight}</code></td><td> The preferred item height for dropdown lists.</td></tr>
-           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator com.zhuoxiu.angelslibrary:listChoiceBackgroundIndicator}</code></td><td> Drawable used as a background for selected list items.</td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListTheme com.zhuoxiu.angelslibrary:panelMenuListTheme}</code></td><td> Default Panel Menu style.</td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListWidth com.zhuoxiu.angelslibrary:panelMenuListWidth}</code></td><td> Default Panel Menu width.</td></tr>
-           <tr><td><code>{@link #Theme_popupMenuStyle com.zhuoxiu.angelslibrary:popupMenuStyle}</code></td><td> Default PopupMenu style.</td></tr>
+           <tr><td><code>{@link #Theme_actionDropDownStyle angels.zhuoxiu.library:actionDropDownStyle}</code></td><td> Default ActionBar dropdown style.</td></tr>
+           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight angels.zhuoxiu.library:dropdownListPreferredItemHeight}</code></td><td> The preferred item height for dropdown lists.</td></tr>
+           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator angels.zhuoxiu.library:listChoiceBackgroundIndicator}</code></td><td> Drawable used as a background for selected list items.</td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListTheme angels.zhuoxiu.library:panelMenuListTheme}</code></td><td> Default Panel Menu style.</td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListWidth angels.zhuoxiu.library:panelMenuListWidth}</code></td><td> Default Panel Menu width.</td></tr>
+           <tr><td><code>{@link #Theme_popupMenuStyle angels.zhuoxiu.library:popupMenuStyle}</code></td><td> Default PopupMenu style.</td></tr>
            </table>
            @see #Theme_actionDropDownStyle
            @see #Theme_dropdownListPreferredItemHeight
@@ -3962,7 +3962,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:actionDropDownStyle
+          @attr name angels.zhuoxiu.library:actionDropDownStyle
         */
         public static final int Theme_actionDropDownStyle = 0;
         /**
@@ -3980,7 +3980,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:dropdownListPreferredItemHeight
+          @attr name angels.zhuoxiu.library:dropdownListPreferredItemHeight
         */
         public static final int Theme_dropdownListPreferredItemHeight = 1;
         /**
@@ -3992,7 +3992,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:listChoiceBackgroundIndicator
+          @attr name angels.zhuoxiu.library:listChoiceBackgroundIndicator
         */
         public static final int Theme_listChoiceBackgroundIndicator = 5;
         /**
@@ -4004,7 +4004,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:panelMenuListTheme
+          @attr name angels.zhuoxiu.library:panelMenuListTheme
         */
         public static final int Theme_panelMenuListTheme = 4;
         /**
@@ -4022,7 +4022,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:panelMenuListWidth
+          @attr name angels.zhuoxiu.library:panelMenuListWidth
         */
         public static final int Theme_panelMenuListWidth = 3;
         /**
@@ -4034,7 +4034,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:popupMenuStyle
+          @attr name angels.zhuoxiu.library:popupMenuStyle
         */
         public static final int Theme_popupMenuStyle = 2;
         /** Attributes that can be used with a TitlePageIndicator.
@@ -4046,18 +4046,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #TitlePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
            <tr><td><code>{@link #TitlePageIndicator_android_textColor android:textColor}</code></td><td> Color of regular titles.</td></tr>
            <tr><td><code>{@link #TitlePageIndicator_android_textSize android:textSize}</code></td><td> Size of title text.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_clipPadding com.zhuoxiu.angelslibrary:clipPadding}</code></td><td> Screen edge padding.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_footerColor com.zhuoxiu.angelslibrary:footerColor}</code></td><td> Color of the footer line and indicator.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorHeight com.zhuoxiu.angelslibrary:footerIndicatorHeight}</code></td><td> Height of the indicator above the footer line.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorStyle com.zhuoxiu.angelslibrary:footerIndicatorStyle}</code></td><td> Style of the indicator.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorUnderlinePadding com.zhuoxiu.angelslibrary:footerIndicatorUnderlinePadding}</code></td><td> Left and right padding of the underline indicator.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_footerLineHeight com.zhuoxiu.angelslibrary:footerLineHeight}</code></td><td> Height of the footer line.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_footerPadding com.zhuoxiu.angelslibrary:footerPadding}</code></td><td> Padding between the bottom of the title and the footer.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_linePosition com.zhuoxiu.angelslibrary:linePosition}</code></td><td> Position of the line.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_selectedBold com.zhuoxiu.angelslibrary:selectedBold}</code></td><td> Whether or not the selected item is displayed as bold.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_selectedColor com.zhuoxiu.angelslibrary:selectedColor}</code></td><td> Color of the selected title.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_titlePadding com.zhuoxiu.angelslibrary:titlePadding}</code></td><td> Padding between titles when bumping into each other.</td></tr>
-           <tr><td><code>{@link #TitlePageIndicator_topPadding com.zhuoxiu.angelslibrary:topPadding}</code></td><td> Padding between titles and the top of the View.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_clipPadding angels.zhuoxiu.library:clipPadding}</code></td><td> Screen edge padding.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerColor angels.zhuoxiu.library:footerColor}</code></td><td> Color of the footer line and indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorHeight angels.zhuoxiu.library:footerIndicatorHeight}</code></td><td> Height of the indicator above the footer line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorStyle angels.zhuoxiu.library:footerIndicatorStyle}</code></td><td> Style of the indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorUnderlinePadding angels.zhuoxiu.library:footerIndicatorUnderlinePadding}</code></td><td> Left and right padding of the underline indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerLineHeight angels.zhuoxiu.library:footerLineHeight}</code></td><td> Height of the footer line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerPadding angels.zhuoxiu.library:footerPadding}</code></td><td> Padding between the bottom of the title and the footer.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_linePosition angels.zhuoxiu.library:linePosition}</code></td><td> Position of the line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_selectedBold angels.zhuoxiu.library:selectedBold}</code></td><td> Whether or not the selected item is displayed as bold.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_selectedColor angels.zhuoxiu.library:selectedColor}</code></td><td> Color of the selected title.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_titlePadding angels.zhuoxiu.library:titlePadding}</code></td><td> Padding between titles when bumping into each other.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_topPadding angels.zhuoxiu.library:topPadding}</code></td><td> Padding between titles and the top of the View.</td></tr>
            </table>
            @see #TitlePageIndicator_android_background
            @see #TitlePageIndicator_android_textColor
@@ -4123,7 +4123,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:clipPadding
+          @attr name angels.zhuoxiu.library:clipPadding
         */
         public static final int TitlePageIndicator_clipPadding = 4;
         /**
@@ -4140,7 +4140,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:footerColor
+          @attr name angels.zhuoxiu.library:footerColor
         */
         public static final int TitlePageIndicator_footerColor = 5;
         /**
@@ -4158,7 +4158,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:footerIndicatorHeight
+          @attr name angels.zhuoxiu.library:footerIndicatorHeight
         */
         public static final int TitlePageIndicator_footerIndicatorHeight = 8;
         /**
@@ -4178,7 +4178,7 @@ containing a value of this type.
 <tr><td><code>underline</code></td><td>2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:footerIndicatorStyle
+          @attr name angels.zhuoxiu.library:footerIndicatorStyle
         */
         public static final int TitlePageIndicator_footerIndicatorStyle = 7;
         /**
@@ -4196,7 +4196,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:footerIndicatorUnderlinePadding
+          @attr name angels.zhuoxiu.library:footerIndicatorUnderlinePadding
         */
         public static final int TitlePageIndicator_footerIndicatorUnderlinePadding = 9;
         /**
@@ -4214,7 +4214,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:footerLineHeight
+          @attr name angels.zhuoxiu.library:footerLineHeight
         */
         public static final int TitlePageIndicator_footerLineHeight = 6;
         /**
@@ -4232,7 +4232,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:footerPadding
+          @attr name angels.zhuoxiu.library:footerPadding
         */
         public static final int TitlePageIndicator_footerPadding = 10;
         /**
@@ -4251,7 +4251,7 @@ containing a value of this type.
 <tr><td><code>top</code></td><td>1</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:linePosition
+          @attr name angels.zhuoxiu.library:linePosition
         */
         public static final int TitlePageIndicator_linePosition = 11;
         /**
@@ -4267,7 +4267,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:selectedBold
+          @attr name angels.zhuoxiu.library:selectedBold
         */
         public static final int TitlePageIndicator_selectedBold = 12;
         /**
@@ -4284,7 +4284,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:selectedColor
+          @attr name angels.zhuoxiu.library:selectedColor
         */
         public static final int TitlePageIndicator_selectedColor = 3;
         /**
@@ -4302,7 +4302,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:titlePadding
+          @attr name angels.zhuoxiu.library:titlePadding
         */
         public static final int TitlePageIndicator_titlePadding = 13;
         /**
@@ -4320,7 +4320,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:topPadding
+          @attr name angels.zhuoxiu.library:topPadding
         */
         public static final int TitlePageIndicator_topPadding = 14;
         /** Attributes that can be used with a UnderlinePageIndicator.
@@ -4330,10 +4330,10 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #UnderlinePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
-           <tr><td><code>{@link #UnderlinePageIndicator_fadeDelay com.zhuoxiu.angelslibrary:fadeDelay}</code></td><td> Length of the delay to fade the indicator.</td></tr>
-           <tr><td><code>{@link #UnderlinePageIndicator_fadeLength com.zhuoxiu.angelslibrary:fadeLength}</code></td><td> Length of the indicator fade to transparent.</td></tr>
-           <tr><td><code>{@link #UnderlinePageIndicator_fades com.zhuoxiu.angelslibrary:fades}</code></td><td> Whether or not the selected indicator fades.</td></tr>
-           <tr><td><code>{@link #UnderlinePageIndicator_selectedColor com.zhuoxiu.angelslibrary:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fadeDelay angels.zhuoxiu.library:fadeDelay}</code></td><td> Length of the delay to fade the indicator.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fadeLength angels.zhuoxiu.library:fadeLength}</code></td><td> Length of the indicator fade to transparent.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fades angels.zhuoxiu.library:fades}</code></td><td> Whether or not the selected indicator fades.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_selectedColor angels.zhuoxiu.library:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
            </table>
            @see #UnderlinePageIndicator_android_background
            @see #UnderlinePageIndicator_fadeDelay
@@ -4367,7 +4367,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:fadeDelay
+          @attr name angels.zhuoxiu.library:fadeDelay
         */
         public static final int UnderlinePageIndicator_fadeDelay = 3;
         /**
@@ -4383,7 +4383,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:fadeLength
+          @attr name angels.zhuoxiu.library:fadeLength
         */
         public static final int UnderlinePageIndicator_fadeLength = 4;
         /**
@@ -4399,7 +4399,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:fades
+          @attr name angels.zhuoxiu.library:fades
         */
         public static final int UnderlinePageIndicator_fades = 2;
         /**
@@ -4416,7 +4416,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:selectedColor
+          @attr name angels.zhuoxiu.library:selectedColor
         */
         public static final int UnderlinePageIndicator_selectedColor = 1;
         /** Attributes that can be used with a View.
@@ -4426,8 +4426,8 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td> Boolean that controls whether a view can take focus.</td></tr>
-           <tr><td><code>{@link #View_paddingEnd com.zhuoxiu.angelslibrary:paddingEnd}</code></td><td> Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}.</td></tr>
-           <tr><td><code>{@link #View_paddingStart com.zhuoxiu.angelslibrary:paddingStart}</code></td><td> Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingEnd angels.zhuoxiu.library:paddingEnd}</code></td><td> Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingStart angels.zhuoxiu.library:paddingStart}</code></td><td> Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}.</td></tr>
            </table>
            @see #View_android_focusable
            @see #View_paddingEnd
@@ -4465,7 +4465,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:paddingEnd
+          @attr name angels.zhuoxiu.library:paddingEnd
         */
         public static final int View_paddingEnd = 2;
         /**
@@ -4483,7 +4483,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:paddingStart
+          @attr name angels.zhuoxiu.library:paddingStart
         */
         public static final int View_paddingStart = 1;
         /** Attributes that can be used with a ViewPagerIndicator.
@@ -4492,12 +4492,12 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ViewPagerIndicator_vpiCirclePageIndicatorStyle com.zhuoxiu.angelslibrary:vpiCirclePageIndicatorStyle}</code></td><td> Style of the circle indicator.</td></tr>
-           <tr><td><code>{@link #ViewPagerIndicator_vpiIconPageIndicatorStyle com.zhuoxiu.angelslibrary:vpiIconPageIndicatorStyle}</code></td><td> Style of the icon indicator's views.</td></tr>
-           <tr><td><code>{@link #ViewPagerIndicator_vpiLinePageIndicatorStyle com.zhuoxiu.angelslibrary:vpiLinePageIndicatorStyle}</code></td><td> Style of the line indicator.</td></tr>
-           <tr><td><code>{@link #ViewPagerIndicator_vpiTabPageIndicatorStyle com.zhuoxiu.angelslibrary:vpiTabPageIndicatorStyle}</code></td><td> Style of the tab indicator's tabs.</td></tr>
-           <tr><td><code>{@link #ViewPagerIndicator_vpiTitlePageIndicatorStyle com.zhuoxiu.angelslibrary:vpiTitlePageIndicatorStyle}</code></td><td> Style of the title indicator.</td></tr>
-           <tr><td><code>{@link #ViewPagerIndicator_vpiUnderlinePageIndicatorStyle com.zhuoxiu.angelslibrary:vpiUnderlinePageIndicatorStyle}</code></td><td> Style of the underline indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiCirclePageIndicatorStyle angels.zhuoxiu.library:vpiCirclePageIndicatorStyle}</code></td><td> Style of the circle indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiIconPageIndicatorStyle angels.zhuoxiu.library:vpiIconPageIndicatorStyle}</code></td><td> Style of the icon indicator's views.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiLinePageIndicatorStyle angels.zhuoxiu.library:vpiLinePageIndicatorStyle}</code></td><td> Style of the line indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiTabPageIndicatorStyle angels.zhuoxiu.library:vpiTabPageIndicatorStyle}</code></td><td> Style of the tab indicator's tabs.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiTitlePageIndicatorStyle angels.zhuoxiu.library:vpiTitlePageIndicatorStyle}</code></td><td> Style of the title indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiUnderlinePageIndicatorStyle angels.zhuoxiu.library:vpiUnderlinePageIndicatorStyle}</code></td><td> Style of the underline indicator.</td></tr>
            </table>
            @see #ViewPagerIndicator_vpiCirclePageIndicatorStyle
            @see #ViewPagerIndicator_vpiIconPageIndicatorStyle
@@ -4519,7 +4519,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:vpiCirclePageIndicatorStyle
+          @attr name angels.zhuoxiu.library:vpiCirclePageIndicatorStyle
         */
         public static final int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
         /**
@@ -4531,7 +4531,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:vpiIconPageIndicatorStyle
+          @attr name angels.zhuoxiu.library:vpiIconPageIndicatorStyle
         */
         public static final int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
         /**
@@ -4543,7 +4543,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:vpiLinePageIndicatorStyle
+          @attr name angels.zhuoxiu.library:vpiLinePageIndicatorStyle
         */
         public static final int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
         /**
@@ -4555,7 +4555,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:vpiTabPageIndicatorStyle
+          @attr name angels.zhuoxiu.library:vpiTabPageIndicatorStyle
         */
         public static final int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
         /**
@@ -4567,7 +4567,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:vpiTitlePageIndicatorStyle
+          @attr name angels.zhuoxiu.library:vpiTitlePageIndicatorStyle
         */
         public static final int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
         /**
@@ -4579,7 +4579,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.zhuoxiu.angelslibrary:vpiUnderlinePageIndicatorStyle
+          @attr name angels.zhuoxiu.library:vpiUnderlinePageIndicatorStyle
         */
         public static final int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
         /** Attributes that can be used with a drop_down_list_attr.
@@ -4588,9 +4588,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #drop_down_list_attr_isAutoLoadOnBottom com.zhuoxiu.angelslibrary:isAutoLoadOnBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #drop_down_list_attr_isDropDownStyle com.zhuoxiu.angelslibrary:isDropDownStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #drop_down_list_attr_isOnBottomStyle com.zhuoxiu.angelslibrary:isOnBottomStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #drop_down_list_attr_isAutoLoadOnBottom angels.zhuoxiu.library:isAutoLoadOnBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #drop_down_list_attr_isDropDownStyle angels.zhuoxiu.library:isDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #drop_down_list_attr_isOnBottomStyle angels.zhuoxiu.library:isOnBottomStyle}</code></td><td></td></tr>
            </table>
            @see #drop_down_list_attr_isAutoLoadOnBottom
            @see #drop_down_list_attr_isDropDownStyle
@@ -4600,7 +4600,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010000, 0x7f010001, 0x7f010002
         };
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#isAutoLoadOnBottom}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#isAutoLoadOnBottom}
           attribute's value can be found in the {@link #drop_down_list_attr} array.
 
 
@@ -4610,11 +4610,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:isAutoLoadOnBottom
+          @attr name angels.zhuoxiu.library:isAutoLoadOnBottom
         */
         public static final int drop_down_list_attr_isAutoLoadOnBottom = 2;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#isDropDownStyle}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#isDropDownStyle}
           attribute's value can be found in the {@link #drop_down_list_attr} array.
 
 
@@ -4624,11 +4624,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:isDropDownStyle
+          @attr name angels.zhuoxiu.library:isDropDownStyle
         */
         public static final int drop_down_list_attr_isDropDownStyle = 0;
         /**
-          <p>This symbol is the offset where the {@link com.zhuoxiu.angelslibrary.R.attr#isOnBottomStyle}
+          <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#isOnBottomStyle}
           attribute's value can be found in the {@link #drop_down_list_attr} array.
 
 
@@ -4638,7 +4638,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.zhuoxiu.angelslibrary:isOnBottomStyle
+          @attr name angels.zhuoxiu.library:isOnBottomStyle
         */
         public static final int drop_down_list_attr_isOnBottomStyle = 1;
     };
