@@ -41,7 +41,7 @@ public class WebImageCache {
     }
 
     public Bitmap get(final String url) {
-        Bitmap bitmap = null;
+        Bitmap bitmap = null; 
 
         // Check for image in memory
         bitmap = getBitmapFromMemory(url);

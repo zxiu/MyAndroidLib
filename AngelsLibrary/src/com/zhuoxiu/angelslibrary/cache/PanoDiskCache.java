@@ -128,7 +128,7 @@ public class PanoDiskCache {
 			for (int i = 0; i < removeFactor; i++) {
 				if (files[i].getName().contains(CACHE_FILE_SUFFIX)) {
 					files[i].delete();
-				}
+				} 
 			}
 		}
 
@@ -179,7 +179,7 @@ public class PanoDiskCache {
 	 * 
 	 * @return
 	 */
-	private static String getDiskCacheDir() {
+	public static String getDiskCacheDir() {
 		return getSDPath() + File.separator + CACHE_DIR;
 	}
 

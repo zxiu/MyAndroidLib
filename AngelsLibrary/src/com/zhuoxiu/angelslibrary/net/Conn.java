@@ -244,7 +244,7 @@ public class Conn implements Constant {
 					conn.getOutputStream().write(param.getValue().getBytes("UTF-8"));
 					conn.getOutputStream().write("&".getBytes("UTF-8"));
 				}
-				if (content!=null){
+				if (content != null) {
 					conn.getOutputStream().write(content.getBytes("UTF-8"));
 				}
 				conn.getOutputStream().flush();
@@ -290,32 +290,22 @@ public class Conn implements Constant {
 				if (listener != null) {
 					listener.onStart(contentLength);
 				}
-				if (disposition != null) {
-					// extracts file name from header field
-					int index = disposition.indexOf("filename=");
-					if (index > 0) {
-						fileName = disposition.substring(index + 10, disposition.length() - 1);
-					}
-				} else {
-					// extracts file name from URL
-					fileName = (key != null ? key + "_" : new String()) + fileURL.substring(fileURL.lastIndexOf("/") + 1, fileURL.length());
-					fileName = new Date().getTime() + ".3gp";
-				}
-
+				fileName = (key != null ? key + "_" : new String()) + URLUtil.guessFileName(fileURL, disposition, contentType);
 				System.out.println("Content-Type = " + contentType);
 				System.out.println("Content-Disposition = " + disposition);
 				System.out.println("Content-Length = " + contentLength);
-				System.out.println("fileName = " + fileName);
+				System.out.println("saveDir = "+saveDir);
+				System.out.println("fileName = " + URLUtil.guessFileName(fileURL, disposition, contentType));
 
 				// opens input stream from the HTTP connection
 				InputStream inputStream = httpConn.getInputStream();
-				String saveFilePath = saveDir + File.separator + fileName;
-				File file = new File(saveFilePath);
+				File file = new File(saveDir, fileName);
+
 				// opens an output stream to save into file
 				if (file.exists()) {
 					file.delete();
 				}
-				FileOutputStream outputStream = new FileOutputStream(saveFilePath);
+				FileOutputStream outputStream = new FileOutputStream(file);
 				int bytesRead = -1;
 				byte[] buffer = new byte[BUFFER_SIZE];
 				while ((bytesRead = inputStream.read(buffer)) != -1) {
@@ -330,7 +320,7 @@ public class Conn implements Constant {
 				if (listener != null) {
 					listener.onFinish(file.exists() && file.isFile() && file.length() > 0, file);
 				}
-				System.out.println("File downloaded");
+				System.out.println("File downloaded = " + file);
 				httpConn.disconnect();
 				return file;
 			} else {

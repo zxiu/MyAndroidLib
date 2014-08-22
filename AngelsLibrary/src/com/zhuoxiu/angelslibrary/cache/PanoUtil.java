@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import com.zhuoxiu.angelslibrary.net.Conn.OnDownloadListener;
+import com.zhuoxiu.angelslibrary.net.Conn;
 import com.zhuoxiu.angelslibrary.net.URLCoder;
 
 public class PanoUtil {
@@ -48,14 +49,10 @@ public class PanoUtil {
 	public File loadFile(String url, OnDownloadListener downloadListener) throws IOException {
 		this.key = createKey(url);
 		File file = PanoDiskCache.getFileFromDisk(key);
-		if (file == null) {
-			return null;
+		if (file == null || !file.exists()) {
+			return Conn.download(url, PanoDiskCache.getDiskCacheDir(), key, downloadListener);
 		}
-		if (!file.exists()) {
-//			ConnOld conn = new ConnOld(url, ConnOld.GET);
-//			conn.downloadFileWithProgress(file, downloadListener);
-		}
-		return file;
+		return null;
 	}
 
 	public Bitmap getBitmap(String url) throws IOException {
