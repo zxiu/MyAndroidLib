@@ -1,20 +1,27 @@
 package com.loopj.android.image;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.graphics.PaintFlagsDrawFilter;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class SmartImageView extends ImageView {
 	private static final int LOADING_THREADS = 4;
 	private static ExecutorService threadPool = Executors.newFixedThreadPool(LOADING_THREADS);
 
 	private SmartImageTask currentTask;
+	boolean isRound = false;
 
 	public SmartImageView(Context context) {
 		super(context);
@@ -104,7 +111,7 @@ public class SmartImageView extends ImageView {
 		currentTask = new SmartImageTask(getContext(), image);
 		currentTask.setOnCompleteHandler(new SmartImageTask.OnCompleteHandler() {
 			@Override
-			public void onComplete(Bitmap bitmap) {
+			public void onComplete(final Bitmap bitmap) {
 				if (bitmap != null) {
 					setImageBitmap(bitmap);
 				} else {
@@ -127,5 +134,52 @@ public class SmartImageView extends ImageView {
 	public static void cancelAllTasks() {
 		threadPool.shutdownNow();
 		threadPool = Executors.newFixedThreadPool(LOADING_THREADS);
+	}
+
+	static Path path;
+	static Paint paint;
+	static PaintFlagsDrawFilter mPaintFlagsDrawFilter;
+
+	@SuppressLint("DrawAllocation")
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		if (isRound) {
+			int w = canvas.getWidth();
+			int h = canvas.getHeight();
+			int stroke = w / 2;
+			if (paint == null) {
+				paint = new Paint();
+				paint.setAntiAlias(true);
+				paint.setColor(Color.WHITE);
+				paint.setStyle(Style.STROKE);
+				paint.setStrokeWidth(stroke);
+
+			}
+			RectF oval = new RectF(0 + getPaddingLeft() - stroke / 2, 0 + getPaddingTop() - stroke / 2, w - getPaddingRight() + stroke / 2, h
+					- getPaddingBottom() + stroke / 2);
+			canvas.drawOval(oval, paint);
+
+		} else {
+
+		}
+	}
+
+	protected Bitmap PrepareRoundBitmap(Bitmap bitmap) {
+		int width = bitmap.getWidth();
+		int height = bitmap.getHeight();
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				if (Math.sqrt(Math.pow((x - width / 2), 2) + Math.pow((y - height / 2), 2)) >= (width + height) / 4) {
+					bitmap.setPixel(x, y, Color.WHITE);
+				}
+			}
+		}
+		return bitmap;
+	}
+
+	public void setRound(boolean isRound) {
+		this.isRound = isRound;
+		invalidate();
 	}
 }

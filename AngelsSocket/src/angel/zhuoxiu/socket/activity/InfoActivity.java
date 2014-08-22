@@ -1,11 +1,5 @@
 package angel.zhuoxiu.socket.activity;
 
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
-
 import android.app.Activity;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiInfo;

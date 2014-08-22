@@ -28,9 +28,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
 import android.webkit.URLUtil;
-import cn.trinea.android.common.util.ListUtils;
 
 public class Conn implements Constant {
 	public interface OnDownloadListener {
@@ -55,6 +53,7 @@ public class Conn implements Constant {
 	static final String ACCESS_TOKEN = "access_token";
 	static final String BEARER = "Bearer";
 	static final String CONTENT_TYPE = "Content-Type";
+	static final String APPLICATION_JSON = "application/json; charset=utf8";
 
 	public static final String tag = Conn.class.getSimpleName();
 
@@ -72,10 +71,10 @@ public class Conn implements Constant {
 	HttpURLConnection conn;
 	String content;
 
-	public Conn(String url) throws IOException{
-		this(url,GET);
+	public Conn(String url) throws IOException {
+		this(url, GET);
 	}
-	
+
 	public Conn(String url, String method) throws IOException {
 		this.url = new URL(url);
 		if (this.url.getProtocol().equalsIgnoreCase(HTTP)) {
@@ -84,12 +83,9 @@ public class Conn implements Constant {
 			conn = (HttpsURLConnection) this.url.openConnection();
 		}
 		conn.setRequestMethod(method);
-		if (method.equalsIgnoreCase(POST)) {
-			conn.setDoOutput(true);
-		}
 		conn.setDoInput(true);
-		conn.setReadTimeout(6000);
-		conn.setConnectTimeout(5000);
+		conn.setReadTimeout(15000);
+		conn.setConnectTimeout(15000);
 	}
 
 	public void addTextBody(String name, String value) {
@@ -105,7 +101,7 @@ public class Conn implements Constant {
 
 	public Conn(String url, JSONObject obj) throws IOException, JSONException {
 		this(url, POST);
-		addHeader("Content-Type", "application/json");
+		addHeader(CONTENT_TYPE, APPLICATION_JSON);
 		content = obj.toString(2);
 	}
 
@@ -240,52 +236,19 @@ public class Conn implements Constant {
 			for (NameValuePair header : headerList) {
 				conn.setRequestProperty(header.getName(), header.getValue());
 			}
-
 			if (conn.getRequestMethod().equalsIgnoreCase(POST)) {
 				conn.setDoOutput(true);
-				if (!ListUtils.isEmpty(paramList)) {
-					for (NameValuePair param : paramList) {
-						conn.getOutputStream().write(param.getName().getBytes("UTF-8"));
-						conn.getOutputStream().write("=".getBytes("UTF-8"));
-						conn.getOutputStream().write(param.getValue().getBytes("UTF-8"));
-						conn.getOutputStream().write("&".getBytes("UTF-8"));
-					}
-					conn.getOutputStream().flush();
-					conn.getOutputStream().close();
+				for (NameValuePair param : paramList) {
+					conn.getOutputStream().write(param.getName().getBytes("UTF-8"));
+					conn.getOutputStream().write("=".getBytes("UTF-8"));
+					conn.getOutputStream().write(param.getValue().getBytes("UTF-8"));
+					conn.getOutputStream().write("&".getBytes("UTF-8"));
 				}
-//
-//				if ((textBodyList.size() > 0 || fileList.size() > 0) && conn.getRequestMethod().equalsIgnoreCase(POST)) {
-//					Log.i(tag, "send multipart");
-//					conn.setRequestProperty("Content-Type", "Multipart/Form-Data; Boundary=" + boundary);
-//
-//					MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-//					builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
-//					builder.setBoundary(boundary);
-//					builder.setCharset(Charset.forName("utf-8"));
-//					for (int i = 0; i < textBodyList.size(); i++) {
-//						builder.addTextBody(textBodyList.get(i).getName(), textBodyList.get(i).getValue(), ContentType.TEXT_PLAIN);
-//						Log.i(tag, textBodyList.get(i).getName() + " = " + textBodyList.get(i).getValue());
-//					}
-//					for (int i = 0; i < fileList.size(); i++) {
-//						String fileString = "123456";
-//						builder.addBinaryBody("[message][message_attachments_attributes][" + i + "][file]", fileList.get(i),
-//								ContentType.create(URLConnection.guessContentTypeFromName(fileList.get(i).getName())), fileList.get(i).getName());
-//
-//						Log.i(tag, fileList.get(i).getAbsolutePath());
-//					}
-//
-//					final HttpEntity entity = builder.build();
-//					Log.i(tag, "entity=" + entity);
-//
-//					ProgressiveEntity progressiveEntity = new ProgressiveEntity(entity);
-//					progressiveEntity.writeTo(conn.getOutputStream());
-//					conn.getOutputStream().close();
-//				} else if (!TextUtils.isEmpty(content)) {
-//					Log.i(tag, "content=" + content);
-//					OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
-//					osw.write(content);
-//					osw.close();
-//				}
+				if (content!=null){
+					conn.getOutputStream().write(content.getBytes("UTF-8"));
+				}
+				conn.getOutputStream().flush();
+				conn.getOutputStream().close();
 			}
 			conn.connect();
 			result.setCode(conn.getResponseCode());
@@ -310,7 +273,6 @@ public class Conn implements Constant {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Log.i(tag, result.toString());
 		return result;
 	}
 
@@ -335,9 +297,9 @@ public class Conn implements Constant {
 						fileName = disposition.substring(index + 10, disposition.length() - 1);
 					}
 				} else {
-					// extracts file name from URL 
+					// extracts file name from URL
 					fileName = (key != null ? key + "_" : new String()) + fileURL.substring(fileURL.lastIndexOf("/") + 1, fileURL.length());
-					fileName=new Date().getTime()+".3gp";
+					fileName = new Date().getTime() + ".3gp";
 				}
 
 				System.out.println("Content-Type = " + contentType);
@@ -350,7 +312,7 @@ public class Conn implements Constant {
 				String saveFilePath = saveDir + File.separator + fileName;
 				File file = new File(saveFilePath);
 				// opens an output stream to save into file
-				if (file.exists()){
+				if (file.exists()) {
 					file.delete();
 				}
 				FileOutputStream outputStream = new FileOutputStream(saveFilePath);
@@ -365,7 +327,7 @@ public class Conn implements Constant {
 
 				outputStream.close();
 				inputStream.close();
-				if (listener!=null){
+				if (listener != null) {
 					listener.onFinish(file.exists() && file.isFile() && file.length() > 0, file);
 				}
 				System.out.println("File downloaded");
