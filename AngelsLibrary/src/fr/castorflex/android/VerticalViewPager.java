@@ -2729,7 +2729,7 @@ public class VerticalViewPager extends ViewGroup {
      * Layout parameters that should be supplied for views added to a
      * ViewPager.
      */
-    public static class LayoutParams extends ViewGroup.LayoutParams {
+    public static class LayoutParams extends android.support.v4.view.ViewPager.LayoutParams {
         /**
          * true if this view is a decoration on the pager itself and not
          * a view supplied by the adapter.
@@ -2765,7 +2765,8 @@ public class VerticalViewPager extends ViewGroup {
         int childIndex;
 
         public LayoutParams() {
-            super(FILL_PARENT, FILL_PARENT);
+        	super();
+            //super(FILL_PARENT, FILL_PARENT);
         }
 
         public LayoutParams(Context context, AttributeSet attrs) {

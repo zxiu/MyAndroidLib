@@ -276,30 +276,28 @@ public class Conn implements Constant {
 		return result;
 	}
 
-	public static File download(String fileURL, String saveDir, String key, OnDownloadListener listener) throws IOException {
+	public static File download(String fileURL, String saveFile, OnDownloadListener listener) throws IOException {
 		if (URLUtil.isValidUrl(fileURL)) {
 			URL url = new URL(fileURL);
 			HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 			int responseCode = httpConn.getResponseCode();
 			// always check HTTP response code first
 			if (responseCode == HttpURLConnection.HTTP_OK) {
-				String fileName = "";
 				String disposition = httpConn.getHeaderField("Content-Disposition");
 				String contentType = httpConn.getContentType();
 				int contentLength = httpConn.getContentLength();
 				if (listener != null) {
 					listener.onStart(contentLength);
 				}
-				fileName = (key != null ? key + "_" : new String()) + URLUtil.guessFileName(fileURL, disposition, contentType);
 				System.out.println("Content-Type = " + contentType);
 				System.out.println("Content-Disposition = " + disposition);
 				System.out.println("Content-Length = " + contentLength);
-				System.out.println("saveDir = "+saveDir);
+				System.out.println("saveFile = " + saveFile);
 				System.out.println("fileName = " + URLUtil.guessFileName(fileURL, disposition, contentType));
 
 				// opens input stream from the HTTP connection
 				InputStream inputStream = httpConn.getInputStream();
-				File file = new File(saveDir, fileName);
+				File file = new File(saveFile);
 
 				// opens an output stream to save into file
 				if (file.exists()) {

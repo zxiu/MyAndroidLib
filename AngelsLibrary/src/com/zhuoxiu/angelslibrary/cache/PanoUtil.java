@@ -50,7 +50,7 @@ public class PanoUtil {
 		this.key = createKey(url);
 		File file = PanoDiskCache.getFileFromDisk(key);
 		if (file == null || !file.exists()) {
-			return Conn.download(url, PanoDiskCache.getDiskCacheDir(), key, downloadListener);
+			return Conn.download(url, PanoDiskCache.getDiskCacheDir(), downloadListener);
 		}
 		return null;
 	}

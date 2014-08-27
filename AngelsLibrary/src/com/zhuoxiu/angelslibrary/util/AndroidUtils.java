@@ -1,11 +1,19 @@
 package com.zhuoxiu.angelslibrary.util;
 
+import java.io.File;
+
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo.State;
+import android.net.Uri;
+import android.util.Log;
+import android.webkit.MimeTypeMap;
 
 public class AndroidUtils {
+	static final String tag = AndroidUtils.class.getSimpleName();
+
 	public static boolean isTablet(Context context) {
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
@@ -42,4 +50,23 @@ public class AndroidUtils {
 		return (int) (pxValue / scale + 0.5f);
 	}
 
+	public static Intent getOpenFileIntent(File file) {
+		if (file == null || !file.exists() || !file.isFile()) {
+			return null;
+		}
+		String extension = MimeTypeMap.getFileExtensionFromUrl(file.getAbsolutePath());
+		String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+		if (extension == null || mimeType == null) {
+			return null;
+		}
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.addCategory(Intent.CATEGORY_DEFAULT);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		intent.setDataAndType(Uri.fromFile(file), mimeType);
+		return intent;
+	}
+
+	public static boolean hasSDCard() {
+		return android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
+	}
 }
