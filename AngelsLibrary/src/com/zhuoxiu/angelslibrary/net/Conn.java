@@ -12,7 +12,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -28,6 +27,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
 import android.webkit.URLUtil;
 
 public class Conn implements Constant {
@@ -77,6 +77,7 @@ public class Conn implements Constant {
 
 	public Conn(String url, String method) throws IOException {
 		this.url = new URL(url);
+		Log.i(tag,"url = "+url);
 		if (this.url.getProtocol().equalsIgnoreCase(HTTP)) {
 			conn = (HttpURLConnection) this.url.openConnection();
 		} else if (this.url.getProtocol().equalsIgnoreCase(HTTPS)) {
@@ -86,6 +87,12 @@ public class Conn implements Constant {
 		conn.setDoInput(true);
 		conn.setReadTimeout(15000);
 		conn.setConnectTimeout(15000);
+	}
+	
+	public Conn(String url, JSONObject obj) throws IOException, JSONException {
+		this(url, POST);
+		addHeader(CONTENT_TYPE, APPLICATION_JSON);
+		content = obj.toString(2);
 	}
 
 	public void addTextBody(String name, String value) {
@@ -97,12 +104,6 @@ public class Conn implements Constant {
 			fileList.add(file);
 			totalSize += file.length();
 		}
-	}
-
-	public Conn(String url, JSONObject obj) throws IOException, JSONException {
-		this(url, POST);
-		addHeader(CONTENT_TYPE, APPLICATION_JSON);
-		content = obj.toString(2);
 	}
 
 	public Conn setContent(String content) {
