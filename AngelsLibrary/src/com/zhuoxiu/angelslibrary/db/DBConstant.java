@@ -14,6 +14,8 @@ public interface DBConstant {
 	public static final String COL_DATA = "data";
 	public static final String COL_MESSAGE = "message";
 	public static final String COL_LAST_USE = "last_use";
+	public static final String COL_ALERT = "alert";
+	public static final String COL_CATEGORY = "category";
 
 	// type
 	public static final String TYPE_NULL = "NULL";

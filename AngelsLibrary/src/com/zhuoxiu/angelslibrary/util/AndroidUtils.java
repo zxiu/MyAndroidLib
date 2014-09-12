@@ -1,6 +1,10 @@
 package com.zhuoxiu.angelslibrary.util;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import android.content.Context;
@@ -10,6 +14,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -24,11 +29,11 @@ public class AndroidUtils {
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
 
-	public static boolean hasNet(Context context) {
-		return hasMobileNet(context) || hasWifiNet(context);
+	public static boolean isInternetConnected(Context context) {
+		return isMobileConnected(context) || isWifiConnected(context);
 	}
 
-	public static boolean hasMobileNet(Context context) {
+	public static boolean isMobileConnected(Context context) {
 		ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		// mobile 3G Data Network
 		if (connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE) == null) {
@@ -39,11 +44,35 @@ public class AndroidUtils {
 		return (mobile == State.CONNECTED || mobile == State.CONNECTING);
 	}
 
-	public static boolean hasWifiNet(Context context) {
+	public static boolean isWifiConnected(Context context) {
 		ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		// Wlan Network
 		State wifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
 		return (wifi == State.CONNECTED || wifi == State.CONNECTING);
+	}
+
+	public static boolean isURLConnectable(Context context, String url) {
+		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = cm.getActiveNetworkInfo();
+		if (netInfo != null && netInfo.isConnected()) {
+			try {
+				HttpURLConnection urlc = (HttpURLConnection) new URL(url).openConnection();
+				urlc.setConnectTimeout(10 * 1000); // 10 s.
+				urlc.connect();
+				if (urlc.getResponseCode() == 200) { // 200 = "OK" code (http
+														// connection is fine).
+					Log.wtf("Connection", "Success !");
+					return true;
+				} else {
+					return false;
+				}
+			} catch (MalformedURLException e1) {
+				return false;
+			} catch (IOException e) {
+				return false;
+			}
+		}
+		return false;
 	}
 
 	public static int dip2px(Context context, float dpValue) {
