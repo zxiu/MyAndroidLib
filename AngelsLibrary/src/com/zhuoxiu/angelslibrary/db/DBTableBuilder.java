@@ -13,8 +13,9 @@ public class DBTableBuilder implements DBConstant {
 
 	String sql = new String();
 	int columnSize = 0;
-	SQLiteDatabase db; 
+	SQLiteDatabase db;
 	String tableName;
+	List<Column> colList = new ArrayList<Column>();
 	List<String> columnList = new ArrayList<String>();
 	List<String> typeList = new ArrayList<String>();
 	List<String> primaryKeyList = new ArrayList<String>();
@@ -30,8 +31,10 @@ public class DBTableBuilder implements DBConstant {
 		this.tableName = tableName;
 	}
 
-	public DBTableBuilder addColumn(String columnName, String type, boolean primaryKey) {
+	public DBTableBuilder addColumn(String columnName, String type, String defaultValue, boolean primaryKey, boolean autoIncrement) {
 		if (columnName != null && type != null) {
+			colList.add(new Column(columnName, type, defaultValue, primaryKey, autoIncrement));
+
 			columnName = columnName.toLowerCase(Locale.ENGLISH);
 			columnList.add(columnName);
 			typeList.add(type);
@@ -40,6 +43,20 @@ public class DBTableBuilder implements DBConstant {
 			}
 		}
 		return this;
+	}
+
+	public DBTableBuilder addColumn(String columnName, boolean primaryKey, boolean autoIncrement) {
+		this.addColumn(columnName, TYPE_INTEGER, null, primaryKey, autoIncrement);
+		return this;
+	}
+
+	public DBTableBuilder addColumn(String columnName, String type, boolean primaryKey) {
+		this.addColumn(columnName, type, null, primaryKey, false);
+		return this;
+	}
+
+	public DBTableBuilder addColumn(String columnName, String type, String defaultValue) {
+		return addColumn(columnName, type, defaultValue, false, false);
 	}
 
 	public DBTableBuilder addColumn(String columnName, String type) {
@@ -58,33 +75,38 @@ public class DBTableBuilder implements DBConstant {
 
 	public void build() {
 		sql = "CREATE TABLE IF NOT EXISTS " + tableName + "(";
-		for (int i = 0; i < columnList.size(); i++) {
-			if (i > 0) {
-				sql += ", ";
-			}
-			sql += columnList.get(i) + " " + typeList.get(i);
+		for (int i = 0; i < colList.size(); i++) {
+			Column column = colList.get(i);
+			sql += (i > 0) ? ", " : "";
+			sql += column.name + " " + column.type;
+			sql += column.defaultValue != null ? " DEFAULT " + column.defaultValue : "";
+			sql += column.isPrimaryKey ? " PRIMARY KEY" : "";
+			sql += column.autoIncrement ? " AUTOINCREMENT" : "";
 		}
-		if (hasFlag) {
-			if (columnList.size() > 0) {
-				sql += ", ";
-			}
-			sql += "flag INTEGER DEFAULT " + defaultFlag;
-		}
-
-		if (primaryKeyList.size() > 0) {
-			sql += ", PRIMARY KEY (";
-			for (int i = 0; i < primaryKeyList.size(); i++) {
-				if (i > 0) {
-					sql += ", ";
-				}
-				sql += primaryKeyList.get(i);
-			}
-			sql += ")";
-		}
-
 		sql += ")";
 		Log.i(tag, "sql = " + sql);
 		db.execSQL(sql);
+	}
+
+	class Column {
+		public String name;
+		public String type;
+		public String defaultValue;
+		public boolean isPrimaryKey;
+		public boolean autoIncrement;
+
+		public Column(String name, String type, boolean isPrimary, boolean autoIncrement) {
+			this(name, type, null, isPrimary, autoIncrement);
+		}
+
+		public Column(String name, String type, String defaultValue, boolean isPrimary, boolean autoIncrement) {
+			this.name = name;
+			this.type = type;
+			this.defaultValue = defaultValue;
+			this.isPrimaryKey = isPrimary;
+			this.autoIncrement = autoIncrement;
+		}
+
 	}
 
 }

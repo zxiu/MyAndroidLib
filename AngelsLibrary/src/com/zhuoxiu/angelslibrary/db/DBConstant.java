@@ -25,12 +25,14 @@ public interface DBConstant {
 	public static final String TYPE_BLOB = "BLOB";
 
 	// flag
-	public static final int FLAG_UNSENT = 0;
-	public static final int FLAG_SENT = 1;
-	public static final int FLAG_PAID = 2;
-	public static final int FLAG_NORMAL = 3;
-	public static final int FLAG_DELETED = 4;
-	public static final int FLAG_READ = 5;
-	public static final int FLAG_UNREAD = 6;
+	public static final Integer FLAG_NONE = 0;
+	public static final Integer FLAG_NEW = 1;
+	public static final Integer FLAG_UNSENT = 2;
+	public static final Integer FLAG_SENT = 3;
+	public static final Integer FLAG_PAID = 4;
+	public static final Integer FLAG_NORMAL = 5;
+	public static final Integer FLAG_DELETED = 6;
+	public static final Integer FLAG_READ = 7;
+	public static final Integer FLAG_UNREAD = 8;
 
 }
