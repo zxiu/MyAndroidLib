@@ -20,7 +20,7 @@ public class DBTableBuilder implements DBConstant {
 	List<String> typeList = new ArrayList<String>();
 	List<String> primaryKeyList = new ArrayList<String>();
 	private boolean hasFlag;
-	private int defaultFlag = FLAG_UNSENT;
+	private int defaultFlag;
 
 	public static DBTableBuilder getInstance(SQLiteDatabase db, String tableName) {
 		return new DBTableBuilder(db, tableName);
@@ -70,7 +70,7 @@ public class DBTableBuilder implements DBConstant {
 	}
 
 	public DBTableBuilder addFlagColumn() {
-		return addFlagColumn(FLAG_UNSENT);
+		return addFlagColumn(FLAG_NONE);
 	}
 
 	public void build() {
