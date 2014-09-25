@@ -13,6 +13,10 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
@@ -85,6 +89,23 @@ public class AndroidUtils {
 		return (int) (pxValue / scale + 0.5f);
 	}
 
+	public static Bitmap drawableToBitmap (Drawable drawable) {
+	    if (drawable instanceof BitmapDrawable) {
+	        return ((BitmapDrawable)drawable).getBitmap();
+	    }
+
+	    int width = drawable.getIntrinsicWidth();
+	    width = width > 0 ? width : 1;
+	    int height = drawable.getIntrinsicHeight();
+	    height = height > 0 ? height : 1;
+
+	    Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+	    Canvas canvas = new Canvas(bitmap); 
+	    drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+	    drawable.draw(canvas);
+	    return bitmap;
+	}
+	
 	public static Intent getOpenFileIntent(File file) {
 		if (file == null || !file.exists() || !file.isFile()) {
 			return null;
