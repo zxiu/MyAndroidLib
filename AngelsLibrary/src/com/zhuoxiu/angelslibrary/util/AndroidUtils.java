@@ -7,6 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+import android.R.integer;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,7 +16,12 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
@@ -89,23 +96,23 @@ public class AndroidUtils {
 		return (int) (pxValue / scale + 0.5f);
 	}
 
-	public static Bitmap drawableToBitmap (Drawable drawable) {
-	    if (drawable instanceof BitmapDrawable) {
-	        return ((BitmapDrawable)drawable).getBitmap();
-	    }
+	public static Bitmap drawableToBitmap(Drawable drawable) {
+		if (drawable instanceof BitmapDrawable) {
+			return ((BitmapDrawable) drawable).getBitmap();
+		}
 
-	    int width = drawable.getIntrinsicWidth();
-	    width = width > 0 ? width : 1;
-	    int height = drawable.getIntrinsicHeight();
-	    height = height > 0 ? height : 1;
+		int width = drawable.getIntrinsicWidth();
+		width = width > 0 ? width : 1;
+		int height = drawable.getIntrinsicHeight();
+		height = height > 0 ? height : 1;
 
-	    Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-	    Canvas canvas = new Canvas(bitmap); 
-	    drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-	    drawable.draw(canvas);
-	    return bitmap;
+		Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+		Canvas canvas = new Canvas(bitmap);
+		drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+		drawable.draw(canvas);
+		return bitmap;
 	}
-	
+
 	public static Intent getOpenFileIntent(File file) {
 		if (file == null || !file.exists() || !file.isFile()) {
 			return null;
@@ -156,4 +163,46 @@ public class AndroidUtils {
 		}
 		return file;
 	}
+
+	static Bitmap generatorContactCountIcon(Context context, Bitmap icon) {
+		int iconSize = (int) context.getResources().getDimension(android.R.dimen.app_icon_size);
+		Bitmap contactIcon = Bitmap.createBitmap(iconSize, iconSize, Config.ARGB_8888);
+		Canvas canvas = new Canvas(contactIcon);
+
+		Paint iconPaint = new Paint();
+		iconPaint.setDither(true);
+		iconPaint.setFilterBitmap(true);
+		Rect src = new Rect(0, 0, icon.getWidth(), icon.getHeight());
+		Rect dst = new Rect(0, 0, iconSize, iconSize);
+		canvas.drawBitmap(icon, src, dst, iconPaint);
+		int contacyCount = 11;
+		Paint countPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DEV_KERN_TEXT_FLAG);
+		countPaint.setColor(Color.RED);
+		countPaint.setTextSize(20f);
+		countPaint.setTypeface(Typeface.DEFAULT_BOLD);
+		canvas.drawText(String.valueOf(contacyCount), iconSize - 18, 25, countPaint);
+		return contactIcon;
+	} 
+
+	public static void updateShortCut(Context context, String title, int iconResId) {
+		Log.i(tag,"updateShortCut");
+		Intent shortcutIntent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
+		if (title != null) {
+			shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, title);
+		}
+		shortcutIntent.putExtra("duplicate", false);
+		Intent mainIntent = new Intent(Intent.ACTION_MAIN);
+		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+		mainIntent.setComponent(new ComponentName(context.getPackageName(), context.getPackageName() + ".MainActivity"));
+		mainIntent.setClass(context, context.getClass());
+
+		shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, mainIntent);
+		shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context, iconResId));
+		// shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON,
+		// generatorContactCountIcon(context, ((BitmapDrawable)
+		// (context.getResources().getDrawable(iconResId))).getBitmap()));
+		context.sendBroadcast(shortcutIntent);
+	}
+
 }
