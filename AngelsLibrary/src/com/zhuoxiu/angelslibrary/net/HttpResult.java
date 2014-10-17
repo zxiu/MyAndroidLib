@@ -8,8 +8,8 @@ import org.apache.http.util.EntityUtils;
 
 public class HttpResult implements org.apache.http.HttpStatus {
 	String tag = this.getClass().getSimpleName();
-
-	private int code;
+	public static final int CODE_EXCEPTION = -1;
+	private int code = 0;
 	private byte[] bytes;
 	public static final int NOT_CONNECTED = 0;
 	public static final String CHARSET = "utf-8";
@@ -77,4 +77,11 @@ public class HttpResult implements org.apache.http.HttpStatus {
 		return (code == SC_BAD_REQUEST);
 	}
 
+	public boolean isForbidden() {
+		return (code == SC_FORBIDDEN);
+	}
+
+	public boolean isException() {
+		return (code == CODE_EXCEPTION);
+	}
 }

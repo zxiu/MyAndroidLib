@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ public class Conn implements Constant {
 
 	public Conn(String url, String method) throws IOException {
 		this.url = new URL(url);
-		Log.i(tag,"url = "+url);
+		Log.i(tag, "url = " + url);
 		if (this.url.getProtocol().equalsIgnoreCase(HTTP)) {
 			conn = (HttpURLConnection) this.url.openConnection();
 		} else if (this.url.getProtocol().equalsIgnoreCase(HTTPS)) {
@@ -88,11 +89,20 @@ public class Conn implements Constant {
 		conn.setReadTimeout(15000);
 		conn.setConnectTimeout(15000);
 	}
-	
+
 	public Conn(String url, JSONObject obj) throws IOException, JSONException {
 		this(url, POST);
 		addHeader(CONTENT_TYPE, APPLICATION_JSON);
 		content = obj.toString(2);
+	}
+
+	public Conn setRequestMethod(String method) {
+		try {
+			conn.setRequestMethod(method);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return this;
 	}
 
 	public void addTextBody(String name, String value) {
@@ -269,10 +279,10 @@ public class Conn implements Constant {
 				}
 				result.setEntityString(resultString);
 			}
-		} catch (MalformedURLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+			result.setCode(HttpResult.CODE_EXCEPTION);
+			result.setEntityString(e.getMessage());
 		}
 		return result;
 	}
