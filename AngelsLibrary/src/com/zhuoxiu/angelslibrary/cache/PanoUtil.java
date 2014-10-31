@@ -123,7 +123,7 @@ public class PanoUtil {
 	/**
 	 * Scale Bitmap
 	 * 
-	 * @param context
+	 * @param mContext
 	 * @param in
 	 * @return
 	 */
