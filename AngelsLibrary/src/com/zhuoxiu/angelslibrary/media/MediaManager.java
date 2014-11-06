@@ -23,7 +23,7 @@ public class MediaManager {
 			actionId = System.currentTimeMillis();
 		} while (fetchMediaListenerArray.get(actionId) != null);
 		intent.putExtra(MediaActivity.KEY_ACTION_ID, actionId);
-		return intent;
+		return intent; 
 	}
 
 	public static Intent getImageCaptureIntent(Context context) {
