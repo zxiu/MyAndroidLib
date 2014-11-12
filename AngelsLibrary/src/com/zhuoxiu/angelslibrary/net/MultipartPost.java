@@ -72,7 +72,7 @@ public class MultipartPost implements Constant {
 	}
 
 	public void setAuthBearerToken(String token) {
-		addHeader(AUTHORIZATION,BEARER+" "+token);
+		addHeader(AUTHORIZATION, BEARER + " " + token);
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class MultipartPost implements Constant {
 		writer.append(LINE_FEED).flush();
 		writer.append("--" + boundary + "--").append(LINE_FEED);
 		writer.close();
-		//httpConn.connect();
+		// httpConn.connect();
 		HttpResult result = new HttpResult().setCode(httpConn.getResponseCode());
 		InputStream is = null;
 		if (result.isOK() || result.isCreated() || result.isNoContent()) {

@@ -96,6 +96,7 @@ public class AndroidUtils {
 		return (int) (pxValue / scale + 0.5f);
 	}
 
+	
 	public static Bitmap drawableToBitmap(Drawable drawable) {
 		if (drawable instanceof BitmapDrawable) {
 			return ((BitmapDrawable) drawable).getBitmap();

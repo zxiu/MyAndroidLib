@@ -1,6 +1,7 @@
 package com.zhuoxiu.angelslibrary.net;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FilterOutputStream;
@@ -283,6 +284,69 @@ public class Conn implements Constant {
 			e.printStackTrace();
 			result.setCode(HttpResult.CODE_EXCEPTION);
 			result.setEntityString(e.getMessage());
+		}
+		return result;
+	}
+	
+	public static HttpResult upload(String fileURL, String saveFile, OnDownloadListener listener) throws IOException {
+		HttpResult result=new HttpResult();
+		if (URLUtil.isValidUrl(fileURL)) {
+			URL url = new URL(fileURL);
+			HttpURLConnection httpUrlConn = (HttpURLConnection) url.openConnection();
+			httpUrlConn.setUseCaches(false);
+			httpUrlConn.setDoOutput(true);
+			httpUrlConn.setRequestMethod("POST");
+			httpUrlConn.setRequestProperty("Cache-Control", "no-cache");
+			DataOutputStream request = new DataOutputStream(httpUrlConn.getOutputStream());
+
+			
+			
+			
+			int responseCode = httpUrlConn.getResponseCode();
+			// always check HTTP response code first
+			if (responseCode == HttpURLConnection.HTTP_OK) {
+				String disposition = httpUrlConn.getHeaderField("Content-Disposition");
+				String contentType = httpUrlConn.getContentType();
+				int contentLength = httpUrlConn.getContentLength();
+				if (listener != null) {
+					listener.onStart(contentLength);
+				}
+				System.out.println("Content-Type = " + contentType);
+				System.out.println("Content-Disposition = " + disposition);
+				System.out.println("Content-Length = " + contentLength);
+				System.out.println("saveFile = " + saveFile);
+				System.out.println("fileName = " + URLUtil.guessFileName(fileURL, disposition, contentType));
+
+				// opens input stream from the HTTP connection
+				InputStream inputStream = httpUrlConn.getInputStream();
+				File file = new File(saveFile);
+
+				// opens an output stream to save into file
+				if (file.exists()) {
+					file.delete();
+				}
+				FileOutputStream outputStream = new FileOutputStream(file);
+				int bytesRead = -1;
+				byte[] buffer = new byte[BUFFER_SIZE];
+				while ((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer, 0, bytesRead);
+					if (listener != null) {
+						listener.onProgress(contentLength, contentLength);
+					}
+				}
+
+				outputStream.close();
+				inputStream.close();
+				if (listener != null) {
+					listener.onFinish(file.exists() && file.isFile() && file.length() > 0, file);
+				}
+				System.out.println("File downloaded = " + file);
+				httpUrlConn.disconnect();
+			} else {
+				System.out.println("No file to download. Server replied HTTP code: " + responseCode);
+				httpUrlConn.disconnect();
+				return null;
+			}
 		}
 		return result;
 	}
