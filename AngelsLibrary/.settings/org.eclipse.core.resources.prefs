@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/com/zhuoxiu/angelslibrary/db/DBHelper.java=UTF-8
-encoding//src/com/zhuoxiu/angelslibrary/emoji/Emoji.java=UTF-8
-encoding//src/com/zhuoxiu/angelslibrary/emoji/Emoji.txt=UTF-8
-encoding//src/com/zhuoxiu/angelslibrary/util/HtmlParser.java=UTF-8
-encoding//src/com/zhuoxiu/angelslibrary/util/URLImageGetter.java=UTF-8
+encoding//src/angel/zhuoxiu/library/db/DBHelper.java=UTF-8
+encoding//src/angel/zhuoxiu/library/emoji/Emoji.java=UTF-8
+encoding//src/angel/zhuoxiu/library/emoji/Emoji.txt=UTF-8
+encoding//src/angel/zhuoxiu/library/util/HtmlParser.java=UTF-8
+encoding//src/angel/zhuoxiu/library/util/URLImageGetter.java=UTF-8
