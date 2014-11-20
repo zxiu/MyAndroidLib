@@ -382,47 +382,47 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int vpiUnderlinePageIndicatorStyle=0x7f01000f;
     }
     public static final class bool {
-        public static int default_circle_indicator_centered=0x7f070000;
-        public static int default_circle_indicator_snap=0x7f070001;
-        public static int default_line_indicator_centered=0x7f070002;
-        public static int default_title_indicator_selected_bold=0x7f070003;
-        public static int default_underline_indicator_fades=0x7f070004;
+        public static int default_circle_indicator_centered=0x7f060000;
+        public static int default_circle_indicator_snap=0x7f060001;
+        public static int default_line_indicator_centered=0x7f060002;
+        public static int default_title_indicator_selected_bold=0x7f060003;
+        public static int default_underline_indicator_fades=0x7f060004;
     }
     public static final class color {
-        public static int default_circle_indicator_fill_color=0x7f060008;
-        public static int default_circle_indicator_page_color=0x7f060009;
-        public static int default_circle_indicator_stroke_color=0x7f06000a;
-        public static int default_line_indicator_selected_color=0x7f06000b;
-        public static int default_line_indicator_unselected_color=0x7f06000c;
-        public static int default_title_indicator_footer_color=0x7f06000d;
-        public static int default_title_indicator_selected_color=0x7f06000e;
-        public static int default_title_indicator_text_color=0x7f06000f;
-        public static int default_underline_indicator_selected_color=0x7f060010;
-        public static int vpi__background_holo_dark=0x7f060000;
-        public static int vpi__background_holo_light=0x7f060001;
-        public static int vpi__bright_foreground_disabled_holo_dark=0x7f060004;
-        public static int vpi__bright_foreground_disabled_holo_light=0x7f060005;
-        public static int vpi__bright_foreground_holo_dark=0x7f060002;
-        public static int vpi__bright_foreground_holo_light=0x7f060003;
-        public static int vpi__bright_foreground_inverse_holo_dark=0x7f060006;
-        public static int vpi__bright_foreground_inverse_holo_light=0x7f060007;
-        public static int vpi__dark_theme=0x7f060011;
-        public static int vpi__light_theme=0x7f060012;
+        public static int default_circle_indicator_fill_color=0x7f050008;
+        public static int default_circle_indicator_page_color=0x7f050009;
+        public static int default_circle_indicator_stroke_color=0x7f05000a;
+        public static int default_line_indicator_selected_color=0x7f05000b;
+        public static int default_line_indicator_unselected_color=0x7f05000c;
+        public static int default_title_indicator_footer_color=0x7f05000d;
+        public static int default_title_indicator_selected_color=0x7f05000e;
+        public static int default_title_indicator_text_color=0x7f05000f;
+        public static int default_underline_indicator_selected_color=0x7f050010;
+        public static int vpi__background_holo_dark=0x7f050000;
+        public static int vpi__background_holo_light=0x7f050001;
+        public static int vpi__bright_foreground_disabled_holo_dark=0x7f050004;
+        public static int vpi__bright_foreground_disabled_holo_light=0x7f050005;
+        public static int vpi__bright_foreground_holo_dark=0x7f050002;
+        public static int vpi__bright_foreground_holo_light=0x7f050003;
+        public static int vpi__bright_foreground_inverse_holo_dark=0x7f050006;
+        public static int vpi__bright_foreground_inverse_holo_light=0x7f050007;
+        public static int vpi__dark_theme=0x7f050011;
+        public static int vpi__light_theme=0x7f050012;
     }
     public static final class dimen {
-        public static int default_circle_indicator_radius=0x7f090000;
-        public static int default_circle_indicator_stroke_width=0x7f090001;
-        public static int default_line_indicator_gap_width=0x7f090003;
-        public static int default_line_indicator_line_width=0x7f090002;
-        public static int default_line_indicator_stroke_width=0x7f090004;
-        public static int default_title_indicator_clip_padding=0x7f090005;
-        public static int default_title_indicator_footer_indicator_height=0x7f090007;
-        public static int default_title_indicator_footer_indicator_underline_padding=0x7f090008;
-        public static int default_title_indicator_footer_line_height=0x7f090006;
-        public static int default_title_indicator_footer_padding=0x7f090009;
-        public static int default_title_indicator_text_size=0x7f09000a;
-        public static int default_title_indicator_title_padding=0x7f09000b;
-        public static int default_title_indicator_top_padding=0x7f09000c;
+        public static int default_circle_indicator_radius=0x7f080000;
+        public static int default_circle_indicator_stroke_width=0x7f080001;
+        public static int default_line_indicator_gap_width=0x7f080003;
+        public static int default_line_indicator_line_width=0x7f080002;
+        public static int default_line_indicator_stroke_width=0x7f080004;
+        public static int default_title_indicator_clip_padding=0x7f080005;
+        public static int default_title_indicator_footer_indicator_height=0x7f080007;
+        public static int default_title_indicator_footer_indicator_underline_padding=0x7f080008;
+        public static int default_title_indicator_footer_line_height=0x7f080006;
+        public static int default_title_indicator_footer_padding=0x7f080009;
+        public static int default_title_indicator_text_size=0x7f08000a;
+        public static int default_title_indicator_title_padding=0x7f08000b;
+        public static int default_title_indicator_top_padding=0x7f08000c;
     }
     public static final class drawable {
         public static int ic_friend_gray=0x7f020000;
@@ -436,34 +436,34 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int vpi__tab_unselected_pressed_holo=0x7f020008;
     }
     public static final class id {
-        public static int bottom=0x7f040006;
-        public static int error=0x7f040002;
-        public static int information=0x7f040000;
-        public static int none=0x7f040003;
-        public static int top=0x7f040007;
-        public static int triangle=0x7f040004;
-        public static int underline=0x7f040005;
-        public static int warning=0x7f040001;
+        public static int bottom=0x7f0a0006;
+        public static int error=0x7f0a0000;
+        public static int information=0x7f0a0001;
+        public static int none=0x7f0a0003;
+        public static int top=0x7f0a0007;
+        public static int triangle=0x7f0a0004;
+        public static int underline=0x7f0a0005;
+        public static int warning=0x7f0a0002;
     }
     public static final class integer {
-        public static int default_circle_indicator_orientation=0x7f080000;
-        public static int default_title_indicator_footer_indicator_style=0x7f080001;
-        public static int default_title_indicator_line_position=0x7f080002;
-        public static int default_underline_indicator_fade_delay=0x7f080003;
-        public static int default_underline_indicator_fade_length=0x7f080004;
+        public static int default_circle_indicator_orientation=0x7f070000;
+        public static int default_title_indicator_footer_indicator_style=0x7f070001;
+        public static int default_title_indicator_line_position=0x7f070002;
+        public static int default_underline_indicator_fade_delay=0x7f070003;
+        public static int default_underline_indicator_fade_length=0x7f070004;
     }
     public static final class layout {
         public static int photo_test=0x7f030000;
     }
     public static final class string {
-        public static int app_name=0x7f050000;
+        public static int app_name=0x7f040000;
     }
     public static final class style {
-        public static int TextAppearance_TabPageIndicator=0x7f0a0003;
-        public static int Theme_PageIndicatorDefaults=0x7f0a0000;
-        public static int Widget=0x7f0a0001;
-        public static int Widget_IconPageIndicator=0x7f0a0004;
-        public static int Widget_TabPageIndicator=0x7f0a0002;
+        public static int TextAppearance_TabPageIndicator=0x7f090003;
+        public static int Theme_PageIndicatorDefaults=0x7f090000;
+        public static int Widget=0x7f090001;
+        public static int Widget_IconPageIndicator=0x7f090004;
+        public static int Widget_TabPageIndicator=0x7f090002;
     }
     public static final class styleable {
         /** Attributes that can be used with a CirclePageIndicator.
@@ -505,7 +505,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static final int CirclePageIndicator_android_background = 1;
+        public static int CirclePageIndicator_android_background = 1;
         /**
           <p>
           @attr description
@@ -514,7 +514,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#orientation}.
           @attr name android:orientation
         */
-        public static final int CirclePageIndicator_android_orientation = 0;
+        public static int CirclePageIndicator_android_orientation = 0;
         /**
           <p>
           @attr description
@@ -530,7 +530,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:centered
         */
-        public static final int CirclePageIndicator_centered = 2;
+        public static int CirclePageIndicator_centered = 2;
         /**
           <p>
           @attr description
@@ -547,7 +547,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:fillColor
         */
-        public static final int CirclePageIndicator_fillColor = 4;
+        public static int CirclePageIndicator_fillColor = 4;
         /**
           <p>
           @attr description
@@ -564,7 +564,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:pageColor
         */
-        public static final int CirclePageIndicator_pageColor = 5;
+        public static int CirclePageIndicator_pageColor = 5;
         /**
           <p>
           @attr description
@@ -582,7 +582,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:radius
         */
-        public static final int CirclePageIndicator_radius = 6;
+        public static int CirclePageIndicator_radius = 6;
         /**
           <p>
           @attr description
@@ -598,7 +598,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:snap
         */
-        public static final int CirclePageIndicator_snap = 7;
+        public static int CirclePageIndicator_snap = 7;
         /**
           <p>
           @attr description
@@ -615,7 +615,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:strokeColor
         */
-        public static final int CirclePageIndicator_strokeColor = 8;
+        public static int CirclePageIndicator_strokeColor = 8;
         /**
           <p>
           @attr description
@@ -633,7 +633,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:strokeWidth
         */
-        public static final int CirclePageIndicator_strokeWidth = 3;
+        public static int CirclePageIndicator_strokeWidth = 3;
         /** Attributes that can be used with a DrawerLayout.
            <p>Includes the following attributes:</p>
            <table>
@@ -656,7 +656,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name angels.zhuoxiu.library:handlerId
         */
-        public static final int DrawerLayout_handlerId = 0;
+        public static int DrawerLayout_handlerId = 0;
         /** Attributes that can be used with a IndexBar.
            <p>Includes the following attributes:</p>
            <table>
@@ -693,7 +693,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:backgroundColor
         */
-        public static final int IndexBar_backgroundColor = 3;
+        public static int IndexBar_backgroundColor = 3;
         /**
           <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#backgroundHoverColor}
           attribute's value can be found in the {@link #IndexBar} array.
@@ -708,7 +708,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:backgroundHoverColor
         */
-        public static final int IndexBar_backgroundHoverColor = 4;
+        public static int IndexBar_backgroundHoverColor = 4;
         /**
           <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#textAlpha}
           attribute's value can be found in the {@link #IndexBar} array.
@@ -722,7 +722,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:textAlpha
         */
-        public static final int IndexBar_textAlpha = 1;
+        public static int IndexBar_textAlpha = 1;
         /**
           <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#textColor}
           attribute's value can be found in the {@link #IndexBar} array.
@@ -737,7 +737,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:textColor
         */
-        public static final int IndexBar_textColor = 0;
+        public static int IndexBar_textColor = 0;
         /**
           <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#textHoverColor}
           attribute's value can be found in the {@link #IndexBar} array.
@@ -752,7 +752,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:textHoverColor
         */
-        public static final int IndexBar_textHoverColor = 2;
+        public static int IndexBar_textHoverColor = 2;
         /** Attributes that can be used with a InfoBar.
            <p>Includes the following attributes:</p>
            <table>
@@ -783,7 +783,7 @@ containing a value of this type.
 </table>
           @attr name angels.zhuoxiu.library:infoType
         */
-        public static final int InfoBar_infoType = 0;
+        public static int InfoBar_infoType = 0;
         /** Attributes that can be used with a LinePageIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -818,7 +818,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static final int LinePageIndicator_android_background = 0;
+        public static int LinePageIndicator_android_background = 0;
         /**
           <p>
           @attr description
@@ -834,7 +834,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:centered
         */
-        public static final int LinePageIndicator_centered = 1;
+        public static int LinePageIndicator_centered = 1;
         /**
           <p>
           @attr description
@@ -852,7 +852,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:gapWidth
         */
-        public static final int LinePageIndicator_gapWidth = 6;
+        public static int LinePageIndicator_gapWidth = 6;
         /**
           <p>
           @attr description
@@ -870,7 +870,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:lineWidth
         */
-        public static final int LinePageIndicator_lineWidth = 5;
+        public static int LinePageIndicator_lineWidth = 5;
         /**
           <p>
           @attr description
@@ -887,7 +887,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:selectedColor
         */
-        public static final int LinePageIndicator_selectedColor = 2;
+        public static int LinePageIndicator_selectedColor = 2;
         /**
           <p>
           @attr description
@@ -905,7 +905,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:strokeWidth
         */
-        public static final int LinePageIndicator_strokeWidth = 3;
+        public static int LinePageIndicator_strokeWidth = 3;
         /**
           <p>
           @attr description
@@ -922,7 +922,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:unselectedColor
         */
-        public static final int LinePageIndicator_unselectedColor = 4;
+        public static int LinePageIndicator_unselectedColor = 4;
         /** Attributes that can be used with a PhotoView.
            <p>Includes the following attributes:</p>
            <table>
@@ -953,7 +953,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:circleAlpha
         */
-        public static final int PhotoView_circleAlpha = 2;
+        public static int PhotoView_circleAlpha = 2;
         /**
           <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#circleColor}
           attribute's value can be found in the {@link #PhotoView} array.
@@ -968,7 +968,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:circleColor
         */
-        public static final int PhotoView_circleColor = 1;
+        public static int PhotoView_circleColor = 1;
         /**
           <p>This symbol is the offset where the {@link angels.zhuoxiu.library.R.attr#circleEnable}
           attribute's value can be found in the {@link #PhotoView} array.
@@ -982,7 +982,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name angels.zhuoxiu.library:circleEnable
         */
-        public static final int PhotoView_circleEnable = 0;
+        public static int PhotoView_circleEnable = 0;
         /** Attributes that can be used with a TitlePageIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -1035,7 +1035,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static final int TitlePageIndicator_android_background = 2;
+        public static int TitlePageIndicator_android_background = 2;
         /**
           <p>
           @attr description
@@ -1044,7 +1044,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#textColor}.
           @attr name android:textColor
         */
-        public static final int TitlePageIndicator_android_textColor = 1;
+        public static int TitlePageIndicator_android_textColor = 1;
         /**
           <p>
           @attr description
@@ -1053,7 +1053,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#textSize}.
           @attr name android:textSize
         */
-        public static final int TitlePageIndicator_android_textSize = 0;
+        public static int TitlePageIndicator_android_textSize = 0;
         /**
           <p>
           @attr description
@@ -1071,7 +1071,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:clipPadding
         */
-        public static final int TitlePageIndicator_clipPadding = 4;
+        public static int TitlePageIndicator_clipPadding = 4;
         /**
           <p>
           @attr description
@@ -1088,7 +1088,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:footerColor
         */
-        public static final int TitlePageIndicator_footerColor = 5;
+        public static int TitlePageIndicator_footerColor = 5;
         /**
           <p>
           @attr description
@@ -1106,7 +1106,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:footerIndicatorHeight
         */
-        public static final int TitlePageIndicator_footerIndicatorHeight = 8;
+        public static int TitlePageIndicator_footerIndicatorHeight = 8;
         /**
           <p>
           @attr description
@@ -1126,7 +1126,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:footerIndicatorStyle
         */
-        public static final int TitlePageIndicator_footerIndicatorStyle = 7;
+        public static int TitlePageIndicator_footerIndicatorStyle = 7;
         /**
           <p>
           @attr description
@@ -1144,7 +1144,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:footerIndicatorUnderlinePadding
         */
-        public static final int TitlePageIndicator_footerIndicatorUnderlinePadding = 9;
+        public static int TitlePageIndicator_footerIndicatorUnderlinePadding = 9;
         /**
           <p>
           @attr description
@@ -1162,7 +1162,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:footerLineHeight
         */
-        public static final int TitlePageIndicator_footerLineHeight = 6;
+        public static int TitlePageIndicator_footerLineHeight = 6;
         /**
           <p>
           @attr description
@@ -1180,7 +1180,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:footerPadding
         */
-        public static final int TitlePageIndicator_footerPadding = 10;
+        public static int TitlePageIndicator_footerPadding = 10;
         /**
           <p>
           @attr description
@@ -1199,7 +1199,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:linePosition
         */
-        public static final int TitlePageIndicator_linePosition = 11;
+        public static int TitlePageIndicator_linePosition = 11;
         /**
           <p>
           @attr description
@@ -1215,7 +1215,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:selectedBold
         */
-        public static final int TitlePageIndicator_selectedBold = 12;
+        public static int TitlePageIndicator_selectedBold = 12;
         /**
           <p>
           @attr description
@@ -1232,7 +1232,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:selectedColor
         */
-        public static final int TitlePageIndicator_selectedColor = 3;
+        public static int TitlePageIndicator_selectedColor = 3;
         /**
           <p>
           @attr description
@@ -1250,7 +1250,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:titlePadding
         */
-        public static final int TitlePageIndicator_titlePadding = 13;
+        public static int TitlePageIndicator_titlePadding = 13;
         /**
           <p>
           @attr description
@@ -1268,7 +1268,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:topPadding
         */
-        public static final int TitlePageIndicator_topPadding = 14;
+        public static int TitlePageIndicator_topPadding = 14;
         /** Attributes that can be used with a UnderlinePageIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -1299,7 +1299,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static final int UnderlinePageIndicator_android_background = 0;
+        public static int UnderlinePageIndicator_android_background = 0;
         /**
           <p>
           @attr description
@@ -1315,7 +1315,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:fadeDelay
         */
-        public static final int UnderlinePageIndicator_fadeDelay = 3;
+        public static int UnderlinePageIndicator_fadeDelay = 3;
         /**
           <p>
           @attr description
@@ -1331,7 +1331,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:fadeLength
         */
-        public static final int UnderlinePageIndicator_fadeLength = 4;
+        public static int UnderlinePageIndicator_fadeLength = 4;
         /**
           <p>
           @attr description
@@ -1347,7 +1347,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:fades
         */
-        public static final int UnderlinePageIndicator_fades = 2;
+        public static int UnderlinePageIndicator_fades = 2;
         /**
           <p>
           @attr description
@@ -1364,7 +1364,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:selectedColor
         */
-        public static final int UnderlinePageIndicator_selectedColor = 1;
+        public static int UnderlinePageIndicator_selectedColor = 1;
         /** Attributes that can be used with a ViewPagerIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -1400,7 +1400,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:vpiCirclePageIndicatorStyle
         */
-        public static final int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
+        public static int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
         /**
           <p>
           @attr description
@@ -1412,7 +1412,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:vpiIconPageIndicatorStyle
         */
-        public static final int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
+        public static int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
         /**
           <p>
           @attr description
@@ -1424,7 +1424,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:vpiLinePageIndicatorStyle
         */
-        public static final int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
+        public static int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
         /**
           <p>
           @attr description
@@ -1436,7 +1436,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:vpiTabPageIndicatorStyle
         */
-        public static final int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
+        public static int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
         /**
           <p>
           @attr description
@@ -1448,7 +1448,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:vpiTitlePageIndicatorStyle
         */
-        public static final int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
+        public static int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
         /**
           <p>
           @attr description
@@ -1460,6 +1460,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name angels.zhuoxiu.library:vpiUnderlinePageIndicatorStyle
         */
-        public static final int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
+        public static int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
     };
 }

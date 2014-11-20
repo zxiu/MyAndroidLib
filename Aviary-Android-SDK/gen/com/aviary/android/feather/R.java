@@ -31,7 +31,7 @@ public final class R {
     	"crop_values" array and it also must contain the same number of entries 
     
          */
-        public static int aviary_crop_labels=0x7f090002;
+        public static int aviary_crop_labels=0x7f080002;
         /**  
     	This defines the 'ratio' values for the 'crop_labels' array
     	Ratio is defined by 'aspectX:aspectY'
@@ -41,31 +41,31 @@ public final class R {
     	value '-1' means use the same aspect(X or Y) of the original image 
     
          */
-        public static int aviary_crop_values=0x7f090003;
+        public static int aviary_crop_values=0x7f080003;
         /**  brush sizes 
          */
-        public static int aviary_draw_brush_sizes=0x7f090005;
+        public static int aviary_draw_brush_sizes=0x7f080005;
         /**  
     	Array of colors for the drawing tool
      
          */
-        public static int aviary_draw_fill_colors=0x7f090004;
+        public static int aviary_draw_fill_colors=0x7f080004;
         /**  
     ############################ SPOT ( redeye, whiten, blemish ) ####################
      
  brush size for spot tools ( red-eye, whiten, blemish ) 
          */
-        public static int aviary_spot_brush_sizes=0x7f090000;
+        public static int aviary_spot_brush_sizes=0x7f080000;
         /**  
     	Array of colors for the text tool
      
          */
-        public static int aviary_text_fill_colors=0x7f090001;
+        public static int aviary_text_fill_colors=0x7f080001;
         /**  list of available borders 
  each border must have an equivalent "feather_plugin_border_xxx_thumb" drawable 
  and a "feather_plugin_border_xxx_name" string label 
          */
-        public static int borders_list=0x7f090006;
+        public static int borders_list=0x7f080006;
     }
     public static final class attr {
         /**  orientation panel item divider weight 
@@ -1631,281 +1631,281 @@ containing a value of this type.
         public static int transcriptMode=0x7f0100f1;
     }
     public static final class color {
-        public static int aviary_adjust_fill_color=0x7f070035;
-        public static int aviary_adjust_internal_stroke_color=0x7f070034;
+        public static int aviary_adjust_fill_color=0x7f060035;
+        public static int aviary_adjust_internal_stroke_color=0x7f060034;
         /**  
     ############################ ORIENTATION ####################
     
          */
-        public static int aviary_adjust_stroke_color=0x7f070033;
-        public static int aviary_background_color=0x7f070000;
-        public static int aviary_bottom_primary_color_inverse_dark=0x7f070020;
+        public static int aviary_adjust_stroke_color=0x7f060033;
+        public static int aviary_background_color=0x7f060000;
+        public static int aviary_bottom_primary_color_inverse_dark=0x7f060020;
         /**  
     ############################ EFFECTS/FRAMES/STICKERS ####################
      
  effects/frames/stickers items background color ( inverted ) 
          */
-        public static int aviary_bottom_primary_color_inverse_light=0x7f07001f;
-        public static int aviary_circle_background_normal=0x7f070028;
-        public static int aviary_circle_background_selected=0x7f070029;
-        public static int aviary_circle_dark=0x7f070025;
+        public static int aviary_bottom_primary_color_inverse_light=0x7f06001f;
+        public static int aviary_circle_background_normal=0x7f060028;
+        public static int aviary_circle_background_selected=0x7f060029;
+        public static int aviary_circle_dark=0x7f060025;
         /**  spot circle 
          */
-        public static int aviary_circle_light=0x7f070024;
-        public static int aviary_circle_selected_dark=0x7f070027;
-        public static int aviary_circle_selected_light=0x7f070026;
-        public static int aviary_crop_fill_color=0x7f070031;
-        public static int aviary_crop_fill_color_pressed=0x7f070032;
+        public static int aviary_circle_light=0x7f060024;
+        public static int aviary_circle_selected_dark=0x7f060027;
+        public static int aviary_circle_selected_light=0x7f060026;
+        public static int aviary_crop_fill_color=0x7f060031;
+        public static int aviary_crop_fill_color_pressed=0x7f060032;
         /**  
     ############################ CROP ####################
      
          */
-        public static int aviary_crop_stroke_color=0x7f07002d;
-        public static int aviary_crop_stroke_color_pressed=0x7f07002e;
-        public static int aviary_crop_stroke_internal_color=0x7f07002f;
-        public static int aviary_crop_stroke_internal_color_pressed=0x7f070030;
+        public static int aviary_crop_stroke_color=0x7f06002d;
+        public static int aviary_crop_stroke_color_pressed=0x7f06002e;
+        public static int aviary_crop_stroke_internal_color=0x7f06002f;
+        public static int aviary_crop_stroke_internal_color_pressed=0x7f060030;
         /**  thumbnail stroke color 
          */
-        public static int aviary_effect_thumb_stroke_color=0x7f070021;
+        public static int aviary_effect_thumb_stroke_color=0x7f060021;
         /**  gallery item background color when selected 
          */
-        public static int aviary_gallery_item_background_color2=0x7f07002a;
-        public static int aviary_highlighted_text_light=0x7f070003;
-        public static int aviary_highlighted_text_light_inverted=0x7f070016;
-        public static int aviary_hint_foreground_light=0x7f070005;
-        public static int aviary_hint_foreground_light_inverted=0x7f070018;
+        public static int aviary_gallery_item_background_color2=0x7f06002a;
+        public static int aviary_highlighted_text_light=0x7f060003;
+        public static int aviary_highlighted_text_light_inverted=0x7f060016;
+        public static int aviary_hint_foreground_light=0x7f060005;
+        public static int aviary_hint_foreground_light_inverted=0x7f060018;
         /**  iap dialog main color background 
          */
-        public static int aviary_iap_background=0x7f070023;
-        public static int aviary_iap_buy_button_text_color=0x7f07003a;
+        public static int aviary_iap_background=0x7f060023;
+        public static int aviary_iap_buy_button_text_color=0x7f06003a;
         /**  iap dialog cell layout background 
          */
-        public static int aviary_iap_cell_layout_background=0x7f070022;
-        public static int aviary_iap_link_color_normal=0x7f070019;
-        public static int aviary_iap_link_color_pressed=0x7f07001b;
-        public static int aviary_iap_link_color_selected=0x7f07001a;
-        public static int aviary_iap_link_text_color=0x7f07003b;
-        public static int aviary_iap_list_divider=0x7f07001c;
-        public static int aviary_iap_restore_all_button_color=0x7f07001d;
-        public static int aviary_iap_workspace_background=0x7f07001e;
-        public static int aviary_link_text_light=0x7f070004;
-        public static int aviary_link_text_light_inverted=0x7f070017;
-        public static int aviary_logo_primary_color=0x7f07000a;
-        public static int aviary_logo_secondary_color=0x7f07000b;
+        public static int aviary_iap_cell_layout_background=0x7f060022;
+        public static int aviary_iap_link_color_normal=0x7f060019;
+        public static int aviary_iap_link_color_pressed=0x7f06001b;
+        public static int aviary_iap_link_color_selected=0x7f06001a;
+        public static int aviary_iap_link_text_color=0x7f06003b;
+        public static int aviary_iap_list_divider=0x7f06001c;
+        public static int aviary_iap_restore_all_button_color=0x7f06001d;
+        public static int aviary_iap_workspace_background=0x7f06001e;
+        public static int aviary_link_text_light=0x7f060004;
+        public static int aviary_link_text_light_inverted=0x7f060017;
+        public static int aviary_logo_primary_color=0x7f06000a;
+        public static int aviary_logo_secondary_color=0x7f06000b;
         /**  main loader background color 
          */
-        public static int aviary_main_loader_background=0x7f07002b;
-        public static int aviary_meme_stroke_color=0x7f070037;
+        public static int aviary_main_loader_background=0x7f06002b;
+        public static int aviary_meme_stroke_color=0x7f060037;
         /**  
     ############################ MEME ####################
     
          */
-        public static int aviary_meme_text_color=0x7f070036;
-        public static int aviary_nav_divider_dark=0x7f070009;
-        public static int aviary_nav_divider_light=0x7f070008;
-        public static int aviary_nav_primary_color=0x7f070006;
-        public static int aviary_nav_secondary_color=0x7f070007;
+        public static int aviary_meme_text_color=0x7f060036;
+        public static int aviary_nav_divider_dark=0x7f060009;
+        public static int aviary_nav_divider_light=0x7f060008;
+        public static int aviary_nav_primary_color=0x7f060006;
+        public static int aviary_nav_secondary_color=0x7f060007;
         /**  disabled status for panels 
          */
-        public static int aviary_panel_disabled_status=0x7f07002c;
-        public static int aviary_primary_color=0x7f070001;
-        public static int aviary_primary_color_disabled_inverted=0x7f070015;
-        public static int aviary_primary_color_inverted=0x7f070013;
-        public static int aviary_primary_color_pressed=0x7f070002;
-        public static int aviary_primary_color_pressed_inverted=0x7f070014;
+        public static int aviary_panel_disabled_status=0x7f06002c;
+        public static int aviary_primary_color=0x7f060001;
+        public static int aviary_primary_color_disabled_inverted=0x7f060015;
+        public static int aviary_primary_color_inverted=0x7f060013;
+        public static int aviary_primary_color_pressed=0x7f060002;
+        public static int aviary_primary_color_pressed_inverted=0x7f060014;
         /**  default highlight color 
          */
-        public static int aviary_primary_highlight_color=0x7f07000c;
+        public static int aviary_primary_highlight_color=0x7f06000c;
         /**  highlight color inverted 
          */
-        public static int aviary_primary_highlight_color_inverted=0x7f07000e;
+        public static int aviary_primary_highlight_color_inverted=0x7f06000e;
         /**  settings highlight color 
          */
-        public static int aviary_primary_highlight_color_muted=0x7f07000d;
+        public static int aviary_primary_highlight_color_muted=0x7f06000d;
         /**  highlight drawable background, stroke inner color pressed 
          */
-        public static int aviary_text_highlight_background_inner_pressed=0x7f070039;
+        public static int aviary_text_highlight_background_inner_pressed=0x7f060039;
         /**  
     ############################ TEXT ####################
     
  highlight drawable background, stroke color 
          */
-        public static int aviary_text_highlight_background_normal=0x7f070038;
-        public static int aviary_tool_text_color=0x7f07003c;
-        public static int aviary_tool_text_color_inverted=0x7f07003d;
-        public static int aviary_tool_text_color_no_selected=0x7f07003e;
-        public static int aviary_workspace_indicator_normal_endColor=0x7f070012;
-        public static int aviary_workspace_indicator_normal_startColor=0x7f070011;
-        public static int aviary_workspace_indicator_selected_endColor=0x7f070010;
-        public static int aviary_workspace_indicator_selected_startColor=0x7f07000f;
+        public static int aviary_text_highlight_background_normal=0x7f060038;
+        public static int aviary_tool_text_color=0x7f06003c;
+        public static int aviary_tool_text_color_inverted=0x7f06003d;
+        public static int aviary_tool_text_color_no_selected=0x7f06003e;
+        public static int aviary_workspace_indicator_normal_endColor=0x7f060012;
+        public static int aviary_workspace_indicator_normal_startColor=0x7f060011;
+        public static int aviary_workspace_indicator_selected_endColor=0x7f060010;
+        public static int aviary_workspace_indicator_selected_startColor=0x7f06000f;
     }
     public static final class dimen {
         /**  adjust option panel button horizontal/vertical padding 
          */
-        public static int aviary_adjust_button_padding_left=0x7f0b002b;
-        public static int aviary_adjust_button_padding_right=0x7f0b002c;
+        public static int aviary_adjust_button_padding_left=0x7f0a002b;
+        public static int aviary_adjust_button_padding_right=0x7f0a002c;
         /**  
 	############################ ORIENTATION #################### 
 	 
  grid external stroke width 
          */
-        public static int aviary_adjust_strokeWidth=0x7f0b0029;
+        public static int aviary_adjust_strokeWidth=0x7f0a0029;
         /**  grid internal stroke width 
          */
-        public static int aviary_adjust_strokeWidth2=0x7f0b002a;
+        public static int aviary_adjust_strokeWidth2=0x7f0a002a;
         /**  height of the bottom bar 
          */
-        public static int aviary_bottombar_height=0x7f0b0009;
+        public static int aviary_bottombar_height=0x7f0a0009;
         /** 
     ############################ COLOR SPLASH #################### 
      
  default brush size for the color splash view 
          */
-        public static int aviary_color_splash_brush_size=0x7f0b001d;
+        public static int aviary_color_splash_brush_size=0x7f0a001d;
         /**  option panel button horizontal/vertical padding 
          */
-        public static int aviary_color_splash_button_padding_left=0x7f0b001e;
-        public static int aviary_color_splash_button_padding_right=0x7f0b001f;
+        public static int aviary_color_splash_button_padding_left=0x7f0a001e;
+        public static int aviary_color_splash_button_padding_right=0x7f0a001f;
         /**  minimum crop area 
          */
-        public static int aviary_crop_min_size=0x7f0b0022;
+        public static int aviary_crop_min_size=0x7f0a0022;
         /**  stroke size for the internal lines 
          */
-        public static int aviary_crop_stroke_internal_width=0x7f0b0021;
+        public static int aviary_crop_stroke_internal_width=0x7f0a0021;
         /** 
     ############################ CROP #################### 
      
  hightlight crop stroke width 
          */
-        public static int aviary_crop_stroke_width=0x7f0b0020;
+        public static int aviary_crop_stroke_width=0x7f0a0020;
         /**  thumb margin bottom 
          */
-        public static int aviary_effect_thumb_margin_bottom=0x7f0b0036;
+        public static int aviary_effect_thumb_margin_bottom=0x7f0a0036;
         /**  thumbnail padding 
          */
-        public static int aviary_effect_thumb_padding=0x7f0b0033;
+        public static int aviary_effect_thumb_padding=0x7f0a0033;
         /**  thumbmail corner radius size 
          */
-        public static int aviary_effect_thumb_radius=0x7f0b0034;
+        public static int aviary_effect_thumb_radius=0x7f0a0034;
         /**  thumbnail stroke size 
          */
-        public static int aviary_effect_thumb_stroke=0x7f0b0035;
+        public static int aviary_effect_thumb_stroke=0x7f0a0035;
         /**  
 	############################ ENHANCE #################### 
 	 
  option panel button horizontal/vertical padding 
          */
-        public static int aviary_enhance_button_padding_left=0x7f0b002d;
-        public static int aviary_enhance_button_padding_right=0x7f0b002e;
+        public static int aviary_enhance_button_padding_left=0x7f0a002d;
+        public static int aviary_enhance_button_padding_right=0x7f0a002e;
         /**  
 	############################ FOCUS #################### 
 	 
  option panel button horizontal/vertical padding 
          */
-        public static int aviary_focus_button_padding_left=0x7f0b002f;
-        public static int aviary_focus_button_padding_right=0x7f0b0030;
-        public static int aviary_frame_item_image_width=0x7f0b0032;
+        public static int aviary_focus_button_padding_left=0x7f0a002f;
+        public static int aviary_focus_button_padding_right=0x7f0a0030;
+        public static int aviary_frame_item_image_width=0x7f0a0032;
         /**  
 	############################ EFFECTS/FRAMES #################### 
 	 
          */
-        public static int aviary_frame_item_width=0x7f0b0031;
-        public static int aviary_gallery_bottom_indicator_height=0x7f0b0011;
+        public static int aviary_frame_item_width=0x7f0a0031;
+        public static int aviary_gallery_bottom_indicator_height=0x7f0a0011;
         /**  dimensions for panels with a gallery widget 
          */
-        public static int aviary_gallery_item_width=0x7f0b000f;
-        public static int aviary_gallery_margin_bottom=0x7f0b0014;
-        public static int aviary_gallery_margin_top=0x7f0b0013;
-        public static int aviary_gallery_mid_indicator_height=0x7f0b0012;
-        public static int aviary_gallery_top_indicator_height=0x7f0b0010;
+        public static int aviary_gallery_item_width=0x7f0a000f;
+        public static int aviary_gallery_margin_bottom=0x7f0a0014;
+        public static int aviary_gallery_margin_top=0x7f0a0013;
+        public static int aviary_gallery_mid_indicator_height=0x7f0a0012;
+        public static int aviary_gallery_top_indicator_height=0x7f0a0010;
         /**  
 	############################ IAP-DIALOG #################### 
 	 
          */
-        public static int aviary_iap_buy_button_width=0x7f0b003d;
-        public static int aviary_iap_detail_icon_maxsize=0x7f0b003e;
-        public static int aviary_iap_list_divider_height=0x7f0b0040;
-        public static int aviary_iap_list_item_image_size=0x7f0b003f;
-        public static int aviary_iap_list_item_padding_bottom=0x7f0b0044;
-        public static int aviary_iap_list_item_padding_left=0x7f0b0041;
-        public static int aviary_iap_list_item_padding_right=0x7f0b0042;
-        public static int aviary_iap_list_item_padding_top=0x7f0b0043;
+        public static int aviary_iap_buy_button_width=0x7f0a003d;
+        public static int aviary_iap_detail_icon_maxsize=0x7f0a003e;
+        public static int aviary_iap_list_divider_height=0x7f0a0040;
+        public static int aviary_iap_list_item_image_size=0x7f0a003f;
+        public static int aviary_iap_list_item_padding_bottom=0x7f0a0044;
+        public static int aviary_iap_list_item_padding_left=0x7f0a0041;
+        public static int aviary_iap_list_item_padding_right=0x7f0a0042;
+        public static int aviary_iap_list_item_padding_top=0x7f0a0043;
         /**  main image padding 
          */
-        public static int aviary_main_image_padding=0x7f0b0017;
+        public static int aviary_main_image_padding=0x7f0a0017;
         /**  main loader shape padding 
          */
-        public static int aviary_main_loader_padding=0x7f0b0016;
+        public static int aviary_main_loader_padding=0x7f0a0016;
         /**  main loader background shape radius 
          */
-        public static int aviary_main_loader_radius=0x7f0b0015;
+        public static int aviary_main_loader_radius=0x7f0a0015;
         /**  navigation color divider size 
          */
-        public static int aviary_nav_divider=0x7f0b000a;
+        public static int aviary_nav_divider=0x7f0a000a;
         /**  navigation color divider size ( 2x ) 
          */
-        public static int aviary_nav_divider_double=0x7f0b000b;
+        public static int aviary_nav_divider_double=0x7f0a000b;
         /**  navigation view height 
          */
-        public static int aviary_nav_height=0x7f0b000c;
+        public static int aviary_nav_height=0x7f0a000c;
         /**  actionbar height 
          */
-        public static int aviary_navbar_height=0x7f0b0004;
+        public static int aviary_navbar_height=0x7f0a0004;
         /**  actionbar progress size 
          */
-        public static int aviary_navbar_progress_height=0x7f0b0005;
-        public static int aviary_navbar_progress_width=0x7f0b0006;
-        public static int aviary_optionpanel_button_padding_bottom=0x7f0b001c;
+        public static int aviary_navbar_progress_height=0x7f0a0005;
+        public static int aviary_navbar_progress_width=0x7f0a0006;
+        public static int aviary_optionpanel_button_padding_bottom=0x7f0a001c;
         /**  option panel button horizontal/vertical padding 
          */
-        public static int aviary_optionpanel_button_padding_left=0x7f0b0019;
-        public static int aviary_optionpanel_button_padding_right=0x7f0b001a;
-        public static int aviary_optionpanel_button_padding_top=0x7f0b001b;
-        public static int aviary_spot_toast_height=0x7f0b000e;
+        public static int aviary_optionpanel_button_padding_left=0x7f0a0019;
+        public static int aviary_optionpanel_button_padding_right=0x7f0a001a;
+        public static int aviary_optionpanel_button_padding_top=0x7f0a001b;
+        public static int aviary_spot_toast_height=0x7f0a000e;
         /**  
     	For panels with a custom Toast, these will be the width and height of the Toast 
     
          */
-        public static int aviary_spot_toast_width=0x7f0b000d;
-        public static int aviary_sticker_overlay_min_size=0x7f0b003b;
-        public static int aviary_sticker_overlay_padding=0x7f0b003c;
-        public static int aviary_sticker_pack_image_width=0x7f0b0038;
+        public static int aviary_spot_toast_width=0x7f0a000d;
+        public static int aviary_sticker_overlay_min_size=0x7f0a003b;
+        public static int aviary_sticker_overlay_padding=0x7f0a003c;
+        public static int aviary_sticker_pack_image_width=0x7f0a0038;
         /**  
 	############################ STICKERS #################### 
 	 
          */
-        public static int aviary_sticker_pack_width=0x7f0b0037;
-        public static int aviary_sticker_single_item_image_width=0x7f0b003a;
-        public static int aviary_sticker_single_item_width=0x7f0b0039;
+        public static int aviary_sticker_pack_width=0x7f0a0037;
+        public static int aviary_sticker_single_item_image_width=0x7f0a003a;
+        public static int aviary_sticker_single_item_width=0x7f0a0039;
         /**  store dialog title text size 
          */
-        public static int aviary_textSizeIAPTitle=0x7f0b0003;
-        public static int aviary_textSizeLarge=0x7f0b0002;
-        public static int aviary_textSizeMedium=0x7f0b0001;
-        public static int aviary_textSizeSmall=0x7f0b0000;
+        public static int aviary_textSizeIAPTitle=0x7f0a0003;
+        public static int aviary_textSizeLarge=0x7f0a0002;
+        public static int aviary_textSizeMedium=0x7f0a0001;
+        public static int aviary_textSizeSmall=0x7f0a0000;
         /**  dimension for the main tool labels 
          */
-        public static int aviary_textSizeTools=0x7f0b0007;
+        public static int aviary_textSizeTools=0x7f0a0007;
         /**  highlight drawable, inner stroke 
          */
-        public static int aviary_text_highlight_background_inner_stroke_width=0x7f0b0028;
+        public static int aviary_text_highlight_background_inner_stroke_width=0x7f0a0028;
         /**  highlight drawable, inner radius 
          */
-        public static int aviary_text_highlight_background_radius=0x7f0b0026;
+        public static int aviary_text_highlight_background_radius=0x7f0a0026;
         /**  highlight drawable, outer stroke 
          */
-        public static int aviary_text_highlight_background_stroke_width=0x7f0b0027;
-        public static int aviary_text_overlay_default_size=0x7f0b0025;
+        public static int aviary_text_highlight_background_stroke_width=0x7f0a0027;
+        public static int aviary_text_overlay_default_size=0x7f0a0025;
         /** 
     ############################ TEXT #################### 
      
          */
-        public static int aviary_text_overlay_min_size=0x7f0b0023;
-        public static int aviary_text_overlay_padding=0x7f0b0024;
-        public static int aviary_tool_margin=0x7f0b0008;
+        public static int aviary_text_overlay_min_size=0x7f0a0023;
+        public static int aviary_text_overlay_padding=0x7f0a0024;
+        public static int aviary_tool_margin=0x7f0a0008;
         /**  left and right margins for the wheel 
          */
-        public static int aviary_wheel_margin_horizontal=0x7f0b0018;
+        public static int aviary_wheel_margin_horizontal=0x7f0a0018;
     }
     public static final class drawable {
         public static int aviary_adjust_knob=0x7f020000;
@@ -2065,117 +2065,117 @@ containing a value of this type.
         public static int ic_stickers=0x7f02009a;
     }
     public static final class id {
-        public static int alwaysScroll=0x7f06000d;
-        public static int aviary_badge=0x7f060021;
-        public static int aviary_banner_text=0x7f06002f;
-        public static int aviary_banner_view=0x7f06002e;
-        public static int aviary_bottom_line=0x7f060055;
-        public static int aviary_bottombar=0x7f060042;
-        public static int aviary_button=0x7f06003b;
-        public static int aviary_button1=0x7f06001e;
-        public static int aviary_button2=0x7f06001f;
-        public static int aviary_button3=0x7f060051;
-        public static int aviary_button4=0x7f060052;
-        public static int aviary_button_circle=0x7f06005e;
-        public static int aviary_button_minus=0x7f060064;
-        public static int aviary_button_plus=0x7f060066;
-        public static int aviary_button_rectangle=0x7f06005f;
-        public static int aviary_buy_button=0x7f060026;
-        public static int aviary_buy_button_loader=0x7f060028;
-        public static int aviary_buy_button_text=0x7f060027;
-        public static int aviary_clear_button1=0x7f060062;
-        public static int aviary_clear_button2=0x7f060063;
-        public static int aviary_content_view=0x7f06000e;
-        public static int aviary_crop_image=0x7f060013;
-        public static int aviary_description=0x7f060033;
-        public static int aviary_disable_status=0x7f060053;
-        public static int aviary_divider_left=0x7f06006b;
-        public static int aviary_divider_right=0x7f06006c;
-        public static int aviary_error_message=0x7f06003c;
-        public static int aviary_flipper=0x7f060067;
-        public static int aviary_gallery=0x7f060054;
-        public static int aviary_gallery2=0x7f060056;
-        public static int aviary_head=0x7f060030;
-        public static int aviary_hidden=0x7f060020;
-        public static int aviary_iap_detail=0x7f06002d;
-        public static int aviary_iap_list=0x7f06002c;
-        public static int aviary_iap_list_progress=0x7f060039;
-        public static int aviary_icon=0x7f060031;
-        public static int aviary_image=0x7f060018;
-        public static int aviary_image2=0x7f060022;
-        public static int aviary_invisible_text_1=0x7f060019;
-        public static int aviary_invisible_text_2=0x7f06001b;
-        public static int aviary_lens_button=0x7f060015;
-        public static int aviary_list=0x7f060038;
-        public static int aviary_list_packs=0x7f060068;
-        public static int aviary_list_stickers=0x7f060069;
-        public static int aviary_loader=0x7f060061;
-        public static int aviary_main_iap_dialog=0x7f06002a;
-        public static int aviary_main_iap_dialog_container=0x7f060029;
-        public static int aviary_meme_dumb=0x7f06001a;
-        public static int aviary_navbar=0x7f060040;
-        public static int aviary_overlay=0x7f060012;
-        public static int aviary_panel=0x7f060060;
-        public static int aviary_progress=0x7f060036;
-        public static int aviary_restore=0x7f060044;
-        public static int aviary_retry_button=0x7f06003e;
-        public static int aviary_retry_text=0x7f06003d;
-        public static int aviary_seekbar=0x7f060065;
-        public static int aviary_summary=0x7f06003a;
-        public static int aviary_switcher=0x7f060016;
-        public static int aviary_text=0x7f06001c;
-        public static int aviary_title=0x7f060032;
-        public static int aviary_tool_view=0x7f06000f;
-        public static int aviary_tools_listview=0x7f060010;
-        public static int aviary_top_line=0x7f060057;
-        public static int aviary_version=0x7f06001d;
-        public static int aviary_view_animator=0x7f06002b;
-        public static int aviary_wheel=0x7f06006a;
-        public static int aviary_white_logo=0x7f060011;
-        public static int aviary_workspace=0x7f060035;
-        public static int aviary_workspace_container=0x7f060034;
-        public static int aviary_workspace_indicator=0x7f060037;
-        public static int button1=0x7f060058;
-        public static int button2=0x7f06005a;
-        public static int button3=0x7f06005c;
-        public static int checked=0x7f060001;
-        public static int disabled=0x7f06000b;
-        public static int divider=0x7f060025;
-        public static int down_top=0x7f060004;
-        public static int dragLayer=0x7f06003f;
-        public static int drawing_view_container=0x7f060043;
-        public static int edge_bottom=0x7f060008;
-        public static int edge_left=0x7f060005;
-        public static int edge_right=0x7f060006;
-        public static int edge_top=0x7f060007;
-        public static int feather_dialogs_container=0x7f060047;
-        public static int horizontal=0x7f06000a;
-        public static int image=0x7f060014;
-        public static int image_loading_view=0x7f060046;
-        public static int image_original=0x7f060045;
-        public static int imagegl=0x7f060017;
-        public static int main_content=0x7f060041;
-        public static int navbar_button1=0x7f06004b;
-        public static int navbar_button2=0x7f06004f;
-        public static int navbar_button3=0x7f060050;
-        public static int navbar_divider1=0x7f06004a;
-        public static int navbar_divider2=0x7f06004e;
-        public static int navbar_progress1=0x7f060049;
-        public static int navbar_progress2=0x7f06004d;
-        public static int navbar_text1=0x7f060048;
-        public static int navbar_text2=0x7f06004c;
-        public static int nonblank=0x7f060023;
-        public static int normal=0x7f06000c;
-        public static int pressed=0x7f060000;
-        public static int selected=0x7f060002;
-        public static int shadow=0x7f06006e;
-        public static int size_preview=0x7f06006d;
-        public static int text=0x7f060024;
-        public static int text1=0x7f060059;
-        public static int text2=0x7f06005b;
-        public static int text3=0x7f06005d;
-        public static int top_down=0x7f060003;
-        public static int vertical=0x7f060009;
+        public static int alwaysScroll=0x7f0c000b;
+        public static int aviary_badge=0x7f0c0021;
+        public static int aviary_banner_text=0x7f0c002f;
+        public static int aviary_banner_view=0x7f0c002e;
+        public static int aviary_bottom_line=0x7f0c0055;
+        public static int aviary_bottombar=0x7f0c0042;
+        public static int aviary_button=0x7f0c003b;
+        public static int aviary_button1=0x7f0c001e;
+        public static int aviary_button2=0x7f0c001f;
+        public static int aviary_button3=0x7f0c0051;
+        public static int aviary_button4=0x7f0c0052;
+        public static int aviary_button_circle=0x7f0c005e;
+        public static int aviary_button_minus=0x7f0c0064;
+        public static int aviary_button_plus=0x7f0c0066;
+        public static int aviary_button_rectangle=0x7f0c005f;
+        public static int aviary_buy_button=0x7f0c0026;
+        public static int aviary_buy_button_loader=0x7f0c0028;
+        public static int aviary_buy_button_text=0x7f0c0027;
+        public static int aviary_clear_button1=0x7f0c0062;
+        public static int aviary_clear_button2=0x7f0c0063;
+        public static int aviary_content_view=0x7f0c000e;
+        public static int aviary_crop_image=0x7f0c0013;
+        public static int aviary_description=0x7f0c0033;
+        public static int aviary_disable_status=0x7f0c0053;
+        public static int aviary_divider_left=0x7f0c006b;
+        public static int aviary_divider_right=0x7f0c006c;
+        public static int aviary_error_message=0x7f0c003c;
+        public static int aviary_flipper=0x7f0c0067;
+        public static int aviary_gallery=0x7f0c0054;
+        public static int aviary_gallery2=0x7f0c0056;
+        public static int aviary_head=0x7f0c0030;
+        public static int aviary_hidden=0x7f0c0020;
+        public static int aviary_iap_detail=0x7f0c002d;
+        public static int aviary_iap_list=0x7f0c002c;
+        public static int aviary_iap_list_progress=0x7f0c0039;
+        public static int aviary_icon=0x7f0c0031;
+        public static int aviary_image=0x7f0c0018;
+        public static int aviary_image2=0x7f0c0022;
+        public static int aviary_invisible_text_1=0x7f0c0019;
+        public static int aviary_invisible_text_2=0x7f0c001b;
+        public static int aviary_lens_button=0x7f0c0015;
+        public static int aviary_list=0x7f0c0038;
+        public static int aviary_list_packs=0x7f0c0068;
+        public static int aviary_list_stickers=0x7f0c0069;
+        public static int aviary_loader=0x7f0c0061;
+        public static int aviary_main_iap_dialog=0x7f0c002a;
+        public static int aviary_main_iap_dialog_container=0x7f0c0029;
+        public static int aviary_meme_dumb=0x7f0c001a;
+        public static int aviary_navbar=0x7f0c0040;
+        public static int aviary_overlay=0x7f0c0012;
+        public static int aviary_panel=0x7f0c0060;
+        public static int aviary_progress=0x7f0c0036;
+        public static int aviary_restore=0x7f0c0044;
+        public static int aviary_retry_button=0x7f0c003e;
+        public static int aviary_retry_text=0x7f0c003d;
+        public static int aviary_seekbar=0x7f0c0065;
+        public static int aviary_summary=0x7f0c003a;
+        public static int aviary_switcher=0x7f0c0016;
+        public static int aviary_text=0x7f0c001c;
+        public static int aviary_title=0x7f0c0032;
+        public static int aviary_tool_view=0x7f0c000f;
+        public static int aviary_tools_listview=0x7f0c0010;
+        public static int aviary_top_line=0x7f0c0057;
+        public static int aviary_version=0x7f0c001d;
+        public static int aviary_view_animator=0x7f0c002b;
+        public static int aviary_wheel=0x7f0c006a;
+        public static int aviary_white_logo=0x7f0c0011;
+        public static int aviary_workspace=0x7f0c0035;
+        public static int aviary_workspace_container=0x7f0c0034;
+        public static int aviary_workspace_indicator=0x7f0c0037;
+        public static int button1=0x7f0c0058;
+        public static int button2=0x7f0c005a;
+        public static int button3=0x7f0c005c;
+        public static int checked=0x7f0c0000;
+        public static int disabled=0x7f0c000c;
+        public static int divider=0x7f0c0025;
+        public static int down_top=0x7f0c0003;
+        public static int dragLayer=0x7f0c003f;
+        public static int drawing_view_container=0x7f0c0043;
+        public static int edge_bottom=0x7f0c0005;
+        public static int edge_left=0x7f0c0006;
+        public static int edge_right=0x7f0c0007;
+        public static int edge_top=0x7f0c0008;
+        public static int feather_dialogs_container=0x7f0c0047;
+        public static int horizontal=0x7f0c0009;
+        public static int image=0x7f0c0014;
+        public static int image_loading_view=0x7f0c0046;
+        public static int image_original=0x7f0c0045;
+        public static int imagegl=0x7f0c0017;
+        public static int main_content=0x7f0c0041;
+        public static int navbar_button1=0x7f0c004b;
+        public static int navbar_button2=0x7f0c004f;
+        public static int navbar_button3=0x7f0c0050;
+        public static int navbar_divider1=0x7f0c004a;
+        public static int navbar_divider2=0x7f0c004e;
+        public static int navbar_progress1=0x7f0c0049;
+        public static int navbar_progress2=0x7f0c004d;
+        public static int navbar_text1=0x7f0c0048;
+        public static int navbar_text2=0x7f0c004c;
+        public static int nonblank=0x7f0c0023;
+        public static int normal=0x7f0c000d;
+        public static int pressed=0x7f0c0001;
+        public static int selected=0x7f0c0002;
+        public static int shadow=0x7f0c006e;
+        public static int size_preview=0x7f0c006d;
+        public static int text=0x7f0c0024;
+        public static int text1=0x7f0c0059;
+        public static int text2=0x7f0c005b;
+        public static int text3=0x7f0c005d;
+        public static int top_down=0x7f0c0004;
+        public static int vertical=0x7f0c000a;
     }
     public static final class integer {
         /**  
@@ -2183,37 +2183,37 @@ containing a value of this type.
 	 
  rotate/flip animation duration 
          */
-        public static int aviary_adjust_animationDuration=0x7f080013;
+        public static int aviary_adjust_animationDuration=0x7f070013;
         /**  reset animation duration 
          */
-        public static int aviary_adjust_animationDuration2=0x7f080014;
+        public static int aviary_adjust_animationDuration2=0x7f070014;
         /**  layout divider weoght 
          */
-        public static int aviary_adjust_divider_weight=0x7f080018;
+        public static int aviary_adjust_divider_weight=0x7f070018;
         /**  enable 3d animation on flip 
          */
-        public static int aviary_adjust_flip3d=0x7f080015;
+        public static int aviary_adjust_flip3d=0x7f070015;
         /**  users will be able to free rotate the image using fingers 
  0 = disable free rotation 
  1 = enable free rotation 
          */
-        public static int aviary_adjust_free_rotate=0x7f080016;
+        public static int aviary_adjust_free_rotate=0x7f070016;
         /**  layout item container weight 
          */
-        public static int aviary_adjust_item_weight=0x7f080017;
-        public static int aviary_asyncimagemanager_tag=0x7f080024;
+        public static int aviary_adjust_item_weight=0x7f070017;
+        public static int aviary_asyncimagemanager_tag=0x7f070024;
         /**  default glow intensity for buttons 
          */
-        public static int aviary_button_highlight_glow_size=0x7f080025;
+        public static int aviary_button_highlight_glow_size=0x7f070025;
         /**  divider weight 
          */
-        public static int aviary_color_splash_divider_weight=0x7f080023;
+        public static int aviary_color_splash_divider_weight=0x7f070023;
         /**  
     ############################ COLOR SPLASH #################### 
      
  button weight ( on 100 ) 
          */
-        public static int aviary_color_splash_item_weight=0x7f080022;
+        public static int aviary_color_splash_item_weight=0x7f070022;
         /**  
     ############################ CROP ####################
      
@@ -2223,22 +2223,22 @@ containing a value of this type.
     	if the value is '0' the crop can be inverted 
     
          */
-        public static int aviary_crop_invert_policy=0x7f08000c;
+        public static int aviary_crop_invert_policy=0x7f07000c;
         /**  crop item selected by default ( based on 'aviary_crop_values' )
          */
-        public static int aviary_crop_selected_index=0x7f08000d;
+        public static int aviary_crop_selected_index=0x7f07000d;
         /**  default selected brush size 
          */
-        public static int aviary_draw_brush_index=0x7f080010;
+        public static int aviary_draw_brush_index=0x7f070010;
         /**  
     ############################ DRAW ####################
      
  blur softness for the drawing paint, use 0 to make hard 
          */
-        public static int aviary_draw_brush_softValue=0x7f08000e;
+        public static int aviary_draw_brush_softValue=0x7f07000e;
         /**  default selected fill color 
          */
-        public static int aviary_draw_fill_color_index=0x7f08000f;
+        public static int aviary_draw_fill_color_index=0x7f07000f;
         /**  
     ############################ STICKERS #################### 
      
@@ -2247,84 +2247,84 @@ containing a value of this type.
      
  button weight ( on 100 ) 
          */
-        public static int aviary_enhance_item_weight=0x7f080021;
+        public static int aviary_enhance_item_weight=0x7f070021;
         /**  
     ############################ FRAMES/EFFECTS #################### 
      
  max number of featured packs to display 
  deprecated 
          */
-        public static int aviary_featured_packs_count=0x7f080020;
-        public static int aviary_iap_dialog_cols_effects=0x7f08001e;
+        public static int aviary_featured_packs_count=0x7f070020;
+        public static int aviary_iap_dialog_cols_effects=0x7f07001e;
         /**  IAP Dialog Workspace cols and rows 
          */
-        public static int aviary_iap_dialog_cols_stickers=0x7f08001c;
+        public static int aviary_iap_dialog_cols_stickers=0x7f07001c;
         /**  
     ############################ IAP Dialog #################### 
      
  height weight of the IAP dialog ( how much screen it will cover vertically ) 
          */
-        public static int aviary_iap_dialog_height_weight=0x7f080019;
+        public static int aviary_iap_dialog_height_weight=0x7f070019;
         /**  margin top weight 
          */
-        public static int aviary_iap_dialog_margin_top_weight=0x7f08001b;
-        public static int aviary_iap_dialog_rows_effects=0x7f08001f;
-        public static int aviary_iap_dialog_rows_stickers=0x7f08001d;
-        public static int aviary_iap_dialog_width_weight=0x7f08001a;
+        public static int aviary_iap_dialog_margin_top_weight=0x7f07001b;
+        public static int aviary_iap_dialog_rows_effects=0x7f07001f;
+        public static int aviary_iap_dialog_rows_stickers=0x7f07001d;
+        public static int aviary_iap_dialog_width_weight=0x7f07001a;
         /**  duration of the restore status, in ms 
          */
-        public static int aviary_image_restore_timeout=0x7f080004;
+        public static int aviary_image_restore_timeout=0x7f070004;
         /**  The duration (in milliseconds) of a medium-length animation. 
          */
-        public static int aviary_mediumAnimTime=0x7f080001;
+        public static int aviary_mediumAnimTime=0x7f070001;
         /**  maximum characters allowed for a single line of the meme 
          */
-        public static int aviary_meme_max_length=0x7f080011;
+        public static int aviary_meme_max_length=0x7f070011;
         /**  toggle stroke for the meme text 
          */
-        public static int aviary_meme_stroke_enabled=0x7f080012;
+        public static int aviary_meme_stroke_enabled=0x7f070012;
         /**  width weight for the seekbar inside its container 
          */
-        public static int aviary_seekbar_weight=0x7f080003;
+        public static int aviary_seekbar_weight=0x7f070003;
         /**  
     ############################ MISC ####################
     
  The duration (in milliseconds) of a short animation. 
          */
-        public static int aviary_shortAnimTime=0x7f080000;
+        public static int aviary_shortAnimTime=0x7f070000;
         /**  default selected brush size for spot tools 
          */
-        public static int aviary_spot_brush_index=0x7f080005;
-        public static int aviary_spot_gallery_item_max_size=0x7f080007;
+        public static int aviary_spot_brush_index=0x7f070005;
+        public static int aviary_spot_gallery_item_max_size=0x7f070007;
         /**  
     	for gallery items drawables, this will be the min and max radius ( in % ) of the
     	current drawable size 
     
          */
-        public static int aviary_spot_gallery_item_min_size=0x7f080006;
+        public static int aviary_spot_gallery_item_min_size=0x7f070006;
         /**  default selected text color 
          */
-        public static int aviary_text_fill_color_index=0x7f08000a;
+        public static int aviary_text_fill_color_index=0x7f07000a;
         /**  drawable radius size ( in % ) 
          */
-        public static int aviary_text_gallery_drawable_radius=0x7f08000b;
+        public static int aviary_text_gallery_drawable_radius=0x7f07000b;
         /**  
     ############################ TEXT ####################
      
  maximum characters allowed in the text tool 
          */
-        public static int aviary_text_max_length=0x7f080008;
-        public static int aviary_text_stroke_enabled=0x7f080009;
+        public static int aviary_text_max_length=0x7f070008;
+        public static int aviary_text_stroke_enabled=0x7f070009;
         /**  width weight for the wheel inside its container 
          */
-        public static int aviary_wheel_weight=0x7f080002;
-        public static int border_version=0x7f08002a;
-        public static int is_border=0x7f080029;
-        public static int is_filter=0x7f080027;
+        public static int aviary_wheel_weight=0x7f070002;
+        public static int border_version=0x7f07002a;
+        public static int is_border=0x7f070029;
+        public static int is_filter=0x7f070027;
         /**  PLUGIN SERVICE - DO NOT EDIT 
          */
-        public static int is_sticker=0x7f080026;
-        public static int is_tool=0x7f080028;
+        public static int is_sticker=0x7f070026;
+        public static int is_tool=0x7f070028;
     }
     public static final class layout {
         public static int aviary_bottombar=0x7f030000;
@@ -2402,324 +2402,324 @@ containing a value of this type.
  change the default font used for the meme pane 
  or leave empty to use the default system font 
          */
-        public static int aviary_meme_font=0x7f0a0000;
-        public static int border_name=0x7f0a0076;
-        public static int confirm_quit_message=0x7f0a0080;
-        public static int feather_about_dialog_message=0x7f0a0019;
-        public static int feather_acc_a_sticker=0x7f0a005f;
-        public static int feather_acc_color=0x7f0a0097;
-        public static int feather_acc_decrease_value=0x7f0a0006;
-        public static int feather_acc_flip_h=0x7f0a0094;
-        public static int feather_acc_flip_v=0x7f0a008c;
-        public static int feather_acc_increase_value=0x7f0a003d;
-        public static int feather_acc_lens_toggle=0x7f0a0063;
-        public static int feather_acc_rotate_ccw=0x7f0a0095;
-        public static int feather_acc_rotate_cw=0x7f0a0092;
-        public static int feather_acc_size=0x7f0a008d;
-        public static int feather_activity_not_found=0x7f0a005b;
-        public static int feather_adjust=0x7f0a0064;
-        public static int feather_apply=0x7f0a0071;
-        public static int feather_attention=0x7f0a0014;
-        public static int feather_auto_enhance_label=0x7f0a0008;
-        public static int feather_back_enhance_label=0x7f0a0061;
-        public static int feather_balance_enhance_label=0x7f0a0083;
-        public static int feather_blemish=0x7f0a0044;
-        public static int feather_borders=0x7f0a0090;
-        public static int feather_borders_dialog_first_time=0x7f0a0075;
-        public static int feather_brightness=0x7f0a007d;
-        public static int feather_cancel=0x7f0a009a;
-        public static int feather_circle=0x7f0a0038;
-        public static int feather_close=0x7f0a0018;
-        public static int feather_colorfix=0x7f0a004e;
-        public static int feather_colorsplash_eraser=0x7f0a0087;
-        public static int feather_colorsplash_free=0x7f0a0052;
-        public static int feather_colorsplash_smart=0x7f0a002a;
-        public static int feather_confirm=0x7f0a003e;
-        public static int feather_contrast=0x7f0a003b;
-        public static int feather_crash_toast_text=0x7f0a005e;
-        public static int feather_crop=0x7f0a009c;
-        public static int feather_custom=0x7f0a0056;
-        public static int feather_delete=0x7f0a0046;
-        public static int feather_details=0x7f0a0003;
-        public static int feather_download=0x7f0a0077;
-        public static int feather_download_start_failed=0x7f0a0089;
-        public static int feather_draw=0x7f0a002b;
-        public static int feather_edit_bottom_text=0x7f0a0062;
-        public static int feather_edit_top_text=0x7f0a0069;
-        public static int feather_edit_your_photo=0x7f0a0009;
-        public static int feather_effect_loading_message=0x7f0a002e;
-        public static int feather_effects=0x7f0a0007;
-        public static int feather_effects_beginning_of_list=0x7f0a0039;
-        public static int feather_effects_end_of_list=0x7f0a0017;
-        public static int feather_effects_error_loading_pack=0x7f0a007a;
-        public static int feather_effects_error_loading_packs=0x7f0a005d;
-        public static int feather_effects_error_update_editor=0x7f0a0021;
-        public static int feather_effects_error_update_editors=0x7f0a0023;
-        public static int feather_effects_error_update_multiple=0x7f0a006c;
-        public static int feather_effects_error_update_pack=0x7f0a0016;
-        public static int feather_effects_error_update_packs=0x7f0a0043;
-        public static int feather_effects_unknown_error=0x7f0a0084;
-        public static int feather_effects_unknown_errors=0x7f0a0074;
-        public static int feather_enhance=0x7f0a0078;
-        public static int feather_enter_text_here=0x7f0a0035;
-        public static int feather_error_download_image_message=0x7f0a002c;
-        public static int feather_error_saving_aviary_folder=0x7f0a000b;
-        public static int feather_error_saving_image=0x7f0a002d;
-        public static int feather_featured=0x7f0a009e;
-        public static int feather_feedback=0x7f0a006d;
-        public static int feather_feedback_dialog_message=0x7f0a0036;
-        public static int feather_filter_pack_updated=0x7f0a0024;
-        public static int feather_flip=0x7f0a0096;
-        public static int feather_generic_error_title=0x7f0a005a;
-        public static int feather_get_more=0x7f0a008f;
-        public static int feather_hidef=0x7f0a0031;
-        public static int feather_iap_banner_text=0x7f0a009b;
-        public static int feather_iap_download=0x7f0a0082;
-        public static int feather_iap_download_failed=0x7f0a0070;
-        public static int feather_iap_error=0x7f0a002f;
-        public static int feather_iap_failed_download_informations=0x7f0a004d;
-        public static int feather_iap_failed_download_previews=0x7f0a0033;
-        public static int feather_iap_installing=0x7f0a009d;
-        public static int feather_iap_list_empty_message=0x7f0a0085;
-        public static int feather_iap_notification_installed_summary=0x7f0a008e;
-        public static int feather_iap_owned=0x7f0a004c;
-        public static int feather_iap_pack_installed=0x7f0a006b;
-        public static int feather_iap_restore=0x7f0a0027;
-        public static int feather_iap_restore_all=0x7f0a0011;
-        public static int feather_iap_restore_all_failed=0x7f0a0073;
-        public static int feather_iap_restore_all_in_progress=0x7f0a003f;
-        public static int feather_iap_restore_all_summary=0x7f0a000c;
-        public static int feather_iap_retry=0x7f0a00a1;
-        public static int feather_iap_unavailable=0x7f0a006e;
-        public static int feather_illuminate=0x7f0a0002;
-        public static int feather_image_saved=0x7f0a000a;
-        public static int feather_image_saved_in=0x7f0a0054;
-        public static int feather_infoscreen_bottom_button=0x7f0a0020;
-        public static int feather_infoscreen_text=0x7f0a0057;
-        public static int feather_item_not_found=0x7f0a0051;
-        public static int feather_keep_editing=0x7f0a001d;
-        public static int feather_loading_image=0x7f0a0037;
-        public static int feather_loading_title=0x7f0a0068;
-        public static int feather_meme=0x7f0a000e;
-        public static int feather_menu_reset=0x7f0a0055;
-        public static int feather_message_button_no=0x7f0a001a;
-        public static int feather_message_button_yes=0x7f0a0032;
-        public static int feather_message_text=0x7f0a0058;
-        public static int feather_message_title=0x7f0a0012;
-        public static int feather_mirror=0x7f0a001f;
-        public static int feather_new_effects=0x7f0a000d;
-        public static int feather_new_frames=0x7f0a000f;
-        public static int feather_new_stickers=0x7f0a0015;
-        public static int feather_no_purchase_made=0x7f0a0053;
-        public static int feather_notification_n_items_cant_be_restored=0x7f0a0013;
-        public static int feather_notification_no_items_to_restore=0x7f0a0093;
-        public static int feather_notification_plugins_installed_count=0x7f0a009f;
-        public static int feather_notification_plus_more=0x7f0a007c;
-        public static int feather_notification_restore_all_completed=0x7f0a0005;
-        public static int feather_notification_some_items_cant_be_restored=0x7f0a004f;
-        public static int feather_original=0x7f0a0045;
-        public static int feather_please_try_again_later=0x7f0a007f;
-        public static int feather_plugin_error_corrupted=0x7f0a008a;
-        public static int feather_plugin_error_download=0x7f0a003c;
-        public static int feather_plugin_error_storage_not_available=0x7f0a0042;
-        public static int feather_plugin_filter_undefined_name=0x7f0a0001;
-        public static int feather_powered_by_aviary=0x7f0a0065;
-        public static int feather_purchase_failed=0x7f0a004a;
-        public static int feather_rectangle=0x7f0a001b;
-        public static int feather_red_eye=0x7f0a00a0;
-        public static int feather_remove=0x7f0a00a2;
-        public static int feather_restore_all_request_sent=0x7f0a006a;
-        public static int feather_revert_dialog_message=0x7f0a0028;
-        public static int feather_revert_dialog_title=0x7f0a001c;
-        public static int feather_rotate=0x7f0a0088;
-        public static int feather_saturation=0x7f0a0025;
-        public static int feather_save=0x7f0a0079;
-        public static int feather_save_progress=0x7f0a0081;
-        public static int feather_send_feedback=0x7f0a004b;
-        public static int feather_shapes=0x7f0a0040;
-        public static int feather_share=0x7f0a0029;
-        public static int feather_sharpen=0x7f0a0072;
-        public static int feather_square=0x7f0a0060;
-        public static int feather_sticker_delete_message=0x7f0a001e;
-        public static int feather_sticker_name=0x7f0a0098;
-        public static int feather_sticker_pack_updated_1=0x7f0a0047;
-        public static int feather_sticker_pack_updated_2=0x7f0a0048;
-        public static int feather_sticker_pack_updated_3=0x7f0a0049;
-        public static int feather_stickers=0x7f0a0059;
-        public static int feather_stickers_dialog_first_time=0x7f0a0030;
-        public static int feather_supply_shop=0x7f0a007b;
-        public static int feather_text=0x7f0a0041;
-        public static int feather_tool=0x7f0a0004;
-        public static int feather_tool_colorsplash=0x7f0a0050;
-        public static int feather_tool_leave_question=0x7f0a0086;
-        public static int feather_tool_name=0x7f0a008b;
-        public static int feather_tool_temperature=0x7f0a0067;
-        public static int feather_tool_tiltshift=0x7f0a007e;
-        public static int feather_try_again=0x7f0a0091;
-        public static int feather_unsaved_from_camera=0x7f0a0099;
-        public static int feather_update=0x7f0a0022;
-        public static int feather_version=0x7f0a0026;
-        public static int feather_view_file=0x7f0a003a;
-        public static int feather_whiten=0x7f0a0010;
-        public static int feather_yes_leave=0x7f0a0034;
-        public static int feather_zoom_mode=0x7f0a005c;
-        public static int filter_name=0x7f0a0066;
-        public static int menu_premium=0x7f0a006f;
+        public static int aviary_meme_font=0x7f090000;
+        public static int border_name=0x7f090076;
+        public static int confirm_quit_message=0x7f090080;
+        public static int feather_about_dialog_message=0x7f090019;
+        public static int feather_acc_a_sticker=0x7f09005f;
+        public static int feather_acc_color=0x7f090097;
+        public static int feather_acc_decrease_value=0x7f090006;
+        public static int feather_acc_flip_h=0x7f090094;
+        public static int feather_acc_flip_v=0x7f09008c;
+        public static int feather_acc_increase_value=0x7f09003d;
+        public static int feather_acc_lens_toggle=0x7f090063;
+        public static int feather_acc_rotate_ccw=0x7f090095;
+        public static int feather_acc_rotate_cw=0x7f090092;
+        public static int feather_acc_size=0x7f09008d;
+        public static int feather_activity_not_found=0x7f09005b;
+        public static int feather_adjust=0x7f090064;
+        public static int feather_apply=0x7f090071;
+        public static int feather_attention=0x7f090014;
+        public static int feather_auto_enhance_label=0x7f090008;
+        public static int feather_back_enhance_label=0x7f090061;
+        public static int feather_balance_enhance_label=0x7f090083;
+        public static int feather_blemish=0x7f090044;
+        public static int feather_borders=0x7f090090;
+        public static int feather_borders_dialog_first_time=0x7f090075;
+        public static int feather_brightness=0x7f09007d;
+        public static int feather_cancel=0x7f09009a;
+        public static int feather_circle=0x7f090038;
+        public static int feather_close=0x7f090018;
+        public static int feather_colorfix=0x7f09004e;
+        public static int feather_colorsplash_eraser=0x7f090087;
+        public static int feather_colorsplash_free=0x7f090052;
+        public static int feather_colorsplash_smart=0x7f09002a;
+        public static int feather_confirm=0x7f09003e;
+        public static int feather_contrast=0x7f09003b;
+        public static int feather_crash_toast_text=0x7f09005e;
+        public static int feather_crop=0x7f09009c;
+        public static int feather_custom=0x7f090056;
+        public static int feather_delete=0x7f090046;
+        public static int feather_details=0x7f090003;
+        public static int feather_download=0x7f090077;
+        public static int feather_download_start_failed=0x7f090089;
+        public static int feather_draw=0x7f09002b;
+        public static int feather_edit_bottom_text=0x7f090062;
+        public static int feather_edit_top_text=0x7f090069;
+        public static int feather_edit_your_photo=0x7f090009;
+        public static int feather_effect_loading_message=0x7f09002e;
+        public static int feather_effects=0x7f090007;
+        public static int feather_effects_beginning_of_list=0x7f090039;
+        public static int feather_effects_end_of_list=0x7f090017;
+        public static int feather_effects_error_loading_pack=0x7f09007a;
+        public static int feather_effects_error_loading_packs=0x7f09005d;
+        public static int feather_effects_error_update_editor=0x7f090021;
+        public static int feather_effects_error_update_editors=0x7f090023;
+        public static int feather_effects_error_update_multiple=0x7f09006c;
+        public static int feather_effects_error_update_pack=0x7f090016;
+        public static int feather_effects_error_update_packs=0x7f090043;
+        public static int feather_effects_unknown_error=0x7f090084;
+        public static int feather_effects_unknown_errors=0x7f090074;
+        public static int feather_enhance=0x7f090078;
+        public static int feather_enter_text_here=0x7f090035;
+        public static int feather_error_download_image_message=0x7f09002c;
+        public static int feather_error_saving_aviary_folder=0x7f09000b;
+        public static int feather_error_saving_image=0x7f09002d;
+        public static int feather_featured=0x7f09009e;
+        public static int feather_feedback=0x7f09006d;
+        public static int feather_feedback_dialog_message=0x7f090036;
+        public static int feather_filter_pack_updated=0x7f090024;
+        public static int feather_flip=0x7f090096;
+        public static int feather_generic_error_title=0x7f09005a;
+        public static int feather_get_more=0x7f09008f;
+        public static int feather_hidef=0x7f090031;
+        public static int feather_iap_banner_text=0x7f09009b;
+        public static int feather_iap_download=0x7f090082;
+        public static int feather_iap_download_failed=0x7f090070;
+        public static int feather_iap_error=0x7f09002f;
+        public static int feather_iap_failed_download_informations=0x7f09004d;
+        public static int feather_iap_failed_download_previews=0x7f090033;
+        public static int feather_iap_installing=0x7f09009d;
+        public static int feather_iap_list_empty_message=0x7f090085;
+        public static int feather_iap_notification_installed_summary=0x7f09008e;
+        public static int feather_iap_owned=0x7f09004c;
+        public static int feather_iap_pack_installed=0x7f09006b;
+        public static int feather_iap_restore=0x7f090027;
+        public static int feather_iap_restore_all=0x7f090011;
+        public static int feather_iap_restore_all_failed=0x7f090073;
+        public static int feather_iap_restore_all_in_progress=0x7f09003f;
+        public static int feather_iap_restore_all_summary=0x7f09000c;
+        public static int feather_iap_retry=0x7f0900a1;
+        public static int feather_iap_unavailable=0x7f09006e;
+        public static int feather_illuminate=0x7f090002;
+        public static int feather_image_saved=0x7f09000a;
+        public static int feather_image_saved_in=0x7f090054;
+        public static int feather_infoscreen_bottom_button=0x7f090020;
+        public static int feather_infoscreen_text=0x7f090057;
+        public static int feather_item_not_found=0x7f090051;
+        public static int feather_keep_editing=0x7f09001d;
+        public static int feather_loading_image=0x7f090037;
+        public static int feather_loading_title=0x7f090068;
+        public static int feather_meme=0x7f09000e;
+        public static int feather_menu_reset=0x7f090055;
+        public static int feather_message_button_no=0x7f09001a;
+        public static int feather_message_button_yes=0x7f090032;
+        public static int feather_message_text=0x7f090058;
+        public static int feather_message_title=0x7f090012;
+        public static int feather_mirror=0x7f09001f;
+        public static int feather_new_effects=0x7f09000d;
+        public static int feather_new_frames=0x7f09000f;
+        public static int feather_new_stickers=0x7f090015;
+        public static int feather_no_purchase_made=0x7f090053;
+        public static int feather_notification_n_items_cant_be_restored=0x7f090013;
+        public static int feather_notification_no_items_to_restore=0x7f090093;
+        public static int feather_notification_plugins_installed_count=0x7f09009f;
+        public static int feather_notification_plus_more=0x7f09007c;
+        public static int feather_notification_restore_all_completed=0x7f090005;
+        public static int feather_notification_some_items_cant_be_restored=0x7f09004f;
+        public static int feather_original=0x7f090045;
+        public static int feather_please_try_again_later=0x7f09007f;
+        public static int feather_plugin_error_corrupted=0x7f09008a;
+        public static int feather_plugin_error_download=0x7f09003c;
+        public static int feather_plugin_error_storage_not_available=0x7f090042;
+        public static int feather_plugin_filter_undefined_name=0x7f090001;
+        public static int feather_powered_by_aviary=0x7f090065;
+        public static int feather_purchase_failed=0x7f09004a;
+        public static int feather_rectangle=0x7f09001b;
+        public static int feather_red_eye=0x7f0900a0;
+        public static int feather_remove=0x7f0900a2;
+        public static int feather_restore_all_request_sent=0x7f09006a;
+        public static int feather_revert_dialog_message=0x7f090028;
+        public static int feather_revert_dialog_title=0x7f09001c;
+        public static int feather_rotate=0x7f090088;
+        public static int feather_saturation=0x7f090025;
+        public static int feather_save=0x7f090079;
+        public static int feather_save_progress=0x7f090081;
+        public static int feather_send_feedback=0x7f09004b;
+        public static int feather_shapes=0x7f090040;
+        public static int feather_share=0x7f090029;
+        public static int feather_sharpen=0x7f090072;
+        public static int feather_square=0x7f090060;
+        public static int feather_sticker_delete_message=0x7f09001e;
+        public static int feather_sticker_name=0x7f090098;
+        public static int feather_sticker_pack_updated_1=0x7f090047;
+        public static int feather_sticker_pack_updated_2=0x7f090048;
+        public static int feather_sticker_pack_updated_3=0x7f090049;
+        public static int feather_stickers=0x7f090059;
+        public static int feather_stickers_dialog_first_time=0x7f090030;
+        public static int feather_supply_shop=0x7f09007b;
+        public static int feather_text=0x7f090041;
+        public static int feather_tool=0x7f090004;
+        public static int feather_tool_colorsplash=0x7f090050;
+        public static int feather_tool_leave_question=0x7f090086;
+        public static int feather_tool_name=0x7f09008b;
+        public static int feather_tool_temperature=0x7f090067;
+        public static int feather_tool_tiltshift=0x7f09007e;
+        public static int feather_try_again=0x7f090091;
+        public static int feather_unsaved_from_camera=0x7f090099;
+        public static int feather_update=0x7f090022;
+        public static int feather_version=0x7f090026;
+        public static int feather_view_file=0x7f09003a;
+        public static int feather_whiten=0x7f090010;
+        public static int feather_yes_leave=0x7f090034;
+        public static int feather_zoom_mode=0x7f09005c;
+        public static int filter_name=0x7f090066;
+        public static int menu_premium=0x7f09006f;
     }
     public static final class style {
-        public static int AviaryAnimations=0x7f0c0088;
-        public static int AviaryAnimations_AviaryToast=0x7f0c0089;
+        public static int AviaryAnimations=0x7f0b0088;
+        public static int AviaryAnimations_AviaryToast=0x7f0b0089;
         /**  base theme 
          */
-        public static int AviaryBaseTheme=0x7f0c008a;
+        public static int AviaryBaseTheme=0x7f0b008a;
         /**  Default dialogs style 
          */
-        public static int AviaryBaseTheme_Dialog=0x7f0c008b;
-        public static int AviaryDialog=0x7f0c0072;
-        public static int AviaryDialog_Divider=0x7f0c0074;
-        public static int AviaryDialog_Feedback=0x7f0c0075;
-        public static int AviaryDialog_Feedback_Text=0x7f0c0076;
-        public static int AviaryDialog_MainLayout=0x7f0c0073;
-        public static int AviaryGraphics=0x7f0c0077;
-        public static int AviaryGraphics_CropHighlightView=0x7f0c0068;
-        public static int AviaryGraphics_GalleryBottomLine=0x7f0c007a;
-        public static int AviaryGraphics_GalleryTopIndicator=0x7f0c0078;
-        public static int AviaryGraphics_GalleryTopIndicator_Inverse=0x7f0c0079;
-        public static int AviaryGraphics_PluginDividerText=0x7f0c0069;
-        public static int AviaryGraphics_PreviewFill=0x7f0c007b;
-        public static int AviaryGraphics_PreviewSpot=0x7f0c007c;
-        public static int AviaryGraphics_StickerHighlightView=0x7f0c006b;
-        public static int AviaryGraphics_TextHighlightView=0x7f0c006a;
-        public static int AviaryTextAppearance=0x7f0c007d;
-        public static int AviaryTextAppearance_Inverted=0x7f0c007e;
-        public static int AviaryTextAppearance_Inverted_Large=0x7f0c0087;
-        public static int AviaryTextAppearance_Inverted_Medium=0x7f0c0084;
-        public static int AviaryTextAppearance_Inverted_Small=0x7f0c007f;
-        public static int AviaryTextAppearance_Large=0x7f0c0085;
-        public static int AviaryTextAppearance_Large_NoSelected=0x7f0c0086;
-        public static int AviaryTextAppearance_Medium=0x7f0c0082;
-        public static int AviaryTextAppearance_Medium_NoSelected=0x7f0c0083;
-        public static int AviaryTextAppearance_Small=0x7f0c0080;
-        public static int AviaryTextAppearance_Small_NoSelected=0x7f0c0081;
+        public static int AviaryBaseTheme_Dialog=0x7f0b008b;
+        public static int AviaryDialog=0x7f0b0072;
+        public static int AviaryDialog_Divider=0x7f0b0074;
+        public static int AviaryDialog_Feedback=0x7f0b0075;
+        public static int AviaryDialog_Feedback_Text=0x7f0b0076;
+        public static int AviaryDialog_MainLayout=0x7f0b0073;
+        public static int AviaryGraphics=0x7f0b0077;
+        public static int AviaryGraphics_CropHighlightView=0x7f0b0068;
+        public static int AviaryGraphics_GalleryBottomLine=0x7f0b007a;
+        public static int AviaryGraphics_GalleryTopIndicator=0x7f0b0078;
+        public static int AviaryGraphics_GalleryTopIndicator_Inverse=0x7f0b0079;
+        public static int AviaryGraphics_PluginDividerText=0x7f0b0069;
+        public static int AviaryGraphics_PreviewFill=0x7f0b007b;
+        public static int AviaryGraphics_PreviewSpot=0x7f0b007c;
+        public static int AviaryGraphics_StickerHighlightView=0x7f0b006b;
+        public static int AviaryGraphics_TextHighlightView=0x7f0b006a;
+        public static int AviaryTextAppearance=0x7f0b007d;
+        public static int AviaryTextAppearance_Inverted=0x7f0b007e;
+        public static int AviaryTextAppearance_Inverted_Large=0x7f0b0087;
+        public static int AviaryTextAppearance_Inverted_Medium=0x7f0b0084;
+        public static int AviaryTextAppearance_Inverted_Small=0x7f0b007f;
+        public static int AviaryTextAppearance_Large=0x7f0b0085;
+        public static int AviaryTextAppearance_Large_NoSelected=0x7f0b0086;
+        public static int AviaryTextAppearance_Medium=0x7f0b0082;
+        public static int AviaryTextAppearance_Medium_NoSelected=0x7f0b0083;
+        public static int AviaryTextAppearance_Small=0x7f0b0080;
+        public static int AviaryTextAppearance_Small_NoSelected=0x7f0b0081;
         /**  aviary default theme 
          */
-        public static int AviaryTheme=0x7f0c008c;
+        public static int AviaryTheme=0x7f0b008c;
         /**  Dialogs themes 
          */
-        public static int AviaryTheme_Dialog=0x7f0c008d;
+        public static int AviaryTheme_Dialog=0x7f0b008d;
         /**  Custom dialogs 
          */
-        public static int AviaryTheme_Dialog_Custom=0x7f0c008e;
-        public static int AviaryWidget=0x7f0c0000;
-        public static int AviaryWidget_AdjustImageView=0x7f0c0067;
-        public static int AviaryWidget_AviaryGallery=0x7f0c0063;
-        public static int AviaryWidget_AviarySeekBar=0x7f0c0001;
-        public static int AviaryWidget_AviaryWheel=0x7f0c0002;
-        public static int AviaryWidget_BottomBar=0x7f0c0006;
-        public static int AviaryWidget_BottomBar_GalleryItem=0x7f0c0007;
-        public static int AviaryWidget_BottomBar_GalleryItem_Container=0x7f0c0008;
-        public static int AviaryWidget_BottomBar_GalleryItem_Crop=0x7f0c000b;
-        public static int AviaryWidget_BottomBar_GalleryItem_Crop_HighlightImageView=0x7f0c000e;
-        public static int AviaryWidget_BottomBar_GalleryItem_Crop_TextView=0x7f0c000c;
-        public static int AviaryWidget_BottomBar_GalleryItem_Crop_TextView_Custom=0x7f0c000d;
-        public static int AviaryWidget_BottomBar_GalleryItem_Divider=0x7f0c0009;
-        public static int AviaryWidget_BottomBar_GalleryItem_HighlightImageView=0x7f0c000a;
-        public static int AviaryWidget_BottomBar_GalleryTopIndicatorView=0x7f0c000f;
-        public static int AviaryWidget_BottomBar_GalleryTopIndicatorView_Inverse=0x7f0c0010;
-        public static int AviaryWidget_BottomBar_HorizontalScrollView=0x7f0c0018;
-        public static int AviaryWidget_BottomBar_Logo=0x7f0c0012;
-        public static int AviaryWidget_BottomBar_Logo_Container=0x7f0c0013;
-        public static int AviaryWidget_BottomBar_Logo_Image=0x7f0c0014;
-        public static int AviaryWidget_BottomBar_OptionPanel=0x7f0c0015;
-        public static int AviaryWidget_BottomBar_OptionPanelContainer=0x7f0c0016;
-        public static int AviaryWidget_BottomBar_OptionPanelContainer_BorderLess=0x7f0c0017;
-        public static int AviaryWidget_BottomBar_Tool=0x7f0c003f;
-        public static int AviaryWidget_BottomBar_Tool_FeedBack=0x7f0c0040;
-        public static int AviaryWidget_BottomBar_ViewFlipper=0x7f0c0011;
-        public static int AviaryWidget_Button=0x7f0c005d;
-        public static int AviaryWidget_Button_LightGray=0x7f0c003c;
-        public static int AviaryWidget_Button_Meme=0x7f0c005e;
-        public static int AviaryWidget_Button_NavButton=0x7f0c005b;
-        public static int AviaryWidget_Button_NavButton_Apply=0x7f0c005c;
-        public static int AviaryWidget_Button_Secondary=0x7f0c005f;
-        public static int AviaryWidget_Button_Secondary_NavBarRestore=0x7f0c0060;
-        public static int AviaryWidget_Button_Secondary_Toggle=0x7f0c0061;
-        public static int AviaryWidget_CropImageView=0x7f0c0064;
-        public static int AviaryWidget_EdgeEffect=0x7f0c0070;
-        public static int AviaryWidget_EffectThumb=0x7f0c001a;
-        public static int AviaryWidget_EffectThumb_Divider=0x7f0c001b;
-        public static int AviaryWidget_EffectThumb_Divider_Left=0x7f0c001e;
-        public static int AviaryWidget_EffectThumb_DividerContainer=0x7f0c001c;
-        public static int AviaryWidget_EffectThumb_DividerContainer_Left=0x7f0c001d;
-        public static int AviaryWidget_EffectThumb_HiddenSelector=0x7f0c0021;
-        public static int AviaryWidget_EffectThumb_Layout=0x7f0c0022;
-        public static int AviaryWidget_EffectThumb_Layout_External=0x7f0c0023;
-        public static int AviaryWidget_EffectThumb_PacksDivider=0x7f0c001f;
-        public static int AviaryWidget_EffectThumb_Text=0x7f0c0020;
-        public static int AviaryWidget_EffectsHorizontalScrollView=0x7f0c0019;
-        public static int AviaryWidget_HiddenText=0x7f0c006e;
-        public static int AviaryWidget_HiddenText_TextTool=0x7f0c006f;
-        public static int AviaryWidget_HighlightImageView=0x7f0c0041;
-        public static int AviaryWidget_HighlightImageView_Clear=0x7f0c0043;
-        public static int AviaryWidget_HighlightImageView_Lens=0x7f0c0042;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton=0x7f0c0045;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle=0x7f0c0046;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Center=0x7f0c0048;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Center_Enhance=0x7f0c004e;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Enhance=0x7f0c004c;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left=0x7f0c0047;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_Adjust=0x7f0c004a;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_Enhance=0x7f0c004d;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_Focus=0x7f0c0050;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_TiltShift=0x7f0c0053;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right=0x7f0c0049;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_Adjust=0x7f0c004b;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_Enhance=0x7f0c004f;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_Focus=0x7f0c0051;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_TiltShift=0x7f0c0054;
-        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_TiltShift=0x7f0c0052;
-        public static int AviaryWidget_HighlightImageView_Tool=0x7f0c0044;
-        public static int AviaryWidget_IAPDialog=0x7f0c0024;
-        public static int AviaryWidget_IAPDialog_CellLayoutEffects=0x7f0c0034;
-        public static int AviaryWidget_IAPDialog_CellLayoutStickers=0x7f0c0033;
-        public static int AviaryWidget_IAPDialog_Container=0x7f0c0027;
-        public static int AviaryWidget_IAPDialog_DownloadButton=0x7f0c003b;
-        public static int AviaryWidget_IAPDialog_DownloadButtonText=0x7f0c003e;
-        public static int AviaryWidget_IAPDialog_Icon=0x7f0c0026;
-        public static int AviaryWidget_IAPDialog_Main=0x7f0c0028;
-        public static int AviaryWidget_IAPDialog_PackInfoPreviewCellLayout=0x7f0c0025;
-        public static int AviaryWidget_IAPDialog_RestoreAllButton=0x7f0c003d;
-        public static int AviaryWidget_IAPDialog_RestoreDialog=0x7f0c0030;
-        public static int AviaryWidget_IAPDialog_ShadowBottom=0x7f0c0039;
-        public static int AviaryWidget_IAPDialog_ShadowTop=0x7f0c0038;
-        public static int AviaryWidget_IAPDialog_SingleCell=0x7f0c0035;
-        public static int AviaryWidget_IAPDialog_SingleCell_Stickers=0x7f0c0036;
-        public static int AviaryWidget_IAPDialog_Text=0x7f0c0029;
-        public static int AviaryWidget_IAPDialog_Text_Banner=0x7f0c0031;
-        public static int AviaryWidget_IAPDialog_Text_Description=0x7f0c002d;
-        public static int AviaryWidget_IAPDialog_Text_Error=0x7f0c002b;
-        public static int AviaryWidget_IAPDialog_Text_ListViewItemDescription=0x7f0c002f;
-        public static int AviaryWidget_IAPDialog_Text_ListViewItemTitle=0x7f0c002e;
-        public static int AviaryWidget_IAPDialog_Text_Title=0x7f0c002a;
-        public static int AviaryWidget_IAPDialog_TextButton_Error=0x7f0c002c;
-        public static int AviaryWidget_IAPDialog_TopGrid=0x7f0c003a;
-        public static int AviaryWidget_IAPDialog_Workspace=0x7f0c0032;
-        public static int AviaryWidget_IAPDialog_WorkspaceIndicator=0x7f0c0037;
-        public static int AviaryWidget_ImageRestoreSwitcher=0x7f0c0071;
-        public static int AviaryWidget_ModalToastLoader=0x7f0c006c;
-        public static int AviaryWidget_ModalToastLoader_MainView=0x7f0c006d;
-        public static int AviaryWidget_NavBar=0x7f0c0055;
-        public static int AviaryWidget_NavBar_Divider=0x7f0c0057;
-        public static int AviaryWidget_NavBar_Main=0x7f0c0056;
-        public static int AviaryWidget_PreviewSpot=0x7f0c0062;
-        public static int AviaryWidget_StickerImageView=0x7f0c0066;
-        public static int AviaryWidget_SymbolMinus=0x7f0c0005;
-        public static int AviaryWidget_SymbolPlus=0x7f0c0004;
-        public static int AviaryWidget_TextImageView=0x7f0c0065;
-        public static int AviaryWidget_TextView=0x7f0c0059;
-        public static int AviaryWidget_TextView_NavTitle=0x7f0c005a;
-        public static int AviaryWidget_TextView_Tool=0x7f0c0058;
-        public static int AviaryWidget_TiltShiftView=0x7f0c0003;
+        public static int AviaryTheme_Dialog_Custom=0x7f0b008e;
+        public static int AviaryWidget=0x7f0b0000;
+        public static int AviaryWidget_AdjustImageView=0x7f0b0067;
+        public static int AviaryWidget_AviaryGallery=0x7f0b0063;
+        public static int AviaryWidget_AviarySeekBar=0x7f0b0001;
+        public static int AviaryWidget_AviaryWheel=0x7f0b0002;
+        public static int AviaryWidget_BottomBar=0x7f0b0006;
+        public static int AviaryWidget_BottomBar_GalleryItem=0x7f0b0007;
+        public static int AviaryWidget_BottomBar_GalleryItem_Container=0x7f0b0008;
+        public static int AviaryWidget_BottomBar_GalleryItem_Crop=0x7f0b000b;
+        public static int AviaryWidget_BottomBar_GalleryItem_Crop_HighlightImageView=0x7f0b000e;
+        public static int AviaryWidget_BottomBar_GalleryItem_Crop_TextView=0x7f0b000c;
+        public static int AviaryWidget_BottomBar_GalleryItem_Crop_TextView_Custom=0x7f0b000d;
+        public static int AviaryWidget_BottomBar_GalleryItem_Divider=0x7f0b0009;
+        public static int AviaryWidget_BottomBar_GalleryItem_HighlightImageView=0x7f0b000a;
+        public static int AviaryWidget_BottomBar_GalleryTopIndicatorView=0x7f0b000f;
+        public static int AviaryWidget_BottomBar_GalleryTopIndicatorView_Inverse=0x7f0b0010;
+        public static int AviaryWidget_BottomBar_HorizontalScrollView=0x7f0b0018;
+        public static int AviaryWidget_BottomBar_Logo=0x7f0b0012;
+        public static int AviaryWidget_BottomBar_Logo_Container=0x7f0b0013;
+        public static int AviaryWidget_BottomBar_Logo_Image=0x7f0b0014;
+        public static int AviaryWidget_BottomBar_OptionPanel=0x7f0b0015;
+        public static int AviaryWidget_BottomBar_OptionPanelContainer=0x7f0b0016;
+        public static int AviaryWidget_BottomBar_OptionPanelContainer_BorderLess=0x7f0b0017;
+        public static int AviaryWidget_BottomBar_Tool=0x7f0b003f;
+        public static int AviaryWidget_BottomBar_Tool_FeedBack=0x7f0b0040;
+        public static int AviaryWidget_BottomBar_ViewFlipper=0x7f0b0011;
+        public static int AviaryWidget_Button=0x7f0b005d;
+        public static int AviaryWidget_Button_LightGray=0x7f0b003c;
+        public static int AviaryWidget_Button_Meme=0x7f0b005e;
+        public static int AviaryWidget_Button_NavButton=0x7f0b005b;
+        public static int AviaryWidget_Button_NavButton_Apply=0x7f0b005c;
+        public static int AviaryWidget_Button_Secondary=0x7f0b005f;
+        public static int AviaryWidget_Button_Secondary_NavBarRestore=0x7f0b0060;
+        public static int AviaryWidget_Button_Secondary_Toggle=0x7f0b0061;
+        public static int AviaryWidget_CropImageView=0x7f0b0064;
+        public static int AviaryWidget_EdgeEffect=0x7f0b0070;
+        public static int AviaryWidget_EffectThumb=0x7f0b001a;
+        public static int AviaryWidget_EffectThumb_Divider=0x7f0b001b;
+        public static int AviaryWidget_EffectThumb_Divider_Left=0x7f0b001e;
+        public static int AviaryWidget_EffectThumb_DividerContainer=0x7f0b001c;
+        public static int AviaryWidget_EffectThumb_DividerContainer_Left=0x7f0b001d;
+        public static int AviaryWidget_EffectThumb_HiddenSelector=0x7f0b0021;
+        public static int AviaryWidget_EffectThumb_Layout=0x7f0b0022;
+        public static int AviaryWidget_EffectThumb_Layout_External=0x7f0b0023;
+        public static int AviaryWidget_EffectThumb_PacksDivider=0x7f0b001f;
+        public static int AviaryWidget_EffectThumb_Text=0x7f0b0020;
+        public static int AviaryWidget_EffectsHorizontalScrollView=0x7f0b0019;
+        public static int AviaryWidget_HiddenText=0x7f0b006e;
+        public static int AviaryWidget_HiddenText_TextTool=0x7f0b006f;
+        public static int AviaryWidget_HighlightImageView=0x7f0b0041;
+        public static int AviaryWidget_HighlightImageView_Clear=0x7f0b0043;
+        public static int AviaryWidget_HighlightImageView_Lens=0x7f0b0042;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton=0x7f0b0045;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle=0x7f0b0046;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Center=0x7f0b0048;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Center_Enhance=0x7f0b004e;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Enhance=0x7f0b004c;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left=0x7f0b0047;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_Adjust=0x7f0b004a;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_Enhance=0x7f0b004d;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_Focus=0x7f0b0050;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Left_TiltShift=0x7f0b0053;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right=0x7f0b0049;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_Adjust=0x7f0b004b;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_Enhance=0x7f0b004f;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_Focus=0x7f0b0051;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_Right_TiltShift=0x7f0b0054;
+        public static int AviaryWidget_HighlightImageView_OptionPanelButton_Toggle_TiltShift=0x7f0b0052;
+        public static int AviaryWidget_HighlightImageView_Tool=0x7f0b0044;
+        public static int AviaryWidget_IAPDialog=0x7f0b0024;
+        public static int AviaryWidget_IAPDialog_CellLayoutEffects=0x7f0b0034;
+        public static int AviaryWidget_IAPDialog_CellLayoutStickers=0x7f0b0033;
+        public static int AviaryWidget_IAPDialog_Container=0x7f0b0027;
+        public static int AviaryWidget_IAPDialog_DownloadButton=0x7f0b003b;
+        public static int AviaryWidget_IAPDialog_DownloadButtonText=0x7f0b003e;
+        public static int AviaryWidget_IAPDialog_Icon=0x7f0b0026;
+        public static int AviaryWidget_IAPDialog_Main=0x7f0b0028;
+        public static int AviaryWidget_IAPDialog_PackInfoPreviewCellLayout=0x7f0b0025;
+        public static int AviaryWidget_IAPDialog_RestoreAllButton=0x7f0b003d;
+        public static int AviaryWidget_IAPDialog_RestoreDialog=0x7f0b0030;
+        public static int AviaryWidget_IAPDialog_ShadowBottom=0x7f0b0039;
+        public static int AviaryWidget_IAPDialog_ShadowTop=0x7f0b0038;
+        public static int AviaryWidget_IAPDialog_SingleCell=0x7f0b0035;
+        public static int AviaryWidget_IAPDialog_SingleCell_Stickers=0x7f0b0036;
+        public static int AviaryWidget_IAPDialog_Text=0x7f0b0029;
+        public static int AviaryWidget_IAPDialog_Text_Banner=0x7f0b0031;
+        public static int AviaryWidget_IAPDialog_Text_Description=0x7f0b002d;
+        public static int AviaryWidget_IAPDialog_Text_Error=0x7f0b002b;
+        public static int AviaryWidget_IAPDialog_Text_ListViewItemDescription=0x7f0b002f;
+        public static int AviaryWidget_IAPDialog_Text_ListViewItemTitle=0x7f0b002e;
+        public static int AviaryWidget_IAPDialog_Text_Title=0x7f0b002a;
+        public static int AviaryWidget_IAPDialog_TextButton_Error=0x7f0b002c;
+        public static int AviaryWidget_IAPDialog_TopGrid=0x7f0b003a;
+        public static int AviaryWidget_IAPDialog_Workspace=0x7f0b0032;
+        public static int AviaryWidget_IAPDialog_WorkspaceIndicator=0x7f0b0037;
+        public static int AviaryWidget_ImageRestoreSwitcher=0x7f0b0071;
+        public static int AviaryWidget_ModalToastLoader=0x7f0b006c;
+        public static int AviaryWidget_ModalToastLoader_MainView=0x7f0b006d;
+        public static int AviaryWidget_NavBar=0x7f0b0055;
+        public static int AviaryWidget_NavBar_Divider=0x7f0b0057;
+        public static int AviaryWidget_NavBar_Main=0x7f0b0056;
+        public static int AviaryWidget_PreviewSpot=0x7f0b0062;
+        public static int AviaryWidget_StickerImageView=0x7f0b0066;
+        public static int AviaryWidget_SymbolMinus=0x7f0b0005;
+        public static int AviaryWidget_SymbolPlus=0x7f0b0004;
+        public static int AviaryWidget_TextImageView=0x7f0b0065;
+        public static int AviaryWidget_TextView=0x7f0b0059;
+        public static int AviaryWidget_TextView_NavTitle=0x7f0b005a;
+        public static int AviaryWidget_TextView_Tool=0x7f0b0058;
+        public static int AviaryWidget_TiltShiftView=0x7f0b0003;
     }
     public static final class styleable {
         /** Attributes that can be used with a AbsHListView.
@@ -2755,37 +2755,37 @@ containing a value of this type.
           attribute's value can be found in the {@link #AbsHListView} array.
           @attr name android:cacheColorHint
         */
-        public static final int AbsHListView_android_cacheColorHint = 3;
+        public static int AbsHListView_android_cacheColorHint = 3;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#choiceMode}
           attribute's value can be found in the {@link #AbsHListView} array.
           @attr name android:choiceMode
         */
-        public static final int AbsHListView_android_choiceMode = 4;
+        public static int AbsHListView_android_choiceMode = 4;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#drawSelectorOnTop}
           attribute's value can be found in the {@link #AbsHListView} array.
           @attr name android:drawSelectorOnTop
         */
-        public static final int AbsHListView_android_drawSelectorOnTop = 1;
+        public static int AbsHListView_android_drawSelectorOnTop = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#listSelector}
           attribute's value can be found in the {@link #AbsHListView} array.
           @attr name android:listSelector
         */
-        public static final int AbsHListView_android_listSelector = 0;
+        public static int AbsHListView_android_listSelector = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#scrollingCache}
           attribute's value can be found in the {@link #AbsHListView} array.
           @attr name android:scrollingCache
         */
-        public static final int AbsHListView_android_scrollingCache = 2;
+        public static int AbsHListView_android_scrollingCache = 2;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#smoothScrollbar}
           attribute's value can be found in the {@link #AbsHListView} array.
           @attr name android:smoothScrollbar
         */
-        public static final int AbsHListView_android_smoothScrollbar = 5;
+        public static int AbsHListView_android_smoothScrollbar = 5;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#stackFromRight}
           attribute's value can be found in the {@link #AbsHListView} array.
@@ -2799,7 +2799,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:stackFromRight
         */
-        public static final int AbsHListView_stackFromRight = 6;
+        public static int AbsHListView_stackFromRight = 6;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#transcriptMode}
           attribute's value can be found in the {@link #AbsHListView} array.
@@ -2817,7 +2817,7 @@ containing a value of this type.
 </table>
           @attr name com.aviary.android.feather:transcriptMode
         */
-        public static final int AbsHListView_transcriptMode = 7;
+        public static int AbsHListView_transcriptMode = 7;
         /** Attributes that can be used with a AviaryAdjustImageView.
            <p>Includes the following attributes:</p>
            <table>
@@ -2858,7 +2858,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #AviaryAdjustImageView} array.
           @attr name android:padding
         */
-        public static final int AviaryAdjustImageView_android_padding = 0;
+        public static int AviaryAdjustImageView_android_padding = 0;
         /**
           <p>
           @attr description
@@ -2874,7 +2874,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_animationDuration
         */
-        public static final int AviaryAdjustImageView_aviary_animationDuration = 4;
+        public static int AviaryAdjustImageView_aviary_animationDuration = 4;
         /**
           <p>
           @attr description
@@ -2890,7 +2890,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_animationDuration2
         */
-        public static final int AviaryAdjustImageView_aviary_animationDuration2 = 8;
+        public static int AviaryAdjustImageView_aviary_animationDuration2 = 8;
         /**
           <p>
           @attr description
@@ -2907,7 +2907,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_color1
         */
-        public static final int AviaryAdjustImageView_aviary_color1 = 5;
+        public static int AviaryAdjustImageView_aviary_color1 = 5;
         /**
           <p>
           @attr description
@@ -2923,7 +2923,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_enable3d
         */
-        public static final int AviaryAdjustImageView_aviary_enable3d = 9;
+        public static int AviaryAdjustImageView_aviary_enable3d = 9;
         /**
           <p>
           @attr description
@@ -2939,7 +2939,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_freeRotate
         */
-        public static final int AviaryAdjustImageView_aviary_freeRotate = 10;
+        public static int AviaryAdjustImageView_aviary_freeRotate = 10;
         /**
           <p>
           @attr description
@@ -2951,7 +2951,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_handle
         */
-        public static final int AviaryAdjustImageView_aviary_handle = 7;
+        public static int AviaryAdjustImageView_aviary_handle = 7;
         /**
           <p>
           @attr description
@@ -2968,7 +2968,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor
         */
-        public static final int AviaryAdjustImageView_aviary_strokeColor = 1;
+        public static int AviaryAdjustImageView_aviary_strokeColor = 1;
         /**
           <p>
           @attr description
@@ -2985,7 +2985,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor2
         */
-        public static final int AviaryAdjustImageView_aviary_strokeColor2 = 3;
+        public static int AviaryAdjustImageView_aviary_strokeColor2 = 3;
         /**
           <p>
           @attr description
@@ -3003,7 +3003,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth
         */
-        public static final int AviaryAdjustImageView_aviary_strokeWidth = 2;
+        public static int AviaryAdjustImageView_aviary_strokeWidth = 2;
         /**
           <p>
           @attr description
@@ -3021,7 +3021,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth2
         */
-        public static final int AviaryAdjustImageView_aviary_strokeWidth2 = 6;
+        public static int AviaryAdjustImageView_aviary_strokeWidth2 = 6;
         /** Attributes that can be used with a AviaryCellLayout.
            <p>Includes the following attributes:</p>
            <table>
@@ -3068,7 +3068,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_cellBottomPadding
         */
-        public static final int AviaryCellLayout_aviary_cellBottomPadding = 3;
+        public static int AviaryCellLayout_aviary_cellBottomPadding = 3;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_cellEndPadding}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3084,7 +3084,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_cellEndPadding
         */
-        public static final int AviaryCellLayout_aviary_cellEndPadding = 1;
+        public static int AviaryCellLayout_aviary_cellEndPadding = 1;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_cellStartPadding}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3100,7 +3100,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_cellStartPadding
         */
-        public static final int AviaryCellLayout_aviary_cellStartPadding = 0;
+        public static int AviaryCellLayout_aviary_cellStartPadding = 0;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_cellTopPadding}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3116,7 +3116,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_cellTopPadding
         */
-        public static final int AviaryCellLayout_aviary_cellTopPadding = 2;
+        public static int AviaryCellLayout_aviary_cellTopPadding = 2;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_cells}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3130,7 +3130,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_cells
         */
-        public static final int AviaryCellLayout_aviary_cells = 6;
+        public static int AviaryCellLayout_aviary_cells = 6;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_horizontalPadding}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3146,7 +3146,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_horizontalPadding
         */
-        public static final int AviaryCellLayout_aviary_horizontalPadding = 4;
+        public static int AviaryCellLayout_aviary_horizontalPadding = 4;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_layout_direction}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3163,7 +3163,7 @@ containing a value of this type.
 </table>
           @attr name com.aviary.android.feather:aviary_layout_direction
         */
-        public static final int AviaryCellLayout_aviary_layout_direction = 8;
+        public static int AviaryCellLayout_aviary_layout_direction = 8;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_rows}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3177,7 +3177,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_rows
         */
-        public static final int AviaryCellLayout_aviary_rows = 7;
+        public static int AviaryCellLayout_aviary_rows = 7;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_verticalPadding}
           attribute's value can be found in the {@link #AviaryCellLayout} array.
@@ -3193,7 +3193,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_verticalPadding
         */
-        public static final int AviaryCellLayout_aviary_verticalPadding = 5;
+        public static int AviaryCellLayout_aviary_verticalPadding = 5;
         /** Attributes that can be used with a AviaryCropHighlightView.
            <p>Includes the following attributes:</p>
            <table>
@@ -3233,7 +3233,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#src}.
           @attr name android:src
         */
-        public static final int AviaryCropHighlightView_android_src = 0;
+        public static int AviaryCropHighlightView_android_src = 0;
         /**
           <p>
           @attr description
@@ -3250,7 +3250,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_color1
         */
-        public static final int AviaryCropHighlightView_aviary_color1 = 4;
+        public static int AviaryCropHighlightView_aviary_color1 = 4;
         /**
           <p>
           @attr description
@@ -3267,7 +3267,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_color2
         */
-        public static final int AviaryCropHighlightView_aviary_color2 = 5;
+        public static int AviaryCropHighlightView_aviary_color2 = 5;
         /**
           <p>
           @attr description
@@ -3284,7 +3284,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor
         */
-        public static final int AviaryCropHighlightView_aviary_strokeColor = 1;
+        public static int AviaryCropHighlightView_aviary_strokeColor = 1;
         /**
           <p>
           @attr description
@@ -3301,7 +3301,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor2
         */
-        public static final int AviaryCropHighlightView_aviary_strokeColor2 = 3;
+        public static int AviaryCropHighlightView_aviary_strokeColor2 = 3;
         /**
           <p>
           @attr description
@@ -3318,7 +3318,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor3
         */
-        public static final int AviaryCropHighlightView_aviary_strokeColor3 = 7;
+        public static int AviaryCropHighlightView_aviary_strokeColor3 = 7;
         /**
           <p>
           @attr description
@@ -3335,7 +3335,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor4
         */
-        public static final int AviaryCropHighlightView_aviary_strokeColor4 = 8;
+        public static int AviaryCropHighlightView_aviary_strokeColor4 = 8;
         /**
           <p>
           @attr description
@@ -3353,7 +3353,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth
         */
-        public static final int AviaryCropHighlightView_aviary_strokeWidth = 2;
+        public static int AviaryCropHighlightView_aviary_strokeWidth = 2;
         /**
           <p>
           @attr description
@@ -3371,7 +3371,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth2
         */
-        public static final int AviaryCropHighlightView_aviary_strokeWidth2 = 6;
+        public static int AviaryCropHighlightView_aviary_strokeWidth2 = 6;
         /** Attributes that can be used with a AviaryCropImageView.
            <p>Includes the following attributes:</p>
            <table>
@@ -3396,7 +3396,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviary_highlightStyle
         */
-        public static final int AviaryCropImageView_aviary_highlightStyle = 1;
+        public static int AviaryCropImageView_aviary_highlightStyle = 1;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_minCropSize}
           attribute's value can be found in the {@link #AviaryCropImageView} array.
@@ -3412,7 +3412,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_minCropSize
         */
-        public static final int AviaryCropImageView_aviary_minCropSize = 0;
+        public static int AviaryCropImageView_aviary_minCropSize = 0;
         /** Attributes that can be used with a AviaryDrawableHighlightView.
            <p>Includes the following attributes:</p>
            <table>
@@ -3452,7 +3452,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static final int AviaryDrawableHighlightView_android_background = 0;
+        public static int AviaryDrawableHighlightView_android_background = 0;
         /**
           <p>
           @attr description
@@ -3461,7 +3461,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#padding}.
           @attr name android:padding
         */
-        public static final int AviaryDrawableHighlightView_android_padding = 1;
+        public static int AviaryDrawableHighlightView_android_padding = 1;
         /**
           <p>
           @attr description
@@ -3473,7 +3473,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_deleteDrawable
         */
-        public static final int AviaryDrawableHighlightView_aviary_deleteDrawable = 4;
+        public static int AviaryDrawableHighlightView_aviary_deleteDrawable = 4;
         /**
           <p>
           @attr description
@@ -3491,7 +3491,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_minSize
         */
-        public static final int AviaryDrawableHighlightView_aviary_minSize = 5;
+        public static int AviaryDrawableHighlightView_aviary_minSize = 5;
         /**
           <p>
           @attr description
@@ -3507,7 +3507,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_moveEnabled
         */
-        public static final int AviaryDrawableHighlightView_aviary_moveEnabled = 6;
+        public static int AviaryDrawableHighlightView_aviary_moveEnabled = 6;
         /**
           <p>
           @attr description
@@ -3528,7 +3528,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_resizeEdgeMode
         */
-        public static final int AviaryDrawableHighlightView_aviary_resizeEdgeMode = 2;
+        public static int AviaryDrawableHighlightView_aviary_resizeEdgeMode = 2;
         /**
           <p>
           @attr description
@@ -3544,7 +3544,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_resizeEnabled
         */
-        public static final int AviaryDrawableHighlightView_aviary_resizeEnabled = 8;
+        public static int AviaryDrawableHighlightView_aviary_resizeEnabled = 8;
         /**
           <p>
           @attr description
@@ -3556,7 +3556,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_rotateDrawable
         */
-        public static final int AviaryDrawableHighlightView_aviary_rotateDrawable = 3;
+        public static int AviaryDrawableHighlightView_aviary_rotateDrawable = 3;
         /**
           <p>
           @attr description
@@ -3572,7 +3572,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_rotateEnabled
         */
-        public static final int AviaryDrawableHighlightView_aviary_rotateEnabled = 7;
+        public static int AviaryDrawableHighlightView_aviary_rotateEnabled = 7;
         /** Attributes that can be used with a AviaryEdgeEffect.
            <p>Includes the following attributes:</p>
            <table>
@@ -3607,7 +3607,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_blendMode
         */
-        public static final int AviaryEdgeEffect_aviary_blendMode = 0;
+        public static int AviaryEdgeEffect_aviary_blendMode = 0;
         /**
           <p>
           @attr description
@@ -3624,7 +3624,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_edgeColor
         */
-        public static final int AviaryEdgeEffect_aviary_edgeColor = 3;
+        public static int AviaryEdgeEffect_aviary_edgeColor = 3;
         /**
           <p>
           @attr description
@@ -3636,7 +3636,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_edgeDrawable
         */
-        public static final int AviaryEdgeEffect_aviary_edgeDrawable = 1;
+        public static int AviaryEdgeEffect_aviary_edgeDrawable = 1;
         /**
           <p>
           @attr description
@@ -3648,7 +3648,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_glowDrawable
         */
-        public static final int AviaryEdgeEffect_aviary_glowDrawable = 2;
+        public static int AviaryEdgeEffect_aviary_glowDrawable = 2;
         /** Attributes that can be used with a AviaryEffectThumbLayout.
            <p>Includes the following attributes:</p>
            <table>
@@ -3677,7 +3677,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_animationDuration
         */
-        public static final int AviaryEffectThumbLayout_aviary_animationDuration = 0;
+        public static int AviaryEffectThumbLayout_aviary_animationDuration = 0;
         /** Attributes that can be used with a AviaryGallery.
            <p>Includes the following attributes:</p>
            <table>
@@ -3696,7 +3696,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #AviaryGallery} array.
           @attr name android:animationDuration
         */
-        public static final int AviaryGallery_android_animationDuration = 0;
+        public static int AviaryGallery_android_animationDuration = 0;
         /** Attributes that can be used with a AviaryGalleryIndicatorView.
            <p>Includes the following attributes:</p>
            <table>
@@ -3723,7 +3723,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_drawableStyle
         */
-        public static final int AviaryGalleryIndicatorView_aviary_drawableStyle = 0;
+        public static int AviaryGalleryIndicatorView_aviary_drawableStyle = 0;
         /** Attributes that can be used with a AviaryGalleryTopIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -3762,19 +3762,19 @@ containing a value of this type.
           attribute's value can be found in the {@link #AviaryGalleryTopIndicator} array.
           @attr name android:minHeight
         */
-        public static final int AviaryGalleryTopIndicator_android_minHeight = 0;
+        public static int AviaryGalleryTopIndicator_android_minHeight = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#shadowColor}
           attribute's value can be found in the {@link #AviaryGalleryTopIndicator} array.
           @attr name android:shadowColor
         */
-        public static final int AviaryGalleryTopIndicator_android_shadowColor = 1;
+        public static int AviaryGalleryTopIndicator_android_shadowColor = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#shadowDy}
           attribute's value can be found in the {@link #AviaryGalleryTopIndicator} array.
           @attr name android:shadowDy
         */
-        public static final int AviaryGalleryTopIndicator_android_shadowDy = 2;
+        public static int AviaryGalleryTopIndicator_android_shadowDy = 2;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_color1}
           attribute's value can be found in the {@link #AviaryGalleryTopIndicator} array.
@@ -3789,7 +3789,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_color1
         */
-        public static final int AviaryGalleryTopIndicator_aviary_color1 = 7;
+        public static int AviaryGalleryTopIndicator_aviary_color1 = 7;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_direction}
           attribute's value can be found in the {@link #AviaryGalleryTopIndicator} array.
@@ -3806,7 +3806,7 @@ containing a value of this type.
 </table>
           @attr name com.aviary.android.feather:aviary_direction
         */
-        public static final int AviaryGalleryTopIndicator_aviary_direction = 6;
+        public static int AviaryGalleryTopIndicator_aviary_direction = 6;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_indicatorSize}
           attribute's value can be found in the {@link #AviaryGalleryTopIndicator} array.
@@ -3820,7 +3820,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_indicatorSize
         */
-        public static final int AviaryGalleryTopIndicator_aviary_indicatorSize = 8;
+        public static int AviaryGalleryTopIndicator_aviary_indicatorSize = 8;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_offsety}
           attribute's value can be found in the {@link #AviaryGalleryTopIndicator} array.
@@ -3836,7 +3836,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_offsety
         */
-        public static final int AviaryGalleryTopIndicator_aviary_offsety = 9;
+        public static int AviaryGalleryTopIndicator_aviary_offsety = 9;
         /**
           <p>
           @attr description
@@ -3853,7 +3853,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor
         */
-        public static final int AviaryGalleryTopIndicator_aviary_strokeColor = 3;
+        public static int AviaryGalleryTopIndicator_aviary_strokeColor = 3;
         /**
           <p>
           @attr description
@@ -3870,7 +3870,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor2
         */
-        public static final int AviaryGalleryTopIndicator_aviary_strokeColor2 = 5;
+        public static int AviaryGalleryTopIndicator_aviary_strokeColor2 = 5;
         /**
           <p>
           @attr description
@@ -3888,7 +3888,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth
         */
-        public static final int AviaryGalleryTopIndicator_aviary_strokeWidth = 4;
+        public static int AviaryGalleryTopIndicator_aviary_strokeWidth = 4;
         /** Attributes that can be used with a AviaryHighlightImageButton.
            <p>Includes the following attributes:</p>
            <table>
@@ -3929,7 +3929,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #AviaryHighlightImageButton} array.
           @attr name android:focusable
         */
-        public static final int AviaryHighlightImageButton_android_focusable = 0;
+        public static int AviaryHighlightImageButton_android_focusable = 0;
         /**
           <p>
           @attr description
@@ -3945,7 +3945,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_blendMode
         */
-        public static final int AviaryHighlightImageButton_aviary_blendMode = 3;
+        public static int AviaryHighlightImageButton_aviary_blendMode = 3;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_checked}
           attribute's value can be found in the {@link #AviaryHighlightImageButton} array.
@@ -3959,7 +3959,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_checked
         */
-        public static final int AviaryHighlightImageButton_aviary_checked = 9;
+        public static int AviaryHighlightImageButton_aviary_checked = 9;
         /**
           <p>
           @attr description
@@ -3979,7 +3979,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_glowMode
         */
-        public static final int AviaryHighlightImageButton_aviary_glowMode = 1;
+        public static int AviaryHighlightImageButton_aviary_glowMode = 1;
         /**
           <p>
           @attr description
@@ -3995,7 +3995,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_glowSize
         */
-        public static final int AviaryHighlightImageButton_aviary_glowSize = 8;
+        public static int AviaryHighlightImageButton_aviary_glowSize = 8;
         /**
           <p>
           @attr description
@@ -4012,7 +4012,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_highlightColorChecked
         */
-        public static final int AviaryHighlightImageButton_aviary_highlightColorChecked = 5;
+        public static int AviaryHighlightImageButton_aviary_highlightColorChecked = 5;
         /**
           <p>
           @attr description
@@ -4029,7 +4029,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_highlightColorPressed
         */
-        public static final int AviaryHighlightImageButton_aviary_highlightColorPressed = 4;
+        public static int AviaryHighlightImageButton_aviary_highlightColorPressed = 4;
         /**
           <p>
           @attr description
@@ -4046,7 +4046,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_highlightColorSelected
         */
-        public static final int AviaryHighlightImageButton_aviary_highlightColorSelected = 6;
+        public static int AviaryHighlightImageButton_aviary_highlightColorSelected = 6;
         /**
           <p>
           @attr description
@@ -4066,7 +4066,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_highlightMode
         */
-        public static final int AviaryHighlightImageButton_aviary_highlightMode = 2;
+        public static int AviaryHighlightImageButton_aviary_highlightMode = 2;
         /**
           <p>
           @attr description
@@ -4082,7 +4082,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_toggleable
         */
-        public static final int AviaryHighlightImageButton_aviary_toggleable = 7;
+        public static int AviaryHighlightImageButton_aviary_toggleable = 7;
         /**
           <p>
           @attr description
@@ -4098,7 +4098,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_untoggleable
         */
-        public static final int AviaryHighlightImageButton_aviary_untoggleable = 10;
+        public static int AviaryHighlightImageButton_aviary_untoggleable = 10;
         /** Attributes that can be used with a AviaryImageRestoreSwitcher.
            <p>Includes the following attributes:</p>
            <table>
@@ -4127,7 +4127,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_restoreTimeout
         */
-        public static final int AviaryImageRestoreSwitcher_aviary_restoreTimeout = 0;
+        public static int AviaryImageRestoreSwitcher_aviary_restoreTimeout = 0;
         /** Attributes that can be used with a AviaryImageViewDrawableOverlay.
            <p>Includes the following attributes:</p>
            <table>
@@ -4150,7 +4150,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviary_highlightStyle
         */
-        public static final int AviaryImageViewDrawableOverlay_aviary_highlightStyle = 0;
+        public static int AviaryImageViewDrawableOverlay_aviary_highlightStyle = 0;
         /** Attributes that can be used with a AviaryPluginDividerDrawable.
            <p>Includes the following attributes:</p>
            <table>
@@ -4181,7 +4181,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#textColor}.
           @attr name android:textColor
         */
-        public static final int AviaryPluginDividerDrawable_android_textColor = 0;
+        public static int AviaryPluginDividerDrawable_android_textColor = 0;
         /**
           <p>
           @attr description
@@ -4198,7 +4198,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor
         */
-        public static final int AviaryPluginDividerDrawable_aviary_strokeColor = 1;
+        public static int AviaryPluginDividerDrawable_aviary_strokeColor = 1;
         /**
           <p>
           @attr description
@@ -4216,7 +4216,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth
         */
-        public static final int AviaryPluginDividerDrawable_aviary_strokeWidth = 2;
+        public static int AviaryPluginDividerDrawable_aviary_strokeWidth = 2;
         /**
           <p>
           @attr description
@@ -4232,7 +4232,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_textPerc
         */
-        public static final int AviaryPluginDividerDrawable_aviary_textPerc = 4;
+        public static int AviaryPluginDividerDrawable_aviary_textPerc = 4;
         /**
           <p>
           @attr description
@@ -4248,7 +4248,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_typeface
         */
-        public static final int AviaryPluginDividerDrawable_aviary_typeface = 3;
+        public static int AviaryPluginDividerDrawable_aviary_typeface = 3;
         /** Attributes that can be used with a AviaryPreviewFillDrawable.
            <p>Includes the following attributes:</p>
            <table>
@@ -4281,7 +4281,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_radius
         */
-        public static final int AviaryPreviewFillDrawable_aviary_radius = 2;
+        public static int AviaryPreviewFillDrawable_aviary_radius = 2;
         /**
           <p>
           @attr description
@@ -4298,7 +4298,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor
         */
-        public static final int AviaryPreviewFillDrawable_aviary_strokeColor = 0;
+        public static int AviaryPreviewFillDrawable_aviary_strokeColor = 0;
         /**
           <p>
           @attr description
@@ -4316,7 +4316,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth
         */
-        public static final int AviaryPreviewFillDrawable_aviary_strokeWidth = 1;
+        public static int AviaryPreviewFillDrawable_aviary_strokeWidth = 1;
         /** Attributes that can be used with a AviaryPreviewSpotDrawable.
            <p>Includes the following attributes:</p>
            <table>
@@ -4364,7 +4364,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_bg_color1
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_bg_color1 = 8;
+        public static int AviaryPreviewSpotDrawable_aviary_bg_color1 = 8;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_bg_color2}
           attribute's value can be found in the {@link #AviaryPreviewSpotDrawable} array.
@@ -4379,7 +4379,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_bg_color2
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_bg_color2 = 9;
+        public static int AviaryPreviewSpotDrawable_aviary_bg_color2 = 9;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_color1}
           attribute's value can be found in the {@link #AviaryPreviewSpotDrawable} array.
@@ -4394,7 +4394,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_color1
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_color1 = 4;
+        public static int AviaryPreviewSpotDrawable_aviary_color1 = 4;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_color2}
           attribute's value can be found in the {@link #AviaryPreviewSpotDrawable} array.
@@ -4409,7 +4409,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_color2
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_color2 = 5;
+        public static int AviaryPreviewSpotDrawable_aviary_color2 = 5;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_color3}
           attribute's value can be found in the {@link #AviaryPreviewSpotDrawable} array.
@@ -4424,7 +4424,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_color3
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_color3 = 6;
+        public static int AviaryPreviewSpotDrawable_aviary_color3 = 6;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_color4}
           attribute's value can be found in the {@link #AviaryPreviewSpotDrawable} array.
@@ -4439,7 +4439,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_color4
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_color4 = 7;
+        public static int AviaryPreviewSpotDrawable_aviary_color4 = 7;
         /**
           <p>
           @attr description
@@ -4455,7 +4455,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_glowSize
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_glowSize = 3;
+        public static int AviaryPreviewSpotDrawable_aviary_glowSize = 3;
         /**
           <p>
           @attr description
@@ -4472,7 +4472,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_highlightColorChecked
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_highlightColorChecked = 2;
+        public static int AviaryPreviewSpotDrawable_aviary_highlightColorChecked = 2;
         /**
           <p>
           @attr description
@@ -4489,7 +4489,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_strokeColor = 0;
+        public static int AviaryPreviewSpotDrawable_aviary_strokeColor = 0;
         /**
           <p>
           @attr description
@@ -4507,7 +4507,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth
         */
-        public static final int AviaryPreviewSpotDrawable_aviary_strokeWidth = 1;
+        public static int AviaryPreviewSpotDrawable_aviary_strokeWidth = 1;
         /** Attributes that can be used with a AviarySeekBar.
            <p>Includes the following attributes:</p>
            <table>
@@ -4541,7 +4541,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySeekBarSecondary
         */
-        public static final int AviarySeekBar_aviarySeekBarSecondary = 2;
+        public static int AviarySeekBar_aviarySeekBarSecondary = 2;
         /**
           <p>
           @attr description
@@ -4553,7 +4553,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySeekBarSecondaryCenter
         */
-        public static final int AviarySeekBar_aviarySeekBarSecondaryCenter = 4;
+        public static int AviarySeekBar_aviarySeekBarSecondaryCenter = 4;
         /**
           <p>
           @attr description
@@ -4565,7 +4565,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySeekBarSecondaryInverted
         */
-        public static final int AviarySeekBar_aviarySeekBarSecondaryInverted = 3;
+        public static int AviarySeekBar_aviarySeekBarSecondaryInverted = 3;
         /**
           <p>
           @attr description
@@ -4577,7 +4577,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySeekBarThumb
         */
-        public static final int AviarySeekBar_aviarySeekBarThumb = 0;
+        public static int AviarySeekBar_aviarySeekBarThumb = 0;
         /**
           <p>
           @attr description
@@ -4595,7 +4595,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySeekBarThumbOffset
         */
-        public static final int AviarySeekBar_aviarySeekBarThumbOffset = 1;
+        public static int AviarySeekBar_aviarySeekBarThumbOffset = 1;
         /** Attributes that can be used with a AviaryTextView.
            <p>Includes the following attributes:</p>
            <table>
@@ -4618,13 +4618,13 @@ containing a value of this type.
           attribute's value can be found in the {@link #AviaryTextView} array.
           @attr name android:clickable
         */
-        public static final int AviaryTextView_android_clickable = 1;
+        public static int AviaryTextView_android_clickable = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#focusable}
           attribute's value can be found in the {@link #AviaryTextView} array.
           @attr name android:focusable
         */
-        public static final int AviaryTextView_android_focusable = 0;
+        public static int AviaryTextView_android_focusable = 0;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_typeface}
           attribute's value can be found in the {@link #AviaryTextView} array.
@@ -4638,7 +4638,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_typeface
         */
-        public static final int AviaryTextView_aviary_typeface = 2;
+        public static int AviaryTextView_aviary_typeface = 2;
         /**  Wave image view 
            <p>Includes the following attributes:</p>
            <table>
@@ -4700,7 +4700,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryCrosshair_enabled
         */
-        public static final int AviaryTiltShiftImageView_aviaryCrosshair_enabled = 15;
+        public static int AviaryTiltShiftImageView_aviaryCrosshair_enabled = 15;
         /**
           <p>
           @attr description
@@ -4716,7 +4716,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryWave_animationDuration
         */
-        public static final int AviaryTiltShiftImageView_aviaryWave_animationDuration = 14;
+        public static int AviaryTiltShiftImageView_aviaryWave_animationDuration = 14;
         /**
           <p>
           @attr description
@@ -4734,7 +4734,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryWave_innerRadius
         */
-        public static final int AviaryTiltShiftImageView_aviaryWave_innerRadius = 12;
+        public static int AviaryTiltShiftImageView_aviaryWave_innerRadius = 12;
         /**
           <p>
           @attr description
@@ -4752,7 +4752,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryWave_outerRadius
         */
-        public static final int AviaryTiltShiftImageView_aviaryWave_outerRadius = 13;
+        public static int AviaryTiltShiftImageView_aviaryWave_outerRadius = 13;
         /**
           <p>
           @attr description
@@ -4764,7 +4764,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryWave_pointDrawable
         */
-        public static final int AviaryTiltShiftImageView_aviaryWave_pointDrawable = 11;
+        public static int AviaryTiltShiftImageView_aviaryWave_pointDrawable = 11;
         /**
           <p>
           @attr description
@@ -4780,7 +4780,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_animationDuration
         */
-        public static final int AviaryTiltShiftImageView_aviary_animationDuration = 10;
+        public static int AviaryTiltShiftImageView_aviary_animationDuration = 10;
         /**
           <p>
           @attr description
@@ -4798,7 +4798,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_crosshair_edge
         */
-        public static final int AviaryTiltShiftImageView_aviary_crosshair_edge = 7;
+        public static int AviaryTiltShiftImageView_aviary_crosshair_edge = 7;
         /**
           <p>
           @attr description
@@ -4816,7 +4816,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_crosshair_radius
         */
-        public static final int AviaryTiltShiftImageView_aviary_crosshair_radius = 6;
+        public static int AviaryTiltShiftImageView_aviary_crosshair_radius = 6;
         /**
           <p>
           @attr description
@@ -4832,7 +4832,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_crosshair_strokeWidth
         */
-        public static final int AviaryTiltShiftImageView_aviary_crosshair_strokeWidth = 5;
+        public static int AviaryTiltShiftImageView_aviary_crosshair_strokeWidth = 5;
         /**
           <p>
           @attr description
@@ -4850,7 +4850,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_shape_defaultsize
         */
-        public static final int AviaryTiltShiftImageView_aviary_shape_defaultsize = 4;
+        public static int AviaryTiltShiftImageView_aviary_shape_defaultsize = 4;
         /**
           <p>
           @attr description
@@ -4866,7 +4866,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_shape_maxsize
         */
-        public static final int AviaryTiltShiftImageView_aviary_shape_maxsize = 3;
+        public static int AviaryTiltShiftImageView_aviary_shape_maxsize = 3;
         /**
           <p>
           @attr description
@@ -4882,7 +4882,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_shape_minsize
         */
-        public static final int AviaryTiltShiftImageView_aviary_shape_minsize = 2;
+        public static int AviaryTiltShiftImageView_aviary_shape_minsize = 2;
         /**
           <p>
           @attr description
@@ -4899,7 +4899,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor
         */
-        public static final int AviaryTiltShiftImageView_aviary_strokeColor = 0;
+        public static int AviaryTiltShiftImageView_aviary_strokeColor = 0;
         /**
           <p>
           @attr description
@@ -4916,7 +4916,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeColor2
         */
-        public static final int AviaryTiltShiftImageView_aviary_strokeColor2 = 8;
+        public static int AviaryTiltShiftImageView_aviary_strokeColor2 = 8;
         /**
           <p>
           @attr description
@@ -4934,7 +4934,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_strokeWidth
         */
-        public static final int AviaryTiltShiftImageView_aviary_strokeWidth = 1;
+        public static int AviaryTiltShiftImageView_aviary_strokeWidth = 1;
         /**
           <p>
           @attr description
@@ -4950,7 +4950,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_timeout
         */
-        public static final int AviaryTiltShiftImageView_aviary_timeout = 9;
+        public static int AviaryTiltShiftImageView_aviary_timeout = 9;
         /** Attributes that can be used with a AviaryWheel.
            <p>Includes the following attributes:</p>
            <table>
@@ -4981,7 +4981,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryWheelIndicator
         */
-        public static final int AviaryWheel_aviaryWheelIndicator = 2;
+        public static int AviaryWheel_aviaryWheelIndicator = 2;
         /**
           <p>
           @attr description
@@ -4993,7 +4993,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryWheelLine
         */
-        public static final int AviaryWheel_aviaryWheelLine = 1;
+        public static int AviaryWheel_aviaryWheelLine = 1;
         /**
           <p>
           @attr description
@@ -5005,7 +5005,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryWheelShadowTop
         */
-        public static final int AviaryWheel_aviaryWheelShadowTop = 0;
+        public static int AviaryWheel_aviaryWheelShadowTop = 0;
         /**
           <p>
           @attr description
@@ -5017,7 +5017,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviary_edgeStyle
         */
-        public static final int AviaryWheel_aviary_edgeStyle = 3;
+        public static int AviaryWheel_aviary_edgeStyle = 3;
         /** Attributes that can be used with a AviaryWorkspace.
            <p>Includes the following attributes:</p>
            <table>
@@ -5046,7 +5046,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_defaultScreen
         */
-        public static final int AviaryWorkspace_aviary_defaultScreen = 0;
+        public static int AviaryWorkspace_aviary_defaultScreen = 0;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviary_overscroll}
           attribute's value can be found in the {@link #AviaryWorkspace} array.
@@ -5060,7 +5060,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviary_overscroll
         */
-        public static final int AviaryWorkspace_aviary_overscroll = 1;
+        public static int AviaryWorkspace_aviary_overscroll = 1;
         /** Attributes that can be used with a AviaryWorkspaceIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -5083,7 +5083,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviary_indicatorId
         */
-        public static final int AviaryWorkspaceIndicator_aviary_indicatorId = 0;
+        public static int AviaryWorkspaceIndicator_aviary_indicatorId = 0;
         /** Attributes that can be used with a HListView.
            <p>Includes the following attributes:</p>
            <table>
@@ -5118,13 +5118,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #HListView} array.
           @attr name android:divider
         */
-        public static final int HListView_android_divider = 1;
+        public static int HListView_android_divider = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#entries}
           attribute's value can be found in the {@link #HListView} array.
           @attr name android:entries
         */
-        public static final int HListView_android_entries = 0;
+        public static int HListView_android_entries = 0;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#dividerWidth}
           attribute's value can be found in the {@link #HListView} array.
@@ -5140,7 +5140,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:dividerWidth
         */
-        public static final int HListView_dividerWidth = 2;
+        public static int HListView_dividerWidth = 2;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#footerDividersEnabled}
           attribute's value can be found in the {@link #HListView} array.
@@ -5154,7 +5154,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:footerDividersEnabled
         */
-        public static final int HListView_footerDividersEnabled = 4;
+        public static int HListView_footerDividersEnabled = 4;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#headerDividersEnabled}
           attribute's value can be found in the {@link #HListView} array.
@@ -5168,7 +5168,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:headerDividersEnabled
         */
-        public static final int HListView_headerDividersEnabled = 3;
+        public static int HListView_headerDividersEnabled = 3;
         /**
           <p>
           @attr description
@@ -5188,7 +5188,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:measureWithChild
         */
-        public static final int HListView_measureWithChild = 7;
+        public static int HListView_measureWithChild = 7;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#overScrollFooter}
           attribute's value can be found in the {@link #HListView} array.
@@ -5200,7 +5200,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name com.aviary.android.feather:overScrollFooter
         */
-        public static final int HListView_overScrollFooter = 6;
+        public static int HListView_overScrollFooter = 6;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#overScrollHeader}
           attribute's value can be found in the {@link #HListView} array.
@@ -5212,7 +5212,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name com.aviary.android.feather:overScrollHeader
         */
-        public static final int HListView_overScrollHeader = 5;
+        public static int HListView_overScrollHeader = 5;
         /** Attributes that can be used with a Theme.
            <p>Includes the following attributes:</p>
            <table>
@@ -5580,7 +5580,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryAdjustDividerWeight
         */
-        public static final int Theme_aviaryAdjustDividerWeight = 52;
+        public static int Theme_aviaryAdjustDividerWeight = 52;
         /**
           <p>
           @attr description
@@ -5592,7 +5592,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryAdjustImageViewStyle
         */
-        public static final int Theme_aviaryAdjustImageViewStyle = 14;
+        public static int Theme_aviaryAdjustImageViewStyle = 14;
         /**
           <p>
           @attr description
@@ -5608,7 +5608,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryAdjustItemWeight
         */
-        public static final int Theme_aviaryAdjustItemWeight = 51;
+        public static int Theme_aviaryAdjustItemWeight = 51;
         /**
           <p>
           @attr description
@@ -5620,7 +5620,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryAdjustOptionPanelToggleButtonStyle
         */
-        public static final int Theme_aviaryAdjustOptionPanelToggleButtonStyle = 41;
+        public static int Theme_aviaryAdjustOptionPanelToggleButtonStyle = 41;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryAdjustOptionPanelToggleCenterButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5630,7 +5630,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryAdjustOptionPanelToggleCenterButtonStyle
         */
-        public static final int Theme_aviaryAdjustOptionPanelToggleCenterButtonStyle = 43;
+        public static int Theme_aviaryAdjustOptionPanelToggleCenterButtonStyle = 43;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryAdjustOptionPanelToggleLeftButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5640,7 +5640,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryAdjustOptionPanelToggleLeftButtonStyle
         */
-        public static final int Theme_aviaryAdjustOptionPanelToggleLeftButtonStyle = 42;
+        public static int Theme_aviaryAdjustOptionPanelToggleLeftButtonStyle = 42;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryAdjustOptionPanelToggleRightButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5650,7 +5650,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryAdjustOptionPanelToggleRightButtonStyle
         */
-        public static final int Theme_aviaryAdjustOptionPanelToggleRightButtonStyle = 44;
+        public static int Theme_aviaryAdjustOptionPanelToggleRightButtonStyle = 44;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryBackgroundColor}
           attribute's value can be found in the {@link #Theme} array.
@@ -5665,7 +5665,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviaryBackgroundColor
         */
-        public static final int Theme_aviaryBackgroundColor = 2;
+        public static int Theme_aviaryBackgroundColor = 2;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryBottomBarHeight}
           attribute's value can be found in the {@link #Theme} array.
@@ -5681,7 +5681,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviaryBottomBarHeight
         */
-        public static final int Theme_aviaryBottomBarHeight = 16;
+        public static int Theme_aviaryBottomBarHeight = 16;
         /**
           <p>
           @attr description
@@ -5693,7 +5693,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarHorizontalViewStyle
         */
-        public static final int Theme_aviaryBottomBarHorizontalViewStyle = 23;
+        public static int Theme_aviaryBottomBarHorizontalViewStyle = 23;
         /**
           <p>
           @attr description
@@ -5705,7 +5705,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarLogoContainerStyle
         */
-        public static final int Theme_aviaryBottomBarLogoContainerStyle = 17;
+        public static int Theme_aviaryBottomBarLogoContainerStyle = 17;
         /**
           <p>
           @attr description
@@ -5717,7 +5717,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarLogoImageStyle
         */
-        public static final int Theme_aviaryBottomBarLogoImageStyle = 18;
+        public static int Theme_aviaryBottomBarLogoImageStyle = 18;
         /**
           <p>
           @attr description
@@ -5729,7 +5729,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarOptionPanelContainerStyle
         */
-        public static final int Theme_aviaryBottomBarOptionPanelContainerStyle = 21;
+        public static int Theme_aviaryBottomBarOptionPanelContainerStyle = 21;
         /**
           <p>
           @attr description
@@ -5741,7 +5741,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarOptionPanelContainerStyleNoMargin
         */
-        public static final int Theme_aviaryBottomBarOptionPanelContainerStyleNoMargin = 22;
+        public static int Theme_aviaryBottomBarOptionPanelContainerStyleNoMargin = 22;
         /**
           <p>
           @attr description
@@ -5753,7 +5753,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarOptionPanelStyle
         */
-        public static final int Theme_aviaryBottomBarOptionPanelStyle = 19;
+        public static int Theme_aviaryBottomBarOptionPanelStyle = 19;
         /**
           <p>
           @attr description
@@ -5765,7 +5765,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarToolFeedBackStyle
         */
-        public static final int Theme_aviaryBottomBarToolFeedBackStyle = 20;
+        public static int Theme_aviaryBottomBarToolFeedBackStyle = 20;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryBottomBarToolImageStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5775,7 +5775,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryBottomBarToolImageStyle
         */
-        public static final int Theme_aviaryBottomBarToolImageStyle = 26;
+        public static int Theme_aviaryBottomBarToolImageStyle = 26;
         /**
           <p>
           @attr description
@@ -5787,7 +5787,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarToolStyle
         */
-        public static final int Theme_aviaryBottomBarToolStyle = 25;
+        public static int Theme_aviaryBottomBarToolStyle = 25;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryBottomBarToolTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5797,7 +5797,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryBottomBarToolTextStyle
         */
-        public static final int Theme_aviaryBottomBarToolTextStyle = 27;
+        public static int Theme_aviaryBottomBarToolTextStyle = 27;
         /**
           <p>
           @attr description
@@ -5809,7 +5809,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryBottomBarViewFlipperStyle
         */
-        public static final int Theme_aviaryBottomBarViewFlipperStyle = 15;
+        public static int Theme_aviaryBottomBarViewFlipperStyle = 15;
         /**
           <p>
           @attr description
@@ -5821,7 +5821,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryColorSplashOptionPanelToggleButtonStyle
         */
-        public static final int Theme_aviaryColorSplashOptionPanelToggleButtonStyle = 55;
+        public static int Theme_aviaryColorSplashOptionPanelToggleButtonStyle = 55;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryColorSplashOptionPanelToggleLeftButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5831,7 +5831,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryColorSplashOptionPanelToggleLeftButtonStyle
         */
-        public static final int Theme_aviaryColorSplashOptionPanelToggleLeftButtonStyle = 56;
+        public static int Theme_aviaryColorSplashOptionPanelToggleLeftButtonStyle = 56;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryColorSplashOptionPanelToggleRightButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5841,7 +5841,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryColorSplashOptionPanelToggleRightButtonStyle
         */
-        public static final int Theme_aviaryColorSplashOptionPanelToggleRightButtonStyle = 57;
+        public static int Theme_aviaryColorSplashOptionPanelToggleRightButtonStyle = 57;
         /**
           <p>
           @attr description
@@ -5853,7 +5853,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryCropHighlightStyle
         */
-        public static final int Theme_aviaryCropHighlightStyle = 9;
+        public static int Theme_aviaryCropHighlightStyle = 9;
         /**
           <p>
           @attr description
@@ -5865,7 +5865,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryCropImageViewStyle
         */
-        public static final int Theme_aviaryCropImageViewStyle = 8;
+        public static int Theme_aviaryCropImageViewStyle = 8;
         /**
           <p>
           @attr description
@@ -5877,7 +5877,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryCustomDialogButtonSecondaryStyle
         */
-        public static final int Theme_aviaryCustomDialogButtonSecondaryStyle = 137;
+        public static int Theme_aviaryCustomDialogButtonSecondaryStyle = 137;
         /**
           <p>
           @attr description
@@ -5890,7 +5890,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryCustomDialogButtonStyle
         */
-        public static final int Theme_aviaryCustomDialogButtonStyle = 136;
+        public static int Theme_aviaryCustomDialogButtonStyle = 136;
         /**
           <p>
           @attr description
@@ -5902,7 +5902,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryDefaultTextStyle
         */
-        public static final int Theme_aviaryDefaultTextStyle = 65;
+        public static int Theme_aviaryDefaultTextStyle = 65;
         /**
           <p>
           @attr description
@@ -5914,7 +5914,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryEdgeEffectDefaultStyle
         */
-        public static final int Theme_aviaryEdgeEffectDefaultStyle = 138;
+        public static int Theme_aviaryEdgeEffectDefaultStyle = 138;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbDividerLeftContainerStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5924,7 +5924,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbDividerLeftContainerStyle
         */
-        public static final int Theme_aviaryEffectThumbDividerLeftContainerStyle = 101;
+        public static int Theme_aviaryEffectThumbDividerLeftContainerStyle = 101;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbDividerLeftStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5934,7 +5934,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbDividerLeftStyle
         */
-        public static final int Theme_aviaryEffectThumbDividerLeftStyle = 99;
+        public static int Theme_aviaryEffectThumbDividerLeftStyle = 99;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbDividerRightContainerStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5944,7 +5944,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbDividerRightContainerStyle
         */
-        public static final int Theme_aviaryEffectThumbDividerRightContainerStyle = 100;
+        public static int Theme_aviaryEffectThumbDividerRightContainerStyle = 100;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbDividerRightStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5954,7 +5954,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbDividerRightStyle
         */
-        public static final int Theme_aviaryEffectThumbDividerRightStyle = 98;
+        public static int Theme_aviaryEffectThumbDividerRightStyle = 98;
         /**
           <p>
           @attr description
@@ -5966,7 +5966,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryEffectThumbDividerStyle
         */
-        public static final int Theme_aviaryEffectThumbDividerStyle = 103;
+        public static int Theme_aviaryEffectThumbDividerStyle = 103;
         /**
           <p>
           @attr description
@@ -5978,7 +5978,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryEffectThumbDividerTextStyle
         */
-        public static final int Theme_aviaryEffectThumbDividerTextStyle = 104;
+        public static int Theme_aviaryEffectThumbDividerTextStyle = 104;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbHiddenSelector}
           attribute's value can be found in the {@link #Theme} array.
@@ -5988,7 +5988,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbHiddenSelector
         */
-        public static final int Theme_aviaryEffectThumbHiddenSelector = 97;
+        public static int Theme_aviaryEffectThumbHiddenSelector = 97;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbLayoutExternalStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5998,7 +5998,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbLayoutExternalStyle
         */
-        public static final int Theme_aviaryEffectThumbLayoutExternalStyle = 96;
+        public static int Theme_aviaryEffectThumbLayoutExternalStyle = 96;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbLayoutStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6008,7 +6008,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbLayoutStyle
         */
-        public static final int Theme_aviaryEffectThumbLayoutStyle = 95;
+        public static int Theme_aviaryEffectThumbLayoutStyle = 95;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEffectThumbTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6018,7 +6018,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEffectThumbTextStyle
         */
-        public static final int Theme_aviaryEffectThumbTextStyle = 102;
+        public static int Theme_aviaryEffectThumbTextStyle = 102;
         /**
           <p>
           @attr description
@@ -6030,7 +6030,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryEffectsHorizontalViewStyle
         */
-        public static final int Theme_aviaryEffectsHorizontalViewStyle = 24;
+        public static int Theme_aviaryEffectsHorizontalViewStyle = 24;
         /**
           <p>
           @attr description
@@ -6048,7 +6048,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryEnhanceItemWeight
         */
-        public static final int Theme_aviaryEnhanceItemWeight = 48;
+        public static int Theme_aviaryEnhanceItemWeight = 48;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEnhanceOptionPanelToggleCenterButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6058,7 +6058,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEnhanceOptionPanelToggleCenterButtonStyle
         */
-        public static final int Theme_aviaryEnhanceOptionPanelToggleCenterButtonStyle = 46;
+        public static int Theme_aviaryEnhanceOptionPanelToggleCenterButtonStyle = 46;
         /**
           <p>
           @attr description
@@ -6070,7 +6070,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryEnhanceOptionPanelToggleLeftButtonStyle
         */
-        public static final int Theme_aviaryEnhanceOptionPanelToggleLeftButtonStyle = 45;
+        public static int Theme_aviaryEnhanceOptionPanelToggleLeftButtonStyle = 45;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryEnhanceOptionPanelToggleRightButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6080,7 +6080,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryEnhanceOptionPanelToggleRightButtonStyle
         */
-        public static final int Theme_aviaryEnhanceOptionPanelToggleRightButtonStyle = 47;
+        public static int Theme_aviaryEnhanceOptionPanelToggleRightButtonStyle = 47;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryFeedbackDialogDividerStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6090,7 +6090,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryFeedbackDialogDividerStyle
         */
-        public static final int Theme_aviaryFeedbackDialogDividerStyle = 132;
+        public static int Theme_aviaryFeedbackDialogDividerStyle = 132;
         /**
           <p>
           @attr description
@@ -6102,7 +6102,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryFeedbackDialogStyle
         */
-        public static final int Theme_aviaryFeedbackDialogStyle = 130;
+        public static int Theme_aviaryFeedbackDialogStyle = 130;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryFeedbackDialogTextMessageStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6112,7 +6112,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryFeedbackDialogTextMessageStyle
         */
-        public static final int Theme_aviaryFeedbackDialogTextMessageStyle = 133;
+        public static int Theme_aviaryFeedbackDialogTextMessageStyle = 133;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryFeedbackDialogTextVersionStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6122,7 +6122,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryFeedbackDialogTextVersionStyle
         */
-        public static final int Theme_aviaryFeedbackDialogTextVersionStyle = 131;
+        public static int Theme_aviaryFeedbackDialogTextVersionStyle = 131;
         /**
           <p>
           @attr description
@@ -6134,7 +6134,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryFocusOptionPanelToggleLeftButtonStyle
         */
-        public static final int Theme_aviaryFocusOptionPanelToggleLeftButtonStyle = 53;
+        public static int Theme_aviaryFocusOptionPanelToggleLeftButtonStyle = 53;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryFocusOptionPanelToggleRightButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6144,7 +6144,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryFocusOptionPanelToggleRightButtonStyle
         */
-        public static final int Theme_aviaryFocusOptionPanelToggleRightButtonStyle = 54;
+        public static int Theme_aviaryFocusOptionPanelToggleRightButtonStyle = 54;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryFontLight}
           attribute's value can be found in the {@link #Theme} array.
@@ -6158,7 +6158,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviaryFontLight
         */
-        public static final int Theme_aviaryFontLight = 1;
+        public static int Theme_aviaryFontLight = 1;
         /**
           <p>
           @attr description
@@ -6174,7 +6174,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryFontRegular
         */
-        public static final int Theme_aviaryFontRegular = 0;
+        public static int Theme_aviaryFontRegular = 0;
         /**
           <p>
           @attr description
@@ -6186,7 +6186,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryBottomIndicatorStyle
         */
-        public static final int Theme_aviaryGalleryBottomIndicatorStyle = 80;
+        public static int Theme_aviaryGalleryBottomIndicatorStyle = 80;
         /**
           <p>
           @attr description
@@ -6198,7 +6198,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryItemContainerStyle
         */
-        public static final int Theme_aviaryGalleryItemContainerStyle = 73;
+        public static int Theme_aviaryGalleryItemContainerStyle = 73;
         /**
           <p>
           @attr description
@@ -6210,7 +6210,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryItemCropImageViewStyle
         */
-        public static final int Theme_aviaryGalleryItemCropImageViewStyle = 78;
+        public static int Theme_aviaryGalleryItemCropImageViewStyle = 78;
         /**
           <p>
           @attr description
@@ -6222,7 +6222,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryItemCropTextCustomStyle
         */
-        public static final int Theme_aviaryGalleryItemCropTextCustomStyle = 77;
+        public static int Theme_aviaryGalleryItemCropTextCustomStyle = 77;
         /**
           <p>
           @attr description
@@ -6234,7 +6234,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryItemCropTextNormalStyle
         */
-        public static final int Theme_aviaryGalleryItemCropTextNormalStyle = 76;
+        public static int Theme_aviaryGalleryItemCropTextNormalStyle = 76;
         /**
           <p>
           @attr description
@@ -6246,7 +6246,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryItemDividerStyle
         */
-        public static final int Theme_aviaryGalleryItemDividerStyle = 74;
+        public static int Theme_aviaryGalleryItemDividerStyle = 74;
         /**
           <p>
           @attr description
@@ -6258,7 +6258,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryItemHighlightImageStyle
         */
-        public static final int Theme_aviaryGalleryItemHighlightImageStyle = 75;
+        public static int Theme_aviaryGalleryItemHighlightImageStyle = 75;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryGalleryStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6268,7 +6268,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryGalleryStyle
         */
-        public static final int Theme_aviaryGalleryStyle = 35;
+        public static int Theme_aviaryGalleryStyle = 35;
         /**
           <p>
           @attr description
@@ -6280,7 +6280,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryGalleryTopIndicatorStyle
         */
-        public static final int Theme_aviaryGalleryTopIndicatorStyle = 79;
+        public static int Theme_aviaryGalleryTopIndicatorStyle = 79;
         /**
           <p>
           @attr description
@@ -6292,7 +6292,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryHiddenEditTextStyle
         */
-        public static final int Theme_aviaryHiddenEditTextStyle = 93;
+        public static int Theme_aviaryHiddenEditTextStyle = 93;
         /**
           <p>
           @attr description
@@ -6304,7 +6304,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryHiddenEditTextStyleMultiline
         */
-        public static final int Theme_aviaryHiddenEditTextStyleMultiline = 94;
+        public static int Theme_aviaryHiddenEditTextStyleMultiline = 94;
         /**
           <p>
           @attr description
@@ -6316,7 +6316,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryHighlightImageButtonStyle
         */
-        public static final int Theme_aviaryHighlightImageButtonStyle = 33;
+        public static int Theme_aviaryHighlightImageButtonStyle = 33;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPBannerTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6326,7 +6326,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPBannerTextStyle
         */
-        public static final int Theme_aviaryIAPBannerTextStyle = 115;
+        public static int Theme_aviaryIAPBannerTextStyle = 115;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogButtonErrorStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6336,7 +6336,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogButtonErrorStyle
         */
-        public static final int Theme_aviaryIAPDialogButtonErrorStyle = 113;
+        public static int Theme_aviaryIAPDialogButtonErrorStyle = 113;
         /**
           <p>
           @attr description
@@ -6349,7 +6349,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryIAPDialogContainerStyle
         */
-        public static final int Theme_aviaryIAPDialogContainerStyle = 105;
+        public static int Theme_aviaryIAPDialogContainerStyle = 105;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogDownloadButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6359,7 +6359,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogDownloadButtonStyle
         */
-        public static final int Theme_aviaryIAPDialogDownloadButtonStyle = 124;
+        public static int Theme_aviaryIAPDialogDownloadButtonStyle = 124;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogDownloadButtonTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6369,7 +6369,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogDownloadButtonTextStyle
         */
-        public static final int Theme_aviaryIAPDialogDownloadButtonTextStyle = 125;
+        public static int Theme_aviaryIAPDialogDownloadButtonTextStyle = 125;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogGridBackground}
           attribute's value can be found in the {@link #Theme} array.
@@ -6379,7 +6379,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogGridBackground
         */
-        public static final int Theme_aviaryIAPDialogGridBackground = 120;
+        public static int Theme_aviaryIAPDialogGridBackground = 120;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogGridTopStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6395,7 +6395,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviaryIAPDialogGridTopStyle
         */
-        public static final int Theme_aviaryIAPDialogGridTopStyle = 121;
+        public static int Theme_aviaryIAPDialogGridTopStyle = 121;
         /**
           <p>
           @attr description
@@ -6411,7 +6411,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryIAPDialogHeightWeight
         */
-        public static final int Theme_aviaryIAPDialogHeightWeight = 107;
+        public static int Theme_aviaryIAPDialogHeightWeight = 107;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogIcon}
           attribute's value can be found in the {@link #Theme} array.
@@ -6421,7 +6421,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogIcon
         */
-        public static final int Theme_aviaryIAPDialogIcon = 110;
+        public static int Theme_aviaryIAPDialogIcon = 110;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogListItemTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6431,7 +6431,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogListItemTextStyle
         */
-        public static final int Theme_aviaryIAPDialogListItemTextStyle = 117;
+        public static int Theme_aviaryIAPDialogListItemTextStyle = 117;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogListItemTitleStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6441,7 +6441,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogListItemTitleStyle
         */
-        public static final int Theme_aviaryIAPDialogListItemTitleStyle = 116;
+        public static int Theme_aviaryIAPDialogListItemTitleStyle = 116;
         /**
           <p>
           @attr description
@@ -6453,7 +6453,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryIAPDialogMainLayout
         */
-        public static final int Theme_aviaryIAPDialogMainLayout = 106;
+        public static int Theme_aviaryIAPDialogMainLayout = 106;
         /**
           <p>
           @attr description
@@ -6469,7 +6469,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryIAPDialogMarginTopWeight
         */
-        public static final int Theme_aviaryIAPDialogMarginTopWeight = 108;
+        public static int Theme_aviaryIAPDialogMarginTopWeight = 108;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogRestoreAllButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6479,7 +6479,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogRestoreAllButtonStyle
         */
-        public static final int Theme_aviaryIAPDialogRestoreAllButtonStyle = 126;
+        public static int Theme_aviaryIAPDialogRestoreAllButtonStyle = 126;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogRestoreDialogTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6489,7 +6489,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogRestoreDialogTextStyle
         */
-        public static final int Theme_aviaryIAPDialogRestoreDialogTextStyle = 127;
+        public static int Theme_aviaryIAPDialogRestoreDialogTextStyle = 127;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogShadowBottom}
           attribute's value can be found in the {@link #Theme} array.
@@ -6499,7 +6499,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogShadowBottom
         */
-        public static final int Theme_aviaryIAPDialogShadowBottom = 123;
+        public static int Theme_aviaryIAPDialogShadowBottom = 123;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogShadowTop}
           attribute's value can be found in the {@link #Theme} array.
@@ -6509,7 +6509,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogShadowTop
         */
-        public static final int Theme_aviaryIAPDialogShadowTop = 122;
+        public static int Theme_aviaryIAPDialogShadowTop = 122;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogTextErrorStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6519,7 +6519,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogTextErrorStyle
         */
-        public static final int Theme_aviaryIAPDialogTextErrorStyle = 112;
+        public static int Theme_aviaryIAPDialogTextErrorStyle = 112;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6529,7 +6529,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogTextStyle
         */
-        public static final int Theme_aviaryIAPDialogTextStyle = 114;
+        public static int Theme_aviaryIAPDialogTextStyle = 114;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogTitleStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6539,7 +6539,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogTitleStyle
         */
-        public static final int Theme_aviaryIAPDialogTitleStyle = 111;
+        public static int Theme_aviaryIAPDialogTitleStyle = 111;
         /**
           <p>
           @attr description
@@ -6555,7 +6555,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryIAPDialogWidthWeight
         */
-        public static final int Theme_aviaryIAPDialogWidthWeight = 109;
+        public static int Theme_aviaryIAPDialogWidthWeight = 109;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogWorkspaceCellEffects}
           attribute's value can be found in the {@link #Theme} array.
@@ -6565,7 +6565,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogWorkspaceCellEffects
         */
-        public static final int Theme_aviaryIAPDialogWorkspaceCellEffects = 128;
+        public static int Theme_aviaryIAPDialogWorkspaceCellEffects = 128;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogWorkspaceCellStickers}
           attribute's value can be found in the {@link #Theme} array.
@@ -6575,7 +6575,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogWorkspaceCellStickers
         */
-        public static final int Theme_aviaryIAPDialogWorkspaceCellStickers = 129;
+        public static int Theme_aviaryIAPDialogWorkspaceCellStickers = 129;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogWorkspaceIndicatorStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6585,7 +6585,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogWorkspaceIndicatorStyle
         */
-        public static final int Theme_aviaryIAPDialogWorkspaceIndicatorStyle = 119;
+        public static int Theme_aviaryIAPDialogWorkspaceIndicatorStyle = 119;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryIAPDialogWorkspaceStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6595,7 +6595,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryIAPDialogWorkspaceStyle
         */
-        public static final int Theme_aviaryIAPDialogWorkspaceStyle = 118;
+        public static int Theme_aviaryIAPDialogWorkspaceStyle = 118;
         /**
           <p>
           @attr description
@@ -6607,7 +6607,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryImageRestoreViewStyle
         */
-        public static final int Theme_aviaryImageRestoreViewStyle = 58;
+        public static int Theme_aviaryImageRestoreViewStyle = 58;
         /**
           <p>
           @attr description
@@ -6619,7 +6619,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryImageViewDrawableOverlaySticker
         */
-        public static final int Theme_aviaryImageViewDrawableOverlaySticker = 12;
+        public static int Theme_aviaryImageViewDrawableOverlaySticker = 12;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryImageViewDrawableOverlayStickerHighlightStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6629,7 +6629,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryImageViewDrawableOverlayStickerHighlightStyle
         */
-        public static final int Theme_aviaryImageViewDrawableOverlayStickerHighlightStyle = 13;
+        public static int Theme_aviaryImageViewDrawableOverlayStickerHighlightStyle = 13;
         /**
           <p>
           @attr description
@@ -6641,7 +6641,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryImageViewDrawableOverlayText
         */
-        public static final int Theme_aviaryImageViewDrawableOverlayText = 10;
+        public static int Theme_aviaryImageViewDrawableOverlayText = 10;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryImageViewDrawableOverlayTextHighlightStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6651,7 +6651,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryImageViewDrawableOverlayTextHighlightStyle
         */
-        public static final int Theme_aviaryImageViewDrawableOverlayTextHighlightStyle = 11;
+        public static int Theme_aviaryImageViewDrawableOverlayTextHighlightStyle = 11;
         /**
           <p>
           @attr description
@@ -6663,7 +6663,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryLensViewStyle
         */
-        public static final int Theme_aviaryLensViewStyle = 34;
+        public static int Theme_aviaryLensViewStyle = 34;
         /**
           <p>
           @attr description
@@ -6675,7 +6675,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryLightGrayButtonStyle
         */
-        public static final int Theme_aviaryLightGrayButtonStyle = 68;
+        public static int Theme_aviaryLightGrayButtonStyle = 68;
         /**
           <p>
           @attr description
@@ -6687,7 +6687,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryLoaderToastStyle
         */
-        public static final int Theme_aviaryLoaderToastStyle = 134;
+        public static int Theme_aviaryLoaderToastStyle = 134;
         /**
           <p>
           @attr description
@@ -6705,7 +6705,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryMainImagePadding
         */
-        public static final int Theme_aviaryMainImagePadding = 91;
+        public static int Theme_aviaryMainImagePadding = 91;
         /**
           <p>
           @attr description
@@ -6717,7 +6717,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryMemeButtonStyle
         */
-        public static final int Theme_aviaryMemeButtonStyle = 71;
+        public static int Theme_aviaryMemeButtonStyle = 71;
         /**
           <p>
           @attr description
@@ -6729,7 +6729,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryMemeClearButtonStyle
         */
-        public static final int Theme_aviaryMemeClearButtonStyle = 72;
+        public static int Theme_aviaryMemeClearButtonStyle = 72;
         /**
           <p>
           @attr description
@@ -6747,7 +6747,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryNavBarHeight
         */
-        public static final int Theme_aviaryNavBarHeight = 29;
+        public static int Theme_aviaryNavBarHeight = 29;
         /**
           <p>
           @attr description
@@ -6759,7 +6759,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryNavBarRestoreButtonStyle
         */
-        public static final int Theme_aviaryNavBarRestoreButtonStyle = 69;
+        public static int Theme_aviaryNavBarRestoreButtonStyle = 69;
         /**
           <p>
           @attr description
@@ -6771,7 +6771,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryNavBarStyle
         */
-        public static final int Theme_aviaryNavBarStyle = 28;
+        public static int Theme_aviaryNavBarStyle = 28;
         /**
           <p>
           @attr description
@@ -6783,7 +6783,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryNavButtonApplyStyle
         */
-        public static final int Theme_aviaryNavButtonApplyStyle = 32;
+        public static int Theme_aviaryNavButtonApplyStyle = 32;
         /**
           <p>
           @attr description
@@ -6795,7 +6795,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryNavButtonStyle
         */
-        public static final int Theme_aviaryNavButtonStyle = 31;
+        public static int Theme_aviaryNavButtonStyle = 31;
         /**
           <p>
           @attr description
@@ -6807,7 +6807,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryNavDividerStyle
         */
-        public static final int Theme_aviaryNavDividerStyle = 81;
+        public static int Theme_aviaryNavDividerStyle = 81;
         /**
           <p>
           @attr description
@@ -6819,7 +6819,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryNavTitleStyle
         */
-        public static final int Theme_aviaryNavTitleStyle = 30;
+        public static int Theme_aviaryNavTitleStyle = 30;
         /**
           <p>
           @attr description
@@ -6831,7 +6831,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryOptionPanelBottomIndicatorStyle
         */
-        public static final int Theme_aviaryOptionPanelBottomIndicatorStyle = 63;
+        public static int Theme_aviaryOptionPanelBottomIndicatorStyle = 63;
         /**
           <p>
           @attr description
@@ -6843,7 +6843,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryOptionPanelBottomLineStyle
         */
-        public static final int Theme_aviaryOptionPanelBottomLineStyle = 64;
+        public static int Theme_aviaryOptionPanelBottomLineStyle = 64;
         /**
           <p>
           @attr description
@@ -6855,7 +6855,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryOptionPanelDefaultButtonStyle
         */
-        public static final int Theme_aviaryOptionPanelDefaultButtonStyle = 36;
+        public static int Theme_aviaryOptionPanelDefaultButtonStyle = 36;
         /**
           <p>
           @attr description
@@ -6867,7 +6867,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryOptionPanelToggleButtonStyle
         */
-        public static final int Theme_aviaryOptionPanelToggleButtonStyle = 37;
+        public static int Theme_aviaryOptionPanelToggleButtonStyle = 37;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryOptionPanelToggleCenterButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6877,7 +6877,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryOptionPanelToggleCenterButtonStyle
         */
-        public static final int Theme_aviaryOptionPanelToggleCenterButtonStyle = 39;
+        public static int Theme_aviaryOptionPanelToggleCenterButtonStyle = 39;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryOptionPanelToggleLeftButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6887,7 +6887,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryOptionPanelToggleLeftButtonStyle
         */
-        public static final int Theme_aviaryOptionPanelToggleLeftButtonStyle = 38;
+        public static int Theme_aviaryOptionPanelToggleLeftButtonStyle = 38;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryOptionPanelToggleRightButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6897,7 +6897,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryOptionPanelToggleRightButtonStyle
         */
-        public static final int Theme_aviaryOptionPanelToggleRightButtonStyle = 40;
+        public static int Theme_aviaryOptionPanelToggleRightButtonStyle = 40;
         /**
           <p>
           @attr description
@@ -6909,7 +6909,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryOptionPanelTopIndicatorStyle
         */
-        public static final int Theme_aviaryOptionPanelTopIndicatorStyle = 62;
+        public static int Theme_aviaryOptionPanelTopIndicatorStyle = 62;
         /**
           <p>
           @attr description
@@ -6921,7 +6921,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryPanelDisabledStatusBackground
         */
-        public static final int Theme_aviaryPanelDisabledStatusBackground = 92;
+        public static int Theme_aviaryPanelDisabledStatusBackground = 92;
         /**
           <p>
           @attr description
@@ -6933,7 +6933,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryPreviewFillDrawableStyle
         */
-        public static final int Theme_aviaryPreviewFillDrawableStyle = 60;
+        public static int Theme_aviaryPreviewFillDrawableStyle = 60;
         /**
           <p>
           @attr description
@@ -6945,7 +6945,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryPreviewSpotDrawableStyle
         */
-        public static final int Theme_aviaryPreviewSpotDrawableStyle = 59;
+        public static int Theme_aviaryPreviewSpotDrawableStyle = 59;
         /**
           <p>
           @attr description
@@ -6957,7 +6957,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryPreviewSpotViewStyle
         */
-        public static final int Theme_aviaryPreviewSpotViewStyle = 61;
+        public static int Theme_aviaryPreviewSpotViewStyle = 61;
         /**
           <p>
           @attr description
@@ -6969,7 +6969,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryPrimaryButtonStyle
         */
-        public static final int Theme_aviaryPrimaryButtonStyle = 66;
+        public static int Theme_aviaryPrimaryButtonStyle = 66;
         /**
           <p>
           @attr description
@@ -6981,7 +6981,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryProgressBarActionBar
         */
-        public static final int Theme_aviaryProgressBarActionBar = 85;
+        public static int Theme_aviaryProgressBarActionBar = 85;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryProgressBarActionBarHeight}
           attribute's value can be found in the {@link #Theme} array.
@@ -6997,7 +6997,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviaryProgressBarActionBarHeight
         */
-        public static final int Theme_aviaryProgressBarActionBarHeight = 87;
+        public static int Theme_aviaryProgressBarActionBarHeight = 87;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryProgressBarActionBarWidth}
           attribute's value can be found in the {@link #Theme} array.
@@ -7013,7 +7013,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.aviary.android.feather:aviaryProgressBarActionBarWidth
         */
-        public static final int Theme_aviaryProgressBarActionBarWidth = 86;
+        public static int Theme_aviaryProgressBarActionBarWidth = 86;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryProgressBarLarge}
           attribute's value can be found in the {@link #Theme} array.
@@ -7023,7 +7023,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryProgressBarLarge
         */
-        public static final int Theme_aviaryProgressBarLarge = 84;
+        public static int Theme_aviaryProgressBarLarge = 84;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryProgressBarLargeInverse}
           attribute's value can be found in the {@link #Theme} array.
@@ -7033,7 +7033,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryProgressBarLargeInverse
         */
-        public static final int Theme_aviaryProgressBarLargeInverse = 90;
+        public static int Theme_aviaryProgressBarLargeInverse = 90;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryProgressBarMedium}
           attribute's value can be found in the {@link #Theme} array.
@@ -7043,7 +7043,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryProgressBarMedium
         */
-        public static final int Theme_aviaryProgressBarMedium = 83;
+        public static int Theme_aviaryProgressBarMedium = 83;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryProgressBarMediumInverse}
           attribute's value can be found in the {@link #Theme} array.
@@ -7053,7 +7053,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryProgressBarMediumInverse
         */
-        public static final int Theme_aviaryProgressBarMediumInverse = 89;
+        public static int Theme_aviaryProgressBarMediumInverse = 89;
         /**
           <p>
           @attr description
@@ -7065,7 +7065,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryProgressBarSmall
         */
-        public static final int Theme_aviaryProgressBarSmall = 82;
+        public static int Theme_aviaryProgressBarSmall = 82;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryProgressBarSmallInverse}
           attribute's value can be found in the {@link #Theme} array.
@@ -7075,7 +7075,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryProgressBarSmallInverse
         */
-        public static final int Theme_aviaryProgressBarSmallInverse = 88;
+        public static int Theme_aviaryProgressBarSmallInverse = 88;
         /**
           <p>
           @attr description
@@ -7087,7 +7087,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySecondaryButtonStyle
         */
-        public static final int Theme_aviarySecondaryButtonStyle = 67;
+        public static int Theme_aviarySecondaryButtonStyle = 67;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviarySeekBarStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -7097,7 +7097,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviarySeekBarStyle
         */
-        public static final int Theme_aviarySeekBarStyle = 3;
+        public static int Theme_aviarySeekBarStyle = 3;
         /**
           <p>
           @attr description
@@ -7113,7 +7113,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySplashDividerWeight
         */
-        public static final int Theme_aviarySplashDividerWeight = 50;
+        public static int Theme_aviarySplashDividerWeight = 50;
         /**
           <p>
           @attr description
@@ -7129,7 +7129,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviarySplashItemWeight
         */
-        public static final int Theme_aviarySplashItemWeight = 49;
+        public static int Theme_aviarySplashItemWeight = 49;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviarySymbolMinusStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -7139,7 +7139,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviarySymbolMinusStyle
         */
-        public static final int Theme_aviarySymbolMinusStyle = 6;
+        public static int Theme_aviarySymbolMinusStyle = 6;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviarySymbolPlusStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -7149,7 +7149,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviarySymbolPlusStyle
         */
-        public static final int Theme_aviarySymbolPlusStyle = 7;
+        public static int Theme_aviarySymbolPlusStyle = 7;
         /**
           <p>
           @attr description
@@ -7161,7 +7161,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryTextAppearance
         */
-        public static final int Theme_aviaryTextAppearance = 139;
+        public static int Theme_aviaryTextAppearance = 139;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceInverted}
           attribute's value can be found in the {@link #Theme} array.
@@ -7171,7 +7171,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceInverted
         */
-        public static final int Theme_aviaryTextAppearanceInverted = 146;
+        public static int Theme_aviaryTextAppearanceInverted = 146;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceLarge}
           attribute's value can be found in the {@link #Theme} array.
@@ -7181,7 +7181,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceLarge
         */
-        public static final int Theme_aviaryTextAppearanceLarge = 140;
+        public static int Theme_aviaryTextAppearanceLarge = 140;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceLargeInverted}
           attribute's value can be found in the {@link #Theme} array.
@@ -7191,7 +7191,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceLargeInverted
         */
-        public static final int Theme_aviaryTextAppearanceLargeInverted = 147;
+        public static int Theme_aviaryTextAppearanceLargeInverted = 147;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceLargeNoSelection}
           attribute's value can be found in the {@link #Theme} array.
@@ -7201,7 +7201,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceLargeNoSelection
         */
-        public static final int Theme_aviaryTextAppearanceLargeNoSelection = 141;
+        public static int Theme_aviaryTextAppearanceLargeNoSelection = 141;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceMedium}
           attribute's value can be found in the {@link #Theme} array.
@@ -7211,7 +7211,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceMedium
         */
-        public static final int Theme_aviaryTextAppearanceMedium = 142;
+        public static int Theme_aviaryTextAppearanceMedium = 142;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceMediumInverted}
           attribute's value can be found in the {@link #Theme} array.
@@ -7221,7 +7221,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceMediumInverted
         */
-        public static final int Theme_aviaryTextAppearanceMediumInverted = 148;
+        public static int Theme_aviaryTextAppearanceMediumInverted = 148;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceMediumNoSelection}
           attribute's value can be found in the {@link #Theme} array.
@@ -7231,7 +7231,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceMediumNoSelection
         */
-        public static final int Theme_aviaryTextAppearanceMediumNoSelection = 143;
+        public static int Theme_aviaryTextAppearanceMediumNoSelection = 143;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceSmall}
           attribute's value can be found in the {@link #Theme} array.
@@ -7241,7 +7241,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceSmall
         */
-        public static final int Theme_aviaryTextAppearanceSmall = 144;
+        public static int Theme_aviaryTextAppearanceSmall = 144;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceSmallInverted}
           attribute's value can be found in the {@link #Theme} array.
@@ -7251,7 +7251,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceSmallInverted
         */
-        public static final int Theme_aviaryTextAppearanceSmallInverted = 149;
+        public static int Theme_aviaryTextAppearanceSmallInverted = 149;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTextAppearanceSmallNoSelection}
           attribute's value can be found in the {@link #Theme} array.
@@ -7261,7 +7261,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTextAppearanceSmallNoSelection
         */
-        public static final int Theme_aviaryTextAppearanceSmallNoSelection = 145;
+        public static int Theme_aviaryTextAppearanceSmallNoSelection = 145;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryTiltShiftViewStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -7271,7 +7271,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryTiltShiftViewStyle
         */
-        public static final int Theme_aviaryTiltShiftViewStyle = 5;
+        public static int Theme_aviaryTiltShiftViewStyle = 5;
         /**
           <p>
           @attr description
@@ -7283,7 +7283,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryToastExitAnimation
         */
-        public static final int Theme_aviaryToastExitAnimation = 135;
+        public static int Theme_aviaryToastExitAnimation = 135;
         /**
           <p>
           @attr description
@@ -7295,7 +7295,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.aviary.android.feather:aviaryToggleButtonStyle
         */
-        public static final int Theme_aviaryToggleButtonStyle = 70;
+        public static int Theme_aviaryToggleButtonStyle = 70;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#aviaryWheelStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -7305,6 +7305,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.aviary.android.feather:aviaryWheelStyle
         */
-        public static final int Theme_aviaryWheelStyle = 4;
+        public static int Theme_aviaryWheelStyle = 4;
     };
 }
