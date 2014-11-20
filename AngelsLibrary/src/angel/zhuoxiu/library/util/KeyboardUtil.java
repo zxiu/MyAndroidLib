@@ -14,4 +14,11 @@ public class KeyboardUtil {
 		}
 	}
 
+	public static void show(Context context, View view) {
+		showOrHide(context, view, true);
+	}
+
+	public static void hide(Context context, View view) {
+		showOrHide(context, view, false);
+	}
 }
