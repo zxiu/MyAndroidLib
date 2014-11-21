@@ -3,8 +3,8 @@ package angel.zhuoxiu.library.util;
 import java.util.Locale;
 
 public enum FileType {
-	UNKNOWN(0, new String[] {}), IMAGE(1, new String[] { "jpg", "jpeg", "bmp", "png" }), VIDEO(2, new String[] {"mp4", "3gp",
-			"avi" }), AUDIO(4, new String[] { "3gp", "mp3" }), DOCUMENT(8, new String[] { "pdf", "txt" });
+	UNKNOWN(0, new String[] {}), IMAGE(1, new String[] { "jpg", "jpeg", "bmp", "png" }), VIDEO(2, new String[] { "mp4",
+			"3gp" }), AUDIO(4, new String[] { "3gp", "mp3", "amr" }), DOCUMENT(8, new String[] { "pdf", "txt" });
 
 	private int value;
 	private String[] extens;
@@ -32,5 +32,5 @@ public enum FileType {
 		}
 		return false;
 	}
-	
+
 }
