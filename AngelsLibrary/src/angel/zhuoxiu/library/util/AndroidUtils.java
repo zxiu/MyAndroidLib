@@ -3,8 +3,12 @@ package angel.zhuoxiu.library.util;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.URL;
+import java.util.Enumeration;
 import java.util.List;
 
 import android.R.integer;
@@ -62,6 +66,26 @@ public class AndroidUtils {
 		return (wifi == State.CONNECTED || wifi == State.CONNECTING);
 	}
 
+	public static String getIpAddress() {
+		String ipaddress = "";
+
+		try {
+			for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+				NetworkInterface intf = en.nextElement();
+				for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+					InetAddress inetAddress = enumIpAddr.nextElement();
+					if (!inetAddress.isLoopbackAddress()) {
+						ipaddress = ipaddress + ";" + inetAddress.getHostAddress().toString();
+					}
+				}
+			}
+		} catch (SocketException ex) {
+			ipaddress = null;
+			Log.e("WifiPreference IpAddress", ex.toString());
+		}
+		return ipaddress;
+	}
+
 	public static boolean isURLConnectable(Context context, String url) {
 		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netInfo = cm.getActiveNetworkInfo();
@@ -96,7 +120,6 @@ public class AndroidUtils {
 		return (int) (pxValue / scale + 0.5f);
 	}
 
-	
 	public static Bitmap drawableToBitmap(Drawable drawable) {
 		if (drawable instanceof BitmapDrawable) {
 			return ((BitmapDrawable) drawable).getBitmap();
@@ -183,10 +206,10 @@ public class AndroidUtils {
 		countPaint.setTypeface(Typeface.DEFAULT_BOLD);
 		canvas.drawText(String.valueOf(contacyCount), iconSize - 18, 25, countPaint);
 		return contactIcon;
-	} 
+	}
 
 	public static void updateShortCut(Context context, String title, int iconResId) {
-		Log.i(tag,"updateShortCut");
+		Log.i(tag, "updateShortCut");
 		Intent shortcutIntent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
 		if (title != null) {
 			shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, title);
@@ -195,11 +218,13 @@ public class AndroidUtils {
 		Intent mainIntent = new Intent(Intent.ACTION_MAIN);
 		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
 
-		mainIntent.setComponent(new ComponentName(context.getPackageName(), context.getPackageName() + ".MainActivity"));
+		mainIntent
+				.setComponent(new ComponentName(context.getPackageName(), context.getPackageName() + ".MainActivity"));
 		mainIntent.setClass(context, context.getClass());
 
 		shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, mainIntent);
-		shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context, iconResId));
+		shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
+				Intent.ShortcutIconResource.fromContext(context, iconResId));
 		// shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON,
 		// generatorContactCountIcon(context, ((BitmapDrawable)
 		// (context.getResources().getDrawable(iconResId))).getBitmap()));
